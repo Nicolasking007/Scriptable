@@ -2,6 +2,7 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: brown; icon-glyph: magic;
 // author:Nicolas-kings
+// ver:0.1.1
 const res = await getData();
 // 初始化组件ui
 let widget = await createWidget(res)
@@ -35,7 +36,8 @@ async function createWidget() {
   body.font = Font.lightMonospacedSystemFont(18)
   body.textColor = Color.white()
   body.textOpacity = 0.88
-  body.url = res.music_url
+  // body.url = res.music_url     //跳转直链播放
+  body.url = `orpheus://song/${res.music_url.split('?')[1].split('=')[1].split('.')[0]}`     //调整点击小组件 默认跳转网易云音乐进行播放
   w.addSpacer(8)
 
 
@@ -44,7 +46,7 @@ async function createWidget() {
   foot.textColor = Color.orange();
   foot.textOpacity = 0.88;
   foot.rightAlignText();
-  
+
   return w
 }
 

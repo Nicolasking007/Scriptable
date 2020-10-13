@@ -2,10 +2,11 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: orange; icon-glyph: grin-squint;
 
-// Configs
-// Modify the array below and your own contacts
-// There are 5 types of services that you can use at the moment:
-// "sms", "facetime", "facetime-audio", "call", "whatsapp"
+//配置
+//修改下面的数组和您自己的联系人相关信息
+//目前可以使用6种服务：
+//“ sms”，“ facetime”，“ facetime-audio”，“ call”，“ whatsapp”，“ qq”
+//下面是配置文件 
 const contacts_list = [
   {
     name: "Placeholder",
@@ -32,15 +33,14 @@ const contacts_list = [
     photo: "4.png",
   },
 ];
-// end of config
+// 结束配置 
 
-// show only the first 4 contacts
+//仅显示前4个联系人 
 let contacts = contacts_list.slice(0, 4);
 
-// If you want shuffle your contacts you can do something like this:
-// let shuffle = [...contacts].sort(() => 0.5 - Math.random()).slice(0, 4);
-// the widget will be refreshed periodically and your contacts will
-// be shuffled.
+//如果您想随机联系人，可以执行以下操作：
+//let shuffle = [... contacts] .sort（（）=> 0.5-Math.random（））。slice（0，4）;
+//小部件将定期刷新，您的联系人将被更改。 
 
 async function getImg(image) {
   let fm = FileManager.iCloud();
@@ -137,7 +137,7 @@ async function CreateContact(contact, row) {
 
   contactStack.url = serviceUrl;
 
-  // contact photo
+ // 联系人照片
   let imgPath = await getImg(contact.photo);
 
   let photoStack = contactStack.addStack();
@@ -152,11 +152,11 @@ async function CreateContact(contact, row) {
   photo.cornerRadius = photo_size / 2;
 
   photoStack.addSpacer();
-  // end of contact photo
+  //联系人照片结束 
 
   contactStack.addSpacer(4);
 
-  // contact name
+  //联系人姓名 
   let nameStack = contactStack.addStack();
   nameStack.centerAlignContent();
 
@@ -173,10 +173,10 @@ async function CreateContact(contact, row) {
   name.textColor = Color.white();
 
   nameStack.addSpacer();
-  // end of contact name
+  //联系人姓名结束 
 }
 
-// row of contacts
+//联系人行高设置 
 wrapperStack.addSpacer();
 
 let rowStack = wrapperStack.addStack();
@@ -187,8 +187,8 @@ for (contact of contacts) {
 }
 
 wrapperStack.addSpacer();
-// end of row of contacts
+//联系人行高设置结束
 
-// present medium sized widget for preview when debugging
-// comment w.presentMedium() out if you don't need any preview
+//提供中等大小的小部件，以便在调试时进行预览
+//如果不需要任何预览，则将w.presentMedium（）注释掉
 w.presentMedium();

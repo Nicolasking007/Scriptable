@@ -1,5 +1,5 @@
 # Conversable for Scriptable
-iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
+iOS14桌面组件神器（Scriptable）汉化脚本，精美作品分享！
  
 ![效果预览](https://ae05.alicdn.com/kf/H33a5f3de043348b39974d80d01531f95G.png)
 

@@ -1,22 +1,37 @@
 # Scriptables 脚本合集
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品收集、分享！ 如果喜欢，欢迎点个 ★ Star ★ 给予小支持，感谢您的使用！  
 
-[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=nicolasking007)](https://github.com/anuraghazra/github-readme-stats)
+![nicolasking007's github stats](https://github-readme-stats.vercel.app/api?username=nicolasking007&show_icons=true)
 
  
 ----  
 ### [网易云热评](https://github.com/Nicolasking007/Scriptable/blob/main/%E7%BD%91%E6%98%93%E4%BA%91%E7%83%AD%E8%AF%84 "网易云热评") by [Nicolas-kings](https://github.com/Nicolasking007 "https://github.com/Nicolasking007")
 
-![效果图1](https://ae02.alicdn.com/kf/H1c0424df7ba54eeab67850dfe275134e0.png)
 
-![效果图2](https://ae01.alicdn.com/kf/H7a9409fb797042de81c0be7322240212P.png)
+<a href="https://github.com/Nicolasking007/Scriptable/blob/main/%E7%BD%91%E6%98%93%E4%BA%91%E7%83%AD%E8%AF%84">
+  <img align="center" src="https://ae02.alicdn.com/kf/H1c0424df7ba54eeab67850dfe275134e0.png" />
+</a>
+<a href="https://github.com/Nicolasking007/Scriptable/blob/main/%E7%BD%91%E6%98%93%E4%BA%91%E7%83%AD%E8%AF%84">
+  <img align="center" src="https://ae01.alicdn.com/kf/H7a9409fb797042de81c0be7322240212P.png" />
+</a>
+
+<!-- ![效果图1](https://ae02.alicdn.com/kf/H1c0424df7ba54eeab67850dfe275134e0.png)
+
+![效果图2](https://ae01.alicdn.com/kf/H7a9409fb797042de81c0be7322240212P.png) -->
 
 ----  
 ### [Conversable](https://github.com/Nicolasking007/Scriptable/tree/main/Conversable "Conversable") by [andyngo](https://github.com/andyngo "https://github.com/andyngo")
 
-![效果图1](https://ae05.alicdn.com/kf/H33a5f3de043348b39974d80d01531f95G.png)
+<a href="https://github.com/andyngo">
+  <img align="center" src="https://ae05.alicdn.com/kf/H33a5f3de043348b39974d80d01531f95G.png" />
+</a>
+<a href="https://github.com/Nicolasking007/Scriptable/tree/main/Conversable">
+  <img align="center" src="https://ae01.alicdn.com/kf/H400a556825f645d4b503197ef66b1ec2Y.png" />
+</a>
 
-![效果图2](https://ae01.alicdn.com/kf/H400a556825f645d4b503197ef66b1ec2Y.png)
+<!-- ![效果图1](https://ae05.alicdn.com/kf/H33a5f3de043348b39974d80d01531f95G.png)
+
+![效果图2](https://ae01.alicdn.com/kf/H400a556825f645d4b503197ef66b1ec2Y.png) -->
 
 ### 如何使用
 1. iPhone 上下载 [Scriptable](https://apps.apple.com/cn/app/scriptable/id1405459188) App（确保你的系统已更新为 iOS14+）. 

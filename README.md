@@ -1,12 +1,18 @@
 # Scriptables 脚本合集
-iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！    
+iOS14桌面组件神器（Scriptable）原创脚本，精美作品收集、分享！ 如果喜欢，欢迎点个 ★ Star ★ 给予小支持，感谢您的使用！  
 
-### 网易云热评
+[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=nicolasking007)](https://github.com/anuraghazra/github-readme-stats)
+
+ 
+----  
+### [网易云热评](https://github.com/Nicolasking007/Scriptable/blob/main/%E7%BD%91%E6%98%93%E4%BA%91%E7%83%AD%E8%AF%84 "网易云热评") by [Nicolas-kings](https://github.com/Nicolasking007 "https://github.com/Nicolasking007")
+
 ![效果图1](https://ae02.alicdn.com/kf/H1c0424df7ba54eeab67850dfe275134e0.png)
 
 ![效果图2](https://ae01.alicdn.com/kf/H7a9409fb797042de81c0be7322240212P.png)
 
-### Conversable
+----  
+### [Conversable](https://github.com/Nicolasking007/Scriptable/tree/main/Conversable "Conversable") by [andyngo](https://github.com/andyngo "https://github.com/andyngo")
 
 ![效果图1](https://ae05.alicdn.com/kf/H33a5f3de043348b39974d80d01531f95G.png)
 

@@ -5,7 +5,7 @@ iOS14桌面组件神器（Scriptable）汉化脚本，精美作品分享！
 
 注意:这个脚本需要 `Scriptable`的`1.5.1`版本，因为它依赖于一些新添加的api，比如 `.addStack()` and `.url()`
 
-[`原作者：andyngo`](https://github.com/andyngo/conversable-for-scriptable)  在此感谢分享、我的工作仅汉化并加上了`qq` 配置、自动更滑背景
+[`原作者：andyngo`](https://github.com/andyngo/conversable-for-scriptable)  在此感谢分享、我的工作仅汉化并加上了`qq` 配置、自动更换背景
 ## 它能做什么?
 
 `Conversable`是一个用`Scriptable` 编写的简单聊天widget。使用`Conversable`，您可以快速\*:

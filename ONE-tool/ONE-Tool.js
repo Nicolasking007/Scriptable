@@ -1,6 +1,7 @@
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
-// icon-color: brown; icon-glyph: magic;
+// icon-color: deep-purple; icon-glyph: fingerprint;
+// Variables used by Scriptable.
 // author:Nicolas-kings
 // github:https://github.com/Nicolasking007/Scriptable
 // ver:1.0.0   2020/11/14
@@ -11,21 +12,28 @@ const changePicBg = true  //选择true时，使用透明背景
 const ImageMode = false   //选择true时，使用必应壁纸
 const previewSize = "Medium"  //预览大小
 const colorMode = false // 是否是纯色背景
-const bgColor = new Color("000000") // 小组件背景色
+const User = 'Nicolas-kings'
+const City = 'shenzhen'
+const WeatherKey = '272e20c3a0ad4876a08fb3843ba20493' // you can get it from https://dev.heweather.com/
+//  const AQIToken = '' // you can get it from https://aqicn.org/data-platform/token/#/
 const padding = {
   top: 0,
   left: 0,
   bottom: 0,
   right: 0
 }
-const res = await getData();
+
+// const aqi = await getAQI()
+const lunarData = await getLunarData()
+const weatherData = await getWeather()
+const honeyData = await gethoney()
+
 const widget = await createWidget()
 /*
 ****************************************************************************
 * 这里是图片逻辑，不用修改
 ****************************************************************************
 */
-
 if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
   const okTips = "您的小部件背景已准备就绪"
   let message = "图片模式支持相册照片&背景透明"
@@ -114,10 +122,12 @@ if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
 // 组件End
 // 设置小组件的背景
 if (colorMode) {
+  const bgColor = new LinearGradient()
+  bgColor.colors = [new Color('#2c5364'), new Color('#203a43'), new Color('#0f2027')]
+  bgColor.locations = [0.0, 0.5, 1.0]
   widget.backgroundColor = bgColor
 } else if (ImageMode) {
-  // const url = "https://area.sinaapp.com/bingImg/"   //使用必应壁纸作为背景时，请注释下面
-  const url = res.data.picurl   //使用歌曲封面作为背景，，请注释上面
+  const url = "https://area.sinaapp.com/bingImg/"   //使用必应壁纸作为背景时，请注释下面
   // const url = "http://p1.music.126.net/uarVFKgUlrI9Z1nr-50cAw==/109951162843608471.jpg"     //固定一张图片,这里我选用城南花已开的封面,图片不能太大，容易崩溃
   const i = await new Request(url);
   const img = await i.loadImage();
@@ -141,48 +151,108 @@ if (previewSize == "Large") {
   widget.presentSmall()
 }
 
-
-
-
-// 创建组件
 async function createWidget() {
-  let w = new ListWidget()
-  w.backgroundColor = new Color("#222222", 1)
+  const widget = new ListWidget()
+  widget.setPadding(12, 12, 12, 0)
+  widget.spacing = 6
 
-  //  标题
-  let title = w.addText("\u7f51\u6613\u4e91\u70ed\u8bc4")
-  title.font = Font.boldMonospacedSystemFont(20)
-  title.textColor = Color.white()
-  title.url = "orpheuswidget://"
-  w.addSpacer(12)
+  const time = new Date()
 
-  //  内容
-  let body = w.addText(`❝${res.data.content}❞ `)
-  body.font = Font.lightMonospacedSystemFont(18)
-  body.textColor = Color.white()
-  body.textOpacity = 0.88
-  // body.url = res.music_url     //跳转直链播放
-  body.url = `orpheus://song/${res.data.url.split('?')[1].split('=')[1].split('.')[0]}`     //默认跳转网易云音乐进行播放
-  w.addSpacer(8)
+  const hour = time.getHours()
+  const isMidnight = hour < 8 && 'midnight'
+  const isMorning = hour >= 8 && hour < 12 && 'morning'
+  const isAfternoon = hour >= 12 && hour < 19 && 'afternoon'
+  const isEvening = hour >= 19 && hour < 21 && 'evening'
+  const isNight = hour >= 21 && 'night'
 
+  const dfTime = new DateFormatter()
+  dfTime.locale = 'en'
+  dfTime.useMediumDateStyle()
+  dfTime.useNoTimeStyle()
 
-  let foot = w.addText(`—— 评论来自歌曲「${res.data.name}」`);
-  foot.font = Font.lightMonospacedSystemFont(12)
-  foot.textColor = Color.orange();
-  foot.textOpacity = 0.88;
-  foot.rightAlignText();
+  const hello = widget.addText(`[🤖]Hi, ${User}. Good ${isMidnight || isMorning || isAfternoon || isEvening || isNight}!`)
+  hello.textColor = new Color('#ffffff')
+  hello.font = new Font('Menlo', 11)
 
-  return w
+  const enTime = dfTime.string(time)
+  const lunartime = widget.addText(`[📅]${enTime} ${lunarData}`)
+  lunartime.textColor = new Color('#C6FFDD')
+  lunartime.font = new Font('Menlo', 11)
 
+  const honey = widget.addText(`[🐷]${honeyData}`)
+  honey.textColor = new Color('#BBD676')
+  honey.font = new Font('Menlo', 11)
+  honey.lineLimit = 1
+
+  const weather = widget.addText(`[🌤]${weatherData}`)
+  weather.textColor = new Color('#FBD786')
+  weather.font = new Font('Menlo', 11)
+
+  const Battery = widget.addText(`[${Device.isCharging() ? '⚡️' : '🔋'}]${renderBattery()} Battery`)
+  Battery.textColor = new Color('#00FF00')
+  Battery.font = new Font('Menlo', 11)
+
+  const Progress = widget.addText(`[⏳]${renderYearProgress()} YearProgress`)
+  Progress.textColor = new Color('#f19c65')
+  Progress.font = new Font('Menlo', 11)
+
+  return widget
 }
 
-async function getData() {
-  const url = 'https://api.uomg.com/api/comments.163'
+
+// async function getAQI() {
+//     const url = `https://api.waqi.info/feed/${City}/?token=${AQIToken}`
+//     const request = new Request(url)
+//     const res = await request.loadJSON()
+//     return res.data.aqi
+// }
+
+async function getLunarData() {
+  const url = 'https://api.xlongwei.com/service/datetime/convert.json'
   const request = new Request(url)
   const res = await request.loadJSON()
-  console.log(res)
-  return res
+  return `${res.ganzhi}${res.shengxiao}年 农历${res.chinese.replace(/.*年/, '')}`
+}
 
+async function getWeather() {
+  const requestCityInfo = new Request(
+    `https://geoapi.heweather.net/v2/city/lookup?key=${WeatherKey}&location=${City}&lang=en`
+  )
+  const resCityInfo = await requestCityInfo.loadJSON()
+  const { name, id } = resCityInfo.location[0]
+
+  const requestNow = new Request(`https://devapi.heweather.net/v7/weather/now?location=${id}&key=${WeatherKey}&lang=en`)
+  const requestDaily = new Request(`https://devapi.heweather.net/v7/weather/3d?location=${id}&key=${WeatherKey}&lang=en`)
+  const resNow = await requestNow.loadJSON()
+  const resDaily = await requestDaily.loadJSON()
+
+  return `${name} ${resNow.now.text} T:${resNow.now.temp}° H:${resDaily.daily[0].tempMax}° L:${resDaily.daily[0].tempMin}°`
+}
+
+async function gethoney() {
+  const url = 'https://api.vvhan.com/api/love?type=json'
+  const request = new Request(url)
+  const res = await request.loadJSON()
+  return `${res.ishan}`
+}
+
+function renderProgress(progress) {
+  const used = '▓'.repeat(Math.floor(progress * 24))
+  const left = '░'.repeat(24 - used.length)
+  return `${used}${left} ${Math.floor(progress * 100)}%`
+}
+
+function renderBattery() {
+  const batteryLevel = Device.batteryLevel()
+  return renderProgress(batteryLevel)
+}
+
+function renderYearProgress() {
+  const now = new Date()
+  const start = new Date(now.getFullYear(), 0, 1) // Start of this year
+  const end = new Date(now.getFullYear() + 1, 0, 1) // End of this year
+  const progress = (now - start) / (end - start)
+  return renderProgress(progress)
 }
 
 async function shadowImage(img) {
@@ -199,6 +269,7 @@ async function shadowImage(img) {
   // 导出最终图片
   return await ctx.getImage()
 }
+
 
 async function generateAlert(message, options) {
   let alert = new Alert()
@@ -324,3 +395,6 @@ function phoneSizes() {
   }
   return phones
 }
+
+
+

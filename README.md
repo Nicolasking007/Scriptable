@@ -24,7 +24,7 @@ iOS14桌面组件神器（Scriptable）原创脚本，精美作品收集、分�
   <img align="center" src="https://ae01.alicdn.com/kf/H7a9409fb797042de81c0be7322240212P.png" />
 </a> -->
 
-![网易云](/images/hotcomment.png)
+![网易云热评](/images/hotcomment.png)
 
 
 ----  
@@ -57,12 +57,12 @@ iOS14桌面组件神器（Scriptable）原创脚本，精美作品收集、分�
 
 ### [ONE-tool](https://github.com/Nicolasking007/Scriptable/blob/main/ONE-tool "ONE-tool") by [Nicolas-kings](https://github.com/Nicolasking007 "https://github.com/Nicolasking007")
 ---
-![cuntdown](/images/main.png)
+![ONE-tool](/images/main.png)
 ---
 
 ### [今天是周五吗](https://github.com/Nicolasking007/Scriptable/blob/main/friday "今天是周五吗") by [Nicolas-kings](https://github.com/Nicolasking007 "https://github.com/Nicolasking007")
 ---
-![cuntdown](/images/main.png)
+![今天是周五吗](/images/main.png)
 ---
 <center>
     <img src="https://ae04.alicdn.com/kf/H697021382f264fd2ad0476c7e817b309g.png" style="width: 100px;">

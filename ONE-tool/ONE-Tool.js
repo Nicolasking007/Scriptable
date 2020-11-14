@@ -14,7 +14,7 @@ const previewSize = "Medium"  //预览大小
 const colorMode = false // 是否是纯色背景
 const User = 'Nicolas-kings'
 const City = 'shenzhen'
-const WeatherKey = '272e20c3a0ad4876a08fb3843ba20493' // you can get it from https://dev.heweather.com/
+const WeatherKey = ' ' // 这里输入和风天气apikey  https://dev.heweather.com/
 //  const AQIToken = '' // you can get it from https://aqicn.org/data-platform/token/#/
 const padding = {
   top: 0,

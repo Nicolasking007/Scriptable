@@ -79,10 +79,15 @@
 ### 健康类
 ---
 - [incidence.js](https://gist.github.com/kevinkub/46caebfebc7e26be63403a7f0587f664) - Covid-19德国的发病率数据.
+
 <img src="https://www.scriptables.net/assets/images/covid_berlin_dark.png" width="400"/>
+
 - [incidence_at.js](https://gist.github.com/Baumchen/b8b9aaf5ba0aebef173a4f956a3b4290) - Covid-19奥地利的发病数据.
+
 <img src="https://www.scriptables.net/assets/images/covid_inzidenz_dark.png" width="400"/>
+
 - [Coronavirus.js](https://gist.github.com/planecore/e7b4c1e5db2dd28b1a023860e831355e) -  可自由选择国家的Covid-19数据.
+
 <img src="https://www.scriptables.net/assets/images/covid_berlin_dark.png" width="400"/>
 
 ### 手机类
@@ -90,15 +95,15 @@
 
 - [10086.js](https://github.com/GideonSenku/Scriptable) - 10086.
 
-  <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_8e7ef0444a8364c5567002354df91537.png" width="800"/>
+  <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_8e7ef0444a8364c5567002354df91537.png" width="400"/>
 
 - [10010.js](https://github.com/GideonSenku/Scriptable) - 10010.
 
-  <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_8e7ef0444a8364c5567002354df91537.png" width="800"/>  
+  <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_8e7ef0444a8364c5567002354df91537.png" width="400"/>  
 
 - [telekom.js](https://gist.github.com/Sillium/f904fb89444bc8dde12cfc07b8fa8728) - 基于费率的Telekom.de数据消耗.
 
-  <img src="https://user-images.githubusercontent.com/8177259/96705591-cb7db480-1395-11eb-8fb3-cff401898bc2.jpg" width="800"/>
+  <img src="https://user-images.githubusercontent.com/8177259/96705591-cb7db480-1395-11eb-8fb3-cff401898bc2.jpg" width="400"/>
 
 - [VodafoneDE](https://github.com/ThisIsBenny/iOS-Widgets/tree/main/VodafoneDE) - 沃达丰DE的基于费率的数据消耗.
 
@@ -141,6 +146,7 @@
 
 
 - [ig-latest-post.js](https://github.com/supermamon/scriptable-scripts/blob/master/instagram-widgets/ig-latest-post.js) - 选定Instagram用户的最新信息.
+<img src="https://shop.io.mi-img.com/app/shop/img?id=shop_b01e226add2b4a1a4144a6e21b72cace.png" width="400"/>
 
 - [termiWidget.js](https://gist.github.com/spencerwooo/7955aefc4ffa5bc8ae7c83d85d05e7a4) - 用户关注数量的终端式输出.
 
@@ -167,6 +173,7 @@
 ### 运动类
 --- 
 - [fitx-widget.js](https://gist.github.com/DanielStefanK/487175b6f65ede401e37ee4848970176) - FitX健身房的工作量.
+
 - [rsg_group_mcfit_high5_johnreed_capacity_widget.js](https://gist.github.com/masselmello/6d4f4c533b98b2550ee23a7a5e6c6cff) - 最近的McFit体育馆的容量.
 - [skiable](https://github.com/p0fi/skiable-for-scriptable) - 滑雪信息，例如雪高或开放式升降机的数量. 
 
@@ -174,15 +181,29 @@
 
 - [Upcoming Matches](https://gist.github.com/ilyichvismara/7895bb479e14a999f3cfd2c391f10597) - 足球队即将进行的比赛.
 
+  <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_7956218c53fadc2ab223e13c93423cf6.png" width="400"/>
+
+- [football](https://github.com/Juniorchen2012/scriptable) - 中超 英超 西甲赛程
+<img src="https://github.com/Juniorchen2012/scriptable/raw/master/zh.png?raw=true " width="400"/>
+
 ### 工具类
 --- 
 - [ONE-tool](https://github.com/Nicolasking007/Scriptable) - 显示农历日、天气、情话等信息.
 
-  <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="800"/>
+  <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>
+
+- [随机网络图片](https://github.com/Nicolasking007/Scriptable) - 显示网络图片.
+
+- [homebridgeStatus](https://github.com/lwitzani/homebridgeStatusWidget) - 显示Homebridge状态的小组件.
+<img src="https://shop.io.mi-img.com/app/shop/img?id=shop_d0fcc7361d8904348fc87f5fc9c44c73.jpeg" width="400"/>
+
+- [Weather-Cal](https://github.com/mzeryck/Weather-Cal) - 天气组件
+
+ <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_735795b876b4c4ec69640afb3040da6c.png" width="400"/>
 
 - [gitlab-stats-for-scribtable](https://github.com/p0fi/gitlab-stats-for-scribtable) - 来自GitLab的统计信息，例如分配的合并请求数.
 
-  <img src="https://github.com/p0fi/gitlab-stats-for-scribtable/raw/main/cover.png" width="800"/>
+  <img src="https://github.com/p0fi/gitlab-stats-for-scribtable/raw/main/cover.png" width="400"/>
 
 - [mz_invisible_widget.js](https://gist.github.com/mzeryck/3a97ccd1e059b3afa3c6666d27a496c9) - 用于创建“透明”背景的小组件.
 - [PurpleAir-AQI-Scriptable-Widget](https://github.com/jasonsnell/PurpleAir-AQI-Scriptable-Widget) - PurpleAir传感器产生的空气质量.

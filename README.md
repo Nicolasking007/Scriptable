@@ -10,6 +10,7 @@
 ![nicolasking007's github stats](https://github-readme-stats.vercel.app/api?username=nicolasking007&show_icons=true)
 
 
+
 ## 目录
 - [如何使用](#如何使用)
 - [汽车电子类](#汽车电子类)
@@ -24,7 +25,8 @@
 - [工具类](#工具类)
 - [常见问题解答](#常见问题解答)
 
- 
+ >  [全选复制·快捷指令| 可便捷解决手机复制scriptable代码问题 ](https://jiejinghe.com/shortcuts/3728536880 )
+
 ### 如何使用
 1. iPhone 上下载 [Scriptable](https://apps.apple.com/cn/app/scriptable/id1405459188) App（确保你的系统已更新为 iOS14+）. 
 2. 打开App，点击右上角 + 号，复制项目中对应的代码  
@@ -41,6 +43,12 @@
   
 ### 汽车电子类
 --- 
+
+- [oliprice.js](https://github.com/DrieStone/TeslaData-Widget) - 支持查询全国所有省份的油价实时数据
+  
+  <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_e0bc060b1bf442ad72631c7af5b46aba.jpeg" width="400"/>
+
+
 - [TeslaData-Widget](https://github.com/DrieStone/TeslaData-Widget) - 有关您的Tesla的信息，例如充电状态和车门已锁定/未锁定
   
   <img src="https://github.com/DrieStone/TeslaData-Widget/raw/main/documentation/screen_001.png" width="400"/>

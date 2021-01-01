@@ -3,10 +3,7 @@
 // icon-color: blue; icon-glyph: award;
 // author:Nicolas-kings
 // ver:1.0.0   2020/11/20
-//*********使用前准备工作*********//
-//请前往代码的272/291行输入抓包获取的cookie
-//请前往代码的277/297行输入抓包获取的x-token
-//以及第20行处输入user_id
+
 const filename = `${Script.name()}.jpg`
 const files = FileManager.local()
 const path = files.joinPath(files.documentsDirectory(), filename)
@@ -16,7 +13,9 @@ const previewSize = "Medium"  //预览大小
 const colorMode = false // 是否是纯色背景
 const bgColor = new Color("000000") // 小组件背景色
 
-
+//*********使用前准备工作*********//
+const token = ''   //抓包获取token
+const cookie= ''   //抓包获取cookie
 const userId = '' //输入捷径社区id  https://sharecuts.cn/user/94lVdg6zgq
 
 const api = 'https://api.sharecuts.cn/'
@@ -272,9 +271,9 @@ async function getData() {
   wakeRequest.headers = {
     "Accept": "*/*",
     "Content-Type": 'application/json',
-    "Cookie":' ',  //抓包获取的cookie
+    "Cookie":cookie,  //抓包获取的cookie
     "User-Agent":'Sharecuts/1.4.13 (tech.miidii.Sharecuts; build:120; iOS 14.2.0) Alamofire/5.0.0',
-    "X-Token":' ', //抓包获取的token
+    "X-Token":token, //抓包获取的token
     "X-User": userId
   }
   return await wakeRequest.loadJSON()
@@ -289,9 +288,9 @@ async function getDown() {
   wakeRequest.headers = {
     "Accept": "*/*",
     "Content-Type": 'application/json',
-    "Cookie":' ',  //抓包获取的cookie
+    "Cookie":cookie,  //抓包获取的cookie
     "User-Agent":'Sharecuts/1.4.13 (tech.miidii.Sharecuts; build:120; iOS 14.2.0) Alamofire/5.0.0',
-    "X-Token":'',   //抓包获取的token
+    "X-Token":token,   //抓包获取的token
     "X-User": userId
 
   }

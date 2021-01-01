@@ -11,11 +11,10 @@ const previewSize = "Medium"  //预览大小  Small/Medium
 const colorMode = false // 是否使用纯色背景
 const bgColor = new Color("000000") // 小组件背景色
 
-//输入要查询的省份 
-const prov = '广东'
+//*********使用前准备工作*********//
+const prov = '广东'  //输入要查询的省份 
+const api_key = ''   //前往天行数据申请apikey https://www.tianapi.com/apiview/104
 
-//前往天行数据申请apikey https://www.tianapi.com/apiview/104
-const api_key = ''  
 const size = previewSize
 let data = await fetchData()
 console.log(`\u6b22\u8fce\u4f7f\u7528\u6bcf\u65e5\u6cb9\u4ef7\u0026\u0023\u0031\u0038\u0033\u003b\u6765\u6e90\u4e8e\u516c\u4f17\u53f7\u0020\u002d\u0020\u66f0\u575b`)

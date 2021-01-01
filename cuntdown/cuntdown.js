@@ -12,9 +12,13 @@ const ImageMode = false   //选择true时，使用必应壁纸
 const previewSize = "Small"  //预览大小
 const colorMode = false // 是否使用纯色背景
 const bgColor = new Color("000000") // 小组件背景色
+
+//*********使用前准备工作*********//
 const endDate = '02/12/2021 00:00:00 AM'; //设定的倒计时时间
-const fontColor = Color.white()   //new Color("#918A8A")
 const daysTillText = '距离春节'  //倒计时文案
+
+
+const fontColor = Color.white()   //new Color("#918A8A")
 const logoUrl = ''
 const widgetUrl = "https://nkupp.com"  //跳转URL
 // const daysFont = Font.ultraLightSystemFont(70)

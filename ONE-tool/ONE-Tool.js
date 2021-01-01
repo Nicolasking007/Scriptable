@@ -12,9 +12,13 @@ const changePicBg = true  //选择true时，使用透明背景
 const ImageMode = false   //选择true时，使用必应壁纸
 const previewSize = "Medium"  //预览大小
 const colorMode = false // 是否是纯色背景
+
+//*********使用前准备工作*********//
 const User = 'Nicolas-kings'
 const City = 'shenzhen'
 const WeatherKey = ' ' // 这里输入和风天气apikey  https://dev.heweather.com/
+
+
 //  const AQIToken = '' // you can get it from https://aqicn.org/data-platform/token/#/
 const padding = {
   top: 0,

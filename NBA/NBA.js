@@ -10,8 +10,6 @@
  * version    : 1.1.0
  * author     : thisisevanfox & Nicolas-kings
  * date       : 2021-01-31
- * github     : [thisisevanfox] https://github.com/thisisevanfox/nba-my-team-ios-widget/blob/main/NBA-MyTeam-Widget.js 
- * github     : https://github.com/Nicolasking007/Scriptable
  *******************************************************/
 
 /************************************************************
@@ -181,24 +179,23 @@ async function addSmallWidgetData(oWidget) {
 
     const dGameDate = new Date(oGameData.gameDate);
     const dLocalDate = dGameDate.toLocaleString([], {
-      year: "numeric",
       month: "numeric",
       day: "numeric",
       hour: "2-digit",
       minute: "2-digit",
     });
     const oGameDateText = oUpperTextStack.addText(
-      `${dLocalDate.split(",")[0]}`
+      `NBA赛事资讯`
     );
-    oGameDateText.font = Font.boldSystemFont(11);
+    oGameDateText.font = Font.boldSystemFont(12);
     oGameDateText.textColor = getColorForCurrentAppearance();
     const oGameTimeText = oUpperTextStack.addText(
-      `${dLocalDate.split(",")[1].trim()}`
+      `${dLocalDate.split(",")[0]}`
     );
-    oGameTimeText.font = Font.boldSystemFont(11);
+    oGameTimeText.font = Font.boldSystemFont(9);
     oGameTimeText.textColor = getColorForCurrentAppearance();
     const oVenueText = oUpperTextStack.addText(`♗ ${oGameData.venue}`);
-    oVenueText.font = Font.boldSystemFont(11);
+    oVenueText.font = Font.boldSystemFont(9);
     oVenueText.textColor = getColorForCurrentAppearance();
 
     oUpperStack.addSpacer();
@@ -208,7 +205,7 @@ async function addSmallWidgetData(oWidget) {
       oOpponentTeam.abbreviation
     );
     const oOpponentLogo = oUpperStack.addImage(oOpponentLogoImage);
-    oOpponentLogo.imageSize = new Size(40, 40);
+    oOpponentLogo.imageSize = new Size(25, 25);
 
     if (SHOW_STATS_AND_STANDINGS) {
       oWidget.addSpacer(4);
@@ -219,25 +216,25 @@ async function addSmallWidgetData(oWidget) {
         " - 负: " +
         oOpponentTeam.record.losses
       );
-      oOpponentTeamStatsText.font = Font.systemFont(11);
+      oOpponentTeamStatsText.font = Font.systemFont(9);
       oOpponentTeamStatsText.textColor = getColorForCurrentAppearance();
 
       const oOpponentTeamStandingsText = oWidget.addText(
-        "Conf.: " +
+        "联盟: " +
         oOpponentTeam.record.confRank +
         "." +
-        " | Div.: " +
+        " | 分区: " +
         oOpponentTeam.record.divRank +
         "."
       );
-      oOpponentTeamStandingsText.font = Font.systemFont(11);
+      oOpponentTeamStandingsText.font = Font.systemFont(9);
       oOpponentTeamStandingsText.textColor = getColorForCurrentAppearance();
 
       if (oOpponentTeam.topscorer.name != null) {
         const oOpponentTeamTopScorerText = oWidget.addText(
           `${oOpponentTeam.topscorer.name} (${oOpponentTeam.topscorer.value})`
         );
-        oOpponentTeamTopScorerText.font = Font.systemFont(11);
+        oOpponentTeamTopScorerText.font = Font.systemFont(9);
         oOpponentTeamTopScorerText.textColor = getColorForCurrentAppearance();
       }
     }
@@ -262,10 +259,10 @@ async function addSmallWidgetData(oWidget) {
       oMyTeamStatsText.textColor = getColorForCurrentAppearance();
 
       const oMyTeamStandingsText = oBottomTextStack.addText(
-        "Conf.: " +
+        "联盟: " +
         oMyTeam.record.confRank +
         "." +
-        " | Div.: " +
+        " | 分区: " +
         oMyTeam.record.divRank +
         "."
       );
@@ -290,7 +287,7 @@ async function addSmallWidgetData(oWidget) {
       oMyTeamLogo.imageSize = new Size(25, 25);
     }
   } else {
-    const oHeadingText = oWidget.addText(`No upcoming games. Season ended.`);
+    const oHeadingText = oWidget.addText(`没有即将举行的比赛——赛季结束.`);
     oHeadingText.font = Font.boldSystemFont(11);
     oHeadingText.textColor = getColorForCurrentAppearance();
 
@@ -527,7 +524,7 @@ async function addMediumWidgetData(oWidget) {
     oHeadingStack.setPadding(7, 7, 7, 7);
 
     const oHeadingText = oHeadingStack.addText(
-      `No upcoming games. Season ended.`
+      `没有即将举行的比赛——赛季结束`
     );
     oHeadingText.font = Font.boldSystemFont(11);
     oHeadingText.textColor = getColorForCurrentAppearance();
@@ -1250,17 +1247,17 @@ async function createLargeWidget() {
   const oWidget = new ListWidget();
   oWidget.setPadding(10, 10, 10, 10);
   oWidget.url =
-    "https://github.com/thisisevanfox/nba-my-team-ios-widget/blob/main/Installation%20guide.md";
+    "https://mp.weixin.qq.com/s/xwa4P39JQzjFO6SCqBX_fQ";
 
   const oHeadingStack = oWidget.addStack();
   oHeadingStack.layoutVertically();
   oHeadingStack.setPadding(7, 7, 7, 7);
 
   const oHeadingText = oHeadingStack.addText(
-    `Currently a large widget is not supported. Only small and medium size widgets are possible. Don't know how to get it? Click the widget to read to the installation instructions.`
+    `\u5f53\u524d\u4e0d\u652f\u6301\u5927\u5c3a\u5bf8\u5c0f\u7ec4\u4ef6\u3002\u4ec5\u652f\u6301\u4e2d\u5c0f\u5c3a\u5bf8\u5c0f\u7ec4\u4ef6\u3002\u4e0d\u77e5\u9053\u5982\u4f55\u4f7f\u7528\uff1f\u5355\u51fb\u5c0f\u7ec4\u4ef6\u4ee5\u9605\u8bfb\u5b89\u88c5\u8bf4\u660e .`
   );
   oHeadingText.font = Font.systemFont(16);
-  oHeadingText.textColor = Color.red();
+  oHeadingText.textColor = Color.white();
 
   return oWidget;
 }

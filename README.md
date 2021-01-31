@@ -50,7 +50,7 @@
 | 2  | ★★★★☆  | 有关您的Tesla的信息，例如充电状态和车门已锁定/未锁定  |  [TeslaData-Widget](https://github.com/DrieStone/TeslaData-Widget) | <img src="https://github.com/DrieStone/TeslaData-Widget/raw/main/documentation/screen_001.png" width="400"/>  |
 | 3  | ★★★☆  |  附近加油站的燃油价格. | [tankstellenpreise.js](https://github.com/Necriso/ScriptableWidgets/blob/main/iamges/tankstellenpreise.js)  |  <img src="https://raw.githubusercontent.com/Necriso/ScriptableWidgets/main/images/tankstellenpreise.png" width="400"/> |
 | 4  | ★★★☆  | 有关您的雷诺佐伊的信息，例如充电或位置.  | [ZOE-Widget.js](https://gist.github.com/mountbatt/772e4512089802a2aa2622058dd1ded7)   |  <img src="https://user-images.githubusercontent.com/2411246/97786189-41f68f80-1baa-11eb-9c6f-96e8d8f7684a.jpeg" width="400"/> |
-| 尽情期待  |  ★★★★★  | -  |  - | -  |
+| -  |  -  | -  |  - | -  |
  
 
 ### 日历类
@@ -64,7 +64,7 @@
 | 4  | ★★☆  | 联系人即将到来的生日信息列表.  | [daysUntilBirthday](https://github.com/lwitzani/daysUntilBirthday)  |  <img src="https://raw.githubusercontent.com/lwitzani/daysUntilBirthday/main/fullySetupWidget.PNG" width="400"/> |
 | 5  | ★★☆  | 可自定义的日历.  | [scriptable-calendar-widget](https://github.com/rudotriton/scriptable-calendar-widget)  | <img src="https://github.com/rudotriton/scriptable-calendar-widget/raw/main/assets/widget.jpg" width="400"/>  |
 | 6  |  ★★★★★  | 破壳日  | [破壳日](https://github.com/dompling/Scriptable/blob/master/Scripts/Birthday.js) | -  |
-| 尽情期待  |  ★★★★★  | -  |  - | -  |
+| -  | -  | -  |  - | -  |
  
 
 ### 健康类
@@ -78,7 +78,7 @@
 | 4  |  ★★★★★  | 健康步数 | [健康步数](https://github.com/dompling/Scriptable/blob/master/Scripts/Health.js) | <img src="https://p.pstatp.com/origin/137d00001fd0739030069" width="400"/>  |
 | 5  |  ★★★★★  | 疫情日报-版本1 | [疫情日报-版本1](https://github.com/Nicolasking007/Scriptable) | <img src="https://p.pstatp.com/origin/ff31000327b44e8e156a" width="400"/>  |
 | 6  |  ★★★★★  | 疫情日报-版本2 | [疫情日报-版本2](https://raw.githubusercontent.com/dompling/scriptableTsx/master/scripts/COVID-19.js) | <img src="https://p.pstatp.com/origin/ff31000327b44e8e156a" width="400"/>  |
-| 尽情期待  |  ★★★★★  | -  |  - | -  |
+| -  |  -  | -  |  - | -  |
 
 
 
@@ -97,7 +97,7 @@
 | 7  |  ★★★☆  | 机场+签到  |  [机场+签到](https://github.com/dompling/Scriptable/blob/master/Scripts/VpnBoard.js) | -  |
 | 8  |  ★★★★☆ | 机场订阅流量  |  [机场订阅流量](https://github.com/dompling/Scriptable/blob/master/Scripts/VPNSubscription.js) | -  |
 | 9  |  ★★★☆  | v2board机场模板  |  [v2board机场模板](https://github.com/dompling/Scriptable/blob/master/Scripts/VPNV2Bord.js)  | -  |
-| 尽情期待  |  ★★★★★  | -  |  - | -  |
+| -  | -  | -  |  - | -  |
 
 
   
@@ -109,7 +109,7 @@
 | 1  | ★★★☆  | 在Sonos上播放音乐的小组件  | [sonos-nowPlaying.js](https://gist.github.com/marco79cgn/98616fcbb2dfdbd752b33a452208bcc8)  |  <img src="https://user-images.githubusercontent.com/9810829/93666651-2151fa80-fa80-11ea-95db-ebebc861c96d.jpg" width="400"/>  |
 | 2  | ★★★☆  | 在Spotify上播放音乐的小组件  | [spotify-now-playing.js](https://gist.github.com/marco79cgn/79a6a265d978dc22cc2a12058b24e02b)  | <img src="https://user-images.githubusercontent.com/9810829/94380118-76eb6e80-0134-11eb-9d71-c6d587b8b224.jpeg" width="400"/>  |
 | 3  | ★★★☆  | 网易云热评小组件  | [hotcomments.js](https://github.com/Nicolasking007/Scriptable/blob/main/%E7%BD%91%E6%98%93%E4%BA%91%E7%83%AD%E8%AF%84)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_ce27566bfa16158fe31252e29e56adff.png" width="400"/>  |
-| 尽情期待  |  ★★★★★  | -  |  - | -  |
+| -  |  -  | -  |  - | -  |
 
  
 ## 阅读类
@@ -121,7 +121,7 @@
 | 2  | ★★★☆  | 德国新闻网站_Tagesschau_的最新文章  | [tagesschau-widget](https://github.com/trbnhck/scriptable-scripts/tree/main/tagesschau-widget)  | <img src="https://camo.githubusercontent.com/a90be978f61e852bddd16233548c44211d3f2de1a2ac5285c352e0c0bfe0d4f9/68747470733a2f2f696d6775722e636f6d2f696f65576869792e6a7067" width="400"/>  |
 | 3  |  ★★★★★  | 历史上的今天 | [历史上的今天](https://github.com/dompling/Scriptable/blob/master/Scripts/HistoryToday.js) | -  |
 | 4  |  ★★★☆  | 毒汤日历  | [毒汤日历](https://github.com/dompling/Scriptable/blob/master/Scripts/PoisonCalendar.js) | -  |
-| 尽情期待  |  ★★★★★  | -  |  - | -  |
+| -  |  -  | -  |  - | -  |
 
 
   
@@ -144,7 +144,7 @@
 | 11  |  ★★★☆  | 显示桌面联系人，(输入相应的手机联系人的名字，会自动关联搜索通讯录，可以是姓，可以是名字，可以是姓+名字  | [桌面联系人](Scripts/Contact.js) | -  |
 | 12  |  ★★★★☆  | Telegram桌面订阅  | [Telegram](https://github.com/dompling/Scriptable/blob/master/Scripts/Telegram.js)  | -  |
 | 13  |  ★★★★☆  | YouTube桌面订阅  | [YouTube](https://github.com/dompling/Scriptable/blob/master/Scripts/YouTube.js)  | -  |
-| 尽情期待  |  ★★★★★  | -  |  - | -  |
+| -  |  -  | -  |  - | -  |
 
       
   
@@ -158,7 +158,7 @@
 | 3  |  ★★★★★  | 京东豆收支明细  | [京东豆收支明细](https://github.com/dompling/Scriptable/blob/master/Scripts/JDDou.js) | -  |
 | 4  |  ★★★★★  | 京东豆收支 K 线图  | [京东豆收支 K 线图](https://github.com/dompling/Scriptable/blob/master/Scripts/JDDouK.js) | -  |
 | 5  |  ★★★★★  | 京东商品物流  | [京东商品物流](https://github.com/dompling/Scriptable/blob/master/Scripts/JDWuLiu.js) | - | 
-| 尽情期待  |  ★★★★★  | -  |  - | -  |
+| -  |  -  | -  |  - | -  |
  
 
 ### 运动类
@@ -171,7 +171,7 @@
 | 3  | ★☆  | 滑雪信息，例如雪高或开放式升降机的数量.  | [skiable](https://github.com/p0fi/skiable-for-scriptable)  | <img src="https://raw.githubusercontent.com/p0fi/skiable-for-scriptable/main/cover.png" width="400"/>  |
 | 4  | ★★★★  | 足球队即将进行的比赛  | [Upcoming Matches](https://gist.github.com/ilyichvismara/7895bb479e14a999f3cfd2c391f10597)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_7956218c53fadc2ab223e13c93423cf6.png" width="400"/>  |
 | 5  | ★★★★★  |  中超 英超 西甲赛程  | [football](https://github.com/Juniorchen2012/scriptable)  | <img src="https://github.com/Juniorchen2012/scriptable/raw/master/zh.png?raw=true " width="400"/>  |
-| 尽情期待  |  ★★★★★  | -  |  - | -  |
+| -  |  -  | -  |  - | -  |
 
 
 
@@ -192,7 +192,7 @@
 | 10  | ★★☆  | Woocommerce商店的销售统计  | [woocommerce-sales](https://gist.github.com/olikdesign/4c9c5549686c81e728b065286eb0e750)  |  <img src="https://user-images.githubusercontent.com/56842969/97914623-76a44b80-1d50-11eb-9273-b35b4b76a3f0.jpeg" width="400"/>  |
 |  11 | ★★☆  | 当前或随机的xkcd漫画  | [xkcd.js](https://github.com/supermamon/scriptable-scripts/blob/master/xkcd-widget/xkcd.js)  |   |
 | 12  |  ★★☆  | 智联火车票提醒  | [智联火车票提醒](https://github.com/dompling/Scriptable/blob/master/Scripts/ZXTrains.js) | -  |
-| 尽情期待  |  ★★★★★  | -  |  - | -  |
+| -  |  -  | -  |  - | -  |
 
 
 ###  常见问题解答
@@ -224,7 +224,7 @@
 </center>
 
 <center>欢迎微信扫码关注公众号哟！</center>
----
+
 
 ### 访问量
 ---

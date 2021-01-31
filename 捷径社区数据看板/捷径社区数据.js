@@ -1,8 +1,18 @@
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
 // icon-color: blue; icon-glyph: award;
-// author:Nicolas-kings
-// ver:1.0.0   2020/11/20
+/********************************************************
+ * script     : 捷径社区.js
+ * version    : 1.0.0
+ * author     : Nicolas-kings
+ * date       : 2020-12-20
+ * github     : https://github.com/Nicolasking007/Scriptable
+ *******************************************************/
+
+/************************************************************
+ ********************用户设置 *********************
+ ************请在首次运行之前进行修改************
+ ***********************************************************/
 
 const filename = `${Script.name()}.jpg`
 const files = FileManager.local()

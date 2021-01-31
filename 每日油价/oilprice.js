@@ -1,7 +1,17 @@
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
 // icon-color: red; icon-glyph: code;
-
+/********************************************************
+ * script     : 每日油价.js
+ * version    : 1.0.0
+ * author     : Nicolas-kings
+ * date       : 2020-12-20
+ * github     : https://github.com/Nicolasking007/Scriptable
+ *******************************************************/
+/************************************************************
+ ********************用户设置 *********************
+ ************请在首次运行之前进行修改************
+ ***********************************************************/
 const filename = `${Script.name()}.jpg`
 const files = FileManager.local()
 const path = files.joinPath(files.documentsDirectory(), filename)

@@ -1,9 +1,17 @@
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
 // icon-color: light-brown; icon-glyph: hospital-symbol;
-// author:Nicolas-kings
-// github:https://github.com/Nicolasking007/Scriptable
-// ver:1.0.0   2020/11/14
+/********************************************************
+ * script     : 今天是星期五吗.js
+ * version    : 1.0.0
+ * author     : Nicolas-kings
+ * date       : 2020-11-14
+ * github     : https://github.com/Nicolasking007/Scriptable
+ *******************************************************/
+/************************************************************
+ ********************用户设置 *********************
+ ************请在首次运行之前进行修改************
+ ***********************************************************/
 const filename = `${Script.name()}.jpg`
 const files = FileManager.local()
 const path = files.joinPath(files.documentsDirectory(), filename)

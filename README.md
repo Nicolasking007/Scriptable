@@ -93,7 +93,7 @@
 | 3  | ★★★☆  | 基于费率的Telekom.de数据消耗  | [telekom.js](https://gist.github.com/Sillium/f904fb89444bc8dde12cfc07b8fa8728)  | <img src="https://user-images.githubusercontent.com/8177259/96705591-cb7db480-1395-11eb-8fb3-cff401898bc2.jpg" width="400"/>  |
 | 4  | ★★☆ | 沃达丰DE的基于费率的数据消耗  | [VodafoneDE](https://github.com/ThisIsBenny/iOS-Widgets/tree/main/VodafoneDE)  | <img src="https://raw.githubusercontent.com/ThisIsBenny/iOS-Widgets/main/VodafoneDE/previewLight.jpeg" width="200"/>  |
 | 5  |  ★★★★☆  | 中国电信  | [中国电信](https://github.com/dompling/Scriptable/blob/master/Scripts/ChinaTelecom.js) | -  |
-| 6  |  ★★★★☆  | 中国移动  |  | [中国移动](https://github.com/dompling/Scriptable/blob/master/Scripts/ChinaMobile.js)  | -  |
+| 6  |  ★★★★☆  | 中国移动  | [中国移动](https://github.com/dompling/Scriptable/blob/master/Scripts/ChinaMobile.js)  | - | -  |
 | 7  |  ★★★☆  | 机场+签到  |  [机场+签到](https://github.com/dompling/Scriptable/blob/master/Scripts/VpnBoard.js) | -  |
 | 8  |  ★★★★☆ | 机场订阅流量  |  [机场订阅流量](https://github.com/dompling/Scriptable/blob/master/Scripts/VPNSubscription.js) | -  |
 | 9  |  ★★★☆  | v2board机场模板  |  [v2board机场模板](https://github.com/dompling/Scriptable/blob/master/Scripts/VPNV2Bord.js)  | -  |

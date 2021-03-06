@@ -7,9 +7,10 @@
 
 /********************************************************
  * script     : NBA-Widget.js
- * version    : 1.1.0
+ * version    : 1.1.1
  * author     : thisisevanfox & Nicolas-kings
  * date       : 2021-01-31
+ * github     : https://github.com/Nicolasking007/Scriptable
  *******************************************************/
 
 /************************************************************
@@ -41,14 +42,16 @@ const CURRENT_SEASON_START_YEAR = "2020";
 //const WIDGET_URL =“”; 
 const WIDGET_URL = "https://m.china.nba.com";
 
+const ImageMode = true   //选择true时，使用必应壁纸
 
+const imgurl = "https://area.sinaapp.com/bingImg/"  //默认必应壁纸，这里可以修改壁纸地址
 
 //设置小部件的外观。默认外观设置为系统配色方案。
 //Device.isUsingDarkAppearance（）=系统配色方案（默认）
 //true =窗口小部件将处于黑暗模式。
 //false =窗口小部件将处于亮灯模式。 
 const DARK_MODE = Device.isUsingDarkAppearance();
-const ImageMode = true   //选择true时，使用必应壁纸
+
 // Indicator if no-background.js is installed
 // Default: false
 // @see: https://github.com/supermamon/scriptable-no-background
@@ -131,8 +134,7 @@ async function createMediumWidget() {
   // Initialise widget
   const oWidget = new ListWidget();
   if (ImageMode) {
-    const url = "https://area.sinaapp.com/bingImg/"   //使用必应壁纸作为背景时，请注释下面
-    // const url = "http://p1.music.126.net/uarVFKgUlrI9Z1nr-50cAw==/109951162843608471.jpg"     //固定一张图片,这里我选用城南花已开的封面,图片不能太大，容易崩溃
+    const url = imgurl  
     const i = await new Request(url);
     const img = await i.loadImage();
     oWidget.backgroundImage = await shadowImage(img)

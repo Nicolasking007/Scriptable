@@ -1,7 +1,8 @@
-# Scriptables ——网易云热评
+## Scriptables —— 网易云热评
+---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！    
 
-![效果图](https://ae02.alicdn.com/kf/H1c0424df7ba54eeab67850dfe275134e0.png)
+![效果图](https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png)
 
 # 如何使用
 1. iPhone 上下载 [Scriptable](https://apps.apple.com/cn/app/scriptable/id1405459188) App（确保你的系统已更新为 iOS14+）. 
@@ -9,7 +10,7 @@ iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 3. 长按桌面，添加组件，选择 `Scriptable`，然后点击组件配置，选择刚刚保存的脚本即可.
 4. 尽情享受吧！   
 
-![流程图](https://ae04.alicdn.com/kf/H5365bd53284746528cac6cfcf3befcb0L.png)
+![流程图](https://shop.io.mi-img.com/app/shop/img?id=shop_2633f187a80f14a861acabba8963a8d8.jpeg)
 
 ## 版本
 ### `V0.1.1`   
@@ -20,8 +21,17 @@ iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 
 2、新增从相册中选用背景图片，这样你就可以使用透明背景了，具体怎么生成`透明壁纸 `这里我就不再赘述.
 
+### 微信公众号
+--- 
 <center>
-    <img src="https://ae04.alicdn.com/kf/H697021382f264fd2ad0476c7e817b309g.png" style="width: 100px;">
+    <img src="https://s2.ax1x.com/2019/12/28/lemBSf.png" style="width: 100px;">
 </center>
 
-**更多好玩的脚本正在码字中...`尽情期待！`**
+<center>欢迎微信扫码关注公众号哟！</center>
+
+
+### 访问量
+---
+![](http://profile-counter.glitch.me/nicolasking007/count.svg)
+
+**更多好玩、有趣的脚本正在码字中...`尽情期待哦！`**

@@ -1,7 +1,7 @@
 # Conversable for Scriptable
 iOS14桌面组件神器（Scriptable）汉化脚本，精美作品分享！
  
-![效果预览](https://ae05.alicdn.com/kf/H33a5f3de043348b39974d80d01531f95G.png)
+![效果预览](https://shop.io.mi-img.com/app/shop/img?id=shop_5e48a0dddbc8169aba2f0450b65814f5.jpeg)
 
 注意:这个脚本需要 `Scriptable`的`1.5.1`版本，因为它依赖于一些新添加的api，比如 `.addStack()` and `.url()`
 
@@ -138,8 +138,17 @@ Telegram的例子:
 
 ---
 
+### 微信公众号
+--- 
 <center>
-    <img src="https://ae04.alicdn.com/kf/H697021382f264fd2ad0476c7e817b309g.png" style="width: 100px;">
+    <img src="https://s2.ax1x.com/2019/12/28/lemBSf.png" style="width: 100px;">
 </center>
 
-**更多好玩的脚本正在码字中...`尽情期待！`**
+<center>欢迎微信扫码关注公众号哟！</center>
+
+
+### 访问量
+---
+![](http://profile-counter.glitch.me/nicolasking007/count.svg)
+
+**更多好玩、有趣的脚本正在码字中...`尽情期待哦！`**

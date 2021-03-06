@@ -171,6 +171,7 @@
 | 3  | ★☆  | 滑雪信息，例如雪高或开放式升降机的数量.  | [skiable](https://github.com/p0fi/skiable-for-scriptable)  | <img src="https://raw.githubusercontent.com/p0fi/skiable-for-scriptable/main/cover.png" width="400"/>  |
 | 4  | ★★★★  | 足球队即将进行的比赛  | [Upcoming Matches](https://gist.github.com/ilyichvismara/7895bb479e14a999f3cfd2c391f10597)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_7956218c53fadc2ab223e13c93423cf6.png" width="400"/>  |
 | 5  | ★★★★★  |  中超 英超 西甲赛程  | [football](https://github.com/Juniorchen2012/scriptable)  | <img src="https://github.com/Juniorchen2012/scriptable/raw/master/zh.png?raw=true " width="400"/>  |
+| 6  |  ★★★★★  | NBA-实时比分  |  [ONE-tool](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/03/06/N62Aeo8tGbc3aP4.jpg" width="400"/> |
 | -  |  -  | -  |  - | -  |
 
 

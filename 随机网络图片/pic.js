@@ -1,4 +1,4 @@
-var keyword="iPhone"
+var keyword="wather"
 if(args.widgetParameter){
   keyword=args.widgetParameter
 }

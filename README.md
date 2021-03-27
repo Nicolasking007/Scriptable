@@ -43,7 +43,7 @@
  >  1、全选复制·快捷指令| 可便捷解决手机复制scriptable代码问题
  * [下载捷径](https://www.icloud.com/shortcuts/d756d6551eb54a8e877789492c2f9814 )
 > 2、脚本订阅
-* 作者：[@Nicolas-kings - 订阅安装包](https://github.com/Nicolasking007/Scriptable/install.json)
+* 作者：[@Nicolas-kings - 订阅安装包](https://github.com/Nicolasking007/Scriptable/main/install.json)
 
 
 ---
@@ -52,8 +52,8 @@
 | ------------ | ------------ | ------------ | ------------ | ------------ |
 | 1 | ★★★★★  | 支持查询全国所有省份的油价实时数据  |  [ONE-oliprice.js](https://github.com/Nicolasking007/Scriptable) |  <img src="https://i.loli.net/2021/03/27/OLpBgxMtnSJHWmh.jpg" width="400"/> |
 | 2  | ★★★★★  | 时间倒计时百分比  |  [ONE-Progress.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/03/27/pz7i8DsA3WkGaTU.jpg" width="400"/>  |
-| 3  |  ★★★★★  | NBA-实时比分  |  [ONE-NBA](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/03/27/yEZAWRdraFKMpJB.jpg" width="400"/> |
-| 4  | ★★★★★  | 显示农历日、天气、情话等信息.  | [ONE-Tool](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/03/27/sH1AGgCmOK3ilqu.jpg" width="400"/>  |
+| 3  |  ★★★★★  | NBA-实时比分  |  [ONE-NBA.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/03/27/yEZAWRdraFKMpJB.jpg" width="400"/> |
+| 4  | ★★★★★  | 显示农历日、天气、情话等信息.  | [ONE-Tool.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/03/27/sH1AGgCmOK3ilqu.jpg" width="400"/>  |
 | 5  | ★★★★★  | 一个简单倒数日  | [ONE-countdown.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/03/27/64eOAa1FtvDBm7J.jpg" width="400"/>  |
 | 6  | ★★★★★  | 网易云热评  | [ONE-hotcomments.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/03/27/WbFpYaeitnZ5Mzc.jpg" width="400"/>  |
 | 7  | ★★★☆  | 今天是周五吗.  |  [ONE-Friday.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |

@@ -3,7 +3,7 @@
 // icon-color: brown; icon-glyph: magic;
 /********************************************************
  * script     : ONE-hotcomments.js
- * version    : 1.0.0
+ * version    : 1.0.2
  * author     : Nicolas-kings
  * date       : 2020-11-14
  * desc       : 具体配置说明，详见微信公众号-曰(读yue)坛

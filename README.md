@@ -43,7 +43,7 @@
  >  1、全选复制·快捷指令| 可便捷解决手机复制scriptable代码问题
  * [下载捷径](https://www.icloud.com/shortcuts/d756d6551eb54a8e877789492c2f9814 )
 > 2、脚本订阅
-* 作者：[@Nicolas-kings - 订阅安装包](https://github.com/Nicolasking007/Scriptable/main/install.json)
+* 作者：[@Nicolas-kings - 订阅](https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/install.json)
 
 
 ---

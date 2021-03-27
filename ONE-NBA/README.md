@@ -1,10 +1,11 @@
 ## Scriptables —— ONE-NBA(NBA赛事信息)
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
+![menu.jpg](https://i.loli.net/2021/03/27/yEZAWRdraFKMpJB.jpg)
 
 ![menu.jpg](https://i.loli.net/2021/03/06/blJRwrfo2aQXykx.jpg)
+.
 
-![menu.jpg](https://i.loli.net/2021/03/06/N62Aeo8tGbc3aP4.jpg)
 ### 如何使用
 ---
 1. iPhone 上下载 [Scriptable](https://apps.apple.com/cn/app/scriptable/id1405459188) App（确保你的系统已更新为 iOS14+）. 

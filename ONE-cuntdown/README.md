@@ -2,7 +2,7 @@
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 
-![效果图](https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png)
+![效果图](https://i.loli.net/2021/03/27/64eOAa1FtvDBm7J.jpg)
 
 ### 如何使用
 ---

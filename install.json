@@ -10,8 +10,8 @@
             "description": "一个整合欢迎语、农历时间、每日情话、当日天气、手机电量、今年百分比的小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Tool/ONE-Tool.js",
             "thumb": "https://pic.rmb.bdstatic.com/bjh/56ffd9646ed482568653f1fc543c3dda.png",
-            "name": "ONE-tool",
-            "title": "ONE-tool",
+            "name": "ONE-Tool",
+            "title": "ONE-Tool",
             "images":["https://i.loli.net/2021/03/27/sH1AGgCmOK3ilqu.jpg"]
         },
         {
@@ -73,6 +73,16 @@
             "name": "ONE-oilprice",
             "title": "每日油价",
             "images":["https://i.loli.net/2021/03/27/OLpBgxMtnSJHWmh.jpg"]
+        },
+        {
+            "version": "1.0.0",
+            "author": "Nicolas-kings",
+            "description": "简单的日历小组件",
+            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Today/ONE-Today.js",
+            "thumb": "https://pic.rmb.bdstatic.com/bjh/56ffd9646ed482568653f1fc543c3dda.png",
+            "name": "ONE-Today",
+            "title": "ONE-Today",
+            "images":["https://i.loli.net/2021/03/27/TbFJz8slCiYONV4.jpg"]
         },
         {
             "version": "1.0.0",

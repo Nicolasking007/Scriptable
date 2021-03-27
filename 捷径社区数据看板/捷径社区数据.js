@@ -26,7 +26,7 @@ const bgColor = new Color("000000") // 小组件背景色
 //*********使用前准备工作*********//
 const token = ''   //抓包获取token
 const cookie= ''   //抓包获取cookie
-const userId = '' //输入捷径社区id  https://sharecuts.cn/user/94lVdg6zgq
+const userId = '' //输入捷径社区id  https://sharecuts.cn/user/XXXXXXXXX   部分
 
 const api = 'https://api.sharecuts.cn/'
 let res = await getData()

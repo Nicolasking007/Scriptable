@@ -22,7 +22,7 @@ const colorMode = false // 是否是纯色背景
 const bgColor = new Color("000000") // 小组件背景色
 
 //*********使用前准备工作*********//
-const userId = '1792466836' //"2778959669" //输入捷径盒userID
+const userId = ' ' //"2778959669" //输入捷径盒userID
 
 
 let res = await getData()

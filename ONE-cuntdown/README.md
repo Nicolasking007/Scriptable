@@ -1,10 +1,9 @@
-## Scriptables —— NBA
+## Scriptables —— ONE-cuntdown(倒计时)
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 
-![menu.jpg](https://i.loli.net/2021/03/06/blJRwrfo2aQXykx.jpg)
+![效果图](https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png)
 
-![menu.jpg](https://i.loli.net/2021/03/06/N62Aeo8tGbc3aP4.jpg)
 ### 如何使用
 ---
 1. iPhone 上下载 [Scriptable](https://apps.apple.com/cn/app/scriptable/id1405459188) App（确保你的系统已更新为 iOS14+）. 

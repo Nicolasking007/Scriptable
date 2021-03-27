@@ -6,7 +6,7 @@
 // icon-color: orange; icon-glyph: basketball-ball;
 
 /********************************************************
- * script     : NBA-Widget.js
+ * script     : ONE-NBA.js
  * version    : 1.1.1
  * author     : thisisevanfox & Nicolas-kings
  * date       : 2021-01-31

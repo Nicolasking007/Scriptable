@@ -2,7 +2,7 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: blue; icon-glyph: award;
 /********************************************************
- * script     : 捷径社区.js
+ * script     : 捷径社区数据.js
  * version    : 1.0.0
  * author     : Nicolas-kings
  * date       : 2020-12-20

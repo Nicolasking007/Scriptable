@@ -2,7 +2,7 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: red; icon-glyph: code;
 /********************************************************
- * script     : 每日油价.js
+ * script     : ONE-oilprice.js
  * version    : 1.0.0
  * author     : Nicolas-kings
  * date       : 2020-12-20

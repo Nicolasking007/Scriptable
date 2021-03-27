@@ -2,7 +2,7 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: gray; icon-glyph: magic;
 /********************************************************
- * script     : 倒计时.js
+ * script     : ONE-cuntdown.js
  * version    : 1.0.0
  * author     : Nicolas-kings
  * date       : 2020-11-14

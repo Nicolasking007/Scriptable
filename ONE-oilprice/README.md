@@ -1,8 +1,8 @@
-## Scriptables —— cuntdown(倒计时)
+## Scriptables —— ONE-oilprice(每日油价)
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 
-![效果图](https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png)
+![menu.jpg](https://shop.io.mi-img.com/app/shop/img?id=shop_e0bc060b1bf442ad72631c7af5b46aba.jpeg)
 
 ### 如何使用
 ---

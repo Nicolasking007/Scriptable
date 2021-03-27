@@ -1,4 +1,4 @@
-## Scriptables ——ONE-tool
+## Scriptables ——ONE-Tool
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 

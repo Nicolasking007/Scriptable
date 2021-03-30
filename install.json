@@ -5,7 +5,7 @@
     "icon": "https://pic.rmb.bdstatic.com/bjh/6a9bfc89880d4a776f6406dd10249483.jpeg",
     "apps": [
         {
-            "version": "1.0.1",
+            "version": "1.1",
             "author": "Nicolas-kings",
             "description": "一个整合欢迎语、农历时间、每日情话、当日天气、手机电量、今年百分比的小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Tool/ONE-Tool.js",
@@ -15,7 +15,7 @@
             "images":["https://i.loli.net/2021/03/27/sH1AGgCmOK3ilqu.jpg"]
         },
         {
-            "version": "1.0.0",
+            "version": "1.0",
             "author": "Nicolas-kings",
             "description": "一个查看今天、本周、本月、今年和今生进度的小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Progress/ONE-Progress.js",
@@ -25,7 +25,7 @@
             "images":["https://i.loli.net/2021/03/27/pz7i8DsA3WkGaTU.jpg"]
         },
         {
-            "version": "1.1.1",
+            "version": "1.1",
             "author": "Nicolas-kings",
             "description": "关注喜爱NBA球队赛事结果小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-NBA/ONE-NBA.js",
@@ -35,7 +35,7 @@
             "images":["https://i.loli.net/2021/03/27/yEZAWRdraFKMpJB.jpg"]
         },
         {
-            "version": "1.0.0",
+            "version": "1.0",
             "author": "Nicolas-kings",
             "description": "今天是星期五吗小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Friday/ONE-Friday.js",
@@ -45,7 +45,7 @@
             "images":["https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png"]
         },
         {
-            "version": "1.0.0",
+            "version": "1.0",
             "author": "Nicolas-kings",
             "description": "简单的倒计时小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-cuntdown/ONE-cuntdown.js",
@@ -55,7 +55,7 @@
             "images":["https://i.loli.net/2021/03/27/64eOAa1FtvDBm7J.jpg"]
         },
         {
-            "version": "1.0.2",
+            "version": "1.2",
             "author": "Nicolas-kings",
             "description": "网易云热评小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-hotcomments/ONE-hotcomments.js",
@@ -65,7 +65,7 @@
             "images":["https://i.loli.net/2021/03/27/WbFpYaeitnZ5Mzc.jpg"]
         },
         {
-            "version": "1.0.0",
+            "version": "1.0",
             "author": "Nicolas-kings",
             "description": "支持全国所有省份的油价实时数据小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-oilprice/ONE-oilprice.js",
@@ -75,7 +75,7 @@
             "images":["https://i.loli.net/2021/03/27/OLpBgxMtnSJHWmh.jpg"]
         },
         {
-            "version": "1.0.0",
+            "version": "1.1",
             "author": "Nicolas-kings",
             "description": "简单的日历小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Today/ONE-Today.js",
@@ -85,7 +85,7 @@
             "images":["https://i.loli.net/2021/03/27/TbFJz8slCiYONV4.jpg"]
         },
         {
-            "version": "1.0.0",
+            "version": "1.0",
             "author": "Nicolas-kings",
             "description": "捷径社区数据看板",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/捷径社区数据看板/捷径社区数据.js",
@@ -95,7 +95,7 @@
             "images":["https://shop.io.mi-img.com/app/shop/img?id=shop_e40aea4ec598fff73a59e611d1c4b545.jpeg"]
         },
         {
-            "version": "1.0.0",
+            "version": "1.0",
             "author": "Nicolas-kings",
             "description": "捷径盒数据看板",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/捷径盒数据看板/捷径盒数据.js",

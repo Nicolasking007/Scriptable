@@ -30,6 +30,7 @@ const padding = {
 }
 const res = await getData();
 const widget = await createWidget()
+let needUpdated = await updateCheck(1.2)
 /*
 ****************************************************************************
 * 这里是图片逻辑，不用修改
@@ -333,4 +334,41 @@ function phoneSizes() {
     }
   }
   return phones
+}
+
+async function updateCheck(version) {
+  let updateCheck = new Request('https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json')
+  let uC = await updateCheck.loadJSON()
+
+  log('[+]' + uC['ONE-hotcomments'].version)
+  let needUpdate = false
+  if (uC['ONE-hotcomments'].version != version) {
+    needUpdate = true
+    log("[+]检测到有新版本！")
+    if (!config.runsInWidget) {
+      log("[+]执行更新步骤")
+      let upd = new Alert()
+      upd.title = "检测到有新版本！"
+      upd.addDestructiveAction("暂不更新")
+      upd.addAction("立即更新")
+      upd.add
+      upd.message = uC['ONE-hotcomments'].notes
+      if (await upd.present() == 1) {
+        const req = new Request(uC['ONE-hotcomments'].cdn_scriptURL)
+        const codeString = await req.loadString()
+        files.writeString(module.filename, codeString)
+        const n = new Notification()
+        n.title = "下载更新成功"
+        n.body = "请点击左上角Done完成，重新进入脚本即可~"
+        n.schedule()
+
+      }
+      Script.complete()
+    }
+
+  } else {
+    log("[+]当前版本已是最新")
+  }
+
+  return needUpdate
 }

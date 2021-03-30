@@ -4,10 +4,9 @@
 
 /********************************************************
  * script     : ONE-Today.js
- * version    : 1.0.0
+ * version    : 1.1.
  * author     : Nicolas-kings
- * date       : 2021-03-27
- * desc       : 具体配置说明，详见微信公众号-曰(读yue)坛
+ * date       : 2021-03-29
  * github     : https://github.com/Nicolasking007/Scriptable
  *******************************************************/
 
@@ -24,21 +23,21 @@
  const colorMode = false // 是否是纯色背景
  const bgColor = new Color("000000") // 小组件背景色
  
- let smallsize=80  // 昨天明天字体大小
- let bigsize=85 // 今天字体大小
+ let smallsize = 80  // 昨天明天字体大小
+ let bigsize = 85 // 今天字体大小
  
  // 获取农历信息
- let date=new Date()
+ let date = new Date()
  const lunarInfo = await getLunar(date.getDate() - 1)
- let lunarJoinInfo = "农历"+lunarInfo.infoLunarText + " " + lunarInfo.holidayText
- const honeyData = await gethoney()
- 
- const str=date.getFullYear()+"年"+(date.getMonth()+1)+"月"
- let day=new Date().getDate().toString()
- let stamp= new Date().getTime()-60*60*24*1000
- let stamp1= new Date().getTime()+60*60*24*1000
- let prev=new Date(stamp).getDate().toString()
- let next=new Date(stamp1).getDate().toString()
+ let lunarJoinInfo = "农历" + lunarInfo.infoLunarText + "·"+lunarInfo.lunarYearText+ " "+lunarInfo.holidayText
+ const honeyData = await gethoney()// 
+ let needUpdated = await updateCheck(1.1)
+ const str = date.getFullYear() + "年" + (date.getMonth() + 1) + "月"
+ let day = new Date().getDate().toString()
+ let stamp = new Date().getTime() - 60 * 60 * 24 * 1000
+ let stamp1 = new Date().getTime() + 60 * 60 * 24 * 1000
+ let prev = new Date(stamp).getDate().toString()
+ let next = new Date(stamp1).getDate().toString()
  // const lunarData = await getLunarData()
  const padding = {
    top: 0,
@@ -58,79 +57,79 @@
    let options = ["图片选择", "透明背景"]
    let isTransparentMode = await generateAlert(message, options)
    if (!isTransparentMode) {
-       let img = await Photos.fromLibrary()
-       message = okTips
-       const resultOptions = ["好的"]
-       await generateAlert(message, resultOptions)
-       files.writeImage(path, img)
+     let img = await Photos.fromLibrary()
+     message = okTips
+     const resultOptions = ["好的"]
+     await generateAlert(message, resultOptions)
+     files.writeImage(path, img)
    } else {
-       message = "以下是【透明背景】生成步骤，如果你没有屏幕截图请退出，并返回主屏幕长按进入编辑模式。滑动到最右边的空白页截图。然后重新运行！"
-       let exitOptions = ["继续(已有截图)", "退出(没有截图)"]
+     message = "以下是【透明背景】生成步骤，如果你没有屏幕截图请退出，并返回主屏幕长按进入编辑模式。滑动到最右边的空白页截图。然后重新运行！"
+     let exitOptions = ["继续(已有截图)", "退出(没有截图)"]
  
-       let shouldExit = await generateAlert(message, exitOptions)
-       if (shouldExit) return
+     let shouldExit = await generateAlert(message, exitOptions)
+     if (shouldExit) return
  
-       // Get screenshot and determine phone size.
-       let img = await Photos.fromLibrary()
-       let height = img.size.height
-       let phone = phoneSizes()[height]
-       if (!phone) {
-           message = "您似乎选择了非iPhone屏幕截图的图像，或者不支持您的iPhone。请使用其他图像再试一次!"
-           await generateAlert(message, ["好的！我现在去截图"])
-           return
-       }
+     // Get screenshot and determine phone size.
+     let img = await Photos.fromLibrary()
+     let height = img.size.height
+     let phone = phoneSizes()[height]
+     if (!phone) {
+       message = "您似乎选择了非iPhone屏幕截图的图像，或者不支持您的iPhone。请使用其他图像再试一次!"
+       await generateAlert(message, ["好的！我现在去截图"])
+       return
+     }
  
-       // Prompt for widget size and position.
-       message = "您想要创建什么尺寸的小部件？"
-       let sizes = ["小号", "中号", "大号"]
-       let size = await generateAlert(message, sizes)
-       let widgetSize = sizes[size]
+     // Prompt for widget size and position.
+     message = "您想要创建什么尺寸的小部件？"
+     let sizes = ["小号", "中号", "大号"]
+     let size = await generateAlert(message, sizes)
+     let widgetSize = sizes[size]
  
-       message = "您想它在什么位置？"
-       message += (height == 1136 ? " (请注意，您的设备仅支持两行小部件，因此中间和底部选项相同。)" : "")
+     message = "您想它在什么位置？"
+     message += (height == 1136 ? " (请注意，您的设备仅支持两行小部件，因此中间和底部选项相同。)" : "")
  
-       // Determine image crop based on phone size.
-       let crop = { w: "", h: "", x: "", y: "" }
-       if (widgetSize == "小号") {
-           crop.w = phone.小号
-           crop.h = phone.小号
-           let positions = ["顶部 左边", "顶部 右边", "中间 左边", "中间 右边", "底部 左边", "底部 右边"]
-           let position = await generateAlert(message, positions)
+     // Determine image crop based on phone size.
+     let crop = { w: "", h: "", x: "", y: "" }
+     if (widgetSize == "小号") {
+       crop.w = phone.小号
+       crop.h = phone.小号
+       let positions = ["顶部 左边", "顶部 右边", "中间 左边", "中间 右边", "底部 左边", "底部 右边"]
+       let position = await generateAlert(message, positions)
  
-           // Convert the two words into two keys for the phone size dictionary.
-           let keys = positions[position].split(' ')
-           crop.y = phone[keys[0]]
-           crop.x = phone[keys[1]]
+       // Convert the two words into two keys for the phone size dictionary.
+       let keys = positions[position].split(' ')
+       crop.y = phone[keys[0]]
+       crop.x = phone[keys[1]]
  
-       } else if (widgetSize == "中号") {
-           crop.w = phone.中号
-           crop.h = phone.小号
+     } else if (widgetSize == "中号") {
+       crop.w = phone.中号
+       crop.h = phone.小号
  
-           // 中号 and 大号 widgets have a fixed x-value.
-           crop.x = phone.左边
-           let positions = ["顶部", "中间", "底部"]
-           let position = await generateAlert(message, positions)
-           let key = positions[position].toLowerCase()
-           crop.y = phone[key]
+       // 中号 and 大号 widgets have a fixed x-value.
+       crop.x = phone.左边
+       let positions = ["顶部", "中间", "底部"]
+       let position = await generateAlert(message, positions)
+       let key = positions[position].toLowerCase()
+       crop.y = phone[key]
  
-       } else if (widgetSize == "大号") {
-           crop.w = phone.中号
-           crop.h = phone.大号
-           crop.x = phone.左边
-           let positions = ["顶部", "底部"]
-           let position = await generateAlert(message, positions)
+     } else if (widgetSize == "大号") {
+       crop.w = phone.中号
+       crop.h = phone.大号
+       crop.x = phone.左边
+       let positions = ["顶部", "底部"]
+       let position = await generateAlert(message, positions)
  
-           // 大号 widgets at the 底部 have the "中间" y-value.
-           crop.y = position ? phone.中间 : phone.顶部
-       }
+       // 大号 widgets at the 底部 have the "中间" y-value.
+       crop.y = position ? phone.中间 : phone.顶部
+     }
  
-       // Crop image and finalize the widget.
-       let imgCrop = cropImage(img, new Rect(crop.x, crop.y, crop.w, crop.h))
+     // Crop image and finalize the widget.
+     let imgCrop = cropImage(img, new Rect(crop.x, crop.y, crop.w, crop.h))
  
-       message = "您的小部件背景已准备就绪，退出到桌面预览。"
-       const resultOptions = ["好的"]
-       await generateAlert(message, resultOptions)
-       files.writeImage(path, imgCrop)
+     message = "您的小部件背景已准备就绪，退出到桌面预览。"
+     const resultOptions = ["好的"]
+     await generateAlert(message, resultOptions)
+     files.writeImage(path, imgCrop)
    }
  
  }
@@ -168,55 +167,56 @@
  
  
  async function createWidget() {
- let widget = new ListWidget()
- let full=widget.addText(str+'·'+`${lunarJoinInfo}`)
- full.font = new Font('Menlo', 16)
- full.centerAlignText()
- full.textColor=new Color("#ffffff")
+   let widget = new ListWidget()
+   let full = widget.addText(str + '·' + `${lunarJoinInfo}`)
+   full.font = new Font('Menlo', 14)
+   full.lineLimit = 1
+   full.centerAlignText()
+   full.textColor = new Color("#ffffff")
  
- let body = widget.addStack()
- body.bottomAlignContent()
+   let body = widget.addStack()
+   body.bottomAlignContent()
  
- addDate(
-   prev,
-   smallsize,
-   body)
- body.addSpacer()
- addDate(
-   day,
-   bigsize,
-   body)
- body.addSpacer()
- addDate(
-   next,
-   smallsize,
-   body)
+   addDate(
+     prev,
+     smallsize,
+     body)
+   body.addSpacer()
+   addDate(
+     day,
+     bigsize,
+     body)
+   body.addSpacer()
+   addDate(
+     next,
+     smallsize,
+     body)
  
    let honey = widget.addText(`${honeyData.tts}`)
    honey.textColor = new Color('#ffffff')
    honey.font = new Font('Menlo', 11)
    honey.centerAlignText()
-   honey.lineLimit = 1  
+   honey.lineLimit = 1
  
    return widget
  }
  
- function addDate(name, size,r) {
+ function addDate(name, size, r) {
    let stack = r.addStack()
- //   stack.layoutVertically()
-   
-   let wname = stack.addText(name)
- //   wname.font = Font.semiboldRoundedSystemFont(size)
-   wname.font=new Font('Cabin Sketch', size)
-   wname.textColor =  new Color("#ffffff")
+   //   stack.layoutVertically()
  
- //   stack.backgroundColor=new Color("#ccc")
-   
-   if(size===smallsize){
-     let size=new Size(100, 100)
-     stack.size=size
+   let wname = stack.addText(name)
+   //   wname.font = Font.semiboldRoundedSystemFont(size)
+   wname.font = new Font('Cabin Sketch', size)
+   wname.textColor = new Color("#ffffff")
+ 
+   //   stack.backgroundColor=new Color("#ccc")
+ 
+   if (size === smallsize) {
+     let size = new Size(100, 100)
+     stack.size = size
      stack.setPadding(0, 0, 0, 0)
-     wname.textColor = new Color("#999",0.6)
+     wname.textColor = new Color("#999", 0.6)
    }
  }
  //获取农历时间
@@ -247,13 +247,15 @@
                  try {
                      infoLunarText = document.querySelector('div#wnrl_k_you_id_${day}.wnrl_k_you .wnrl_k_you_id_wnrl_nongli').innerText
                      holidayText = document.querySelectorAll('div.wnrl_k_zuo div.wnrl_riqi')[${day}].querySelector('.wnrl_td_bzl').innerText
+                     lunarYearText = document.querySelector('div.wnrl_k_you_id_wnrl_nongli_ganzhi').innerText
+                     lunarYearText = lunarYearText.slice(0, lunarYearText.indexOf('年')+1)
                      if(infoLunarText.search(holidayText) != -1) {
                          holidayText = ''
                      }
                  } catch {
                      holidayText = ''
                  }
-                 return {infoLunarText: infoLunarText, holidayText: holidayText}
+                 return {infoLunarText: infoLunarText,  lunarYearText: lunarYearText,  holidayText: holidayText }
              }
              
              getData()`
@@ -261,7 +263,7 @@
      // 节日数据  
      response = await webview.evaluateJavaScript(getData, false)
      console.log(`[+]欢迎使用：${Script.name()}小组件`);
-     console.log("遇到问题，请前往公众号：曰坛 反馈");
+     console.log("[+]遇到问题，请前往公众号：曰坛 反馈");
      Keychain.set(cacheKey, JSON.stringify(response))
      console.log(`[+]农历输出：${JSON.stringify(response)}`);
    } catch (e) {
@@ -281,8 +283,7 @@
    try {
      poetryData = await new Request("http://timor.tech/api/holiday/tts").loadJSON()
      files.writeString(poetryCachePath, JSON.stringify(poetryData))
-     log("[+]tts获取成功")
-     // log(JSON.stringify(poetryData))
+     log("[+]tts获取成功:" + JSON.stringify(poetryData))
    } catch (e) {
      poetryData = JSON.parse(files.readString(poetryCachePath))
      log("[+]获取tts失败，使用缓存数据")
@@ -312,7 +313,7 @@
    alert.message = message
  
    for (const option of options) {
-       alert.addAction(option)
+     alert.addAction(option)
    }
  
    let response = await alert.presentAlert()
@@ -339,9 +340,9 @@
        "顶部": 212,
        "中间": 756,
        "底部": 1300,
-   },
+     },
  
-   "2532": { // 12/12 Pro
+     "2532": { // 12/12 Pro
        "小号": 472,
        "中号": 1012,
        "大号": 1058,
@@ -350,9 +351,9 @@
        "顶部": 230,
        "中间": 818,
        "底部": 1408,
-   },
+     },
  
-   "2778": { // 12 Pro Max
+     "2778": { // 12 Pro Max
        "小号": 518,
        "中号": 1114,
        "大号": 1162,
@@ -361,9 +362,9 @@
        "顶部": 252,
        "中间": 898,
        "底部": 1544,
-   },
+     },
  
-   "2688": {
+     "2688": {
        "小号": 507,
        "中号": 1080,
        "大号": 1137,
@@ -372,9 +373,9 @@
        "顶部": 228,
        "中间": 858,
        "底部": 1488
-   },
+     },
  
-   "1792": {
+     "1792": {
        "小号": 338,
        "中号": 720,
        "大号": 758,
@@ -383,9 +384,9 @@
        "顶部": 160,
        "中间": 580,
        "底部": 1000
-   },
+     },
  
-   "2436": {
+     "2436": {
        "小号": 465,
        "中号": 987,
        "大号": 1035,
@@ -394,9 +395,9 @@
        "顶部": 213,
        "中间": 783,
        "底部": 1353
-   },
+     },
  
-   "2208": {
+     "2208": {
        "小号": 471,
        "中号": 1044,
        "大号": 1071,
@@ -405,9 +406,9 @@
        "顶部": 114,
        "中间": 696,
        "底部": 1278
-   },
+     },
  
-   "1334": {
+     "1334": {
        "小号": 296,
        "中号": 642,
        "大号": 648,
@@ -416,9 +417,9 @@
        "顶部": 60,
        "中间": 412,
        "底部": 764
-   },
+     },
  
-   "1136": {
+     "1136": {
        "小号": 282,
        "中号": 584,
        "大号": 622,
@@ -427,9 +428,46 @@
        "顶部": 59,
        "中间": 399,
        "底部": 399
+     }
    }
+   return phones
  }
- return phones
+ 
+ async function updateCheck(version) {
+   let updateCheck = new Request('https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json')
+   let uC = await updateCheck.loadJSON()
+ 
+   log('[+]' + uC['ONE-Today'].version)
+   let needUpdate = false
+   if (uC['ONE-Today'].version != version) {
+     needUpdate = true
+     log("[+]检测到有新版本！")
+     if (!config.runsInWidget) {
+       log("[+]执行更新步骤")
+       let upd = new Alert()
+       upd.title = "检测到有新版本！"
+       upd.addDestructiveAction("暂不更新")
+       upd.addAction("立即更新")
+       upd.add
+       upd.message = uC['ONE-Today'].notes
+       if (await upd.present() == 1) {
+         const req = new Request(uC['ONE-Today'].cdn_scriptURL)
+         const codeString = await req.loadString()
+         files.writeString(module.filename, codeString)
+         const n = new Notification()
+         n.title = "下载更新成功"
+         n.body = "请点击左上角Done完成，重新进入脚本即可~"
+         n.schedule()
+ 
+       }
+       Script.complete()
+     }
+ 
+   } else {
+     log("[+]当前版本已是最新")
+   }
+ 
+   return needUpdate
  }
  
  

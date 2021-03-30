@@ -51,7 +51,7 @@ const imgurl = "https://area.sinaapp.com/bingImg/"  //默认必应壁纸，这�
 //true =窗口小部件将处于黑暗模式。
 //false =窗口小部件将处于亮灯模式。 
 const DARK_MODE = Device.isUsingDarkAppearance();
-
+let needUpdated = await updateCheck(1.1)
 // Indicator if no-background.js is installed
 // Default: false
 // @see: https://github.com/supermamon/scriptable-no-background
@@ -1285,6 +1285,45 @@ async function shadowImage(img) {
   // 导出最终图片
   return await ctx.getImage()
 }
+
+async function updateCheck(version) {
+  let updateCheck = new Request('https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json')
+  let uC = await updateCheck.loadJSON()
+
+  log('[+]' + uC['ONE-NBA'].version)
+  let needUpdate = false
+  if (uC['ONE-NBA'].version != version) {
+    needUpdate = true
+    log("[+]检测到有新版本！")
+    if (!config.runsInWidget) {
+      log("[+]执行更新步骤")
+      let upd = new Alert()
+      upd.title = "检测到有新版本！"
+      upd.addDestructiveAction("暂不更新")
+      upd.addAction("立即更新")
+      upd.add
+      upd.message = uC['ONE-NBA'].notes
+      if (await upd.present() == 1) {
+        const req = new Request(uC['ONE-NBA'].cdn_scriptURL)
+        const codeString = await req.loadString()
+        files.writeString(module.filename, codeString)
+        const n = new Notification()
+        n.title = "下载更新成功"
+        n.body = "请点击左上角Done完成，重新进入脚本即可~"
+        n.schedule()
+
+      }
+      Script.complete()
+    }
+
+  } else {
+    log("[+]当前版本已是最新")
+  }
+
+  return needUpdate
+}
+
+
 
 /********************************************************
  ************* MAKE SURE TO COPY EVERYTHING *************

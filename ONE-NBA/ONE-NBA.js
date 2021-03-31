@@ -7,9 +7,9 @@
 
 /********************************************************
  * script     : ONE-NBA.js
- * version    : 1.1.1
+ * version    : 1.2
  * author     : thisisevanfox & Nicolas-kings
- * date       : 2021-01-31
+ * date       : 2021-03-31
  * github     : https://github.com/Nicolasking007/Scriptable
  *******************************************************/
 
@@ -51,7 +51,8 @@ const imgurl = "https://area.sinaapp.com/bingImg/"  //默认必应壁纸，这�
 //true =窗口小部件将处于黑暗模式。
 //false =窗口小部件将处于亮灯模式。 
 const DARK_MODE = Device.isUsingDarkAppearance();
-let needUpdated = await updateCheck(1.1)
+const versionData = await getversion()
+let needUpdated = await updateCheck(1.2)
 // Indicator if no-background.js is installed
 // Default: false
 // @see: https://github.com/supermamon/scriptable-no-background
@@ -1286,10 +1287,26 @@ async function shadowImage(img) {
   return await ctx.getImage()
 }
 
-async function updateCheck(version) {
-  let updateCheck = new Request('https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json')
-  let uC = await updateCheck.loadJSON()
+async function getversion() {
+  const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")
+  var versionData
+  try {
+    versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
+    files.writeString(versionCachePath, JSON.stringify(versionData))
+    log("[+]版本信息获取成功:" + JSON.stringify(versionData))
+  } catch (e) {
+    versionData = JSON.parse(files.readString(versionCachePath))
+    log("[+]获取版本信息失败，使用缓存数据")
+  }
 
+  return versionData
+}
+
+
+
+async function updateCheck(version) {
+  
+  const uC = versionData
   log('[+]' + uC['ONE-NBA'].version)
   let needUpdate = false
   if (uC['ONE-NBA'].version != version) {

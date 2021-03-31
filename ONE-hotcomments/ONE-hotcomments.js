@@ -3,7 +3,7 @@
 // icon-color: brown; icon-glyph: magic;
 /********************************************************
  * script     : ONE-hotcomments.js
- * version    : 1.0.2
+ * version    : 1.3
  * author     : Nicolas-kings
  * date       : 2020-11-14
  * desc       : 具体配置说明，详见微信公众号-曰(读yue)坛
@@ -28,9 +28,10 @@ const padding = {
   bottom: 0,
   right: 0
 }
-const res = await getData();
+const hotcommentsData = await getData();
 const widget = await createWidget()
-let needUpdated = await updateCheck(1.2)
+const versionData = await getversion()
+let needUpdated = await updateCheck(1.3)
 /*
 ****************************************************************************
 * 这里是图片逻辑，不用修改
@@ -128,7 +129,7 @@ if (colorMode) {
   widget.backgroundColor = bgColor
 } else if (ImageMode) {
   // const url = "https://area.sinaapp.com/bingImg/"   //使用必应壁纸作为背景时，请注释下面
-  const url = res.data.picurl   //使用歌曲封面作为背景，，请注释上面
+  const url = hotcommentsData.data.picurl   //使用歌曲封面作为背景，，请注释上面
   // const url = "http://p1.music.126.net/uarVFKgUlrI9Z1nr-50cAw==/109951162843608471.jpg"     //固定一张图片,这里我选用城南花已开的封面,图片不能太大，容易崩溃
   const i = await new Request(url);
   const img = await i.loadImage();
@@ -168,16 +169,16 @@ async function createWidget() {
   w.addSpacer(12)
 
   //  内容
-  let body = w.addText(`❝${res.data.content}❞ `)
+  let body = w.addText(`❝${hotcommentsData.data.content}❞ `)
   body.font = Font.lightMonospacedSystemFont(18)
   body.textColor = Color.white()
   body.textOpacity = 0.88
-  // body.url = res.music_url     //跳转直链播放
-  body.url = `orpheus://song/${res.data.url.split('?')[1].split('=')[1].split('.')[0]}`     //默认跳转网易云音乐进行播放
+  // body.url = hotcommentsData.music_url     //跳转直链播放
+  body.url = `orpheus://song/${hotcommentsData.data.url.split('?')[1].split('=')[1].split('.')[0]}`     //默认跳转网易云音乐进行播放
   w.addSpacer(8)
 
 
-  let foot = w.addText(`—— 评论来自歌曲「${res.data.name}」`);
+  let foot = w.addText(`—— 评论来自歌曲「${hotcommentsData.data.name}」`);
   foot.font = Font.lightMonospacedSystemFont(12)
   foot.textColor = Color.orange();
   foot.textOpacity = 0.88;
@@ -188,13 +189,20 @@ async function createWidget() {
 }
 
 async function getData() {
-  const url = 'https://api.uomg.com/api/comments.163'
-  const request = new Request(url)
-  const res = await request.loadJSON()
-  console.log(res)
-  return res
+  const hotcommentsCachePath = files.joinPath(files.documentsDirectory(), "hotcomments-NK")
+  var hotcommentsData
+  try {
+    hotcommentsData = await new Request("https://api.uomg.com/api/comments.163").loadJSON()
+    files.writeString(hotcommentsCachePath, JSON.stringify(hotcommentsData))
+    log("[+]获取热评成功:" + JSON.stringify(hotcommentsData))
+  } catch (e) {
+    hotcommentsData = JSON.parse(files.readString(hotcommentsCachePath))
+    log("[+]获取热评失败，使用缓存数据")
+  }
 
+  return hotcommentsData
 }
+
 
 async function shadowImage(img) {
   let ctx = new DrawContext()
@@ -336,10 +344,26 @@ function phoneSizes() {
   return phones
 }
 
-async function updateCheck(version) {
-  let updateCheck = new Request('https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json')
-  let uC = await updateCheck.loadJSON()
 
+async function getversion() {
+  const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")
+  var versionData
+  try {
+    versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
+    files.writeString(versionCachePath, JSON.stringify(versionData))
+    log("[+]版本信息获取成功:" + JSON.stringify(versionData))
+  } catch (e) {
+    versionData = JSON.parse(files.readString(versionCachePath))
+    log("[+]获取版本信息失败，使用缓存数据")
+  }
+
+  return versionData
+}
+
+
+async function updateCheck(version) {
+
+  const uC = versionData
   log('[+]' + uC['ONE-hotcomments'].version)
   let needUpdate = false
   if (uC['ONE-hotcomments'].version != version) {

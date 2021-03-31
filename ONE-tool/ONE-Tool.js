@@ -3,9 +3,9 @@
 // icon-color: deep-purple; icon-glyph: fingerprint;
 /********************************************************
  * script     : ONE-Tool.js
- * version    : 1.1
+ * version    : 1.2
  * author     : Nicolas-kings
- * date       : 2020-03-29
+ * date       : 2020-03-31
  * desc       : 具体配置说明，详见微信公众号-曰(读yue)坛
  * github     : https://github.com/Nicolasking007/Scriptable
  *******************************************************/
@@ -41,7 +41,8 @@
 let date=new Date()
 const lunarInfo = await getLunar(date.getDate() - 1)
 let lunarJoinInfo = "农历" + lunarInfo.infoLunarText + "·"+lunarInfo.lunarYearText+ " "+lunarInfo.holidayText
-let needUpdated = await updateCheck(1.1)
+const versionData = await getversion()
+let needUpdated = await updateCheck(1.2)
 const weatherData = await getWeather()
 const honeyData = await gethoney()
 
@@ -477,10 +478,25 @@ function phoneSizes() {
   return phones
 }
 
-async function updateCheck(version) {
-  let updateCheck = new Request('https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json')
-  let uC = await updateCheck.loadJSON()
+async function getversion() {
+  const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")
+  var versionData
+  try {
+    versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
+    files.writeString(versionCachePath, JSON.stringify(versionData))
+    log("[+]版本信息获取成功:" + JSON.stringify(versionData))
+  } catch (e) {
+    versionData = JSON.parse(files.readString(versionCachePath))
+    log("[+]获取版本信息失败，使用缓存数据")
+  }
 
+  return versionData
+}
+
+
+async function updateCheck(version) {
+  
+  const uC = versionData
   log('[+]' + uC['ONE-Tool'].version)
   let needUpdate = false
   if (uC['ONE-Tool'].version != version) {

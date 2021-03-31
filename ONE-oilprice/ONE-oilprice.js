@@ -3,9 +3,9 @@
 // icon-color: red; icon-glyph: code;
 /********************************************************
  * script     : ONE-oilprice.js
- * version    : 1.0.0
+ * version    : 1.2
  * author     : Nicolas-kings
- * date       : 2020-12-20
+ * date       : 2021-03-31
  * desc       : 具体配置说明，详见微信公众号-曰(读yue)坛
  * github     : https://github.com/Nicolasking007/Scriptable
  *******************************************************/
@@ -25,10 +25,14 @@ const bgColor = new Color("000000") // 小组件背景色
 //*********使用前准备工作*********//
 const prov = '广东'  //输入要查询的省份 
 const api_key = ''   //前往天行数据申请apikey https://www.tianapi.com/apiview/104
+//  ***********************************************************/
+
 
 const size = previewSize
 let data = await fetchData()
-let needUpdated = await updateCheck(1.1)
+const versionData = await getversion()
+let needUpdated = await updateCheck(1.2)
+
 console.log(`\u6b22\u8fce\u4f7f\u7528\u6bcf\u65e5\u6cb9\u4ef7\u0026\u0023\u0031\u0038\u0033\u003b\u6765\u6e90\u4e8e\u516c\u4f17\u53f7\u0020\u002d\u0020\u66f0\u575b`)
 function colorConfig() {
   // general
@@ -598,10 +602,26 @@ function phoneSizes() {
   return phones
 }
 
-async function updateCheck(version) {
-  let updateCheck = new Request('https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json')
-  let uC = await updateCheck.loadJSON()
+async function getversion() {
+  const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")
+  var versionData
+  try {
+    versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
+    files.writeString(versionCachePath, JSON.stringify(versionData))
+    log("[+]版本信息获取成功:" + JSON.stringify(versionData))
+  } catch (e) {
+    versionData = JSON.parse(files.readString(versionCachePath))
+    log("[+]获取版本信息失败，使用缓存数据")
+  }
 
+  return versionData
+}
+
+
+
+async function updateCheck(version) {
+  
+  const uC = versionData
   log('[+]' + uC['ONE-oilprice'].version)
   let needUpdate = false
   if (uC['ONE-oilprice'].version != version) {

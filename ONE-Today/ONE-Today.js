@@ -4,12 +4,15 @@
 
 /********************************************************
  * script     : ONE-Today.js
- * version    : 1.2
+ * version    : 1.3
  * author     : Nicolas-kings
- * date       : 2021-03-31
+ * date       : 2021-04-04
  * github     : https://github.com/Nicolasking007/Scriptable
- *******************************************************/
-
+ *Changelog   : v1.3 - 支持版本更新、脚本远程下载
+                v1.2 - api接口数据增加缓存，应对无网络情况下也能使用小组件
+                v1.1 - 替换api接口
+                v1.0 - 首次发布
+----------------------------------------------- */
 /************************************************************
  ********************用户设置 *********************
  ************请在首次运行之前进行修改************
@@ -21,8 +24,9 @@ const changePicBg = false  //选择true时，使用透明背景
 const ImageMode = false   //选择true时，使用必应壁纸
 const previewSize = "Medium"  //预览大小
 const colorMode = false // 是否是纯色背景
-const bgColor = new Color("000000") // 小组件背景色
-
+const COLOR_LIGHT_GRAY = new Color('#E5E7EB', 1);
+const COLOR_DARK_GRAY = new Color('#374151', 1);
+const COLOR_BAR_BACKGROUND = Color.dynamic(COLOR_LIGHT_GRAY, COLOR_DARK_GRAY);
 let smallsize = 80  // 昨天明天字体大小
 let bigsize = 85 // 今天字体大小
 
@@ -32,7 +36,7 @@ const lunarInfo = await getLunar(date.getDate() - 1)
 let lunarJoinInfo = "农历" + lunarInfo.infoLunarText + "·" + lunarInfo.lunarYearText + " " + lunarInfo.holidayText
 const honeyData = await gethoney()// 
 const versionData = await getversion()
-let needUpdated = await updateCheck(1.2)
+let needUpdated = await updateCheck(1.3)
 const str = date.getFullYear() + "年" + (date.getMonth() + 1) + "月"
 let day = new Date().getDate().toString()
 let stamp = new Date().getTime() - 60 * 60 * 24 * 1000
@@ -140,7 +144,7 @@ if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
 // 组件End
 // 设置小组件的背景
 if (colorMode) {
-  widget.backgroundColor = bgColor
+  widget.backgroundColor = COLOR_BAR_BACKGROUND
 } else if (ImageMode) {
   const url = "https://area.sinaapp.com/bingImg/"   //使用必应壁纸作为背景时，请注释下面
   // const url = "http://p1.music.126.net/uarVFKgUlrI9Z1nr-50cAw==/109951162843608471.jpg"     //固定一张图片,这里我选用城南花已开的封面,图片不能太大，容易崩溃
@@ -175,6 +179,33 @@ async function createWidget() {
   full.centerAlignText()
   full.textColor = new Color("#ffffff")
 
+  if (previewSize === "Small" || config.widgetFamily === "small") {
+    //   const widget = new ListWidget();
+    const error = widget.addText("\u62b1\u6b49\uff0c\u8be5\u5c3a\u5bf8\u5c0f\u7ec4\u4ef6\u4f5c\u8005\u6682\u672a\u9002\u914d")
+    error.font = Font.blackMonospacedSystemFont(12)
+    error.textColor = Color.white()
+    error.centerAlignText()
+
+    widget.backgroundColor = COLOR_BAR_BACKGROUND
+
+  } else if (previewSize == "Large" || config.widgetFamily == "large") {
+    //   const widget = new ListWidget();
+    const error = widget.addText("\u62b1\u6b49\uff0c\u8be5\u5c3a\u5bf8\u5c0f\u7ec4\u4ef6\u4f5c\u8005\u6682\u672a\u9002\u914d")
+    error.font = Font.blackMonospacedSystemFont(16)
+    error.centerAlignText()
+    const error2 = widget.addText("\u5982\u60a8\u8feb\u5207\u9700\u8981\u9002\u914d\u8be5\u5c3a\u5bf8\uff0c\u8bf7\u5c1d\u8bd5\u5728\u4f5c\u8005\u516c\u4f17\u53f7\u7559\u8a00\u53cd\u9988.")
+    error2.font = Font.systemFont(10)
+    error2.centerAlignText()
+    //   error2.textColor = Color.gray()
+    const error3 = widget.addText("\u6211\u5728\u66f0\u575b\u7b49\u4f60😎")
+    error3.font = Font.systemFont(10)
+    error3.textOpacity = 0.8
+    error3.centerAlignText()
+    widget.url = 'https://mp.weixin.qq.com/mp/homepage?__biz=MzU3MTcyMDM1NA==&hid=1&sn=95931d7607893e42afc85ede24ba9fe5&scene=18'
+    widget.backgroundColor = COLOR_BAR_BACKGROUND
+
+  } else {
+
   let body = widget.addStack()
   body.bottomAlignContent()
 
@@ -198,7 +229,7 @@ async function createWidget() {
   honey.font = new Font('Menlo', 11)
   honey.centerAlignText()
   honey.lineLimit = 1
-
+}
   return widget
 }
 
@@ -263,7 +294,7 @@ async function getLunar(day) {
 
     // 节日数据  
     response = await webview.evaluateJavaScript(getData, false)
-    console.log(`[+]欢迎使用：${Script.name()}小组件`);
+    console.log(`[+]欢迎使用：ONE-Today小组件`);
     console.log("[+]遇到问题，请前往公众号：曰坛 反馈");
     Keychain.set(cacheKey, JSON.stringify(response))
     console.log(`[+]农历输出：${JSON.stringify(response)}`);
@@ -440,7 +471,7 @@ async function getversion() {
   try {
     versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
     files.writeString(versionCachePath, JSON.stringify(versionData))
-    log("[+]版本信息获取成功:" + JSON.stringify(versionData))
+    log("[+]版本信息获取成功")
   } catch (e) {
     versionData = JSON.parse(files.readString(versionCachePath))
     log("[+]获取版本信息失败，使用缓存数据")

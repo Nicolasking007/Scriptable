@@ -5,7 +5,7 @@
     "icon": "https://pic.rmb.bdstatic.com/bjh/6a9bfc89880d4a776f6406dd10249483.jpeg",
     "apps": [
         {
-            "version": "1.2",
+            "version": "1.3",
             "author": "Nicolas-kings",
             "description": "一个整合欢迎语、农历时间、每日情话、当日天气、手机电量、今年百分比的小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Tool/ONE-Tool.js",
@@ -55,7 +55,7 @@
             "images":["https://i.loli.net/2021/03/27/64eOAa1FtvDBm7J.jpg"]
         },
         {
-            "version": "1.3",
+            "version": "2.0",
             "author": "Nicolas-kings",
             "description": "网易云热评小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-hotcomments/ONE-hotcomments.js",
@@ -75,7 +75,7 @@
             "images":["https://i.loli.net/2021/03/27/OLpBgxMtnSJHWmh.jpg"]
         },
         {
-            "version": "1.2",
+            "version": "1.3",
             "author": "Nicolas-kings",
             "description": "简单的日历小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Today/ONE-Today.js",

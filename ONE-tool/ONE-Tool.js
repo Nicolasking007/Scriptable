@@ -3,13 +3,16 @@
 // icon-color: deep-purple; icon-glyph: fingerprint;
 /********************************************************
  * script     : ONE-Tool.js
- * version    : 1.2
+ * version    : 1.3
  * author     : Nicolas-kings
- * date       : 2020-03-31
+ * date       : 2021-04-04
  * desc       : 具体配置说明，详见微信公众号-曰(读yue)坛
  * github     : https://github.com/Nicolasking007/Scriptable
- *******************************************************/
-
+ *Changelog   : v1.3 - 支持版本更新、脚本远程下载
+                v1.2 - api接口数据增加缓存，应对无网络情况下也能使用小组件
+                v1.1 - 替换api接口
+                v1.0 - 首次发布
+----------------------------------------------- */
  const filename = `${Script.name()}.jpg`
  const files = FileManager.local()
  const path = files.joinPath(files.documentsDirectory(), filename)
@@ -42,7 +45,7 @@ let date=new Date()
 const lunarInfo = await getLunar(date.getDate() - 1)
 let lunarJoinInfo = "农历" + lunarInfo.infoLunarText + "·"+lunarInfo.lunarYearText+ " "+lunarInfo.holidayText
 const versionData = await getversion()
-let needUpdated = await updateCheck(1.2)
+let needUpdated = await updateCheck(1.3)
 const weatherData = await getWeather()
 const honeyData = await gethoney()
 
@@ -188,7 +191,18 @@ async function createWidget() {
   dfTime.useMediumDateStyle()
   dfTime.useNoTimeStyle()
 
-  const hello = widget.addText(`[🤖]Hi, ${User}. Good ${isMidnight || isMorning || isAfternoon || isEvening || isNight}!`)
+  if (previewSize === "Small" || config.widgetFamily === "small") {
+    //   const widget = new ListWidget();
+    const error = widget.addText("\u62b1\u6b49\uff0c\u8be5\u5c3a\u5bf8\u5c0f\u7ec4\u4ef6\u4f5c\u8005\u6682\u672a\u9002\u914d")
+    error.font = Font.blackMonospacedSystemFont(12)
+    error.textColor = Color.white()
+    error.centerAlignText()
+    widget.url = 'https://mp.weixin.qq.com/mp/homepage?__biz=MzU3MTcyMDM1NA==&hid=1&sn=95931d7607893e42afc85ede24ba9fe5&scene=18'
+    widget.backgroundColor = bgColor
+
+  }else{
+
+    const hello = widget.addText(`[🤖]Hi, ${User}. Good ${isMidnight || isMorning || isAfternoon || isEvening || isNight}!`)
   hello.textColor = new Color('#ffffff')
   hello.font = new Font('Menlo', 11)
 
@@ -226,6 +240,8 @@ async function createWidget() {
   // lastUpdatedElement.rightAlignText()
   // lastUpdatedElement.lineLimit = 1
 
+
+  }
 
   return widget
 }
@@ -484,7 +500,7 @@ async function getversion() {
   try {
     versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
     files.writeString(versionCachePath, JSON.stringify(versionData))
-    log("[+]版本信息获取成功:" + JSON.stringify(versionData))
+    log("[+]版本信息获取成功")
   } catch (e) {
     versionData = JSON.parse(files.readString(versionCachePath))
     log("[+]获取版本信息失败，使用缓存数据")

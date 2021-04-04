@@ -11,8 +11,10 @@
  * author     : thisisevanfox & Nicolas-kings
  * date       : 2021-03-31
  * github     : https://github.com/Nicolasking007/Scriptable
- *******************************************************/
-
+ *Changelog   :  v1.2 - 支持版本更新、脚本远程下载
+                 v1.1 - api接口数据增加缓存，应对无网络情况下也能使用小组件
+                 v1.0 - 首次发布
+----------------------------------------------- */
 /************************************************************
  ********************用户设置 *********************
  ************请在首次运行之前进行修改************
@@ -1293,7 +1295,7 @@ async function getversion() {
   try {
     versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
     files.writeString(versionCachePath, JSON.stringify(versionData))
-    log("[+]版本信息获取成功:" + JSON.stringify(versionData))
+    log("[+]版本信息获取成功")
   } catch (e) {
     versionData = JSON.parse(files.readString(versionCachePath))
     log("[+]获取版本信息失败，使用缓存数据")

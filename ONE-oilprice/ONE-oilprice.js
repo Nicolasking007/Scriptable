@@ -32,9 +32,10 @@ const api_key = ''   //前往天行数据申请apikey https://www.tianapi.com/ap
 
 
 const size = previewSize
-let data = await fetchData()
 const versionData = await getversion()
 let needUpdated = await updateCheck(1.2)
+let data = await fetchData()
+
 
 console.log(`\u6b22\u8fce\u4f7f\u7528\u6bcf\u65e5\u6cb9\u4ef7\u0026\u0023\u0031\u0038\u0033\u003b\u6765\u6e90\u4e8e\u516c\u4f17\u53f7\u0020\u002d\u0020\u66f0\u575b`)
 function colorConfig() {

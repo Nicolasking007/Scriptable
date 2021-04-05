@@ -32,11 +32,11 @@ let bigsize = 85 // 今天字体大小
 
 // 获取农历信息
 let date = new Date()
+const versionData = await getversion()
+let needUpdated = await updateCheck(1.3)
 const lunarInfo = await getLunar(date.getDate() - 1)
 let lunarJoinInfo = "农历" + lunarInfo.infoLunarText + "·" + lunarInfo.lunarYearText + " " + lunarInfo.holidayText
 const honeyData = await gethoney()// 
-const versionData = await getversion()
-let needUpdated = await updateCheck(1.3)
 const str = date.getFullYear() + "年" + (date.getMonth() + 1) + "月"
 let day = new Date().getDate().toString()
 let stamp = new Date().getTime() - 60 * 60 * 24 * 1000

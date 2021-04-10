@@ -10,6 +10,8 @@
 ![nicolasking007's github stats](https://github-readme-stats.vercel.app/api?username=nicolasking007&show_icons=true)
 
 
+📌 近来发现 有人用此项目中脚本源码，在[`csdn`](https://download.csdn.net/download/weixin_42116794/16163401?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161802515916780264061143%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=161802515916780264061143&biz_id=1&utm_medium=distribute.pc_search_result.none-task-download-2~all~first_rank_v2~rank_v29-17-16163401.pc_search_result_before_js&utm_term=Scriptable%E8%84%9A%E6%9C%AC)上赚取积分，行为属实有点。。。，望自重
+
 
 ## 目录
 - [如何使用](#如何使用)
@@ -60,7 +62,6 @@
 | 8  | ★★★☆  | 今天是周五吗.  |  [ONE-Friday.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |
 | 9  | ★★★☆  | 捷径盒用户关注数量、下载数量、捷径创造数量等  | [捷径盒数据.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_e40aea4ec598fff73a59e611d1c4b545.jpeg" width="400"/>   |
 | 10  | ★★★☆  | 捷径社区用户关注数量、下载数量、捷径创造数量等  | [捷径社区数据.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_e40aea4ec598fff73a59e611d1c4b545.jpeg" width="400"/>   |
-
 | -  |  -  | -  |  - | -  |
 
 

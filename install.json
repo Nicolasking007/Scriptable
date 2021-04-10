@@ -15,7 +15,7 @@
             "images":["https://i.loli.net/2021/03/27/sH1AGgCmOK3ilqu.jpg"]
         },
         {
-            "version": "1.0",
+            "version": "1.1",
             "author": "Nicolas-kings",
             "description": "一个查看今天、本周、本月、今年和今生进度的小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Progress/ONE-Progress.js",

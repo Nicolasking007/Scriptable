@@ -4,13 +4,14 @@
 
 /********************************************************
  * script     : ONE-Progress.js
- * version    : 1.0.0
+ * version    : 1.1
  * author     : Nicolas-kings
  * date       : 2021-03-06
  * github     : https://github.com/Nicolasking007/Scriptable
  * desc       : 具体配置，详见微信公众号-曰(读yue)坛
  * color      : #FFA400, #FF7500, #0AA344, #4B5CC4, #B25D25
- *Changelog   : v1.0 - 首次发布
+ * Changelog  :  v1.1 - 支持版本更新、脚本远程下载
+ *               v1.0 - 首次发布
 ----------------------------------------------- */
 /************************************************************
  ********************用户设置 *********************
@@ -26,6 +27,10 @@ const previewSize = "Medium"  //预览大小
 const colorMode = false // 是否是纯色背景
 const life_expectancy = 77.3  //采用2020年中国人均预期寿命77.3岁
 
+/************************************************************
+ ********************用户设置 *********************
+ ************请在首次运行之前进行修改************
+ ***********************************************************/
 ////////////////////////
 const LIFE_BIRTHDAY = '1995-09-30'; //在这里输入您的出生年月  
 ////////////////////////
@@ -40,7 +45,8 @@ const COLOR_DARK_GRAY = new Color('#374151', 1);
 const COLOR_BAR_BACKGROUND = Color.dynamic(COLOR_LIGHT_GRAY, COLOR_DARK_GRAY);
 
 
-
+const versionData = await getversion()
+let needUpdated = await updateCheck(1.0)
 //渐变色  #3B82F6,#10B981,#FBBF24,#EF4444
 const DEFAULT_Color = new LinearGradient()
 DEFAULT_Color.colors = [new Color('#3B82F6'), new Color('#FBBF24'), new Color('#10B981'),]
@@ -561,4 +567,56 @@ function phoneSizes() {
     }
   }
   return phones
+}
+
+async function getversion() {
+  const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")
+  var versionData
+  try {
+    versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
+    files.writeString(versionCachePath, JSON.stringify(versionData))
+    log("[+]版本信息获取成功")
+  } catch (e) {
+    versionData = JSON.parse(files.readString(versionCachePath))
+    log("[+]获取版本信息失败，使用缓存数据")
+  }
+
+  return versionData
+}
+
+
+async function updateCheck(version) {
+
+  const uC = versionData
+  log('[+]' + uC['ONE-Progress'].version)
+  let needUpdate = false
+  if (uC['ONE-Progress'].version != version) {
+    needUpdate = true
+    log("[+]检测到有新版本！")
+    if (!config.runsInWidget) {
+      log("[+]执行更新步骤")
+      let upd = new Alert()
+      upd.title = "检测到有新版本！"
+      upd.addDestructiveAction("暂不更新")
+      upd.addAction("立即更新")
+      upd.add
+      upd.message = uC['ONE-Progress'].notes
+      if (await upd.present() == 1) {
+        const req = new Request(uC['ONE-Progress'].cdn_scriptURL)
+        const codeString = await req.loadString()
+        files.writeString(module.filename, codeString)
+        const n = new Notification()
+        n.title = "下载更新成功"
+        n.body = "请点击左上角Done完成，重新进入脚本即可~"
+        n.schedule()
+
+      }
+      Script.complete()
+    }
+
+  } else {
+    log("[+]当前版本已是最新")
+  }
+
+  return needUpdate
 }

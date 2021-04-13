@@ -173,11 +173,7 @@ if (previewSize == "Large") {
 
 async function createWidget() {
   let widget = new ListWidget()
-  let full = widget.addText(str + '·' + `${lunarJoinInfo}`)
-  full.font = new Font('Menlo', 14)
-  full.lineLimit = 1
-  full.centerAlignText()
-  full.textColor = new Color("#ffffff")
+
 
   if (previewSize === "Small" || config.widgetFamily === "small") {
     //   const widget = new ListWidget();
@@ -205,31 +201,36 @@ async function createWidget() {
     widget.backgroundColor = COLOR_BAR_BACKGROUND
 
   } else {
+    let full = widget.addText(str + '·' + `${lunarJoinInfo}`)
+    full.font = new Font('Menlo', 14)
+    full.lineLimit = 1
+    full.centerAlignText()
+    full.textColor = new Color("#ffffff")
 
-  let body = widget.addStack()
-  body.bottomAlignContent()
+    let body = widget.addStack()
+    body.bottomAlignContent()
 
-  addDate(
-    prev,
-    smallsize,
-    body)
-  body.addSpacer()
-  addDate(
-    day,
-    bigsize,
-    body)
-  body.addSpacer()
-  addDate(
-    next,
-    smallsize,
-    body)
+    addDate(
+      prev,
+      smallsize,
+      body)
+    body.addSpacer()
+    addDate(
+      day,
+      bigsize,
+      body)
+    body.addSpacer()
+    addDate(
+      next,
+      smallsize,
+      body)
 
-  let honey = widget.addText(`${honeyData.tts}`)
-  honey.textColor = new Color('#ffffff')
-  honey.font = new Font('Menlo', 11)
-  honey.centerAlignText()
-  honey.lineLimit = 1
-}
+    let honey = widget.addText(`${honeyData.tts}`)
+    honey.textColor = new Color('#ffffff')
+    honey.font = new Font('Menlo', 11)
+    honey.centerAlignText()
+    honey.lineLimit = 1
+  }
   return widget
 }
 

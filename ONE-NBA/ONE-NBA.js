@@ -7,11 +7,12 @@
 
 /********************************************************
  * script     : ONE-NBA.js
- * version    : 1.2
+ * version    : 1.3
  * author     : thisisevanfox & Nicolas-kings
  * date       : 2021-03-31
  * github     : https://github.com/Nicolasking007/Scriptable
- *Changelog   :  v1.2 - 支持版本更新、脚本远程下载
+ *Changelog   :  v1.3 - 修复bug
+                 v1.2 - 支持版本更新、脚本远程下载
                  v1.1 - api接口数据增加缓存，应对无网络情况下也能使用小组件
                  v1.0 - 首次发布
 ----------------------------------------------- */
@@ -52,6 +53,9 @@ const imgurl = "https://area.sinaapp.com/bingImg/"  //默认必应壁纸，这�
 //Device.isUsingDarkAppearance（）=系统配色方案（默认）
 //true =窗口小部件将处于黑暗模式。
 //false =窗口小部件将处于亮灯模式。 
+const filename = `${Script.name()}.jpg`
+const files = FileManager.local()
+const path = files.joinPath(files.documentsDirectory(), filename)
 const DARK_MODE = Device.isUsingDarkAppearance();
 const versionData = await getversion()
 let needUpdated = await updateCheck(1.2)

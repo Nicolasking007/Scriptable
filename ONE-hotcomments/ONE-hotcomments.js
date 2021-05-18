@@ -142,7 +142,7 @@
    // const url = "http://p1.music.126.net/uarVFKgUlrI9Z1nr-50cAw==/109951162843608471.jpg"     //固定一张图片,这里我选用城南花已开的封面,图片不能太大，容易崩溃
    // const i = await new Request(url);
    // const bgImgs = await i.loadImage();
-   const bgImgs = await getImageByUrl(hotcommentsData.data.picurl, `ONE-hotcomments-bg`)
+   const bgImgs = await getImageByUrl(hotcommentsData.data.picurl, `${hotcommentsData.data.picurl}-bg`)
    bgImg = await blurImage(bgImgs, blurStyle, 40)
    widget.backgroundImage = bgImg
    // widget.backgroundImage = await shadowImage(img)

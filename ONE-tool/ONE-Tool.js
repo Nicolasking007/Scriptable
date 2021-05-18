@@ -9,12 +9,13 @@
 // icon-color: deep-purple; icon-glyph: fingerprint;
 /********************************************************
  * script     : ONE-Tool.js
- * version    : 1.4
+ * version    : 1.5
  * author     : Nicolas-kings
  * date       : 2021-04-05
  * desc       : 具体配置说明，详见微信公众号-曰(读yue)坛
  * github     : https://github.com/Nicolasking007/Scriptable
- * Changelog  : v1.4 - api所有接口数据增加缓存，简化使用流程 
+ * Changelog  : v1.5 - 优化背景图片缓存处理
+ *              v1.4 - api所有接口数据增加缓存，简化使用流程 
                 v1.3 - 支持版本更新、脚本远程下载
                 v1.2 - api接口数据增加缓存，应对无网络情况下也能使用小组件
                 v1.1 - 替换api接口
@@ -23,8 +24,8 @@
 const filename = `${Script.name()}.jpg`
 const files = FileManager.local()
 const path = files.joinPath(files.documentsDirectory(), filename)
-const changePicBg = true  //选择true时，使用透明背景 
-const ImageMode = false    //选择true时，使用必应壁纸
+const changePicBg = false  //选择true时，使用透明背景 
+const ImageMode = true    //选择true时，使用必应壁纸
 const previewSize = "Medium"  //预览大小
 const colorMode = false // 是否是纯色背景
 const refreshInterval = 30   //刷新间隔  时间单位：分钟
@@ -33,8 +34,8 @@ const refreshInterval = 30   //刷新间隔  时间单位：分钟
 ********************用户设置 *********************
 ************请在首次运行之前进行修改************
 ***********************************************************/
-const User = 'Nicolas-kings'//昵称
-const WeatherKey = ' ' // 和风天气api-key 申请地址： https://dev.heweather.com/
+const User = '请在这输入你的昵称'//昵称
+const WeatherKey = '请在这输入和风天气api_key' // 和风天气api-key 申请地址： https://dev.heweather.com/
 //  ***********************************************************/
 
 const padding = {
@@ -45,6 +46,8 @@ const padding = {
 }
 
 const currentDate = new Date()
+const versionData = await getversion()
+let needUpdated = await updateCheck(1.5)
 const tencentApiKey = ""   // 腾讯位置服务apiKey，自带官方key，也可以使用自己申请的
 const lockLocation = false  //是否锁定定位信息
 const LOCATION = await getLocation()
@@ -53,11 +56,8 @@ const city = areaData.result.address_component.city
 const district = areaData.result.address_component.district
 const lunarInfo = await getLunar(currentDate.getDate() - 1)
 let lunarJoinInfo = "农历" + lunarInfo.infoLunarText + "·" + lunarInfo.lunarYearText + " " + lunarInfo.holidayText
-const versionData = await getversion()
-let needUpdated = await updateCheck(1.3)
 const weatherData = await getWeather()
 const honeyData = await gethoney()
-
 const widget = await createWidget()
 /*
 ****************************************************************************
@@ -157,10 +157,11 @@ if (colorMode) {
     bgColor.locations = [0.0, 0.5, 1.0]
     widget.backgroundColor = bgColor
 } else if (ImageMode) {
-    const url = "https://area.sinaapp.com/bingImg/"   //使用必应壁纸作为背景时，请注释下面
+    // const url = "https://area.sinaapp.com/bingImg/"   //使用必应壁纸作为背景时，请注释下面
     // const url = "http://p1.music.126.net/uarVFKgUlrI9Z1nr-50cAw==/109951162843608471.jpg"     //固定一张图片,这里我选用城南花已开的封面,图片不能太大，容易崩溃
-    const i = await new Request(url);
-    const img = await i.loadImage();
+    // const i = await new Request(url);
+    // const img = await i.loadImage();
+    const img = await getImageByUrl('https://area.sinaapp.com/bingImg/', `ONE-Tool-bg`)
     widget.backgroundImage = await shadowImage(img)
 }
 else {
@@ -375,6 +376,7 @@ async function getWeather() {
         data = dataToday
         files.writeString(cachePath, JSON.stringify(data))
         log("[+]天气信息请求成功")
+        console.log(data)
       }
       catch (e) {
         data = JSON.parse(files.readString(cachePath))
@@ -492,6 +494,33 @@ function cropImage(img, rect) {
     draw.drawImageAtPoint(img, new Point(-rect.x, -rect.y))
     return draw.getImage()
 }
+
+async function getImageByUrl(url, cacheKey, useCache = true) {
+    const cacheFile = FileManager.local().joinPath(FileManager.local().temporaryDirectory(), cacheKey)
+    const exists = FileManager.local().fileExists(cacheFile)
+    // 判断是否有缓存
+    if (useCache && exists) {
+        return Image.fromFile(cacheFile)
+    }
+    try {
+        const req = new Request(url)
+        const img = await req.loadImage()
+        // 存储到缓存
+        FileManager.local().writeImage(cacheFile, img)
+        return img
+    } catch (e) {
+        console.error(`图片加载失败：${e}`)
+        if (exists) {
+            return Image.fromFile(cacheFile)
+        }
+        // 没有缓存+失败情况下，返回黑色背景
+        let ctx = new DrawContext()
+        ctx.size = new Size(100, 100)
+        ctx.setFillColor(Color.black())
+        ctx.fillRect(new Rect(0, 0, 100, 100))
+        return await ctx.getImage()
+    }
+  }
 
 // Pixel sizes and positions for widgets on all supported phones.
 function phoneSizes() {

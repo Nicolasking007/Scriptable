@@ -60,8 +60,8 @@
 | 6  | ★★★★★  | 一个简单日历小组件  | [ONE-Today.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/03/27/TbFJz8slCiYONV4.jpg" width="400"/>  |
 | 7  | ★★★★★  | 网易云热评  | [ONE-hotcomments.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/03/27/WbFpYaeitnZ5Mzc.jpg" width="400"/>  |
 | 8  | ★★★☆  | 今天是周五吗.  |  [ONE-Friday.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |
-| 9  | ★★★☆  | 捷径盒用户关注数量、下载数量、捷径创造数量等  | [捷径盒数据.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_e40aea4ec598fff73a59e611d1c4b545.jpeg" width="400"/>   |
-| 10  | ★★★☆  | 捷径社区用户关注数量、下载数量、捷径创造数量等  | [捷径社区数据.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_e40aea4ec598fff73a59e611d1c4b545.jpeg" width="400"/>   |
+| 9  | ★★★☆  | 捷径盒用户关注数量、下载数量、捷径创造数量等  | [捷径盒数据.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg" width="400"/>   |
+| 10  | ★★★☆  | 捷径社区用户关注数量、下载数量、捷径创造数量等  | [捷径社区数据.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg" width="400"/>   |
 | -  |  -  | -  |  - | -  |
 
 

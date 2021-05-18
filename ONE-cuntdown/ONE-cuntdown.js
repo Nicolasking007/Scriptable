@@ -3,11 +3,12 @@
 // icon-color: gray; icon-glyph: magic;
 /********************************************************
  * script     : ONE-cuntdown.js
- * version    : 1.0.0
+ * version    : 1.1
  * author     : Nicolas-kings
  * date       : 2020-11-14
  * github     : https://github.com/Nicolasking007/Scriptable
- *Changelog   :  v1.0 - 首次发布
+ * Changelog   : v1.1 - 优化背景图片缓存处理
+                 v1.0 - 首次发布
 ----------------------------------------------- */
 /************************************************************
  ********************用户设置 *********************
@@ -25,8 +26,9 @@ const bgColor = new Color("000000") // 小组件背景色
 //*********使用前准备工作*********//
 const endDate = '02/12/2021 00:00:00 AM'; //设定的倒计时时间
 const daysTillText = '距离春节'  //倒计时文案
-
-
+const versionData = await getversion()
+let needUpdated = await updateCheck(1.1)
+const weatherData = await getWeather()
 const fontColor = Color.white()   //new Color("#918A8A")
 const logoUrl = ''
 const widgetUrl = "https://nkupp.com"  //跳转URL
@@ -134,10 +136,11 @@ if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
 if (colorMode) {
         widget.backgroundColor = bgColor
 } else if (ImageMode) {
-        const url = "https://area.sinaapp.com/bingImg/"   //使用必应壁纸作为背景时，请注释下面
+        // const url = "https://area.sinaapp.com/bingImg/"   //使用必应壁纸作为背景时，请注释下面
         // const url = "http://p1.music.126.net/uarVFKgUlrI9Z1nr-50cAw==/109951162843608471.jpg"     //固定一张图片,这里我选用城南花已开的封面,图片不能太大，容易崩溃
-        const i = await new Request(url);
-        const img = await i.loadImage();
+        // const i = await new Request(url);
+        // const img = await i.loadImage();
+        const img = await getImageByUrl('https://area.sinaapp.com/bingImg/', `ONE-cuntdown-bg`)
         widget.backgroundImage = await shadowImage(img)
 }
 else {
@@ -256,6 +259,33 @@ function cropImage(img, rect) {
         return draw.getImage()
 }
 
+async function getImageByUrl(url, cacheKey, useCache = true) {
+        const cacheFile = FileManager.local().joinPath(FileManager.local().temporaryDirectory(), cacheKey)
+        const exists = FileManager.local().fileExists(cacheFile)
+        // 判断是否有缓存
+        if (useCache && exists) {
+            return Image.fromFile(cacheFile)
+        }
+        try {
+            const req = new Request(url)
+            const img = await req.loadImage()
+            // 存储到缓存
+            FileManager.local().writeImage(cacheFile, img)
+            return img
+        } catch (e) {
+            console.error(`图片加载失败：${e}`)
+            if (exists) {
+                return Image.fromFile(cacheFile)
+            }
+            // 没有缓存+失败情况下，返回黑色背景
+            let ctx = new DrawContext()
+            ctx.size = new Size(100, 100)
+            ctx.setFillColor(Color.black())
+            ctx.fillRect(new Rect(0, 0, 100, 100))
+            return await ctx.getImage()
+        }
+      }
+
 // Pixel sizes and positions for widgets on all supported phones.
 function phoneSizes() {
         let phones = {
@@ -360,3 +390,55 @@ function phoneSizes() {
         }
         return phones
 }
+
+async function getversion() {
+        const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")
+        var versionData
+        try {
+            versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
+            files.writeString(versionCachePath, JSON.stringify(versionData))
+            log("[+]版本信息获取成功")
+        } catch (e) {
+            versionData = JSON.parse(files.readString(versionCachePath))
+            log("[+]获取版本信息失败，使用缓存数据")
+        }
+    
+        return versionData
+    }
+    
+    
+    async function updateCheck(version) {
+    
+        const uC = versionData
+        log('[+]' + uC['ONE-cuntdown'].version)
+        let needUpdate = false
+        if (uC['ONE-cuntdown'].version != version) {
+            needUpdate = true
+            log("[+]检测到有新版本！")
+            if (!config.runsInWidget) {
+                log("[+]执行更新步骤")
+                let upd = new Alert()
+                upd.title = "检测到有新版本！"
+                upd.addDestructiveAction("暂不更新")
+                upd.addAction("立即更新")
+                upd.add
+                upd.message = uC['ONE-cuntdown'].notes
+                if (await upd.present() == 1) {
+                    const req = new Request(uC['ONE-cuntdown'].cdn_scriptURL)
+                    const codeString = await req.loadString()
+                    files.writeString(module.filename, codeString)
+                    const n = new Notification()
+                    n.title = "下载更新成功"
+                    n.body = "请点击左上角Done完成，重新进入脚本即可~"
+                    n.schedule()
+    
+                }
+                Script.complete()
+            }
+    
+        } else {
+            log("[+]当前版本已是最新")
+        }
+    
+        return needUpdate
+    }

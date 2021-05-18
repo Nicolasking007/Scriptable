@@ -4,13 +4,14 @@
 
 /********************************************************
  * script     : ONE-Progress.js
- * version    : 1.1
+ * version    : 1.2
  * author     : Nicolas-kings
  * date       : 2021-03-06
  * github     : https://github.com/Nicolasking007/Scriptable
  * desc       : 具体配置，详见微信公众号-曰(读yue)坛
  * color      : #FFA400, #FF7500, #0AA344, #4B5CC4, #B25D25
- * Changelog  :  v1.1 - 支持版本更新、脚本远程下载
+ * Changelog  :  v1.2 - 优化背景图片缓存处理
+ *               v1.1 - 支持版本更新、脚本远程下载
  *               v1.0 - 首次发布
 ----------------------------------------------- */
 /************************************************************
@@ -46,7 +47,7 @@ const COLOR_BAR_BACKGROUND = Color.dynamic(COLOR_LIGHT_GRAY, COLOR_DARK_GRAY);
 
 
 const versionData = await getversion()
-let needUpdated = await updateCheck(1.0)
+let needUpdated = await updateCheck(1.2)
 //渐变色  #3B82F6,#10B981,#FBBF24,#EF4444
 const DEFAULT_Color = new LinearGradient()
 DEFAULT_Color.colors = [new Color('#3B82F6'), new Color('#FBBF24'), new Color('#10B981'),]
@@ -313,10 +314,10 @@ if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
 if (colorMode) {
   widget.backgroundColor = COLOR_BAR_BACKGROUND
 } else if (ImageMode) {
-  const url = "https://area.sinaapp.com/bingImg/"   //使用必应壁纸作为背景时，请注释下面
+  // const url = "https://area.sinaapp.com/bingImg/"   //使用必应壁纸作为背景时，请注释下面
   // const url = "http://p1.music.126.net/uarVFKgUlrI9Z1nr-50cAw==/109951162843608471.jpg"     //固定一张图片,这里我选用城南花已开的封面,图片不能太大，容易崩溃
-  const i = await new Request(url);
-  const img = await i.loadImage();
+  // const i = await new Request(url);
+  const img = await getImageByUrl('https://area.sinaapp.com/bingImg/', `ONE-Progress-bg`)
   widget.backgroundImage = await shadowImage(img)
 }
 else {
@@ -463,6 +464,35 @@ function cropImage(img, rect) {
   draw.drawImageAtPoint(img, new Point(-rect.x, -rect.y))
   return draw.getImage()
 }
+
+
+async function getImageByUrl(url, cacheKey, useCache = true) {
+  const cacheFile = FileManager.local().joinPath(FileManager.local().temporaryDirectory(), cacheKey)
+  const exists = FileManager.local().fileExists(cacheFile)
+  // 判断是否有缓存
+  if (useCache && exists) {
+      return Image.fromFile(cacheFile)
+  }
+  try {
+      const req = new Request(url)
+      const img = await req.loadImage()
+      // 存储到缓存
+      FileManager.local().writeImage(cacheFile, img)
+      return img
+  } catch (e) {
+      console.error(`图片加载失败：${e}`)
+      if (exists) {
+          return Image.fromFile(cacheFile)
+      }
+      // 没有缓存+失败情况下，返回黑色背景
+      let ctx = new DrawContext()
+      ctx.size = new Size(100, 100)
+      ctx.setFillColor(Color.black())
+      ctx.fillRect(new Rect(0, 0, 100, 100))
+      return await ctx.getImage()
+  }
+}
+
 
 // Pixel sizes and positions for widgets on all supported phones.
 function phoneSizes() {

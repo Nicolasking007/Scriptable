@@ -317,7 +317,7 @@ if (colorMode) {
   // const url = "https://area.sinaapp.com/bingImg/"   //使用必应壁纸作为背景时，请注释下面
   // const url = "http://p1.music.126.net/uarVFKgUlrI9Z1nr-50cAw==/109951162843608471.jpg"     //固定一张图片,这里我选用城南花已开的封面,图片不能太大，容易崩溃
   // const i = await new Request(url);
-  const img = await getImageByUrl('https://area.sinaapp.com/bingImg/', `ONE-Progress-bg`)
+  const img = await getImageByUrl('https://area.sinaapp.com/bingImg/', `ONE-Progress-bg`, false)
   widget.backgroundImage = await shadowImage(img)
 }
 else {
@@ -471,25 +471,25 @@ async function getImageByUrl(url, cacheKey, useCache = true) {
   const exists = FileManager.local().fileExists(cacheFile)
   // 判断是否有缓存
   if (useCache && exists) {
-      return Image.fromFile(cacheFile)
+    return Image.fromFile(cacheFile)
   }
   try {
-      const req = new Request(url)
-      const img = await req.loadImage()
-      // 存储到缓存
-      FileManager.local().writeImage(cacheFile, img)
-      return img
+    const req = new Request(url)
+    const img = await req.loadImage()
+    // 存储到缓存
+    FileManager.local().writeImage(cacheFile, img)
+    return img
   } catch (e) {
-      console.error(`图片加载失败：${e}`)
-      if (exists) {
-          return Image.fromFile(cacheFile)
-      }
-      // 没有缓存+失败情况下，返回黑色背景
-      let ctx = new DrawContext()
-      ctx.size = new Size(100, 100)
-      ctx.setFillColor(Color.black())
-      ctx.fillRect(new Rect(0, 0, 100, 100))
-      return await ctx.getImage()
+    console.error(`图片加载失败：${e}`)
+    if (exists) {
+      return Image.fromFile(cacheFile)
+    }
+    // 没有缓存+失败情况下，返回黑色背景
+    let ctx = new DrawContext()
+    ctx.size = new Size(100, 100)
+    ctx.setFillColor(Color.black())
+    ctx.fillRect(new Rect(0, 0, 100, 100))
+    return await ctx.getImage()
   }
 }
 
@@ -605,6 +605,8 @@ async function getversion() {
   try {
     versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
     files.writeString(versionCachePath, JSON.stringify(versionData))
+    console.log(`===>欢迎使用：${versionData.author}制作的小组件<===`);
+    console.log("[+]遇到问题，请前往公众号：曰坛 反馈");
     log("[+]版本信息获取成功")
   } catch (e) {
     versionData = JSON.parse(files.readString(versionCachePath))
@@ -618,7 +620,7 @@ async function getversion() {
 async function updateCheck(version) {
 
   const uC = versionData
-  log('[+]' + uC['ONE-Progress'].version)
+  log('[+]最新版本：' + uC['ONE-Progress'].version)
   let needUpdate = false
   if (uC['ONE-Progress'].version != version) {
     needUpdate = true

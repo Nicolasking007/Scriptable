@@ -43,9 +43,10 @@ const padding = {
   bottom: 10,
   right: 10
 }
-const DARK_MODE = Device.isUsingDarkAppearance();
 const versionData = await getversion()
 let needUpdated = await updateCheck(1.5)
+const DARK_MODE = Device.isUsingDarkAppearance();
+
 
 //指示是否应显示实时得分。
 //如果您不想被破坏，请将其设置为false。
@@ -173,7 +174,7 @@ if (colorMode) {
   // const url = "http://p1.music.126.net/uarVFKgUlrI9Z1nr-50cAw==/109951162843608471.jpg"     //固定一张图片,这里我选用城南花已开的封面,图片不能太大，容易崩溃
   // const i = await new Request(url);
   // const bgImgs = await i.loadImage();
-  const bgImgs = await getImageByUrl('https://area.sinaapp.com/bingImg/', `ONE-NBA-bg`)
+  const bgImgs = await getImageByUrl('https://area.sinaapp.com/bingImg/', `ONE-NBA-bg`,false)
   bgImg = await blurImage(bgImgs, blurStyle, 40)
   widget.backgroundImage = bgImg
   // widget.backgroundImage = await shadowImage(img)
@@ -1680,6 +1681,8 @@ async function getversion() {
   try {
     versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
     files.writeString(versionCachePath, JSON.stringify(versionData))
+    console.log(`===>欢迎使用：${versionData.author}制作的小组件<===`);
+    console.log("[+]遇到问题，请前往公众号：曰坛 反馈");
     log("[+]版本信息获取成功")
   } catch (e) {
     versionData = JSON.parse(files.readString(versionCachePath))
@@ -1694,7 +1697,7 @@ async function getversion() {
 async function updateCheck(version) {
 
   const uC = versionData
-  log('[+]' + uC['ONE-NBA'].version)
+  log('[+]最新版本：' + uC['ONE-NBA'].version)
   let needUpdate = false
   if (uC['ONE-NBA'].version != version) {
     needUpdate = true

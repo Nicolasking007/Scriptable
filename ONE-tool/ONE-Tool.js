@@ -161,7 +161,7 @@ if (colorMode) {
     // const url = "http://p1.music.126.net/uarVFKgUlrI9Z1nr-50cAw==/109951162843608471.jpg"     //固定一张图片,这里我选用城南花已开的封面,图片不能太大，容易崩溃
     // const i = await new Request(url);
     // const img = await i.loadImage();
-    const img = await getImageByUrl('https://area.sinaapp.com/bingImg/', `ONE-Tool-bg`)
+    const img = await getImageByUrl('https://area.sinaapp.com/bingImg/', `ONE-Tool-bg`,false)
     widget.backgroundImage = await shadowImage(img)
 }
 else {
@@ -296,8 +296,6 @@ async function getLunar(day) {
 
         // 节日数据  
         response = await webview.evaluateJavaScript(getData, false)
-        console.log(`[+]欢迎使用：${Script.name()}小组件`);
-        console.log("[+]遇到问题，请前往公众号：曰坛 反馈");
         Keychain.set(cacheKey, JSON.stringify(response))
         console.log(`[+]农历输出：${JSON.stringify(response)}`);
     } catch (e) {
@@ -633,6 +631,8 @@ async function getversion() {
     try {
         versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
         files.writeString(versionCachePath, JSON.stringify(versionData))
+        console.log(`===>欢迎使用：${versionData.author}制作的小组件<===`);
+        console.log("[+]遇到问题，请前往公众号：曰坛 反馈");
         log("[+]版本信息获取成功")
     } catch (e) {
         versionData = JSON.parse(files.readString(versionCachePath))
@@ -646,7 +646,7 @@ async function getversion() {
 async function updateCheck(version) {
 
     const uC = versionData
-    log('[+]' + uC['ONE-Tool'].version)
+    log('[+]最新版本：' + uC['ONE-Tool'].version)
     let needUpdate = false
     if (uC['ONE-Tool'].version != version) {
         needUpdate = true

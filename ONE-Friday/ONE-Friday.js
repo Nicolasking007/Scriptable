@@ -128,7 +128,7 @@
    // const url = "http://p1.music.126.net/uarVFKgUlrI9Z1nr-50cAw==/109951162843608471.jpg"     //固定一张图片,这里我选用城南花已开的封面,图片不能太大，容易崩溃
    // const i = await new Request(url);
    // const img = await i.loadImage();
-   const img = await getImageByUrl('https://area.sinaapp.com/bingImg/', `ONE-Friday-bg`)
+   const img = await getImageByUrl('https://area.sinaapp.com/bingImg/', `ONE-Friday-bg`,false)
    widget.backgroundImage = await shadowImage(img)
  }
  else {

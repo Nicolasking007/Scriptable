@@ -92,7 +92,7 @@
             "thumb": "https://pic.rmb.bdstatic.com/bjh/56ffd9646ed482568653f1fc543c3dda.png",
             "name": "捷径社区数据",
             "title": "捷径社区数据",
-            "images":["https://shop.io.mi-img.com/app/shop/img?id=shop_e40aea4ec598fff73a59e611d1c4b545.jpeg"]
+            "images":["https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg"]
         },
         {
             "version": "1.0",
@@ -102,7 +102,17 @@
             "thumb": "https://pic.rmb.bdstatic.com/bjh/56ffd9646ed482568653f1fc543c3dda.png",
             "name": "捷径盒数据",
             "title": "捷径盒数据",
-            "images":["https://shop.io.mi-img.com/app/shop/img?id=shop_e40aea4ec598fff73a59e611d1c4b545.jpeg"]
+            "images":["https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg"]
+        },
+        {
+            "version": "1.0",
+            "author": "Nicolas-kings",
+            "description": "中国/全球疫苗接种数据",
+            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/COVID-19/ONE-COVID_Vac.js",
+            "thumb": "https://pic.rmb.bdstatic.com/bjh/56ffd9646ed482568653f1fc543c3dda.png",
+            "name": "ONE-COVID_Vac",
+            "title": "ONE-COVID_Vac",
+            "images":["https://i.loli.net/2021/05/27/OTal5tm1IUvVBPi"]
         }
     ]
 }

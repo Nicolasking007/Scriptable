@@ -30,7 +30,7 @@
 
 
 
-### 如何使用
+### 🟠🟡🟢如何使用
 1. iPhone 上下载 [Scriptable](https://apps.apple.com/cn/app/scriptable/id1405459188) App（确保你的系统已更新为 iOS14+）. 
 2. 打开App，点击右上角 + 号，复制项目中对应的代码  
 3. 长按桌面，添加组件，选择 `Scriptable`，然后点击组件配置，选择刚刚保存的脚本即可.
@@ -39,12 +39,12 @@
 ![menu.jpg](https://shop.io.mi-img.com/app/shop/img?id=shop_2633f187a80f14a861acabba8963a8d8.jpeg)
 
 
-### 我的作品集   
+### 🟠🟡🟢我的作品集   
 > 注：本人原创以及他人基础上修改的作品，相关配置信息详见-公众号内推文
 
- >  1、全选复制·快捷指令| 可便捷解决手机复制scriptable代码问题
+ >  🟢1、全选复制·快捷指令| 可便捷解决手机复制scriptable代码问题
  * [下载捷径](https://www.icloud.com/shortcuts/d756d6551eb54a8e877789492c2f9814 )
-> 2、脚本订阅
+> 🟢2、脚本订阅
 * 作者：[@Nicolas-kings - 订阅](https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/install.json)
 
 
@@ -62,12 +62,15 @@
 | 8  | ★★★☆  | 今天是周五吗.  |  [ONE-Friday.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |
 | 9  | ★★★☆  | 捷径盒用户关注数量、下载数量、捷径创造数量等  | [捷径盒数据.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg" width="400"/>   |
 | 10  | ★★★☆  | 捷径社区用户关注数量、下载数量、捷径创造数量等  | [捷径社区数据.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg" width="400"/>   |
+| 11  |  ★★★★★  | 中国/全球疫苗接种数据  |  [ONE-COVID_Vac.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/05/27/OTal5tm1IUvVBPi.jpg" width="400"/>  |
+| 12  |  ★★★★★  | 音乐榜单  |  [ONE-musicTop.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/05/27/C5jLBVl8cS2DPzo.jpg" width="400"/>  |
 | -  |  -  | -  |  - | -  |
-
 
   
 ### 汽车电子类
 --- 
+<details>
+<summary>🟢查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -76,10 +79,15 @@
 | 3  | ★★★☆  |  附近加油站的燃油价格. | [tankstellenpreise.js](https://github.com/Necriso/ScriptableWidgets/blob/main/iamges/tankstellenpreise.js)  |  <img src="https://raw.githubusercontent.com/Necriso/ScriptableWidgets/main/images/tankstellenpreise.png" width="400"/> |
 | 4  | ★★★☆  | 有关您的雷诺佐伊的信息，例如充电或位置.  | [ZOE-Widget.js](https://gist.github.com/mountbatt/772e4512089802a2aa2622058dd1ded7)   |  <img src="https://user-images.githubusercontent.com/2411246/97786189-41f68f80-1baa-11eb-9c6f-96e8d8f7684a.jpeg" width="400"/> |
 | -  |  -  | -  |  - | -  |
+</details>
+
+
  
 
 ### 日历类
 --- 
+<details>
+<summary>🟢查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -92,10 +100,15 @@
 | 7  |  ★★★★★  | 破壳日  | [破壳日](https://github.com/dompling/Scriptable/blob/master/Scripts/Birthday.js) | -  |
 | -  | -  | -  |  - | -  |
 
+</details>
+
+
  
 
 ### 健康类
 ---
+<details>
+<summary>🟢查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -107,11 +120,15 @@
 | 6  |  ★★★★★  | 疫情日报-版本2 | [疫情日报-版本2](https://raw.githubusercontent.com/dompling/scriptableTsx/master/scripts/COVID-19.js) | <img src="https://p.pstatp.com/origin/ff31000327b44e8e156a" width="400"/>  |
 | -  |  -  | -  |  - | -  |
 
+</details>
+
+
 
 
 ### 手机类
 --- 
-
+<details>
+<summary>🟢查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -126,10 +143,16 @@
 | 9  |  ★★★☆  | v2board机场模板  |  [v2board机场模板](https://github.com/dompling/Scriptable/blob/master/Scripts/VPNV2Bord.js)  | -  |
 | -  | -  | -  |  - | -  |
 
+</details>
+
+
+
 
   
 ### 音乐类
 --- 
+<details>
+<summary>🟢查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -138,9 +161,14 @@
 | 3  | ★★★☆  | 网易云热评小组件  | [ONE-hotcomments.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_ce27566bfa16158fe31252e29e56adff.png" width="400"/>  |
 | -  |  -  | -  |  - | -  |
 
+</details>
+
+
  
 ## 阅读类
 --- 
+<details>
+<summary>🟢查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -150,11 +178,16 @@
 | 4  |  ★★★☆  | 毒汤日历  | [毒汤日历](https://github.com/dompling/Scriptable/blob/master/Scripts/PoisonCalendar.js) | -  |
 | -  |  -  | -  |  - | -  |
 
+</details>
+
+
 
   
 
 ### 社交类
 --- 
+<details>
+<summary>🟢查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -173,10 +206,15 @@
 | 13  |  ★★★★☆  | YouTube桌面订阅  | [YouTube](https://github.com/dompling/Scriptable/blob/master/Scripts/YouTube.js)  | -  |
 | -  |  -  | -  |  - | -  |
 
+</details>
+
+
       
   
 ### 购物类
 ---
+<details>
+<summary>🟢查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -186,10 +224,15 @@
 | 4  |  ★★★★★  | 京东豆收支 K 线图  | [京东豆收支 K 线图](https://github.com/dompling/Scriptable/blob/master/Scripts/JDDouK.js) | -  |
 | 5  |  ★★★★★  | 京东商品物流  | [京东商品物流](https://github.com/dompling/Scriptable/blob/master/Scripts/JDWuLiu.js) | - | 
 | -  |  -  | -  |  - | -  |
+
+</details>
+
  
 
 ### 运动类
 --- 
+<details>
+<summary>🟢查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -201,10 +244,15 @@
 | 6  |  ★★★★★  | NBA-实时比分  |  [ONE-NBA](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/03/06/N62Aeo8tGbc3aP4.jpg" width="400"/> |
 | -  |  -  | -  |  - | -  |
 
+</details>
+
+
 
 
 ### 工具类
 --- 
+<details>
+<summary>🟢查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -221,9 +269,11 @@
 |  11 | ★★☆  | 当前或随机的xkcd漫画  | [xkcd.js](https://github.com/supermamon/scriptable-scripts/blob/master/xkcd-widget/xkcd.js)  |   |
 | 12  |  ★★☆  | 智联火车票提醒  | [智联火车票提醒](https://github.com/dompling/Scriptable/blob/master/Scripts/ZXTrains.js) | -  |
 | -  |  -  | -  |  - | -  |
+</details>
 
 
-###  常见问题解答
+
+###  🟠🟡🟢常见问题解答
 --- 
 
 敬请期待
@@ -232,7 +282,7 @@
 - [scriptdu.de](https://scriptdu.de) - Downloader and updater for scripts.
 
 - [Widget Hub](https://widget-hub.app/) - Collection for downlading scripts. -->
-### 免责声明
+### 🟠🟡🟢免责声明
 ---
 1. 此所有收集的脚本仅用于学习研究，不保证其合法性、准确性、有效性，请根据情况自行判断，本人对此不承担任何保证责任。
 2. 由于此脚本仅用于学习研究，您必须在下载后 24 小时内将所有内容从您的计算机或手机或任何存储设备中完全删除，若违反规定引起任何事件本人对此均不负责。
@@ -245,7 +295,16 @@
 9. 再次补充说明：为爱发电产物......
 
 
-### 微信公众号
+### 🟠🟡🟢赞赏
+--- 
+<center>
+    <img src="https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/images/pay/wechat.jpg" style="width: 100px;">
+</center>
+
+<center>开发不易，觉得帮助到了您，可以考虑给我买瓶饮料啥的，期待赞赏</center>
+
+
+### 🟠🟡🟢微信公众号
 --- 
 <center>
     <img src="https://s2.ax1x.com/2019/12/28/lemBSf.png" style="width: 100px;">
@@ -253,7 +312,8 @@
 
 <center>欢迎微信扫码关注公众号哟！</center>
 
-### 感谢
+
+### 🟠🟡🟢感谢
 * [dompling](https://github.com/dompling/Scriptable)
 * [andyngo](https://github.com/andyngo/conversable-for-scriptable)
 * [supermamon](https://github.com/supermamon/scriptable-scripts)
@@ -262,7 +322,7 @@
 * [Juniorchen2012](https://github.com/Juniorchen2012/scriptable)
 
 ......
-### 访问量
+### 🟠🟡🟢访问量
 ---
 ![](http://profile-counter.glitch.me/nicolasking007/count.svg)
 

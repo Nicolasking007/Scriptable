@@ -298,7 +298,7 @@
 ### 🟠🟡🟢赞赏
 --- 
 <center>
-    <img src="https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/images/pay/wechat.jpg" style="width: 100px;">
+    <img src="https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/images/pay/wechat.jpg" width="200px" height="200px"/>
 </center>
 
 <center>开发不易，觉得帮助到了您，可以考虑给我买瓶饮料啥的，期待赞赏</center>

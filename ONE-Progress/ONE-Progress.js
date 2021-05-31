@@ -1,7 +1,10 @@
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
 // icon-color: orange; icon-glyph: stopwatch;
-
+/********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/
 /********************************************************
  * script     : ONE-Progress.js
  * version    : 1.2
@@ -652,3 +655,9 @@ async function updateCheck(version) {
 
   return needUpdate
 }
+
+
+/********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/

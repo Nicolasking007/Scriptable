@@ -1,12 +1,10 @@
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
-// icon-color: deep-green; icon-glyph: magic;
-// Variables used by Scriptable.
-// These must be at the very top of the file. Do not edit.
-// icon-color: deep-purple; icon-glyph: fingerp
-// Variables used by Scriptable.
-// These must be at the very top of the file. Do not edit.
 // icon-color: deep-purple; icon-glyph: fingerprint;
+/********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/
 /********************************************************
  * script     : ONE-Tool.js
  * version    : 1.5
@@ -678,3 +676,9 @@ async function updateCheck(version) {
 
     return needUpdate
 }
+
+
+/********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/

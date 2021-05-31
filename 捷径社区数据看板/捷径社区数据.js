@@ -2,6 +2,10 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: blue; icon-glyph: award;
 /********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/
+/********************************************************
  * script     : 捷径社区数据.js
  * version    : 1.0.0
  * author     : Nicolas-kings
@@ -461,3 +465,7 @@ function phoneSizes() {
 return phones
 }
 
+/********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/

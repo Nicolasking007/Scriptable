@@ -1,17 +1,18 @@
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
-// icon-color: pink; icon-glyph: magic;
-// Variables used by Scriptable.
-// These must be at the very top of the file. Do not edit.
 // icon-color: orange; icon-glyph: basketball-ball;
-
+/********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/
 /********************************************************
  * script     : ONE-NBA.js
- * version    : 1.5
+ * version    : 1.6
  * author     : thisisevanfox & Nicolas-kings
  * date       : 2021-05-09
  * github     : https://github.com/Nicolasking007/Scriptable
- * Changelog  :  v1.5 - 优化背景图片缓存处理
+ * Changelog  :  v1.6 - 细节优化、适配中文比赛场地
+ *               v1.5 - 优化背景图片缓存处理
                  v1.4 - 适配透明背景设置、图片背景高斯模糊等
                  v1.3 - 修复bug
                  v1.2 - 支持版本更新、脚本远程下载
@@ -24,17 +25,17 @@ const files = FileManager.local()
 const path = files.joinPath(files.documentsDirectory(), filename)
 const changePicBg = false  //选择false/true时，决定是否使用透明背景 
 const ImageMode = true   //选择false/true时，决定是否使用必应壁纸
-const previewSize = "Medium"  // Large/Medium/Small预览大小
+const previewSize = (config.runsInWidget ? config.widgetFamily : "medium");// medium、small、large 预览大小
 const colorMode = false // 选择false/true时，是否是纯色背景
 const bgColor = new Color("000000") // 小组件背景色
-const blurStyle = "dark" // 高斯样式：light/dark
+const blurStyle = "light" // 高斯样式：light/dark
 
 
 /************************************************************
  ********************用户设置 *********************
  ************请在首次运行之前进行修改************
  ***********************************************************/
-const MY_NBA_TEAM = "LAL"; ///在此处输入你喜欢的NBA球队的缩写。
+const MY_NBA_TEAM = "LAL"; ///在此处输入你喜欢的NBA球队的缩写。 具体配置 详见公众号内推文---曰坛
 
 
 const padding = {
@@ -44,7 +45,7 @@ const padding = {
   right: 10
 }
 const versionData = await getversion()
-let needUpdated = await updateCheck(1.5)
+let needUpdated = await updateCheck(1.6)
 const DARK_MODE = Device.isUsingDarkAppearance();
 
 
@@ -175,7 +176,7 @@ if (colorMode) {
   // const i = await new Request(url);
   // const bgImgs = await i.loadImage();
   const bgImgs = await getImageByUrl('https://area.sinaapp.com/bingImg/', `ONE-NBA-bg`,false)
-  bgImg = await blurImage(bgImgs, blurStyle, 40)
+  bgImg = await blurImage(bgImgs, blurStyle, 100)
   widget.backgroundImage = bgImg
   // widget.backgroundImage = await shadowImage(img)
 }
@@ -185,26 +186,32 @@ else {
 // 设置边距(上，左，下，右)
 widget.setPadding(padding.top, padding.left, padding.bottom, padding.right)
 // 设置组件
+if (!config.runsInWidget) {
+  switch (previewSize) {
+    case "small":
+      await widget.presentSmall();
+      break;
+    case "medium":
+      await widget.presentMedium();
+      break;
+    case "large":
+      await widget.presentLarge();
+      break;
+  }
+}
 Script.setWidget(widget)
 // 完成脚本
 Script.complete()
 // 预览
 
-if (previewSize == "Large") {
-  widget.presentLarge()
-} else if (previewSize == "Medium") {
-  widget.presentMedium()
-} else {
-  widget.presentSmall()
-}
 
 async function createWidget() {
   const widget = new ListWidget();
-  if (previewSize === "Small" || config.widgetFamily === "small") {
+  if (previewSize === "small") {
     await addSmallWidgetData(widget);
     widget.url = WIDGET_URL;
   }
-  else if (previewSize == "Medium" || config.widgetFamily == "medium") {
+  else if (previewSize == "medium") {
     await addMediumWidgetData(widget);
     widget.url = WIDGET_URL;
   } else {
@@ -275,7 +282,7 @@ async function addSmallWidgetData(widget) {
     );
     oGameTimeText.font = Font.boldSystemFont(9);
     oGameTimeText.textColor = getColorForCurrentAppearance();
-    const oVenueText = oUpperTextStack.addText(`♗ ${oGameData.venue}`);
+    const oVenueText = oUpperTextStack.addText(`📍 ${oGameData.venue}`);
     oVenueText.font = Font.boldSystemFont(9);
     oVenueText.textColor = getColorForCurrentAppearance();
 
@@ -419,7 +426,7 @@ async function addMediumWidgetData(widget) {
         minute: "2-digit",
       });
       oHeadingText = oHeadingStack.addText(
-        `${dLocalDate} · ${oGameData.venue}`
+        `${dLocalDate} · 📍${oGameData.venue}`
       );
     }
     oHeadingText.font = Font.boldSystemFont(11);
@@ -520,7 +527,7 @@ async function addMediumWidgetData(widget) {
     if (SHOW_LIVE_SCORES) {
       const iAwayTeamLiveScore = oGameData.awayTeam.liveScore;
       const iSpacer =
-        iAwayTeamLiveScore < 99 || iAwayTeamLiveScore === "-" ? 45 : 25;
+        iAwayTeamLiveScore < 99 || iAwayTeamLiveScore === "-" ? 25 : 5;
       oAwayTeamLogoStack.addSpacer(iSpacer);
 
       const oAwayTeamGoalsText = oAwayTeamLogoStack.addText(
@@ -1021,7 +1028,7 @@ function getTeamData() {
       teamName: "Atlanta Hawks",
       simpleName: "Hawks",
       shortName: "hawks",
-      location: "Atlanta",
+      location: "菲利浦体育馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/cfcn1w1503741986.png/preview",
     },
@@ -1031,7 +1038,7 @@ function getTeamData() {
       teamName: "Boston Celtics",
       simpleName: "Celtics",
       shortName: "celtics",
-      location: "Boston",
+      location: "TD北岸花园球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/051sjd1537102179.png/preview",
     },
@@ -1041,7 +1048,7 @@ function getTeamData() {
       teamName: "Brooklyn Nets",
       simpleName: "Nets",
       shortName: "nets",
-      location: "Brooklyn",
+      location: "巴克莱中心",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/h0dwny1600552068.png/preview",
     },
@@ -1051,7 +1058,7 @@ function getTeamData() {
       teamName: "Charlotte Hornets",
       simpleName: "Hornets",
       shortName: "hornets",
-      location: "Charlotte",
+      location: "时代华纳中心球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/xqtvvp1422380623.png/preview",
     },
@@ -1061,7 +1068,7 @@ function getTeamData() {
       teamName: "Chicago Bulls",
       simpleName: "Bulls",
       shortName: "bulls",
-      location: "Chicago",
+      location: "联合中心球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/yk7swg1547214677.png/preview",
     },
@@ -1071,7 +1078,7 @@ function getTeamData() {
       teamName: "Cleveland Cavaliers",
       simpleName: "Cavaliers",
       shortName: "cavaliers",
-      location: "Cleveland",
+      location: "速贷球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/a2pp4c1503741152.png/preview",
     },
@@ -1081,7 +1088,7 @@ function getTeamData() {
       teamName: "Dallas Mavericks",
       simpleName: "Mavericks",
       shortName: "mavericks",
-      location: "Dallas",
+      location: "美国航线中心",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/yqrxrs1420568796.png/preview",
     },
@@ -1091,7 +1098,7 @@ function getTeamData() {
       teamName: "Denver Nuggets",
       simpleName: "Nuggets",
       shortName: "nuggets",
-      location: "Denver",
+      location: "丹佛百事中心",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/8o8j5k1546016274.png/preview",
     },
@@ -1101,7 +1108,7 @@ function getTeamData() {
       teamName: "Detroit Pistons",
       simpleName: "Pistons",
       shortName: "pistons",
-      location: "Detroit",
+      location: "奥本山宫殿球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/12612u1511101660.png/preview",
     },
@@ -1111,7 +1118,7 @@ function getTeamData() {
       teamName: "Golden State Warriors",
       simpleName: "Warriors",
       shortName: "warriors",
-      location: "Golden State",
+      location: "奥克兰体育馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/irobi61565197527.png/preview",
     },
@@ -1121,7 +1128,7 @@ function getTeamData() {
       teamName: "Houston Rockets",
       simpleName: "Rockets",
       shortName: "rockets",
-      location: "Houston",
+      location: "丰田中心球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/yezpho1597486052.png/preview",
     },
@@ -1131,7 +1138,7 @@ function getTeamData() {
       teamName: "Indiana Pacers",
       simpleName: "Pacers",
       shortName: "pacers",
-      location: "Indiana",
+      location: "银行家生活球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/v6jzgm1503741821.png/preview",
     },
@@ -1141,7 +1148,7 @@ function getTeamData() {
       teamName: "Los Angeles Clippers",
       simpleName: "Clippers",
       shortName: "clippers",
-      location: "Los Angeles",
+      location: "斯台普斯中心",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/jv7tf21545916958.png/preview",
     },
@@ -1151,7 +1158,7 @@ function getTeamData() {
       teamName: "Los Angeles Lakers",
       simpleName: "Lakers",
       shortName: "lakers",
-      location: "Los Angeles",
+      location: "斯台普斯中心",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/44ubym1511102073.png/preview",
     },
@@ -1161,7 +1168,7 @@ function getTeamData() {
       teamName: "Memphis Grizzlies",
       simpleName: "Grizzlies",
       shortName: "grizzlies",
-      location: "Memphis",
+      location: "联邦快递球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/m64v461565196789.png/preview",
     },
@@ -1171,7 +1178,7 @@ function getTeamData() {
       teamName: "Miami Heat",
       simpleName: "Heat",
       shortName: "heat",
-      location: "Miami",
+      location: "美航球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/5v67x51547214763.png/preview",
     },
@@ -1181,7 +1188,7 @@ function getTeamData() {
       teamName: "Milwaukee Bucks",
       simpleName: "Bucks",
       shortName: "bucks",
-      location: "Milwaukee",
+      location: "布拉德利中心",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/qgyz6z1503742649.png/preview",
     },
@@ -1191,7 +1198,7 @@ function getTeamData() {
       teamName: "Minnesota Timberwolves",
       simpleName: "Timberwolves",
       shortName: "timberwolves",
-      location: "Minnesota",
+      location: "标靶中心球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/b6a05s1503742837.png/preview",
     },
@@ -1201,7 +1208,7 @@ function getTeamData() {
       teamName: "New Orleans Pelicans",
       simpleName: "Pelicans",
       shortName: "pelicans",
-      location: "New Orleans",
+      location: "新奥尔良球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/f341s31523700397.png/preview",
     },
@@ -1211,7 +1218,7 @@ function getTeamData() {
       teamName: "New York Knicks",
       simpleName: "Knicks",
       shortName: "knicks",
-      location: "New York",
+      location: "麦迪逊广场花园",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/wyhpuf1511810435.png/preview",
     },
@@ -1221,7 +1228,7 @@ function getTeamData() {
       teamName: "Oklahoma City Thunder",
       simpleName: "Thunder",
       shortName: "thunder",
-      location: "Oklahoma City",
+      location: "切萨皮克能源球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/xpswpq1422575434.png/preview",
     },
@@ -1231,7 +1238,7 @@ function getTeamData() {
       teamName: "Orlando Magic",
       simpleName: "Magic",
       shortName: "magic",
-      location: "Orlando",
+      location: "安利中心",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/txuyrr1422492990.png/preview",
     },
@@ -1241,7 +1248,7 @@ function getTeamData() {
       teamName: "Philadelphia 76ers",
       simpleName: "76ers",
       shortName: "sixers",
-      location: "Philadelphia",
+      location: "瓦乔维亚中心球场",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/71545f1518464849.png/preview",
     },
@@ -1251,7 +1258,7 @@ function getTeamData() {
       teamName: "Phoenix Suns",
       simpleName: "Suns",
       shortName: "suns",
-      location: "Phoenix",
+      location: "美航中心",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/qrtuxq1422919040.png/preview",
     },
@@ -1261,7 +1268,7 @@ function getTeamData() {
       teamName: "Portland Trail Blazers",
       simpleName: "trail_blazers",
       shortName: "blazers",
-      location: "Portland",
+      location: "摩达中心",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/mbtzin1520794112.png/preview",
     },
@@ -1271,7 +1278,7 @@ function getTeamData() {
       teamName: "Sacramento Kings",
       simpleName: "Kings",
       shortName: "kings",
-      location: "Sacramento",
+      location: "阿科球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/nf6jii1511465735.png/preview",
     },
@@ -1281,7 +1288,7 @@ function getTeamData() {
       teamName: "San Antonio Spurs",
       simpleName: "Spurs",
       shortName: "spurs",
-      location: "San Antonio",
+      location: "AT&T中心球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/crit1q1511809636.png/preview",
     },
@@ -1291,7 +1298,7 @@ function getTeamData() {
       teamName: "Toronto Raptors",
       simpleName: "Raptors",
       shortName: "raptors",
-      location: "Toronto",
+      location: "加拿大航空中心体育馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/gitpi61503743151.png/preview",
     },
@@ -1301,7 +1308,7 @@ function getTeamData() {
       teamName: "Utah Jazz",
       simpleName: "Jazz",
       shortName: "jazz",
-      location: "Utah",
+      location: "能源方案球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/9p1e5j1572041084.png/preview",
     },
@@ -1311,7 +1318,7 @@ function getTeamData() {
       teamName: "Washington Wizards",
       simpleName: "Wizards",
       shortName: "wizards",
-      location: "Washington",
+      location: "Verizon威瑞森中心球馆",
       logo:
         "https://www.thesportsdb.com/images/media/team/badge/m2qhln1503743635.png/preview",
     },
@@ -1734,4 +1741,5 @@ async function updateCheck(version) {
 
 /********************************************************
  ************* MAKE SURE TO COPY EVERYTHING *************
- *******************************************************/
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/

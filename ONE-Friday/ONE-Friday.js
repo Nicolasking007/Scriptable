@@ -2,6 +2,10 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: light-brown; icon-glyph: hospital-symbol;
 /********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/
+/********************************************************
  * script     : ONE-Friday.js
  * version    : 1.1
  * author     : Nicolas-kings
@@ -347,3 +351,7 @@
  }
 
 
+/********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/

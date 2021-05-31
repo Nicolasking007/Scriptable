@@ -1,7 +1,10 @@
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
 // icon-color: deep-blue; icon-glyph: clock;
-
+/********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/
 /********************************************************
  * script     : ONE-Today.js
  * version    : 1.4
@@ -550,3 +553,7 @@ async function updateCheck(version) {
   return needUpdate
 }
 
+/********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/

@@ -2,6 +2,10 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: gray; icon-glyph: magic;
 /********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/
+/********************************************************
  * script     : ONE-cuntdown.js
  * version    : 1.1
  * author     : Nicolas-kings
@@ -444,3 +448,8 @@ async function updateCheck(version) {
 
         return needUpdate
 }
+
+/********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2021 Copyright Nicolas-kings ************/

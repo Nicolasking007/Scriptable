@@ -13,22 +13,24 @@
  * github     : https://github.com/Nicolasking007/Scriptable 
  *Changelog   : v1.0 - 首次发布
 ----------------------------------------------- */
-/************************************************************
- ********************用户设置 *********************
- ************请在首次运行之前进行修改************
- ***********************************************************/
+//##############公共参数配置模块##############
 const filename = `${Script.name()}.jpg`
 const files = FileManager.local()
 const path = files.joinPath(files.documentsDirectory(), filename)
 const changePicBg = false  //选择true时，使用透明背景 
 const ImageMode = true   //选择true时，使用必应壁纸
-const previewSize = "Medium"  //预览大小
+const previewSize = "medium" //预览大小  small/medium/large
 const colorMode = false // 是否是纯色背景
 const bgColor = new Color("000000") // 小组件背景色
 
-//*********使用前准备工作*********//
+//##############用户自定义参数配置模块-开始##############
+//⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊
+//##############请在首次运行之前进行修改##############
+
 const userId = ' ' //"2778959669" //输入捷径盒userID
 
+//⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈
+//##############用户自定义参数配置模块-结束##############
 
 let res = await getData()
 let widgeturl = res.badges[0].url
@@ -39,11 +41,9 @@ const padding = {
   right: 10
 }
 let widget = await createWidget()
-/*
-****************************************************************************
-* 这里是图片逻辑，不用修改
-****************************************************************************
-*/
+
+//#####################背景模块-START#####################
+
 if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
   const okTips = "您的小部件背景已准备就绪"
   let message = "图片模式支持相册照片&背景透明"
@@ -127,10 +127,8 @@ if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
 
 }
 
+//#####################背景模块-设置小组件的背景#####################
 
-//////////////////////////////////////
-// 组件End
-// 设置小组件的背景
 if (colorMode) {
   widget.backgroundColor = bgColor
 } else if (ImageMode) {
@@ -150,13 +148,16 @@ Script.setWidget(widget)
 // 完成脚本
 Script.complete()
 // 预览
-if (previewSize == "Large") {
+if (previewSize == "large") {
   widget.presentLarge()
-} else if (previewSize == "Medium") {
+} else if (previewSize == "medium") {
   widget.presentMedium()
 } else {
   widget.presentSmall()
 }
+
+//#####################内容模块-创建小组件内容#####################
+
 async function createWidget() {
 
   // Create widget
@@ -267,6 +268,8 @@ async function createWidget() {
 }
 
 
+//#####################事务逻辑处理模块#####################
+
 async function getData() {
 
   let wakeUrl = 'https://jiejinghe.com/api/users/' + userId
@@ -279,10 +282,8 @@ async function getData() {
   return await wakeRequest.loadJSON()
 }
 
-// You can your own code here to add additional items to the "invisible" background of the widget.
-/* --------------- */
-/* Assemble Widget */
-/* --------------- */
+//#####################背景模块-逻辑处理部分#####################
+
 async function shadowImage(img) {
   let ctx = new DrawContext()
   // 把画布的尺寸设置成图片的尺寸

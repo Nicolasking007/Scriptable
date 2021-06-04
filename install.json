@@ -25,7 +25,7 @@
             "images":["https://i.loli.net/2021/03/27/pz7i8DsA3WkGaTU.jpg"]
         },
         {
-            "version": "1.5",
+            "version": "1.6",
             "author": "Nicolas-kings",
             "description": "关注喜爱NBA球队赛事结果小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-NBA/ONE-NBA.js",
@@ -65,7 +65,7 @@
             "images":["https://i.loli.net/2021/03/27/WbFpYaeitnZ5Mzc.jpg"]
         },
         {
-            "version": "1.3",
+            "version": "1.4",
             "author": "Nicolas-kings",
             "description": "支持全国所有省份的油价实时数据小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-oilprice/ONE-oilprice.js",
@@ -89,7 +89,7 @@
             "author": "Nicolas-kings",
             "description": "捷径社区数据看板",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/捷径社区数据看板/捷径社区数据.js",
-            "thumb": "https://pic.rmb.bdstatic.com/bjh/56ffd9646ed482568653f1fc543c3dda.png",
+            "thumb": "https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg",
             "name": "捷径社区数据",
             "title": "捷径社区数据",
             "images":["https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg"]
@@ -99,20 +99,30 @@
             "author": "Nicolas-kings",
             "description": "捷径盒数据看板",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/捷径盒数据看板/捷径盒数据.js",
-            "thumb": "https://pic.rmb.bdstatic.com/bjh/56ffd9646ed482568653f1fc543c3dda.png",
+            "thumb": "https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg",
             "name": "捷径盒数据",
             "title": "捷径盒数据",
             "images":["https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg"]
         },
         {
-            "version": "1.0",
+            "version": "1.3",
             "author": "Nicolas-kings",
             "description": "中国/全球疫苗接种数据",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/COVID-19/ONE-COVID_Vac.js",
-            "thumb": "https://pic.rmb.bdstatic.com/bjh/56ffd9646ed482568653f1fc543c3dda.png",
+            "thumb": "https://i.loli.net/2021/05/27/OTal5tm1IUvVBPi",
             "name": "ONE-COVID_Vac",
             "title": "ONE-COVID_Vac",
             "images":["https://i.loli.net/2021/05/27/OTal5tm1IUvVBPi"]
+        },
+        {
+            "version": "1.0",
+            "author": "Nicolas-kings",
+            "description": "日历壁纸",
+            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-memorandum/ONE-memorandum.js",
+            "thumb": "https://i.loli.net/2021/05/31/anHWT9g6Bzmxoi7.jpg",
+            "name": "ONE-memorandum",
+            "title": "ONE-memorandum",
+            "images":["https://i.loli.net/2021/05/31/anHWT9g6Bzmxoi7.jpg"]
         }
     ]
 }

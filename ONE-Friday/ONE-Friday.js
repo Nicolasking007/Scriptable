@@ -14,16 +14,13 @@
  * Changelog  : v1.1 - 优化背景图片缓存处理
                 v1.0 - 首次发布
 ----------------------------------------------- */
-/************************************************************
- ********************用户设置 *********************
- ************请在首次运行之前进行修改************
- ***********************************************************/
+//##############公共参数配置模块############## 
  const filename = `${Script.name()}.jpg`
  const files = FileManager.local()
  const path = files.joinPath(files.documentsDirectory(), filename)
  const changePicBg = true  //选择true时，使用透明背景 
  const ImageMode = false   //选择true时，使用必应壁纸
- const previewSize = "Small"  //预览大小
+ const previewSize = "small"  // 预览大小 medium、small、large
  const colorMode = false // 是否是纯色背景
  const bgColor = new Color("000000") // 小组件背景色
  const padding = {
@@ -33,11 +30,9 @@
    right: 0
  }
  const widget = await createWidget()
- /*
- ****************************************************************************
- * 这里是图片逻辑，不用修改
- ****************************************************************************
- */
+
+ //#####################背景模块-START#####################
+
  if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
    const okTips = "您的小部件背景已准备就绪"
    let message = "图片模式支持相册照片&背景透明"
@@ -122,9 +117,8 @@
  }
  
  
- //////////////////////////////////////
- // 组件End
- // 设置小组件的背景
+//#####################背景模块-设置小组件的背景#####################
+
  if (colorMode) {
    widget.backgroundColor = bgColor
  } else if (ImageMode) {
@@ -145,14 +139,16 @@
  // 完成脚本
  Script.complete()
  // 预览
- if (previewSize == "Large") {
+ if (previewSize == "large") {
    widget.presentLarge()
- } else if (previewSize == "Medium") {
+ } else if (previewSize == "medium") {
    widget.presentMedium()
  } else {
    widget.presentSmall()
  }
  
+//#####################内容模块-创建小组件内容#####################
+
  async function createWidget() {
    const widget = new ListWidget()
  function isFriday() {
@@ -167,6 +163,7 @@
  
  let question = widget.addText(q)
  question.font = Font.boldSystemFont(18)
+ 
  if (isFriday()) {
    let answer = widget.addText('是😏')
    answer.font = Font.boldSystemFont(60)
@@ -177,10 +174,9 @@
  }
  return widget
  }
- // You can your own code here to add additional items to the "invisible" background of the widget.
- /* --------------- */
- /* Assemble Widget */
- /* --------------- */
+
+ //#####################背景模块-逻辑处理部分#####################
+
  async function shadowImage(img) {
    let ctx = new DrawContext()
    // 把画布的尺寸设置成图片的尺寸

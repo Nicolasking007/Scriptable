@@ -19,22 +19,25 @@
                 v1.1 - 替换api接口
                 v1.0 - 首次发布
 ----------------------------------------------- */
+//##############公共参数配置模块############## 
 const filename = `${Script.name()}.jpg`
 const files = FileManager.local()
 const path = files.joinPath(files.documentsDirectory(), filename)
 const changePicBg = false  //选择true时，使用透明背景 
 const ImageMode = true    //选择true时，使用必应壁纸
-const previewSize = "Medium"  //预览大小
+const previewSize =  (config.runsInWidget ? config.widgetFamily : "medium");// medium、small、large 预览大小
 const colorMode = false // 是否是纯色背景
 const refreshInterval = 30   //刷新间隔  时间单位：分钟
 
-/************************************************************
-********************用户设置 *********************
-************请在首次运行之前进行修改************
-***********************************************************/
+//##############用户自定义参数配置模块-开始##############
+//⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊
+//##############请在首次运行之前进行修改##############
+
 const User = '请在这输入你的昵称'//昵称
 const WeatherKey = '请在这输入和风天气api_key' // 和风天气api-key 申请地址： https://dev.heweather.com/
-//  ***********************************************************/
+
+//⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈
+//##############用户自定义参数配置模块-结束##############
 
 const padding = {
     top: 10,
@@ -57,11 +60,9 @@ let lunarJoinInfo = "农历" + lunarInfo.infoLunarText + "·" + lunarInfo.lunarY
 const weatherData = await getWeather()
 const honeyData = await gethoney()
 const widget = await createWidget()
-/*
-****************************************************************************
-* 这里是图片逻辑，不用修改
-****************************************************************************
-*/
+
+//#####################背景模块-START#####################
+
 if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
     const okTips = "您的小部件背景已准备就绪"
     let message = "图片模式支持相册照片&背景透明"
@@ -145,10 +146,8 @@ if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
 
 }
 
+//#####################背景模块-设置小组件的背景#####################
 
-//////////////////////////////////////
-// 组件End
-// 设置小组件的背景
 if (colorMode) {
     const bgColor = new LinearGradient()
     bgColor.colors = [new Color('#2c5364'), new Color('#203a43'), new Color('#0f2027')]
@@ -168,17 +167,25 @@ else {
 // 设置边距(上，左，下，右)
 widget.setPadding(padding.top, padding.left, padding.bottom, padding.right)
 // 设置组件
-Script.setWidget(widget)
-// 完成脚本
-Script.complete()
-// 预览
-if (previewSize == "Large") {
-    widget.presentLarge()
-} else if (previewSize == "Medium") {
-    widget.presentMedium()
-} else {
-    widget.presentSmall()
-}
+if (!config.runsInWidget) {
+    switch (previewSize) {
+      case "small":
+        await widget.presentSmall();
+        break;
+      case "medium":
+        await widget.presentMedium();
+        break;
+      case "large":
+        await widget.presentLarge();
+        break;
+    }
+  }
+  Script.setWidget(widget)
+  // 完成脚本
+  Script.complete()
+  // 预览
+
+//#####################内容模块-创建小组件内容#####################
 
 async function createWidget() {
     const widget = new ListWidget()
@@ -258,6 +265,8 @@ async function createWidget() {
     return widget
 }
 
+
+//#####################事务逻辑处理模块#####################
 // ######获取万年历数据#######
 async function getLunar(day) {
     // 缓存key
@@ -455,6 +464,8 @@ function renderYearProgress() {
     return renderProgress(progress)
 }
 
+//#####################背景模块-逻辑处理部分#####################
+
 async function shadowImage(img) {
     let ctx = new DrawContext()
     // 把画布的尺寸设置成图片的尺寸
@@ -622,6 +633,8 @@ function phoneSizes() {
     }
     return phones
 }
+
+//#####################版本更新模块#####################
 
 async function getversion() {
     const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")

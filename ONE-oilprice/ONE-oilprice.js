@@ -19,10 +19,7 @@
                 v1.1 - api接口数据增加缓存，应对无网络情况下也能使用小组件
                 v1.0 - 首次发布
 ----------------------------------------------- */
-/************************************************************
- ********************用户设置 *********************
- ************请在首次运行之前进行修改************
- ***********************************************************/
+//##############公共参数配置模块############## 
  const filename = `${Script.name()}.jpg`
  const files = FileManager.local()
  const path = files.joinPath(files.documentsDirectory(), filename)
@@ -32,11 +29,16 @@
  const colorMode = false // 是否使用纯色背景
  const bgColor = new Color("000000") // 小组件背景色
  
- //*********使用前准备工作*********//
+//##############用户自定义参数配置模块-开始##############
+//⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊
+//##############请在首次运行之前进行修改##############
+
  const prov = '广东'  //输入要查询的省份 
  const api_key = '请在这里输入apikey'   //前往天行数据申请apikey https://www.tianapi.com/apiview/104
- //  ***********************************************************/
- 
+
+//⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈
+//##############用户自定义参数配置模块-结束##############
+
  const versionData = await getversion()
  let needUpdated = await updateCheck(1.5)
  let data = await fetchData()
@@ -72,11 +74,9 @@
    right: 15
  }
  const widget = await createWidget()
- /*
- ****************************************************************************
- * 这里是图片逻辑，不用修改
- ****************************************************************************
- */
+
+ //#####################背景模块-START#####################
+
  if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
    const okTips = "您的小部件背景已准备就绪"
    let message = "图片模式支持相册照片&背景透明"
@@ -161,9 +161,9 @@
  }
  
  
- //////////////////////////////////////
- // 组件End
- // 设置小组件的背景
+//#####################背景模块-设置小组件的背景#####################
+
+
  if (colorMode) {
    widget.backgroundColor = bgColor
  } else if (ImageMode) {
@@ -198,18 +198,7 @@ Script.setWidget(widget)
 Script.complete()
 // 预览
  
- // if (config.runsInWidget) {
- //   const size = config.widgetFamily;
- //   const widget = await createWidget(size);
- 
- //   Script.setWidget(widget);
- //   Script.complete();
- // } else {
- //   // choose any size for debugging
- //   // const size = 'small'
- 
- 
- //   const widget = await createWidget(size);
+//#####################内容模块-创建小组件内容#####################
  
  async function createWidget() {
    const colors = colorConfig();
@@ -388,6 +377,8 @@ Script.complete()
    return widget;
  }
  
+//#####################事务逻辑处理模块#####################
+
  function addItem(img, description, count, stack, previewSize) {
    const colors = colorConfig();
    // small size
@@ -425,8 +416,29 @@ Script.complete()
      wname.textColor = colors.textColor;
    }
  }
+
+ async function fetchData() {
+  const fetchCachePath = files.joinPath(files.documentsDirectory(), "oilprice-NK")
+  var fetchData
+  try {
+  let wakeUrl = `https://api.tianapi.com/txapi/oilprice/index?key=${api_key}&prov=${encodeURI(prov)}`
+  let wakeRequest = new Request(wakeUrl)
+  wakeRequest.method = 'get'
+  wakeRequest.headers = {
+    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
+    "Accept": "*/*",
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+  fetchData = await wakeRequest.loadJSON()
+  files.writeString(fetchCachePath, JSON.stringify(fetchData))
+  }catch (e) {
+    fetchData = JSON.parse(files.readString(fetchCachePath))
+    log("[+]获取油价数据失败，使用缓存数据")
+  }
+  return fetchData
+}
  
- 
+ //#####################背景模块-逻辑处理部分#####################
  
  async function shadowImage(img) {
    let ctx = new DrawContext()
@@ -494,26 +506,7 @@ Script.complete()
    return draw.getImage()
  }
  
- async function fetchData() {
-   const fetchCachePath = files.joinPath(files.documentsDirectory(), "oilprice-NK")
-   var fetchData
-   try {
-   let wakeUrl = `https://api.tianapi.com/txapi/oilprice/index?key=${api_key}&prov=${encodeURI(prov)}`
-   let wakeRequest = new Request(wakeUrl)
-   wakeRequest.method = 'get'
-   wakeRequest.headers = {
-     'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
-     "Accept": "*/*",
-     'Content-Type': 'application/x-www-form-urlencoded'
-   }
-   fetchData = await wakeRequest.loadJSON()
-   files.writeString(fetchCachePath, JSON.stringify(fetchData))
-   }catch (e) {
-     fetchData = JSON.parse(files.readString(fetchCachePath))
-     log("[+]获取油价数据失败，使用缓存数据")
-   }
-   return fetchData
- }
+ 
  
  async function getImageByUrl(url, cacheKey, useCache = true) {
    const cacheFile = FileManager.local().joinPath(FileManager.local().temporaryDirectory(), cacheKey)
@@ -647,6 +640,8 @@ Script.complete()
    return phones
  }
  
+//#####################版本更新模块#####################
+
  async function getversion() {
    const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")
    var versionData

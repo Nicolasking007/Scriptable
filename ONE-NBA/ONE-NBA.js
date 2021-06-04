@@ -19,7 +19,7 @@
                  v1.1 - api接口数据增加缓存，应对无网络情况下也能使用小组件
                  v1.0 - 首次发布
 ----------------------------------------------- */
-
+//##############公共参数配置模块############## 
 const filename = `${Script.name()}.jpg`
 const files = FileManager.local()
 const path = files.joinPath(files.documentsDirectory(), filename)
@@ -31,12 +31,14 @@ const bgColor = new Color("000000") // 小组件背景色
 const blurStyle = "light" // 高斯样式：light/dark
 
 
-/************************************************************
- ********************用户设置 *********************
- ************请在首次运行之前进行修改************
- ***********************************************************/
+//##############用户自定义参数配置模块-开始##############
+//⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊⇊
+//##############请在首次运行之前进行修改##############
+
 const MY_NBA_TEAM = "LAL"; ///在此处输入你喜欢的NBA球队的缩写。 具体配置 详见公众号内推文---曰坛
 
+//⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈
+//##############用户自定义参数配置模块-结束##############
 
 const padding = {
   top: 10,
@@ -75,10 +77,8 @@ const WIDGET_URL = "https://m.china.nba.com";
 //true =窗口小部件将处于黑暗模式。
 //false =窗口小部件将处于亮灯模式。
 
-/*
-****************************************************************************
-* 这里是图片逻辑，不用修改
-****************************************************************************/
+//#####################背景模块-START#####################
+
 const widget = await createWidget()
 if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
   const okTips = "您的小部件背景已准备就绪"
@@ -163,10 +163,8 @@ if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
 
 }
 
+//#####################背景模块-设置小组件的背景#####################
 
-//////////////////////////////////////
-// 组件End
-// 设置小组件的背景
 if (colorMode) {
   widget.backgroundColor = bgColor
 } else if (ImageMode) {
@@ -204,6 +202,8 @@ Script.setWidget(widget)
 Script.complete()
 // 预览
 
+//#####################内容模块-创建小组件内容#####################
+
 
 async function createWidget() {
   const widget = new ListWidget();
@@ -231,6 +231,8 @@ async function createWidget() {
   return widget;
 
 }
+
+//#####################事务逻辑处理模块#####################
 
 
 const WIDGET_BACKGROUND = DARK_MODE ? new Color("#ff7f00") : new Color("#FFFFFF");
@@ -1016,7 +1018,7 @@ function emptyFunction() {
 }
 
 /**
- * Returns static team data.
+ * 返回静态团队数据
  *
  * @return {Object}
  */
@@ -1325,7 +1327,7 @@ function getTeamData() {
   };
 }
 
-
+//#####################背景模块-逻辑处理部分#####################
 
 async function getImage(url) {
 
@@ -1681,6 +1683,8 @@ function phoneSizes() {
   }
   return phones
 }
+
+//#####################版本更新模块#####################
 
 async function getversion() {
   const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")

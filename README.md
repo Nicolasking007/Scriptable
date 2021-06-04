@@ -10,7 +10,7 @@
 ![nicolasking007's github stats](https://github-readme-stats.vercel.app/api?username=nicolasking007&show_icons=true)
 
 
-📌 近来发现 有人用此项目中脚本源码，在[`csdn`](https://download.csdn.net/download/weixin_42116794/16163401?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161802515916780264061143%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=161802515916780264061143&biz_id=1&utm_medium=distribute.pc_search_result.none-task-download-2~all~first_rank_v2~rank_v29-17-16163401.pc_search_result_before_js&utm_term=Scriptable%E8%84%9A%E6%9C%AC)上赚取积分，行为属实有点。。。，望自重
+<!-- 📌 近来发现 有人用此项目中脚本源码，在[`csdn`](https://download.csdn.net/download/weixin_42116794/16163401?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161802515916780264061143%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=161802515916780264061143&biz_id=1&utm_medium=distribute.pc_search_result.none-task-download-2~all~first_rank_v2~rank_v29-17-16163401.pc_search_result_before_js&utm_term=Scriptable%E8%84%9A%E6%9C%AC)上赚取积分，行为属实有点。。。，望自重 -->
 
 
 ## 目录
@@ -42,39 +42,41 @@
 ### 🟠🟡🟢我的作品集   
 > 注：本人原创以及他人基础上修改的作品，相关配置信息详见-公众号内推文
 
- >  🟢1、全选复制·快捷指令| 可便捷解决手机复制scriptable代码问题
- * [下载捷径](https://www.icloud.com/shortcuts/d756d6551eb54a8e877789492c2f9814 )
-> 🟢2、脚本订阅
-* 作者：[@Nicolas-kings - 订阅](https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/install.json)
+ > 🌍 全选复制·快捷指令| 可便捷解决手机复制scriptable代码问题
+* 🟢[下载捷径](https://www.icloud.com/shortcuts/d756d6551eb54a8e877789492c2f9814 )
+>  🌍 脚本订阅
+* 🟢作者：[@Nicolas-kings - 订阅](https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/install.json)
 
 
 ---
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
-| 1 | ★★★★★  | 支持查询全国所有省份的油价实时数据  |  [ONE-oliprice.js](https://github.com/Nicolasking007/Scriptable) |  <img src="https://i.loli.net/2021/03/27/OLpBgxMtnSJHWmh.jpg" width="400"/> |
-| 2  | ★★★★★  | 时间倒计时百分比  |  [ONE-Progress.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/03/27/pz7i8DsA3WkGaTU.jpg" width="400"/>  |
-| 3  |  ★★★★★  | NBA-实时比分  |  [ONE-NBA.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/03/27/yEZAWRdraFKMpJB.jpg" width="400"/> |
-| 4  | ★★★★★  | 显示农历日、天气、情话等信息.  | [ONE-Tool.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/03/27/sH1AGgCmOK3ilqu.jpg" width="400"/>  |
-| 5  | ★★★★★  | 一个简单倒数日  | [ONE-countdown.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/03/27/64eOAa1FtvDBm7J.jpg" width="400"/>  |
-| 6  | ★★★★★  | 一个简单日历小组件  | [ONE-Today.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/03/27/TbFJz8slCiYONV4.jpg" width="400"/>  |
-| 7  | ★★★★★  | 网易云热评  | [ONE-hotcomments.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/03/27/WbFpYaeitnZ5Mzc.jpg" width="400"/>  |
-| 8  | ★★★☆  | 今天是周五吗.  |  [ONE-Friday.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |
-| 9  | ★★★☆  | 捷径盒用户关注数量、下载数量、捷径创造数量等  | [捷径盒数据.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg" width="400"/>   |
-| 10  | ★★★☆  | 捷径社区用户关注数量、下载数量、捷径创造数量等  | [捷径社区数据.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg" width="400"/>   |
-| 11  |  ★★★★★  | 中国/全球疫苗接种数据  |  [ONE-COVID_Vac.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/05/27/OTal5tm1IUvVBPi.jpg" width="400"/>  |
-| 12  |  ★★★★★  | 音乐榜单  |  [ONE-musicTop.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/05/27/C5jLBVl8cS2DPzo.jpg" width="400"/>  |
+| 1 | ★★★★★  | 支持查询全国所有省份的油价实时数据  |  [ONE-oliprice.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-oliprice) |  <img src="https://i.loli.net/2021/03/27/OLpBgxMtnSJHWmh.jpg" width="400"/> |
+| 2  | ★★★★★  | 时间倒计时百分比  |  [ONE-Progress.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Progress) | <img src="https://i.loli.net/2021/03/27/pz7i8DsA3WkGaTU.jpg" width="400"/>  |
+| 3  |  ★★★★★  | NBA-实时比分  |  [ONE-NBA.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-NBA) | <img src="https://i.loli.net/2021/03/27/yEZAWRdraFKMpJB.jpg" width="400"/> |
+| 4  | ★★★★★  | 显示农历日、天气、情话等信息.  | [ONE-Tool.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Tool)  | <img src="https://i.loli.net/2021/03/27/sH1AGgCmOK3ilqu.jpg" width="400"/>  |
+| 5  | ★★★★★  | 一个简单倒数日  | [ONE-countdown.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-countdown)  | <img src="https://i.loli.net/2021/03/27/64eOAa1FtvDBm7J.jpg" width="400"/>  |
+| 6  | ★★★★★  | 一个简单日历小组件  | [ONE-Today.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Today)  | <img src="https://i.loli.net/2021/03/27/TbFJz8slCiYONV4.jpg" width="400"/>  |
+| 7  | ★★★★★  | 网易云热评  | [ONE-hotcomments.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-hotcomments)  | <img src="https://i.loli.net/2021/03/27/WbFpYaeitnZ5Mzc.jpg" width="400"/>  |
+| 8  | ★★★☆  | 今天是周五吗.  |  [ONE-Friday.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Friday) | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |
+| 9  | ★★★☆  | 捷径盒用户关注数量、下载数量、捷径创造数量等  | [捷径盒数据.js](https://github.com/Nicolasking007/Scriptable/tree/main/捷径盒数据看板)  | <img src="https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg" width="400"/>   |
+| 10  | ★★★☆  | 捷径社区用户关注数量、下载数量、捷径创造数量等  | [捷径社区数据.js](https://github.com/Nicolasking007/Scriptable/tree/main/捷径社区数据看板)  | <img src="https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg" width="400"/>   |
+| 11  |  ★★★★★  | 中国/全球疫苗接种数据  |  [ONE-COVID_Vac.js](https://github.com/Nicolasking007/Scriptable/tree/main/COVID-19) | <img src="https://i.loli.net/2021/05/27/OTal5tm1IUvVBPi.jpg" width="400"/>  |
+<!-- | 12  |  ★★★★★  | 音乐榜单  |  [ONE-musicTop.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/05/27/C5jLBVl8cS2DPzo.jpg" width="400"/>  |
+| 13  |  ★★★★★  | 日历壁纸  |  [ONE-memorandum.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-memorandum) | <img src="https://i.loli.net/2021/05/31/anHWT9g6Bzmxoi7.jpg" width="400"/>  |
+| 14  |  ★★★★★  | NBA赛程比分  |  [ONE-NBAMATCH.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-NBAMATCH) | <img src="https://i.loli.net/2021/06/04/ietfW3wKngVLBGX.jpg" width="400"/>  |  -->
 | -  |  -  | -  |  - | -  |
 
   
-### 汽车电子类
+### 🌍汽车电子类
 --- 
 <details>
-<summary>🟢查看更多</summary>
+<summary>🔻查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
-|  1 | ★★★★☆  | 支持查询全国所有省份的油价实时数据  |  [ONE-oliprice.js](https://github.com/Nicolasking007/Scriptable) |  <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_e0bc060b1bf442ad72631c7af5b46aba.jpeg" width="400"/> |
+|  1 | ★★★★☆  | 支持查询全国所有省份的油价实时数据  |  [ONE-oliprice.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-oliprice) |  <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_e0bc060b1bf442ad72631c7af5b46aba.jpeg" width="400"/> |
 | 2  | ★★★★☆  | 有关您的Tesla的信息，例如充电状态和车门已锁定/未锁定  |  [TeslaData-Widget](https://github.com/DrieStone/TeslaData-Widget) | <img src="https://github.com/DrieStone/TeslaData-Widget/raw/main/documentation/screen_001.png" width="400"/>  |
 | 3  | ★★★☆  |  附近加油站的燃油价格. | [tankstellenpreise.js](https://github.com/Necriso/ScriptableWidgets/blob/main/iamges/tankstellenpreise.js)  |  <img src="https://raw.githubusercontent.com/Necriso/ScriptableWidgets/main/images/tankstellenpreise.png" width="400"/> |
 | 4  | ★★★☆  | 有关您的雷诺佐伊的信息，例如充电或位置.  | [ZOE-Widget.js](https://gist.github.com/mountbatt/772e4512089802a2aa2622058dd1ded7)   |  <img src="https://user-images.githubusercontent.com/2411246/97786189-41f68f80-1baa-11eb-9c6f-96e8d8f7684a.jpeg" width="400"/> |
@@ -84,16 +86,16 @@
 
  
 
-### 日历类
+### 🌍日历类
 --- 
 <details>
-<summary>🟢查看更多</summary>
+<summary>🔻查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
-| 1  | ★★★★★  | 时间倒计时百分比  |  [ONE-Progress.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/03/06/df31xUrDb2y7LvW.png" width="400"/>  |
-| 2  | ★★★☆  | 今天是周五吗.  |  [ONE-Friday.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |
-| 3  | ★★★☆  | 一个简单倒数日1  | [ONE-countdown.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |
+| 1  | ★★★★★  | 时间倒计时百分比  |  [ONE-Progress.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Progress) | <img src="https://i.loli.net/2021/03/06/df31xUrDb2y7LvW.png" width="400"/>  |
+| 2  | ★★★☆  | 今天是周五吗.  |  [ONE-Friday.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Friday) | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |
+| 3  | ★★★☆  | 一个简单倒数日1  | [ONE-countdown.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-countdown)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |
 | 4  | ★★☆  | 一个简单倒数日2  | [countdown.js](https://gist.github.com/flasozzi/ab6222ea15de5113555c32c855e9e326)  | <img src="https://user-images.githubusercontent.com/17153908/95031000-bdd3e980-0689-11eb-83ce-49e2adbe1ca1.jpg" width="400"/>  |
 | 5  | ★★☆  | 联系人即将到来的生日信息列表.  | [daysUntilBirthday](https://github.com/lwitzani/daysUntilBirthday)  |  <img src="https://raw.githubusercontent.com/lwitzani/daysUntilBirthday/main/fullySetupWidget.PNG" width="400"/> |
 | 6  | ★★☆  | 可自定义的日历.  | [scriptable-calendar-widget](https://github.com/rudotriton/scriptable-calendar-widget)  | <img src="https://github.com/rudotriton/scriptable-calendar-widget/raw/main/assets/widget.jpg" width="400"/>  |
@@ -105,10 +107,10 @@
 
  
 
-### 健康类
+### 🌍健康类
 ---
 <details>
-<summary>🟢查看更多</summary>
+<summary>🔻查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -125,10 +127,10 @@
 
 
 
-### 手机类
+### 🌍手机类
 --- 
 <details>
-<summary>🟢查看更多</summary>
+<summary>🔻查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -149,26 +151,26 @@
 
 
   
-### 音乐类
+### 🌍音乐类
 --- 
 <details>
-<summary>🟢查看更多</summary>
+<summary>🔻查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
 | 1  | ★★★☆  | 在Sonos上播放音乐的小组件  | [sonos-nowPlaying.js](https://gist.github.com/marco79cgn/98616fcbb2dfdbd752b33a452208bcc8)  |  <img src="https://user-images.githubusercontent.com/9810829/93666651-2151fa80-fa80-11ea-95db-ebebc861c96d.jpg" width="400"/>  |
 | 2  | ★★★☆  | 在Spotify上播放音乐的小组件  | [spotify-now-playing.js](https://gist.github.com/marco79cgn/79a6a265d978dc22cc2a12058b24e02b)  | <img src="https://user-images.githubusercontent.com/9810829/94380118-76eb6e80-0134-11eb-9d71-c6d587b8b224.jpeg" width="400"/>  |
-| 3  | ★★★☆  | 网易云热评小组件  | [ONE-hotcomments.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_ce27566bfa16158fe31252e29e56adff.png" width="400"/>  |
+| 3  | ★★★☆  | 网易云热评小组件  | [ONE-hotcomments.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-hotcomments)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_ce27566bfa16158fe31252e29e56adff.png" width="400"/>  |
 | -  |  -  | -  |  - | -  |
 
 </details>
 
 
  
-## 阅读类
+## 🌍阅读类
 --- 
 <details>
-<summary>🟢查看更多</summary>
+<summary>🔻查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -184,19 +186,19 @@
 
   
 
-### 社交类
+### 🌍社交类
 --- 
 <details>
-<summary>🟢查看更多</summary>
+<summary>🔻查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
 | 1  | ★★★☆  |  一个桌面联系人图标以开始对话.  | [conversable-for-scriptable](https://github.com/andyngo/conversable-for-scriptable)  | <img src="https://github.com/andyngo/conversable-for-scriptable/raw/main/conversable.png" width="400"/>  |
-| 2  | ★★★☆  | 一个桌面联系人图标以开始对话  | [conversable-for-scriptable-china](https://github.com/nicolasking007/scriptable)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_5e48a0dddbc8169aba2f0450b65814f5.jpeg" width="400"/>  |
+| 2  | ★★★☆  | 一个桌面联系人图标以开始对话  | [conversable-for-scriptable-china](https://github.com/Nicolasking007/Scriptable/tree/main/Conversable)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_5e48a0dddbc8169aba2f0450b65814f5.jpeg" width="400"/>  |
 | 3  | ★★★☆  | 选定Instagram用户的最新信息  | [ig-latest-post.js](https://github.com/supermamon/scriptable-scripts/blob/master/instagram-widgets/ig-latest-post.js)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_b01e226add2b4a1a4144a6e21b72cace.png" width="400"/>  |
 | 4  | ★★☆  | 用户关注数量的终端式输出.  | [termiWidget.js](https://gist.github.com/spencerwooo/7955aefc4ffa5bc8ae7c83d85d05e7a4)  |  <img src="https://user-images.githubusercontent.com/32114380/90952313-18780400-e495-11ea-9791-20634a895af6.PNG" width="400"/>  |
-| 5  | ★★★☆  | 捷径盒用户关注数量、下载数量、捷径创造数量等  | [捷径盒数据.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_e40aea4ec598fff73a59e611d1c4b545.jpeg" width="400"/>   |
-| 6  | ★★★☆  | 捷径社区用户关注数量、下载数量、捷径创造数量等  | [捷径社区数据.js](https://github.com/Nicolasking007/Scriptable)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_e40aea4ec598fff73a59e611d1c4b545.jpeg" width="400"/>   |
+| 5  | ★★★☆  | 捷径盒用户关注数量、下载数量、捷径创造数量等  | [捷径盒数据.js](https://github.com/Nicolasking007/Scriptable/tree/main/捷径盒数据看板)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_e40aea4ec598fff73a59e611d1c4b545.jpeg" width="400"/>   |
+| 6  | ★★★☆  | 捷径社区用户关注数量、下载数量、捷径创造数量等  | [捷径社区数据.js](https://github.com/Nicolasking007/Scriptable/tree/main/捷径社区数据看板)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_e40aea4ec598fff73a59e611d1c4b545.jpeg" width="400"/>   |
 | 7  | ★★★☆  | 知乎热榜、微博热搜、B站榜单、RSS、豆瓣、人人影视资源  | [榜单](https://github.com/evilbutcher/Scriptables)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_7fac0993671255e0d3ecd2681b1e19f7.png" width="400"/>   |
 | 8  |  ★★★★★  | 哔哩哔哩今日番剧  | [哔哩哔哩今日番剧](https://github.com/dompling/Scriptable/blob/master/Scripts/BiliBili.js) | -  |
 | 9  |  ★★★★★  | 哔哩哔哩关注消息  | [哔哩哔哩关注消息](https://github.com/dompling/Scriptable/blob/master/Scripts/BiliBiliWatch.js)  | <img src="https://p.pstatp.com/origin/137d10002eed70e0b28bf" width="200"/> |
@@ -211,10 +213,10 @@
 
       
   
-### 购物类
+### 🌍购物类
 ---
 <details>
-<summary>🟢查看更多</summary>
+<summary>🔻查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -229,10 +231,10 @@
 
  
 
-### 运动类
+### 🌍运动类
 --- 
 <details>
-<summary>🟢查看更多</summary>
+<summary>🔻查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -241,7 +243,7 @@
 | 3  | ★☆  | 滑雪信息，例如雪高或开放式升降机的数量.  | [skiable](https://github.com/p0fi/skiable-for-scriptable)  | <img src="https://raw.githubusercontent.com/p0fi/skiable-for-scriptable/main/cover.png" width="400"/>  |
 | 4  | ★★★★  | 足球队即将进行的比赛  | [Upcoming Matches](https://gist.github.com/ilyichvismara/7895bb479e14a999f3cfd2c391f10597)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_7956218c53fadc2ab223e13c93423cf6.png" width="400"/>  |
 | 5  | ★★★★★  |  中超 英超 西甲赛程  | [football](https://github.com/Juniorchen2012/scriptable)  | <img src="https://github.com/Juniorchen2012/scriptable/raw/master/zh.png?raw=true " width="400"/>  |
-| 6  |  ★★★★★  | NBA-实时比分  |  [ONE-NBA](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/03/06/N62Aeo8tGbc3aP4.jpg" width="400"/> |
+| 6  |  ★★★★★  | NBA-实时比分  |  [ONE-NBA](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-NBA) | <img src="https://i.loli.net/2021/03/06/N62Aeo8tGbc3aP4.jpg" width="400"/> |
 | -  |  -  | -  |  - | -  |
 
 </details>
@@ -249,15 +251,15 @@
 
 
 
-### 工具类
+### 🌍工具类
 --- 
 <details>
-<summary>🟢查看更多</summary>
+<summary>🔻查看更多</summary>
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
-| 1  | ★★★★☆  | 显示农历日、天气、情话等信息.  | [ONE-Tool](https://github.com/Nicolasking007/Scriptable)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |
-| 2  | ★★☆  | 显示网络图片.  | [随机网络图片](https://github.com/Nicolasking007/Scriptable)  |   |
+| 1  | ★★★★☆  | 显示农历日、天气、情话等信息.  | [ONE-Tool](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Tool)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |
+| 2  | ★★☆  | 显示网络图片.  | [随机网络图片](https://github.com/Nicolasking007/Scriptable/tree/main/)  |   |
 | 3  | ★★★★★  | 显示Homebridge状态的小组件.  | [homebridgeStatus](https://github.com/lwitzani/homebridgeStatusWidget)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_d0fcc7361d8904348fc87f5fc9c44c73.jpeg" width="400"/>  |
 | 4  | ★★★☆  |  天气组件  | [Weather-Cal](https://github.com/mzeryck/Weather-Cal)  | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_735795b876b4c4ec69640afb3040da6c.png" width="400"/>  |
 | 5  | ★★☆  | 来自GitLab的统计信息，例如分配的合并请求数.  |  [gitlab-stats-for-scribtable](https://github.com/p0fi/gitlab-stats-for-scribtable)  | <img src="https://github.com/p0fi/gitlab-stats-for-scribtable/raw/main/cover.png" width="400"/>  |

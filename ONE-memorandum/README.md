@@ -1,10 +1,9 @@
-## Scriptables —— ONE-NBA(NBA赛事信息)
+## Scriptables —— ONE-memorandum(日历壁纸)
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
-![menu.jpg](https://i.loli.net/2021/03/27/yEZAWRdraFKMpJB.jpg)
+<!-- ![menu.jpg](https://i.loli.net/2021/05/31/anHWT9g6Bzmxoi7.jpg) -->
 
-![menu.jpg](https://i.loli.net/2021/03/06/blJRwrfo2aQXykx.jpg)
-
+尽情期待！
 
 ### 如何使用
 ---
@@ -18,7 +17,7 @@ iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 
 ### 支持尺寸
 ---
-
+* 大尺寸
 * 中尺寸
 * 小尺寸
 

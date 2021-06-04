@@ -1,10 +1,9 @@
-## Scriptables —— ONE-NBA(NBA赛事信息)
+## Scriptables —— ONE-musicTop(音乐榜单)
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
-![menu.jpg](https://i.loli.net/2021/03/27/yEZAWRdraFKMpJB.jpg)
+<!-- ![menu.jpg](https://i.loli.net/2021/05/27/C5jLBVl8cS2DPzo.jpg) -->
 
-![menu.jpg](https://i.loli.net/2021/03/06/blJRwrfo2aQXykx.jpg)
-
+尽情期待！
 
 ### 如何使用
 ---
@@ -18,7 +17,7 @@ iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 
 ### 支持尺寸
 ---
-
+* 大尺寸
 * 中尺寸
 * 小尺寸
 

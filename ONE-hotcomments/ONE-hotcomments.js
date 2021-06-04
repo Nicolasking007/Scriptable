@@ -1,6 +1,6 @@
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
-// icon-color: brown; icon-glyph: magic;
+// icon-color: pink; icon-glyph: paper-plane;
 /********************************************************
  ************* MAKE SURE TO COPY EVERYTHING *************
  *******************************************************
@@ -20,20 +20,16 @@
                 v1.1 - 替换api接口，修正点击直链播放 改为跳转网易云播放.
                 v1.0 - 首次发布
 ----------------------------------------------- */
-/************************************************************
- ********************用户设置 *********************
- ************请在首次运行之前进行修改************
- ***********************************************************/
-
+//##############公共参数配置模块############## 
 const filename = `${Script.name()}.jpg`
 const files = FileManager.local()
 const path = files.joinPath(files.documentsDirectory(), filename)
 const changePicBg = false  //选择true时，使用透明背景 
 const ImageMode = true   //选择true时，使用必应壁纸
-const previewSize = "Medium"  //预览大小
+const previewSize = "medium"  //预览大小 medium、small、large
 const colorMode = false // 是否是纯色背景
 const bgColor = new Color("000000") // 小组件背景色
-const blurStyle = "dark" // 高斯样式：light/dark
+const blurStyle = "light" // 高斯样式：light/dark
 const padding = {
   top: 10,
   left: 10,
@@ -46,10 +42,7 @@ const hotcommentsData = await getData();
 const widget = await createWidget()
 
 
-/*
-****************************************************************************
-* 这里是图片逻辑，不用修改
-****************************************************************************/
+//#####################背景模块-START#####################
 
 if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
   const okTips = "您的小部件背景已准备就绪"
@@ -135,9 +128,8 @@ if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
 }
 
 
-//////////////////////////////////////
-// 组件End
-// 设置小组件的背景
+//#####################背景模块-设置小组件的背景#####################
+
 if (colorMode) {
   widget.backgroundColor = bgColor
 } else if (ImageMode) {
@@ -147,7 +139,7 @@ if (colorMode) {
   // const i = await new Request(url);
   // const bgImgs = await i.loadImage();
   const bgImgs = await getImageByUrl(hotcommentsData.data.picurl, `${hotcommentsData.data.picurl}-bg`, false)
-  bgImg = await blurImage(bgImgs, blurStyle, 40)
+  bgImg = await blurImage(bgImgs, blurStyle, 100)
   widget.backgroundImage = bgImg
   // widget.backgroundImage = await shadowImage(img)
 }
@@ -161,15 +153,16 @@ Script.setWidget(widget)
 // 完成脚本
 Script.complete()
 // 预览
-if (previewSize == "Large") {
+if (previewSize == "large") {
   widget.presentLarge()
-} else if (previewSize == "Medium") {
+} else if (previewSize == "medium") {
   widget.presentMedium()
 } else {
   widget.presentSmall()
 }
 
-// 创建组件
+//#####################内容模块-创建小组件内容#####################
+
 async function createWidget() {
   let w = new ListWidget()
   let he = w.addText('❝ ')
@@ -239,6 +232,8 @@ async function createWidget() {
 
 }
 
+//#####################事务逻辑处理模块#####################
+
 async function getData() {
   const hotcommentsCachePath = files.joinPath(files.documentsDirectory(), "hotcomments-NK")
   var hotcommentsData
@@ -253,6 +248,8 @@ async function getData() {
 
   return hotcommentsData
 }
+
+//#####################背景模块-逻辑处理部分#####################
 
 async function getImage(url) {
 
@@ -609,6 +606,8 @@ function phoneSizes() {
   }
   return phones
 }
+
+//#####################版本更新模块#####################
 
 async function getversion() {
   const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")

@@ -1,7 +1,7 @@
 ## Scriptables —— ONE-NBAMATCH(NBA赛事信息)
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
-<!-- ![menu.jpg](https://i.loli.net/2021/06/04/ietfW3wKngVLBGX.jpg) -->
+![menu.jpg](https://i.loli.net/2021/06/04/ietfW3wKngVLBGX.jpg)
 
 尽情期待！
 

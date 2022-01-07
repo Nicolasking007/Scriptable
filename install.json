@@ -1,34 +1,38 @@
 {
     "author": "Nicolas-kings",
     "scriptable": true,
+    "Email":"nicolas-king@qq.com",
     "repo": "https://github.com/Nicolasking007/Scriptable",
     "icon": "https://pic.rmb.bdstatic.com/bjh/6a9bfc89880d4a776f6406dd10249483.jpeg",
     "apps": [
         {
-            "version": "1.5",
+            "version": "1.8",
             "author": "Nicolas-kings",
             "description": "一个整合欢迎语、农历时间、每日情话、当日天气、手机电量、今年百分比的小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Tool/ONE-Tool.Enc.js",
+            "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-Tool.Enc.js",
             "thumb": "https://i.loli.net/2021/03/27/sH1AGgCmOK3ilqu.jpg",
             "name": "ONE-Tool",
             "title": "ONE-Tool",
             "images":["https://i.loli.net/2021/03/27/sH1AGgCmOK3ilqu.jpg"]
         },
         {
-            "version": "1.2",
+            "version": "1.5",
             "author": "Nicolas-kings",
             "description": "一个查看今天、本周、本月、今年和今生进度的小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Progress/ONE-Progress.Enc.js",
+            "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-Progress.Enc.js",
             "thumb": "https://i.loli.net/2021/03/27/pz7i8DsA3WkGaTU.jpg",
             "name": "ONE-Progress",
             "title": "人生进度条",
             "images":["https://i.loli.net/2021/03/27/pz7i8DsA3WkGaTU.jpg"]
         },
         {
-            "version": "1.6",
+            "version": "1.9",
             "author": "Nicolas-kings",
             "description": "关注喜爱NBA球队赛事结果小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-NBA/ONE-NBA.Enc.js",
+            "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-NBA.Enc.js",
             "thumb": "https://i.loli.net/2021/03/27/yEZAWRdraFKMpJB.jpg",
             "name": "ONE-NBA",
             "title": "ONE-NBA",
@@ -39,46 +43,53 @@
             "author": "Nicolas-kings",
             "description": "今天是星期五吗小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Friday/ONE-Friday.Enc.js",
+            "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-Friday.Enc.js",
             "thumb": "https://pic.rmb.bdstatic.com/bjh/56ffd9646ed482568653f1fc543c3dda.png",
             "name": "ONE-Friday",
             "title": "今天是星期五吗",
             "images":["https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png"]
         },
         {
-            "version": "1.1",
+            "version": "1.4",
             "author": "Nicolas-kings",
             "description": "简单的倒计时小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-cuntdown/ONE-cuntdown.Enc.js",
+            "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-cuntdown.Enc.js",
             "thumb": "https://i.loli.net/2021/03/27/64eOAa1FtvDBm7J.jpg",
             "name": "ONE-cuntdown",
             "title": "倒计时",
             "images":["https://i.loli.net/2021/03/27/64eOAa1FtvDBm7J.jpg"]
         },
         {
-            "version": "2.5",
+            "version": "2.8",
             "author": "Nicolas-kings",
             "description": "网易云热评小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-hotcomments/ONE-hotcomments.Enc.js",
-            "thumb": "https://i.loli.net/2021/03/27/WbFpYaeitnZ5Mzc.jpg",
+            "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-hotcomments.Enc.js",
+            "thumb": "https://i.loli.net/2021/04/04/KQARiV18gzv2cDj.jpg",
             "name": "ONE-hotcomments",
             "title": "网易云热评",
-            "images":["https://i.loli.net/2021/03/27/WbFpYaeitnZ5Mzc.jpg"]
+            "images": [
+                "https://i.loli.net/2021/04/04/KQARiV18gzv2cDj.jpg","https://i.loli.net/2021/03/27/WbFpYaeitnZ5Mzc.jpg"
+            ]
         },
         {
-            "version": "1.4",
+            "version": "1.8",
             "author": "Nicolas-kings",
             "description": "支持全国所有省份的油价实时数据小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-oilprice/ONE-oilprice.Enc.js",
+            "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-oilprice.Enc.js",
             "thumb": "https://i.loli.net/2021/03/27/OLpBgxMtnSJHWmh.jpg",
             "name": "ONE-oilprice",
             "title": "每日油价",
             "images":["https://i.loli.net/2021/03/27/OLpBgxMtnSJHWmh.jpg"]
         },
         {
-            "version": "1.4",
+            "version": "1.8",
             "author": "Nicolas-kings",
             "description": "简单的日历小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Today/ONE-Today.Enc.js",
+            "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-Today.Enc.js",
             "thumb": "https://i.loli.net/2021/03/27/TbFJz8slCiYONV4.jpg",
             "name": "ONE-Today",
             "title": "ONE-Today",
@@ -105,14 +116,15 @@
             "images":["https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg"]
         },
         {
-            "version": "1.2",
+            "version": "1.5",
             "author": "Nicolas-kings",
             "description": "中国/全球疫苗接种数据",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/COVID-19/ONE-COVID_Vac.Enc.js",
-            "thumb": "https://i.loli.net/2021/05/27/OTal5tm1IUvVBPi",
+            "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-COVID_Vac.Enc.js",
+            "thumb": "https://i.loli.net/2021/05/27/OTal5tm1IUvVBPi.jpg",
             "name": "ONE-COVID_Vac",
             "title": "ONE-COVID_Vac",
-            "images":["https://i.loli.net/2021/05/27/OTal5tm1IUvVBPi"]
+            "images":["https://i.loli.net/2021/05/27/OTal5tm1IUvVBPi.jpg"]
         },
         {
             "version": "1.0",
@@ -125,24 +137,48 @@
             "images":["https://i.loli.net/2021/05/31/anHWT9g6Bzmxoi7.jpg"]
         },
         {
-            "version": "1.0",
+            "version": "1.4",
             "author": "Nicolas-kings",
-            "description": "日历壁纸",
-            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-memorandum/ONE-memorandum.Enc.js",
-            "thumb": "https://i.loli.net/2021/05/31/anHWT9g6Bzmxoi7.jpg",
-            "name": "ONE-memorandum",
-            "title": "ONE-memorandum",
-            "images":["https://i.loli.net/2021/05/31/anHWT9g6Bzmxoi7.jpg"]
-        },
-        {
-            "version": "1.0",
-            "author": "Nicolas-kings",
-            "description": "日历壁纸",
-            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-memorandum/ONE-memorandum.Enc.js",
-            "thumb": "https://i.loli.net/2021/05/31/anHWT9g6Bzmxoi7.jpg",
+            "description": "关注喜爱NBA球队赛事结果小组件",
+            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-NBAMATCH/ONE-NBAMATCH.Enc.js",
+            "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-NBAMATCH.Enc.js",
+            "thumb": "https://i.loli.net/2021/06/04/ietfW3wKngVLBGX.jpg",
             "name": "ONE-NBAMATCH",
             "title": "ONE-NBAMATCH",
-            "images":["https://i.loli.net/2021/05/31/anHWT9g6Bzmxoi7.jpg"]
+            "images":["https://i.loli.net/2021/06/04/ietfW3wKngVLBGX.jpg"]
+        },
+        {
+            "version": "1.0",
+            "author": "Nicolas-kings",
+            "description": "关注喜爱lpl战队赛事结果小组件",
+            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-LOLMATCH/ONE-LOLMATCH.Enc.js",
+            "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-LOLMATCH.Enc.js",
+            "thumb": "https://i.loli.net/2021/06/13/Uknrwv8LPTZEAmK.jpg",
+            "name": "ONE-LOLMATCH",
+            "title": "ONE-LOLMATCH",
+            "images":["https://i.loli.net/2021/06/13/Uknrwv8LPTZEAmK.jpg"]
+        },
+        {
+            "version": "1.0",
+            "author": "Nicolas-kings",
+            "description": "关注喜爱足球赛事结果小组件",
+            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-FOOTMATCH/ONE-FOOTMATCH.Enc.js",
+            "thumb": "https://i.loli.net/2021/06/13/6B3sTjg8VwaRGmP.jpg",
+            "name": "ONE-FOOTMATCH",
+            "title": "ONE-FOOTMATCH",
+            "images":["https://i.loli.net/2021/06/13/6B3sTjg8VwaRGmP.jpg"]
+        },
+        {
+            "version": "1.3",
+            "author": "Nicolas-kings",
+            "description": "夏季奥林匹克运动会奖牌榜小组件",
+            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Olympic/ONE-Olympic.Enc.js",
+            "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-Olympic.Enc.js",
+            "thumb": "https://i.loli.net/2021/07/24/sfr1aeEKlyRnIu4.jpg",
+            "name": "ONE-Olympic",
+            "title": "ONE-Olympic",
+            "images":["https://i.loli.net/2021/07/24/sfr1aeEKlyRnIu4.jpg"]
         }
-    ]
+    ],
+    "copyright":"© 2021 Copyright Nicolas-kings - 不允许基于该数据私自改编，修改任何作品等，进行上述操作前请先与我取得联系，谢谢！"
 }

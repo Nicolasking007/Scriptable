@@ -81,6 +81,18 @@
 | 2  | ★★★★☆  | 有关您的Tesla的信息，例如充电状态和车门已锁定/未锁定  |  [TeslaData-Widget](https://github.com/DrieStone/TeslaData-Widget) | <img src="https://github.com/DrieStone/TeslaData-Widget/raw/main/documentation/screen_001.png" width="400"/>  |
 | 3  | ★★★☆  |  附近加油站的燃油价格. | [tankstellenpreise.js](https://github.com/Necriso/ScriptableWidgets/blob/main/iamges/tankstellenpreise.js)  |  <img src="https://raw.githubusercontent.com/Necriso/ScriptableWidgets/main/images/tankstellenpreise.png" width="400"/> |
 | 4  | ★★★☆  | 有关您的雷诺佐伊的信息，例如充电或位置.  | [ZOE-Widget.js](https://gist.github.com/mountbatt/772e4512089802a2aa2622058dd1ded7)   |  <img src="https://user-images.githubusercontent.com/2411246/97786189-41f68f80-1baa-11eb-9c6f-96e8d8f7684a.jpeg" width="400"/> |
+| 5  |  ★★★★★  | 宝马汽车小组件  |  - | -  |
+| 6  |  ★★★★★  | 奥迪汽车小组件  |  - | -  |
+| 7  |  ★★★★★  | 一汽、上汽大众小组件  |  - | -  |
+| 8  |  ★★★★★  | 领克汽车小组件  |  - | -  |
+| 9  |  ★★★★★  | 丰田凯美瑞汽车小组件  |  [丰田凯美瑞汽车小组件](https://github.com/Nicolasking007/Scriptable/tree/main/Carlist) | -  |
+| 10  |  ★★★★★  | 林肯汽车小组件  |  [林肯汽车小组件](https://github.com/Nicolasking007/Scriptable/tree/main/Carlist)| -  |
+| 11  |  ★★★★★  | 福特汽车小组件  |  [福特汽车小组件](https://github.com/Nicolasking007/Scriptable/tree/main/Carlist) | -  |
+| 12  |  ★★★★★  | WEY汽车小组件  |  [WEY汽车小组件](https://github.com/Nicolasking007/Scriptable/tree/main/Carlist) | -  |
+| 13  |  ★★★★★  | 捷豹汽车小组件  |  [捷豹汽车小组件](https://github.com/Nicolasking007/Scriptable/tree/main/Carlist) | -  |
+| 14  |  ★★★★★  | 长安马自达汽车小组件  |  [长安马自达汽车小组件](https://github.com/Nicolasking007/Scriptable/tree/main/Carlist) | -  |
+| 15  |  ★★★★★  | 广汽丰田汽车小组件  |  [广汽丰田汽车小组件](https://github.com/Nicolasking007/Scriptable/tree/main/Carlist) | -  |
+| 16  |  ★★★★★  | 一汽丰田汽车小组件  |  [一汽丰田汽车小组件](https://github.com/Nicolasking007/Scriptable/tree/main/Carlist) | -  |
 | -  |  -  | -  |  - | -  |
 </details>
 
@@ -306,7 +318,7 @@
 
 --- 
 
-<center>开发不易，觉得帮助到了您，可以考虑给我买瓶饮料啥的，期待赞赏</center>
+<center>投币催更，三连尤佳</center>
 
 
 ### 🟠🟡🟢微信公众号

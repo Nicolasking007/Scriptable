@@ -5,6 +5,8 @@
  
  <p align="center">iOS14桌面组件神器（Scriptable）原创脚本，精美作品收集、分享！ 如果喜欢，欢迎点个 ★ Star ★ 给予小支持，感谢您的使用！<br><br>喜欢这个项目？有好的脚本？请考虑留言来帮助完善它！</p>
 
+ <p align="center">如果您使用过程中发现有问题或可以改进的流程，请提出 Issue 或 Pull request ！</p>
+
 ---
 
 ![nicolasking007's github stats](https://github-readme-stats.vercel.app/api?username=nicolasking007&show_icons=true)

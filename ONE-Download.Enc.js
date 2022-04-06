@@ -1,14 +1,3 @@
-/*
- * @Author: Nicolas-kings
- * @Date: 2022-04-06 11:19:32
- * @guthub: https://github.com/Nicolasking007
- * @LastEditors: OBKoro1
- * @LastEditTime: 2022-04-06 11:19:32
- * @FilePath: \Nicolas-kings\Scriptable\ONE-Download.Enc.js
- * @Description: 
- * 
- * Copyright (c) 2022 by Nicolas-kings, All Rights Reserved. 
- */
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
 // icon-color: orange; icon-glyph: baseball-ball;

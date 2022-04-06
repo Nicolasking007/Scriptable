@@ -9,7 +9,7 @@
             "version": "1.8",
             "author": "Nicolas-kings",
             "description": "一个整合欢迎语、农历时间、每日情话、当日天气、手机电量、今年百分比的小组件",
-            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-Tool/ONE-Tool.Enc.js",
+            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-tool/ONE-Tool.Enc.js",
             "cdn_scriptURL": "https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-Tool.Enc.js",
             "thumb": "https://i.loli.net/2021/03/27/sH1AGgCmOK3ilqu.jpg",
             "name": "ONE-Tool",

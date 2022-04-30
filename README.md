@@ -170,6 +170,7 @@
 | 7  |  ★★★☆  | 机场+签到  |  [机场+签到](https://github.com/dompling/Scriptable/blob/master/Scripts/VpnBoard.js) | -  |
 | 8  |  ★★★★☆ | 机场订阅流量  |  [机场订阅流量](https://github.com/dompling/Scriptable/blob/master/Scripts/VPNSubscription.js) | -  |
 | 9  |  ★★★☆  | v2board机场模板  |  [v2board机场模板](https://github.com/dompling/Scriptable/blob/master/Scripts/VPNV2Bord.js)  | -  |
+| 10  |  ★★★☆  | 中国电信优化版  |  [中国电信优化版](https://lambdaexpression.github.io/ScriptablesComponent/ChinaTelecomPanel/)  | -  |
 | -  | -  | -  |  - | -  |
 
 </details>

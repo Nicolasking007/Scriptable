@@ -12,16 +12,16 @@
 ![nicolasking007's github stats](https://github-readme-stats.vercel.app/api?username=nicolasking007&show_icons=true)
 
 
-<!-- ##  📌 关于部分脚本加密的原因说明：
+##  📌 关于部分脚本加密的原因说明：
 
- 部分人使用仓库脚本为自己公众号、小程序商业化引流，且不尊重作者行为如下 
+ 部分人使用仓库脚本为自己公众号、小程序商业化引流，且不尊重作者行为 
 
-- 删除原作者注释信息等
-- 修改个图标 就声明自己原创等行为
+- 删除原作者注释等信息，将`"借鉴"`一词发挥淋漓尽致
+- 极其讨厌拿着我的脚本修改引流，改出问题，LZ还得负责`"擦屁股"`行为
 - 打包源码进行出售行为
 - ......
 
-原则：脚本供用户免费使用，但请`白嫖用户`反省自己的某些行为，本人没有义务一定要为你做什么 -->
+
 
 ## 目录
 - [如何使用](#如何使用)
@@ -72,7 +72,7 @@
 | 4  | ★★★★★  | 显示农历日、天气、情话等信息.  | [ONE-Tool.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Tool)  | <img src="https://i.loli.net/2021/03/27/sH1AGgCmOK3ilqu.jpg" width="400"/>  |
 | 5  | ★★★★★  | 一个简单倒数日  | [ONE-countdown.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-countdown)  | <img src="https://i.loli.net/2021/03/27/64eOAa1FtvDBm7J.jpg" width="400"/>  |
 | 6  | ★★★★★  | 一个简单日历小组件  | [ONE-Today.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Today)  | <img src="https://i.loli.net/2021/03/27/TbFJz8slCiYONV4.jpg" width="400"/>  |
-| 7  | ★★★★★  | 网易云热评  | [ONE-hotcomments.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-hotcomments)  | <img src="https://i.loli.net/2021/03/27/WbFpYaeitnZ5Mzc.jpg" width="400"/>  |
+| 7  | ★★★★★  | 网易云热评  | [ONE-hotcomments.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-hotcomments)  | <img src="https://i.loli.net/2021/04/04/KQARiV18gzv2cDj.jpg" width="400"/>  |
 | 8  | ★★★☆  | 今天是周五吗.  |  [ONE-Friday.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Friday) | <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_9c96a5f405165fe3a4b3c59df3a1d363.png" width="400"/>  |
 | 9  | ★★★☆  | 捷径盒用户关注数量、下载数量、捷径创造数量等  | [捷径盒数据.js](https://github.com/Nicolasking007/Scriptable/tree/main/捷径盒数据看板)  | <img src="https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg" width="400"/>   |
 | 10  | ★★★☆  | 捷径社区用户关注数量、下载数量、捷径创造数量等  | [捷径社区数据.js](https://github.com/Nicolasking007/Scriptable/tree/main/捷径社区数据看板)  | <img src="https://i.loli.net/2021/04/25/yJx4jGIMCRKodqg.jpg" width="400"/>   |
@@ -80,7 +80,8 @@
 | 12  |  ★★★★★  | 音乐榜单  |  [ONE-musicTop.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/05/27/C5jLBVl8cS2DPzo.jpg" width="400"/>  |
 | 13  |  ★★★★★  | 日历壁纸  |  [ONE-memorandum.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-memorandum) | <img src="https://i.loli.net/2021/05/31/anHWT9g6Bzmxoi7.jpg" width="400"/>  |
 | 14  |  ★★★★★  | NBA赛程比分  |  [ONE-NBAMATCH.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-NBAMATCH) | <img src="https://i.loli.net/2021/06/04/ietfW3wKngVLBGX.jpg" width="400"/>  | 
-| 15  |  ★★★★★  | 东京奥运会奖牌榜  |  [ONE-Olympic.js](https://github.com/Nicolasking007/Scriptable) | <img src="https://i.loli.net/2021/07/24/sfr1aeEKlyRnIu4.jpg" width="400"/>  |
+| 15  |  ★★★★★  | 东京奥运会奖牌榜  |  [ONE-Olympic.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Olympic) | <img src="https://i.loli.net/2021/07/24/sfr1aeEKlyRnIu4.jpg" width="400"/>  |
+| 16  |  ★★★★★  | 正向计时小组件  |  [ONE-Forwardtime.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Forwardtime) | <img src="https://pic.rmb.bdstatic.com/bjh/d2fd42a569bef6049a1835c14051c6b8.jpeg" width="400"/>  |
 | -  |  -  | -  |  - | -  |
 
   

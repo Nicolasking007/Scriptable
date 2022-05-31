@@ -329,7 +329,7 @@
 ### 🟠🟡🟢赞赏
 --- 
 <center>
-    <img src="https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/images/pay/wechat.jpg" width="200px" height="200px"/>
+    <img src="https://fastly.jsdelivr.net/gh/Nicolasking007/CDN@latest/images/pay/wechat.jpg" width="200px" height="200px"/>
 </center>
 
 --- 

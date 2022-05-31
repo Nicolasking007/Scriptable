@@ -832,7 +832,7 @@ async function getversion() {
     const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")
     var versionData
     try {
-        versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
+        versionData = await new Request("https://fastly.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
         files.writeString(versionCachePath, JSON.stringify(versionData))
         console.log(`===>\u6b22\u8fce\u4f7f\u7528：${versionData.author}\u5236\u4f5c\u7684\u5c0f\u7ec4\u4ef6<===`);
         console.log("[+]\u9047\u5230\u95ee\u9898\uff0c\u8bf7\u524d\u5f80\u516c\u4f17\u53f7\uff1a\u66f0\u575b\u0020\u53cd\u9988");

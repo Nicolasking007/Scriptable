@@ -10,7 +10,10 @@
 ---
 
 ![nicolasking007's github stats](https://github-readme-stats.vercel.app/api?username=nicolasking007&show_icons=true)
+---
 
+[![Stargazers over time](https://starchart.cc/Nicolasking007/Scriptable.svg)](https://starchart.cc/Nicolasking007/Scriptable)
+---
 
 ##  📌 关于部分脚本加密的原因说明：
 
@@ -375,33 +378,7 @@
 ---
 ![](http://profile-counter.glitch.me/nicolasking007/count.svg)
 
-**更多好玩、有趣的脚本正在码字中...`尽情期待哦！`**
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
+- 更多好玩、有趣的脚本正在码字中...`尽情期待哦！`
 
 
 

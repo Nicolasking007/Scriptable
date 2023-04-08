@@ -5,7 +5,7 @@
 /********************************************************
  ************* MAKE SURE TO COPY EVERYTHING *************
  *******************************************************
- ************ © 2021 Copyright Nicolas-kings ************/
+ ************ © 2023 Copyright Nicolas-kings ************/
 /********************************************************
  * script     : ONE-NBA.js
  * version    : 1.9.1
@@ -51,7 +51,1844 @@ const MY_NBA_TEAM = "LAL";
 // 对于2021-22赛季，该值必须为“ 2021”
 const CURRENT_SEASON_START_YEAR = "2022";
 // 上下左右间距
-const padding = { top: 10, left: 10, bottom: 10, right: 10 }
+ const padding = { top: 10, left: 10, bottom: 10, right: 10 }
 //⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈⇈
 //##############用户自定义参数配置模块-结束##############
-const _0x2b9a94=_0x13a4,_0x324b29=_0x5978;(function(_0x43bd44,_0x350ab2){const _0x7958c4=_0x5978,_0x4deaed=_0x13a4,_0xf8f3d0=_0x43bd44();while(!![]){try{const _0x37dbdf=parseInt(_0x4deaed(0x259,'EB71'))/0x1*(parseInt(_0x4deaed(0x13e,'%B9M'))/0x2)+-parseInt(_0x7958c4(0x96))/0x3+parseInt(_0x7958c4(0x1b4))/0x4+parseInt(_0x4deaed(0x294,'oe65'))/0x5+parseInt(_0x4deaed(0x1ec,'R0qC'))/0x6*(-parseInt(_0x4deaed(0x1fc,'9n]2'))/0x7)+parseInt(_0x7958c4(0x1db))/0x8+-parseInt(_0x7958c4(0x21c))/0x9*(parseInt(_0x4deaed(0x28a,'Dvj0'))/0xa);if(_0x37dbdf===_0x350ab2)break;else _0xf8f3d0['push'](_0xf8f3d0['shift']());}catch(_0x470000){_0xf8f3d0['push'](_0xf8f3d0['shift']());}}}(_0x215f,0xdfdd0));const filename=Script[_0x324b29(0xa2)]()+'.jpg',files=FileManager[_0x2b9a94(0x2c5,'oRVp')](),localversion=_0x324b29(0x113),path=files[_0x2b9a94(0x179,'nkbA')](files['documentsDirectory'](),filename),versionData=await getversion();let needUpdated=await updateCheck(localversion);const DARK_MODE=Device[_0x2b9a94(0xdb,'o(V]')](),SHOW_LIVE_SCORES=!![],SHOW_STATS_AND_STANDINGS=!![],SHOW_HOME_TEAM_FIRST=![],CACHING_ACTIVE=!![],WIDGET_URL='https://m.china.nba.com',widget=await createWidget();if(!colorMode&&!ImageMode&&!config[_0x2b9a94(0xfd,'dbXa')]&&changePicBg){const okTips=_0x324b29(0xed);let message=_0x324b29(0x9e),options=['图片选择',_0x324b29(0x186),_0x324b29(0x173),'取消'],response=await generateAlert(message,options);if(response==0x3)return;if(response==0x0){let img=await Photos[_0x324b29(0xb1)]();message=okTips;const resultOptions=['好的'];await generateAlert(message,resultOptions),files['writeImage'](path,img);}response==0x2&&Safari[_0x2b9a94(0x1ff,'o(V]')](versionData[_0x2b9a94(0x107,'R0qC')][_0x324b29(0xd5)],![]);if(response==0x1){message=_0x2b9a94(0x226,'N3yp');let exitOptions=[_0x2b9a94(0x205,'LAy]'),'退出(没有截图)'],shouldExit=await generateAlert(message,exitOptions);if(shouldExit)return;let img=await Photos[_0x324b29(0xb1)](),height=img[_0x2b9a94(0x21a,'Y5Y7')][_0x2b9a94(0x1d4,'g(c[')],phone=phoneSizes()[height];if(!phone){message=_0x2b9a94(0xbe,'yMCo'),await generateAlert(message,['好的！我现在去截图']);return;}if(height==0x984){let files=FileManager[_0x2b9a94(0x117,'%W*X')](),cacheName=_0x2b9a94(0x1d5,'Y5Y7'),cachePath=files['joinPath'](files[_0x2b9a94(0x127,'N3yp')](),cacheName);if(files[_0x324b29(0x122)](cachePath)){let typeString=files[_0x324b29(0x95)](cachePath);phone=phone[typeString];}else{message=_0x2b9a94(0x241,'FOFg');let types=['iPhone\x2012\x20mini',_0x2b9a94(0xd6,'U%0L')],typeIndex=await generateAlert(message,types),type=typeIndex==0x0?_0x324b29(0x1c0):'x';phone=phone[type],files[_0x324b29(0xc2)](cachePath,type);}}message=_0x2b9a94(0x22e,'gn@E');let sizes=['小号','中号','大号'],size=await generateAlert(message,sizes),widgetSize=sizes[size];message='您想它在什么位置？',message+=height==0x470?_0x324b29(0x190):'';let crop={'w':'','h':'','x':'','y':''};if(widgetSize=='小号'){crop['w']=phone['小号'],crop['h']=phone['小号'];let positions=[_0x324b29(0x240),_0x2b9a94(0x19e,'#hBm'),_0x324b29(0x201),'中间\x20右边','底部\x20左边','底部\x20右边'],position=await generateAlert(message,positions),keys=positions[position][_0x2b9a94(0x1a6,'cGUC')]('\x20');crop['y']=phone[keys[0x0]],crop['x']=phone[keys[0x1]];}else{if(widgetSize=='中号'){crop['w']=phone['中号'],crop['h']=phone['小号'],crop['x']=phone['左边'];let positions=['顶部','中间','底部'],position=await generateAlert(message,positions),key=positions[position]['toLowerCase']();crop['y']=phone[key];}else{if(widgetSize=='大号'){crop['w']=phone['中号'],crop['h']=phone['大号'],crop['x']=phone['左边'];let positions=['顶部','底部'],position=await generateAlert(message,positions);crop['y']=position?phone['中间']:phone['顶部'];}}}let imgCrop=cropImage(img,new Rect(crop['x'],crop['y'],crop['w'],crop['h']));message=_0x324b29(0xe4);const resultOptions=[_0x2b9a94(0x287,'z1^b'),_0x2b9a94(0x104,'LAy]')],exportToFiles=await generateAlert(message,resultOptions);exportToFiles?files['writeImage'](path,imgCrop):Photos[_0x324b29(0x199)](imgCrop);}}function _0x13a4(_0x1ada08,_0x1aa5a7){const _0x217ed3=_0x215f();return _0x13a4=function(_0x1ee393,_0x2857e1){_0x1ee393=_0x1ee393-0x93;let _0x215f62=_0x217ed3[_0x1ee393];if(_0x13a4['nSoDxv']===undefined){var _0x13a41d=function(_0x35b2f9){const _0x3c4729='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x5978a2='',_0x2e21d1='',_0x180a23=_0x5978a2+_0x13a41d;for(let _0x1eb6a0=0x0,_0x179a24,_0x59fbbb,_0x1b5466=0x0;_0x59fbbb=_0x35b2f9['charAt'](_0x1b5466++);~_0x59fbbb&&(_0x179a24=_0x1eb6a0%0x4?_0x179a24*0x40+_0x59fbbb:_0x59fbbb,_0x1eb6a0++%0x4)?_0x5978a2+=_0x180a23['charCodeAt'](_0x1b5466+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x179a24>>(-0x2*_0x1eb6a0&0x6)):_0x1eb6a0:0x0){_0x59fbbb=_0x3c4729['indexOf'](_0x59fbbb);}for(let _0xb76ac4=0x0,_0x31145c=_0x5978a2['length'];_0xb76ac4<_0x31145c;_0xb76ac4++){_0x2e21d1+='%'+('00'+_0x5978a2['charCodeAt'](_0xb76ac4)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x2e21d1);};const _0x1c409d=function(_0x138e96,_0x49e10e){let _0x5a7fb8=[],_0x1b1805=0x0,_0x12f865,_0x29c06c='';_0x138e96=_0x13a41d(_0x138e96);let _0x59703e;for(_0x59703e=0x0;_0x59703e<0x100;_0x59703e++){_0x5a7fb8[_0x59703e]=_0x59703e;}for(_0x59703e=0x0;_0x59703e<0x100;_0x59703e++){_0x1b1805=(_0x1b1805+_0x5a7fb8[_0x59703e]+_0x49e10e['charCodeAt'](_0x59703e%_0x49e10e['length']))%0x100,_0x12f865=_0x5a7fb8[_0x59703e],_0x5a7fb8[_0x59703e]=_0x5a7fb8[_0x1b1805],_0x5a7fb8[_0x1b1805]=_0x12f865;}_0x59703e=0x0,_0x1b1805=0x0;for(let _0x5561da=0x0;_0x5561da<_0x138e96['length'];_0x5561da++){_0x59703e=(_0x59703e+0x1)%0x100,_0x1b1805=(_0x1b1805+_0x5a7fb8[_0x59703e])%0x100,_0x12f865=_0x5a7fb8[_0x59703e],_0x5a7fb8[_0x59703e]=_0x5a7fb8[_0x1b1805],_0x5a7fb8[_0x1b1805]=_0x12f865,_0x29c06c+=String['fromCharCode'](_0x138e96['charCodeAt'](_0x5561da)^_0x5a7fb8[(_0x5a7fb8[_0x59703e]+_0x5a7fb8[_0x1b1805])%0x100]);}return _0x29c06c;};_0x13a4['EXdKMj']=_0x1c409d,_0x1ada08=arguments,_0x13a4['nSoDxv']=!![];}const _0x568ed0=_0x217ed3[0x0],_0x3a786a=_0x1ee393+_0x568ed0,_0x36806e=_0x1ada08[_0x3a786a];if(!_0x36806e){if(_0x13a4['XzMYBt']===undefined){const _0x1bab87=function(_0x3f43fe){this['jlAFFj']=_0x3f43fe,this['DzFdgc']=[0x1,0x0,0x0],this['ICkzLi']=function(){return'newState';},this['fdNjQc']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['uMWPjW']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x1bab87['prototype']['xqrsbs']=function(){const _0x2fca07=new RegExp(this['fdNjQc']+this['uMWPjW']),_0x22a298=_0x2fca07['test'](this['ICkzLi']['toString']())?--this['DzFdgc'][0x1]:--this['DzFdgc'][0x0];return this['NttsXB'](_0x22a298);},_0x1bab87['prototype']['NttsXB']=function(_0x2a3271){if(!Boolean(~_0x2a3271))return _0x2a3271;return this['YEydBZ'](this['jlAFFj']);},_0x1bab87['prototype']['YEydBZ']=function(_0x2e7087){for(let _0x138844=0x0,_0x4ffa64=this['DzFdgc']['length'];_0x138844<_0x4ffa64;_0x138844++){this['DzFdgc']['push'](Math['round'](Math['random']())),_0x4ffa64=this['DzFdgc']['length'];}return _0x2e7087(this['DzFdgc'][0x0]);},new _0x1bab87(_0x13a4)['xqrsbs'](),_0x13a4['XzMYBt']=!![];}_0x215f62=_0x13a4['EXdKMj'](_0x215f62,_0x2857e1),_0x1ada08[_0x3a786a]=_0x215f62;}else _0x215f62=_0x36806e;return _0x215f62;},_0x13a4(_0x1ada08,_0x1aa5a7);}if(colorMode)widget[_0x324b29(0x163)]=bgColor;else{if(ImageMode)switch(Imgstyle){case 0x1:const blugImgs=await getImageByUrl(_0x2b9a94(0x16c,'yMCo')+IMAGE_SEARCH_TERMS,'_'+Script[_0x2b9a94(0x131,'%W*X')]()+_0x2b9a94(0x1fd,'%B9M'),![]);bgImg=await blurImage(blugImgs,blurStyle,blursize),widget[_0x324b29(0x224)]=bgImg;break;case 0x2:const unsplashurl=_0x2b9a94(0x20d,'%W*X')+IMAGE_SEARCH_TERMS,orginImgs=await getImageByUrl(unsplashurl,'_'+Script[_0x324b29(0xa2)]()+_0x324b29(0x289),![]);bgImg=await shadowImage(orginImgs),widget[_0x2b9a94(0x15c,'%B9M')]=bgImg;break;case 0x3:const bingurl=_0x324b29(0x146),bingImgs=await getImageByUrl(bingurl,'_'+Script[_0x2b9a94(0xa1,'eZnz')]()+_0x324b29(0x1aa),![]);bgImg=await shadowImage(bingImgs),widget[_0x324b29(0x224)]=bgImg;break;}else widget[_0x2b9a94(0x93,'KGN4')]=files[_0x324b29(0x1e4)](path);}widget['setPadding'](padding[_0x324b29(0x193)],padding[_0x2b9a94(0x2a8,'g(c[')],padding[_0x324b29(0x13c)],padding[_0x2b9a94(0x12e,'dMNJ')]);if(!config[_0x2b9a94(0x1e7,'gn@E')])switch(previewSize){case _0x2b9a94(0x23f,'%W*X'):await widget[_0x324b29(0x250)]();break;case _0x324b29(0xcc):await widget[_0x324b29(0x203)]();break;case _0x2b9a94(0x19f,'yMCo'):await widget[_0x2b9a94(0x18a,'9n]2')]();break;}Script[_0x324b29(0x27b)](widget),Script['complete']();async function createWidget(){const _0x4cf0a=_0x324b29,_0x119fdd=_0x2b9a94,_0xb76ac4=new ListWidget();if(previewSize===_0x119fdd(0x24f,'oRVp'))await addSmallWidgetData(_0xb76ac4),_0xb76ac4[_0x119fdd(0x299,'eaH]')]=WIDGET_URL;else{if(previewSize==_0x4cf0a(0xcc))await addMediumWidgetData(_0xb76ac4),_0xb76ac4[_0x119fdd(0x264,'%W*X')]=WIDGET_URL;else{const _0x31145c=_0xb76ac4[_0x4cf0a(0x9d)](_0x119fdd(0x1d1,'eaH]')),_0x138e96=_0xb76ac4[_0x119fdd(0x15e,'o(V]')]();_0x138e96['layoutVertically'](),_0x138e96[_0x119fdd(0xa5,'N3yp')](0x7,0x7,0x7,0x7);const _0x49e10e=_0x138e96[_0x119fdd(0x245,'%B9M')](_0x4cf0a(0x28b));_0x49e10e['font']=Font[_0x119fdd(0x147,'1wbB')](0x10),_0x49e10e[_0x4cf0a(0x2bd)]=Color[_0x4cf0a(0xb3)](),_0x31145c[_0x4cf0a(0x237)](),_0xb76ac4['url']=_0x119fdd(0x252,'BGd[');}}return _0xb76ac4;}const WIDGET_BACKGROUND=DARK_MODE?new Color(_0x324b29(0x160)):new Color(_0x324b29(0x221)),STACK_BACKGROUND=DARK_MODE?new Color(_0x2b9a94(0xc4,'BGd[')):new Color(_0x2b9a94(0x129,'$GzP'));async function addSmallWidgetData(_0x5a7fb8){const _0x45ccc8=_0x2b9a94,_0x18c76c=_0x324b29,_0x1b1805=await prepareData();if(_0x1b1805!=null){const _0x12f865=getTeamData(),_0x29c06c=_0x12f865[MY_NBA_TEAM][_0x18c76c(0x2a3)];let _0x59703e,_0x5561da;_0x1b1805[_0x45ccc8(0x256,'KGN4')][_0x18c76c(0x2a3)]==_0x29c06c?(_0x59703e=_0x1b1805['homeTeam'],_0x5561da=_0x1b1805['awayTeam']):(_0x5561da=_0x1b1805[_0x18c76c(0x29d)],_0x59703e=_0x1b1805[_0x18c76c(0x1f6)]);const _0x1bab87=_0x5a7fb8[_0x45ccc8(0x277,'2Pn[')]();_0x1bab87[_0x18c76c(0x1d2)]();const _0x3f43fe=_0x1bab87[_0x18c76c(0x16e)]();_0x3f43fe['layoutVertically']();const _0x2fca07=new Date(_0x1b1805[_0x45ccc8(0x1df,'WRPs')]),_0x22a298=_0x2fca07[_0x18c76c(0x1d8)]([],{'year':'numeric','month':_0x18c76c(0x206),'day':_0x18c76c(0x206),'hour':'2-digit','minute':'2-digit'}),_0x2a3271=_0x3f43fe[_0x18c76c(0x9d)](''+_0x22a298[_0x45ccc8(0x21b,'EB71')](',')[0x0]);_0x2a3271[_0x18c76c(0x175)]=Font[_0x45ccc8(0xf0,'gn@E')](0xb),_0x2a3271[_0x18c76c(0x2bd)]=getColorForCurrentAppearance();if(!!_0x22a298[_0x45ccc8(0x15b,'o(V]')](',')[0x1]){const _0x4ad90b=_0x3f43fe[_0x18c76c(0x9d)](''+_0x22a298[_0x45ccc8(0xc9,'oRVp')](',')[0x1][_0x45ccc8(0x291,'o(V]')]());_0x4ad90b['font']=Font[_0x45ccc8(0x2bf,'Y5Y7')](0xb),_0x4ad90b[_0x45ccc8(0x101,'g(c[')]=getColorForCurrentAppearance();}const _0x2e7087=_0x3f43fe[_0x45ccc8(0x286,'22L4')](_0x45ccc8(0x108,'U%0L')+_0x1b1805['venue']);_0x2e7087['font']=Font[_0x45ccc8(0x219,'#n%h')](0xb),_0x2e7087[_0x18c76c(0x2bd)]=getColorForCurrentAppearance(),_0x1bab87['addSpacer']();const _0x138844=await loadLogo(_0x5561da[_0x45ccc8(0xcf,'z1^b')],_0x5561da[_0x18c76c(0x2a3)]),_0x4ffa64=_0x1bab87[_0x18c76c(0x282)](_0x138844);_0x4ffa64[_0x45ccc8(0x1bf,'f4OK')]=new Size(0x28,0x28);if(SHOW_STATS_AND_STANDINGS){_0x5a7fb8[_0x18c76c(0x181)](0x4);const _0x2bcb79=_0x5a7fb8['addText'](_0x45ccc8(0x192,'BGd[')+_0x5561da[_0x18c76c(0x260)][_0x18c76c(0x274)]+_0x45ccc8(0xbc,'[aW5')+_0x5561da[_0x45ccc8(0x120,'Dvj0')][_0x18c76c(0x1b5)]);_0x2bcb79[_0x18c76c(0x175)]=Font[_0x45ccc8(0x14b,'taSu')](0xb),_0x2bcb79[_0x18c76c(0x2bd)]=getColorForCurrentAppearance();const _0x421260=_0x5a7fb8[_0x45ccc8(0x27d,'oRVp')](_0x45ccc8(0x12d,'oRVp')+_0x5561da[_0x18c76c(0x260)][_0x45ccc8(0x12f,'H2#k')]+'.'+_0x45ccc8(0x1f3,'1Uwf')+_0x5561da['record'][_0x45ccc8(0x17f,'N3yp')]+'.');_0x421260[_0x45ccc8(0xeb,'oe65')]=Font[_0x45ccc8(0x1d9,'BGd[')](0xb),_0x421260[_0x18c76c(0x2bd)]=getColorForCurrentAppearance();if(_0x5561da[_0x18c76c(0x1ab)][_0x18c76c(0xa2)]!=null){const _0x1fe637=_0x5a7fb8[_0x45ccc8(0x1be,'T6BY')](_0x5561da[_0x18c76c(0x1ab)][_0x45ccc8(0x110,'a^![')]+'\x20('+_0x5561da[_0x18c76c(0x1ab)]['value']+')');_0x1fe637[_0x45ccc8(0x265,'gn@E')]=Font['systemFont'](0xb),_0x1fe637[_0x45ccc8(0x14a,'KGN4')]=getColorForCurrentAppearance();}}if(SHOW_STATS_AND_STANDINGS){const _0x507fb9=_0x5a7fb8[_0x18c76c(0x9d)](_0x18c76c(0xf9));_0x507fb9[_0x18c76c(0x175)]=Font[_0x18c76c(0x17e)](0x6),_0x507fb9[_0x18c76c(0x2bd)]=getColorForCurrentAppearance(),_0x5a7fb8[_0x45ccc8(0x155,'o(V]')](0x6);const _0x2bcf1a=_0x5a7fb8[_0x45ccc8(0x1a4,'%W*X')]();_0x2bcf1a[_0x45ccc8(0x1b3,'C1)E')]();const _0x555ebd=_0x2bcf1a[_0x18c76c(0x16e)]();_0x555ebd[_0x18c76c(0x28e)]();const _0x145986=_0x555ebd[_0x18c76c(0x9d)](_0x18c76c(0x18b)+_0x59703e[_0x18c76c(0x260)][_0x45ccc8(0x11f,'$GzP')]+_0x18c76c(0xf5)+_0x59703e['record'][_0x45ccc8(0xff,'hbtg')]);_0x145986[_0x18c76c(0x175)]=Font[_0x18c76c(0xb6)](0x9),_0x145986['textColor']=getColorForCurrentAppearance();const _0x599cb0=_0x555ebd['addText'](_0x45ccc8(0x258,'BGd[')+_0x59703e[_0x18c76c(0x260)][_0x45ccc8(0x2a7,'eaH]')]+'.'+_0x18c76c(0x180)+_0x59703e[_0x18c76c(0x260)][_0x18c76c(0x25d)]+'.');_0x599cb0[_0x18c76c(0x175)]=Font['systemFont'](0x9),_0x599cb0[_0x18c76c(0x2bd)]=getColorForCurrentAppearance();if(_0x59703e[_0x45ccc8(0x162,'$GzP')]['name']!=null){const _0x4e79e6=_0x555ebd[_0x45ccc8(0x2b6,'2Pn[')](_0x59703e['topscorer'][_0x45ccc8(0x1e5,'#n%h')]+'\x20('+_0x59703e[_0x18c76c(0x1ab)][_0x45ccc8(0x213,'22L4')]+')');_0x4e79e6[_0x18c76c(0x175)]=Font[_0x18c76c(0xb6)](0x9),_0x4e79e6[_0x45ccc8(0xac,'#n%h')]=getColorForCurrentAppearance();}_0x2bcf1a[_0x18c76c(0x181)]();const _0x5f0c5f=await loadLogo(_0x59703e[_0x18c76c(0xe1)],_0x59703e[_0x45ccc8(0xcd,'FOFg')]),_0x394c55=_0x2bcf1a[_0x18c76c(0x282)](_0x5f0c5f);_0x394c55[_0x18c76c(0x150)]=new Size(0x19,0x19);}}else{_0x5a7fb8[_0x18c76c(0x181)]();const _0x579cca=_0x5a7fb8['addText'](_0x45ccc8(0xcb,'yMCo'));_0x579cca[_0x45ccc8(0x145,'FOFg')](),_0x579cca['font']=Font[_0x18c76c(0x17e)](0xb),_0x579cca[_0x18c76c(0x2bd)]=getColorForCurrentAppearance(),_0x5a7fb8[_0x45ccc8(0x270,'eZnz')]();}}async function addMediumWidgetData(_0x32ae73){const _0x543966=_0x2b9a94,_0x326a71=_0x324b29,_0x55bdcf=await prepareData(),_0x41f8b8=_0x32ae73['addStack']();_0x41f8b8[_0x326a71(0x24d)]=0xc,_0x41f8b8[_0x326a71(0xad)]=new Size(0x134,0xf),_0x41f8b8[_0x326a71(0x184)](0x7,0x7,0x7,0x7),_0x41f8b8[_0x543966(0x10e,'g(c[')]();const _0x2c11a2=_0x41f8b8['addStack']();_0x2c11a2[_0x326a71(0x1d2)](),_0x2c11a2[_0x326a71(0x181)]();if(_0x55bdcf!=null){const _0x456c33=_0x41f8b8[_0x326a71(0x16e)]();_0x456c33['layoutHorizontally'](),_0x456c33['addSpacer'](),_0x456c33['setPadding'](0x7,0x7,0x7,0x7);let _0x466011;if(_0x55bdcf[_0x543966(0x29e,'2Pn[')]!=undefined&&_0x55bdcf[_0x543966(0x11b,'oRVp')]!=''&&_0x55bdcf[_0x543966(0xd9,'1ott')]['liveScore']!='-'&&SHOW_LIVE_SCORES)_0x466011=_0x456c33[_0x543966(0x12c,'dMNJ')](''+_0x55bdcf[_0x543966(0x23c,'22L4')]);else{const _0x470f8d=new Date(_0x55bdcf[_0x543966(0xa8,'$15Y')]),_0x492a43=_0x470f8d[_0x543966(0x102,'f4OK')]([],{'year':_0x326a71(0x2c4),'month':_0x326a71(0x2c4),'day':_0x543966(0x183,'#hBm'),'hour':_0x543966(0x20b,'T6BY'),'minute':_0x543966(0x10b,'Ny@&')});_0x466011=_0x456c33['addText'](_0x492a43+_0x543966(0x1a8,'taSu')+_0x55bdcf[_0x326a71(0x229)]);}_0x466011[_0x543966(0x2a6,'1wbB')]=Font['boldSystemFont'](0xb),_0x466011[_0x326a71(0x2bd)]=getColorForCurrentAppearance(),_0x456c33[_0x326a71(0x181)]();const _0x314a15=_0x41f8b8[_0x326a71(0x16e)]();_0x314a15[_0x326a71(0x1d2)](),_0x314a15[_0x326a71(0x181)](),_0x32ae73[_0x326a71(0x181)]();const _0x2b7e67=_0x32ae73[_0x326a71(0x16e)]();_0x2b7e67[_0x326a71(0x1d2)](),_0x2b7e67[_0x543966(0x1a2,'g(c[')]=0xc;SHOW_HOME_TEAM_FIRST?(await addHomeTeamStack(_0x2b7e67,_0x55bdcf),_0x2b7e67['addSpacer'](),await addAwayTeamStack(_0x2b7e67,_0x55bdcf)):(await addAwayTeamStack(_0x2b7e67,_0x55bdcf),_0x2b7e67[_0x543966(0xf3,'aeED')](),await addHomeTeamStack(_0x2b7e67,_0x55bdcf));_0x32ae73[_0x326a71(0x181)]();const _0x956870=_0x32ae73[_0x326a71(0x16e)]();_0x956870[_0x326a71(0x1d2)](),_0x956870['centerAlignContent'](),_0x956870[_0x543966(0x13a,'1Uwf')]=0xc,_0x956870[_0x543966(0x234,'T6BY')](0x3,0x7,0x3,0x7),_0x956870['addSpacer'](),_0x956870[_0x326a71(0xad)]=new Size(0x134,0x0);for(let _0x46283a=0x0;_0x46283a<_0x55bdcf[_0x543966(0x148,'EB71')]['length'];_0x46283a++){const _0x40e6b9=_0x55bdcf['nextGames'][_0x46283a],_0x492439=_0x956870['addStack']();_0x492439[_0x543966(0x1e8,'1Uwf')](),_0x492439[_0x543966(0x19a,'%W*X')]();const _0x247766=await loadLogo(_0x40e6b9[_0x543966(0x130,'U%0L')]['logoLink'],_0x40e6b9['opponent'][_0x326a71(0x2a3)]),_0x1914dd=_0x492439['addImage'](_0x247766);_0x1914dd[_0x326a71(0x150)]=new Size(0xf,0xf);const _0x2d2a89=new Date(_0x40e6b9[_0x543966(0x176,'C1)E')]),_0x18dd53=_0x2d2a89[_0x326a71(0x1d8)]([],{'month':_0x543966(0x15d,'N3yp'),'day':_0x543966(0x115,'[aW5')}),_0x1f0702=_0x492439[_0x543966(0x1cf,'oe65')]('\x20'+_0x18dd53);_0x1f0702[_0x326a71(0x175)]=Font['systemFont'](0xb),_0x1f0702['textColor']=getColorForCurrentAppearance(),_0x492439['addSpacer']();}_0x956870[_0x543966(0x1c9,'LAy]')]();}else{_0x32ae73['addSpacer']();const _0x11c2ae=_0x32ae73[_0x326a71(0x9d)](_0x543966(0x24b,'eaH]'));_0x11c2ae[_0x326a71(0x237)](),_0x11c2ae['font']=Font[_0x543966(0x188,'f4OK')](0xf),_0x11c2ae[_0x326a71(0x2bd)]=getColorForCurrentAppearance(),_0x32ae73[_0x326a71(0x181)]();}}async function addHomeTeamStack(_0x48a132,_0x8fc305){const _0x4679df=_0x2b9a94,_0x3edf0b=_0x324b29,_0x185864=_0x48a132[_0x3edf0b(0x16e)]();_0x185864[_0x4679df(0x2b9,'WRPs')](),_0x185864[_0x3edf0b(0x297)](),_0x185864[_0x4679df(0x137,'%B9M')](0x7,0x7,0x7,0x7),_0x185864[_0x3edf0b(0x24d)]=0xc,_0x185864[_0x3edf0b(0xad)]=new Size(0x96,0x0);const _0x1a2aeb=_0x185864['addStack']();_0x1a2aeb[_0x4679df(0x1da,'%W*X')]();const _0x474d1a=await loadLogo(_0x8fc305['homeTeam'][_0x3edf0b(0xe1)],_0x8fc305['homeTeam'][_0x3edf0b(0x2a3)]),_0x116027=_0x1a2aeb['addImage'](_0x474d1a);_0x116027[_0x4679df(0x292,'T6BY')]=new Size(0x28,0x28);if(SHOW_LIVE_SCORES){const _0x1fd526=_0x8fc305[_0x4679df(0x25c,'a^![')][_0x3edf0b(0x1ef)],_0x1095e3=_0x1fd526<0x63||_0x1fd526==='-'?0x2d:0x19;_0x1a2aeb[_0x3edf0b(0x181)](_0x1095e3);const _0x28143f=_0x1a2aeb[_0x4679df(0x187,'5jC2')](''+_0x1fd526);_0x28143f[_0x4679df(0x112,'EB71')]=Font['boldSystemFont'](0x23),_0x28143f[_0x4679df(0x2c6,'1wbB')]=getColorForCurrentAppearance();}if(SHOW_STATS_AND_STANDINGS){const _0x3adeb2=_0x185864['addText'](_0x3edf0b(0x18b)+_0x8fc305[_0x4679df(0x1ee,'Dvj0')]['record']['wins']+_0x4679df(0x22a,'C1)E')+_0x8fc305[_0x3edf0b(0x29d)][_0x4679df(0x136,'5jC2')][_0x3edf0b(0x1b5)]);_0x3adeb2[_0x4679df(0x1a3,'[aW5')]=Font[_0x4679df(0x1ed,'g(c[')](0xb),_0x3adeb2[_0x4679df(0x1ae,'gn@E')]=getColorForCurrentAppearance();const _0x51985e=_0x185864['addText'](_0x4679df(0xf4,'LAy]')+_0x8fc305['homeTeam'][_0x3edf0b(0x260)][_0x4679df(0x12f,'H2#k')]+'.'+_0x3edf0b(0x21d)+_0x8fc305[_0x4679df(0xaf,'BGd[')]['record'][_0x3edf0b(0x25d)]+'.');_0x51985e['font']=Font[_0x4679df(0x272,'#hBm')](0x9),_0x51985e[_0x4679df(0x2c6,'1wbB')]=getColorForCurrentAppearance();if(_0x8fc305[_0x3edf0b(0x29d)][_0x3edf0b(0x1ab)]['name']!=null){const _0x38a60d=_0x185864[_0x3edf0b(0x9d)](_0x8fc305[_0x3edf0b(0x29d)][_0x3edf0b(0x1ab)]['name']+'\x20('+_0x8fc305['homeTeam']['topscorer'][_0x3edf0b(0x232)]+')');_0x38a60d[_0x3edf0b(0x237)](),_0x38a60d[_0x4679df(0x1ca,'U%0L')]=Font['systemFont'](0x9),_0x38a60d[_0x3edf0b(0x2bd)]=getColorForCurrentAppearance();}}}async function addAwayTeamStack(_0x2e2b39,_0x1a1a2b){const _0x34ec85=_0x2b9a94,_0x4a476f=_0x324b29,_0x3fa464=_0x2e2b39[_0x4a476f(0x16e)]();_0x3fa464['layoutVertically'](),_0x3fa464[_0x34ec85(0x267,'T6BY')](),_0x3fa464[_0x34ec85(0x1ad,'Py*t')](0x7,0x7,0x7,0x7),_0x3fa464['cornerRadius']=0xc,_0x3fa464['size']=new Size(0x96,0x0);const _0x30c7f6=_0x3fa464['addStack']();_0x30c7f6[_0x34ec85(0x1f5,'1wbB')]();const _0xa33606=await loadLogo(_0x1a1a2b['awayTeam'][_0x34ec85(0x135,'R0qC')],_0x1a1a2b[_0x4a476f(0x1f6)][_0x34ec85(0x1f9,'GcV@')]),_0x52c369=_0x30c7f6[_0x34ec85(0x17b,'Ny@&')](_0xa33606);_0x52c369['imageSize']=new Size(0x28,0x28);if(SHOW_LIVE_SCORES){const _0x4fa173=_0x1a1a2b[_0x34ec85(0x295,'2Pn[')][_0x34ec85(0x97,'%W*X')],_0x453280=_0x4fa173<0x63||_0x4fa173==='-'?0x2d:0x19;_0x30c7f6[_0x4a476f(0x181)](_0x453280);const _0x66630d=_0x30c7f6[_0x4a476f(0x9d)](''+_0x4fa173);_0x66630d[_0x34ec85(0x112,'EB71')]=Font[_0x34ec85(0x246,'LAy]')](0x23),_0x66630d['textColor']=getColorForCurrentAppearance();}if(SHOW_STATS_AND_STANDINGS){const _0x251d9a=_0x3fa464[_0x4a476f(0x9d)](_0x4a476f(0x18b)+_0x1a1a2b['awayTeam'][_0x34ec85(0xfb,'BGd[')][_0x4a476f(0x274)]+_0x34ec85(0x94,'$15Y')+_0x1a1a2b[_0x4a476f(0x1f6)][_0x4a476f(0x260)][_0x4a476f(0x1b5)]);_0x251d9a['font']=Font[_0x34ec85(0x16d,'Py*t')](0xb),_0x251d9a[_0x4a476f(0x2bd)]=getColorForCurrentAppearance();const _0x246ff7=_0x3fa464['addText'](_0x34ec85(0x143,'f4OK')+_0x1a1a2b[_0x34ec85(0xaa,'KGN4')][_0x34ec85(0x132,'[aW5')][_0x34ec85(0xd0,'yMCo')]+'.'+'\x20|\x20分区排名:\x20'+_0x1a1a2b['awayTeam'][_0x4a476f(0x260)][_0x4a476f(0x25d)]+'.');_0x246ff7[_0x34ec85(0x265,'gn@E')]=Font[_0x4a476f(0xb6)](0x9),_0x246ff7[_0x4a476f(0x2bd)]=getColorForCurrentAppearance();if(_0x1a1a2b[_0x34ec85(0x1ba,'taSu')]['topscorer']['name']!=null){const _0x1519f6=_0x3fa464[_0x34ec85(0x19c,'eZnz')](_0x1a1a2b[_0x4a476f(0x1f6)]['topscorer'][_0x34ec85(0x26a,'dbXa')]+'\x20('+_0x1a1a2b[_0x34ec85(0x236,'BGd[')][_0x4a476f(0x1ab)][_0x34ec85(0x283,'o(V]')]+')');_0x1519f6[_0x34ec85(0x13f,'cGUC')]=Font[_0x34ec85(0x24a,'%B9M')](0x9),_0x1519f6[_0x4a476f(0x2bd)]=getColorForCurrentAppearance();}}}async function prepareData(){const _0x4e4367=_0x324b29,_0x3e642b=_0x2b9a94,_0xd18c52={'gameDate':'','gameStatus':'','venue':'','nextGames':[],'homeTeam':{'abbreviation':'','logoLink':'','record':{'wins':'','losses':'','confRank':'','divRank':''},'liveScore':'','topscorer':{'name':null,'value':''}},'awayTeam':{'abbreviation':'','logoLink':'','record':{'wins':'','losses':'','confRank':'','divRank':''},'liveScore':'','topscorer':{'name':null,'value':''}}},_0x1ffd21=getTeamData();let _0x230f42=await fetchScheduleData(_0x1ffd21);if(_0x230f42&&_0x230f42[_0x3e642b(0x22d,'$15Y')]>0x0){const _0x22ed72=_0x230f42[0x0];if(_0x22ed72!=undefined){const _0x3f73ec=filterTeamDataById(_0x22ed72['h']['tid'],_0x1ffd21),_0x4a6d07=await fetchStandings(_0x3f73ec),_0x1ab8cb=await fetchTopScorer(_0x3f73ec),_0x2f1e4a=filterTeamDataById(_0x22ed72['v']['tid'],_0x1ffd21),_0x412379=await fetchStandings(_0x2f1e4a),_0x12b90e=await fetchTopScorer(_0x2f1e4a);_0xd18c52[_0x3e642b(0x227,'5jC2')]=_0x22ed72[_0x3e642b(0x1af,'9n]2')],_0xd18c52[_0x3e642b(0x119,'yMCo')]=_0x3f73ec[_0x3e642b(0x1b7,'BGd[')],_0xd18c52[_0x3e642b(0x21e,'a^![')]=getNextGames(_0x230f42,_0x1ffd21),_0xd18c52[_0x3e642b(0x269,'#n%h')]['abbreviation']=_0x3f73ec['abbreviation'],_0xd18c52[_0x4e4367(0x29d)][_0x3e642b(0x1c7,'oRVp')]=_0x3f73ec['logo'],_0xd18c52[_0x3e642b(0x1bd,'C1)E')][_0x3e642b(0x1a0,'oRVp')]={'wins':_0x4a6d07[_0x4e4367(0x1fa)],'losses':_0x4a6d07[_0x3e642b(0x196,'%B9M')],'confRank':_0x4a6d07[_0x4e4367(0xfa)],'divRank':_0x4a6d07[_0x4e4367(0x25d)]},_0xd18c52['awayTeam'][_0x4e4367(0x2a3)]=_0x2f1e4a['abbreviation'],_0xd18c52[_0x3e642b(0x182,'f4OK')]['logoLink']=_0x2f1e4a[_0x4e4367(0xbb)],_0xd18c52[_0x4e4367(0x1f6)]['record']={'wins':_0x412379[_0x3e642b(0x13b,'$15Y')],'losses':_0x412379[_0x3e642b(0x19d,'nkbA')],'confRank':_0x412379[_0x4e4367(0xfa)],'divRank':_0x412379[_0x4e4367(0x25d)]};_0x1ab8cb['name']!=null&&(_0xd18c52[_0x3e642b(0x16f,'H2#k')][_0x4e4367(0x1ab)]['name']=_0x1ab8cb['name'],_0xd18c52[_0x3e642b(0xd8,'#hBm')][_0x3e642b(0x194,'a^![')][_0x4e4367(0x232)]=_0x1ab8cb['value']);_0x12b90e[_0x3e642b(0x215,'LAy]')]!=null&&(_0xd18c52[_0x4e4367(0x1f6)][_0x3e642b(0x2c1,'gn@E')][_0x3e642b(0x156,'22L4')]=_0x12b90e[_0x4e4367(0xa2)],_0xd18c52[_0x3e642b(0xc7,'R0qC')][_0x4e4367(0x1ab)][_0x3e642b(0x12b,'%B9M')]=_0x12b90e[_0x3e642b(0x283,'o(V]')]);if(SHOW_LIVE_SCORES){const _0xabee84=await fetchLiveData(_0x22ed72[_0x3e642b(0x1e3,'9n]2')],_0x22ed72[_0x3e642b(0x1a1,'Ny@&')]);_0xd18c52['homeTeam'][_0x4e4367(0x1ef)]=_0xabee84[_0x3e642b(0xdc,'f4OK')],_0xd18c52['awayTeam'][_0x3e642b(0x28c,'oRVp')]=_0xabee84['awayTeamScore'],_0xd18c52[_0x4e4367(0x118)]=_0xabee84[_0x4e4367(0x9a)];}}}else return null;return _0xd18c52;}function filterTeamDataById(_0x208151,_0x2db671){for(let _0x152884 in _0x2db671){if(_0x2db671[_0x152884]['id']==_0x208151)return _0x2db671[_0x152884];}return{};}function getNextGames(_0x6b3448,_0x72abd0){const _0x21cdf9=_0x2b9a94,_0xaeb667=_0x324b29,_0x5b0d01=_0x72abd0[MY_NBA_TEAM]['id'],_0x304799=[],_0x5b2ef0=_0x6b3448['length']<0x5?_0x6b3448[_0xaeb667(0x166)]:0x5;for(let _0x2086ef=0x1;_0x2086ef<_0x5b2ef0;_0x2086ef++){let _0x351675={'gameDate':'','opponent':{'abbreviation':'','logoLink':''}};const _0x3217ba=_0x6b3448[_0x2086ef];_0x351675[_0x21cdf9(0xa8,'$15Y')]=_0x3217ba['gdtutc'];if(_0x3217ba['h'][_0xaeb667(0x172)]==_0x5b0d01){const _0x186f2b=filterTeamDataById(_0x3217ba['v'][_0x21cdf9(0x17a,'5jC2')],_0x72abd0);_0x351675[_0x21cdf9(0x10c,'%B9M')]['abbreviation']=_0x186f2b['abbreviation'],_0x351675[_0xaeb667(0x1d3)]['logoLink']=_0x186f2b['logo'];}else{const _0x7b949e=filterTeamDataById(_0x3217ba['h'][_0xaeb667(0x172)],_0x72abd0);_0x351675[_0xaeb667(0x1d3)][_0xaeb667(0x2a3)]=_0x7b949e[_0x21cdf9(0x191,'%B9M')],_0x351675[_0x21cdf9(0x23d,'R0qC')][_0x21cdf9(0x2b8,'#n%h')]=_0x7b949e[_0x21cdf9(0x1f1,'LAy]')];}_0x304799[_0xaeb667(0x2a1)](_0x351675);}return _0x304799;}async function fetchScheduleData(_0x17cd8f){const _0x3fe739=_0x2b9a94,_0x3bf696=_0x324b29,_0x34a9b0=_0x17cd8f[MY_NBA_TEAM][_0x3bf696(0x200)][_0x3fe739(0x144,'%W*X')](),_0x4e0630=CURRENT_SEASON_START_YEAR,_0x7e6471=_0x3fe739(0x167,'#n%h')+_0x4e0630+_0x3fe739(0x262,'nkbA')+_0x34a9b0+'_schedule.json',_0x4b904b=new Request(_0x7e6471),_0x4c4820=await _0x4b904b['loadJSON']();if(_0x4c4820){const _0xddf9c3=new Date();_0xddf9c3['setHours'](_0xddf9c3['getHours']()-0x6);const _0x20e6ba=_0x4c4820[_0x3bf696(0xd1)]['g'],_0x312d89=_0x20e6ba[_0x3fe739(0x157,'Y5Y7')](_0x491f37=>{const _0x2e4ab4=_0x3bf696,_0x5a1723=_0x3fe739,_0x165bca=new Date(_0x491f37[_0x5a1723(0xd3,'$15Y')]);if(new Date(_0x165bca['toDateString']())>=new Date(_0xddf9c3['toDateString']()))return _0x491f37[_0x2e4ab4(0xba)]=_0x491f37['gdtutc']+'T'+_0x491f37['utctm']+':00Z',_0x491f37;});return _0x312d89;}return[];}async function fetchStandings(_0x21a464){const _0x436775=_0x324b29,_0x7a80ad=_0x2b9a94,_0x1969fd=_0x7a80ad(0x1c6,'gn@E')+_0x21a464[_0x436775(0xd2)],_0x3bd067=new Request(_0x1969fd),_0x11a115=await _0x3bd067[_0x7a80ad(0x26f,'FOFg')]();return{'win':_0x11a115['payload'][_0x436775(0x11c)][_0x436775(0x2a9)][_0x7a80ad(0x17d,'gn@E')],'loss':_0x11a115[_0x7a80ad(0x216,'%W*X')]['team'][_0x7a80ad(0x152,'R0qC')][_0x436775(0x1b5)],'confRank':_0x11a115[_0x7a80ad(0x121,'[aW5')][_0x436775(0x11c)][_0x7a80ad(0x124,'#n%h')]['confRank'],'divRank':_0x11a115['payload']['team'][_0x436775(0x2a9)][_0x7a80ad(0x1a9,'Ny@&')]};}async function fetchTopScorer(_0x27b3ca){const _0x60123f=_0x2b9a94,_0x28c05d=_0x324b29,_0x3c544b=CURRENT_SEASON_START_YEAR,_0x50d6=_0x28c05d(0x2a0)+_0x27b3ca[_0x28c05d(0xd2)],_0x478e9d=new Request(_0x50d6),_0x2b5039=await _0x478e9d[_0x28c05d(0x1a5)]();let _0x162f93={'name':null,'value':''};if(_0x2b5039){const _0x1f281e=_0x2b5039[_0x28c05d(0x281)][_0x28c05d(0x1f8)][_0x28c05d(0x29c)][0x0];_0x162f93[_0x60123f(0xdd,'1Uwf')]=_0x1f281e[_0x28c05d(0x280)][_0x60123f(0x26c,'dMNJ')],_0x162f93[_0x60123f(0x1ce,'U%0L')]=_0x1f281e[_0x28c05d(0x232)];}return _0x162f93;}async function fetchLiveData(_0x3ab9aa,_0x5c1429){const _0x15ffc0=_0x324b29,_0x48aea3=_0x2b9a94,_0x1947f8=_0x48aea3(0x28d,'BGd['),_0x2ce24c=new Request(_0x1947f8),_0x1cf78c=await _0x2ce24c[_0x15ffc0(0x1a5)]();if(_0x1cf78c!==undefined){const _0x2b96c2=_0x1cf78c[_0x48aea3(0x27f,'1wbB')][_0x48aea3(0xec,'#n%h')],_0xe5989e=_0x2b96c2[_0x15ffc0(0x1e6)](_0x3a98a6=>_0x3a98a6['gameId']==_0x3ab9aa);if(_0xe5989e[_0x48aea3(0x10f,'H2#k')]>0x0){const _0x2adcef=_0xe5989e[0x0];return{'statusText':_0x2adcef[_0x15ffc0(0x20f)],'homeTeamScore':_0x2adcef[_0x48aea3(0x239,'1wbB')]===0x0?'-':calculateScore(_0x2adcef['homeTeam'][_0x48aea3(0x2c2,'R0qC')]),'awayTeamScore':_0x2adcef['period']===0x0?'-':calculateScore(_0x2adcef[_0x48aea3(0x9b,'dMNJ')][_0x48aea3(0x271,'eZnz')])};}}return{'statusText':null,'homeTeamScore':_0x48aea3(0x142,'eZnz'),'awayTeamScore':_0x48aea3(0xf6,'U%0L')};}function calculateScore(_0x347b4d){const _0x4ffd0b=_0x324b29;let _0x109d05=0x0;return _0x347b4d[_0x4ffd0b(0x22c)](_0x4592d9=>_0x109d05+=parseInt(_0x4592d9[_0x4ffd0b(0x134)])),_0x109d05;}async function loadLogo(_0x22db37,_0x46e174){const _0x6d77c8=_0x324b29,_0x167a92=_0x2b9a94;let _0x4a4789;if(CACHING_ACTIVE){const _0x4f95ae=FileManager[_0x167a92(0x117,'%W*X')](),_0x3c2186=_0x4f95ae[_0x6d77c8(0xb2)](_0x4f95ae[_0x6d77c8(0x114)](),_0x46e174+_0x167a92(0x1f7,'N3yp')),_0x2634cd=_0x4f95ae[_0x6d77c8(0x122)](_0x3c2186);try{if(_0x2634cd)_0x4a4789=_0x4f95ae['readImage'](_0x3c2186);else{const _0x333758=new Request(_0x22db37);_0x4a4789=await _0x333758[_0x6d77c8(0x11e)]();try{_0x4f95ae[_0x167a92(0x228,'LAy]')](_0x3c2186,_0x4a4789),console[_0x167a92(0x18d,'g(c[')](_0x6d77c8(0x2b3)+_0x46e174+_0x6d77c8(0xda));}catch(_0x4d3cc6){console['log'](_0x4d3cc6);}}}catch(_0xe6167b){console[_0x167a92(0x2b4,'#n%h')](_0xe6167b),_0x2634cd?_0x4a4789=_0x4f95ae[_0x167a92(0x17c,'#hBm')](_0x3c2186):console[_0x6d77c8(0xef)](_0x167a92(0x100,'#n%h')+_0x46e174+_0x167a92(0x244,'Py*t'));}}else{const _0x1de6ef=new Request(_0x22db37);_0x4a4789=await _0x1de6ef[_0x6d77c8(0x11e)]();}return _0x4a4789;}function _0x5978(_0x1ada08,_0x1aa5a7){const _0x217ed3=_0x215f();return _0x5978=function(_0x1ee393,_0x2857e1){_0x1ee393=_0x1ee393-0x93;let _0x215f62=_0x217ed3[_0x1ee393];if(_0x5978['YcqAfT']===undefined){var _0x13a41d=function(_0x1c409d){const _0x35b2f9='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x3c4729='',_0x5978a2='',_0x2e21d1=_0x3c4729+_0x13a41d;for(let _0x180a23=0x0,_0x1eb6a0,_0x179a24,_0x59fbbb=0x0;_0x179a24=_0x1c409d['charAt'](_0x59fbbb++);~_0x179a24&&(_0x1eb6a0=_0x180a23%0x4?_0x1eb6a0*0x40+_0x179a24:_0x179a24,_0x180a23++%0x4)?_0x3c4729+=_0x2e21d1['charCodeAt'](_0x59fbbb+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x1eb6a0>>(-0x2*_0x180a23&0x6)):_0x180a23:0x0){_0x179a24=_0x35b2f9['indexOf'](_0x179a24);}for(let _0x1b5466=0x0,_0xb76ac4=_0x3c4729['length'];_0x1b5466<_0xb76ac4;_0x1b5466++){_0x5978a2+='%'+('00'+_0x3c4729['charCodeAt'](_0x1b5466)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x5978a2);};_0x5978['SGHhTw']=_0x13a41d,_0x1ada08=arguments,_0x5978['YcqAfT']=!![];}const _0x568ed0=_0x217ed3[0x0],_0x3a786a=_0x1ee393+_0x568ed0,_0x36806e=_0x1ada08[_0x3a786a];if(!_0x36806e){const _0x31145c=function(_0x138e96){this['pieWDE']=_0x138e96,this['KAFIHX']=[0x1,0x0,0x0],this['uUFkrA']=function(){return'newState';},this['CCaNJP']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['sdaclw']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x31145c['prototype']['ZfeDBD']=function(){const _0x49e10e=new RegExp(this['CCaNJP']+this['sdaclw']),_0x5a7fb8=_0x49e10e['test'](this['uUFkrA']['toString']())?--this['KAFIHX'][0x1]:--this['KAFIHX'][0x0];return this['nNVHhr'](_0x5a7fb8);},_0x31145c['prototype']['nNVHhr']=function(_0x1b1805){if(!Boolean(~_0x1b1805))return _0x1b1805;return this['EoxqTX'](this['pieWDE']);},_0x31145c['prototype']['EoxqTX']=function(_0x12f865){for(let _0x29c06c=0x0,_0x59703e=this['KAFIHX']['length'];_0x29c06c<_0x59703e;_0x29c06c++){this['KAFIHX']['push'](Math['round'](Math['random']())),_0x59703e=this['KAFIHX']['length'];}return _0x12f865(this['KAFIHX'][0x0]);},new _0x31145c(_0x5978)['ZfeDBD'](),_0x215f62=_0x5978['SGHhTw'](_0x215f62),_0x1ada08[_0x3a786a]=_0x215f62;}else _0x215f62=_0x36806e;return _0x215f62;},_0x5978(_0x1ada08,_0x1aa5a7);}function getColorForCurrentAppearance(){return DARK_MODE?Color['white']():Color['white']();}function emptyFunction(){return{};}function getTeamData(){const _0x454b07=_0x324b29,_0x4734c1=_0x2b9a94;return{'ATL':{'id':0x60000001,'abbreviation':'ATL','teamName':_0x4734c1(0x24c,'aeED'),'simpleName':_0x454b07(0x2bc),'shortName':_0x4734c1(0x14c,'%W*X'),'location':_0x4734c1(0x26d,'9n]2'),'logo':_0x4734c1(0xc1,'oRVp')},'BOS':{'id':0x60000002,'abbreviation':_0x4734c1(0x217,'%W*X'),'teamName':'Boston\x20Celtics','simpleName':_0x4734c1(0x248,'$GzP'),'shortName':_0x4734c1(0x230,'1wbB'),'location':'TD北岸花园球馆','logo':_0x4734c1(0xee,'KGN4')},'BKN':{'id':0x6000000f,'abbreviation':_0x4734c1(0x223,'U%0L'),'teamName':_0x4734c1(0x1b2,'LAy]'),'simpleName':_0x4734c1(0x26e,'$GzP'),'shortName':_0x4734c1(0x29b,'$GzP'),'location':_0x4734c1(0x251,'dMNJ'),'logo':_0x454b07(0x9c)},'CHA':{'id':0x6000001e,'abbreviation':_0x4734c1(0x1f4,'LAy]'),'teamName':_0x4734c1(0x154,'#hBm'),'simpleName':_0x454b07(0xde),'shortName':_0x454b07(0xdf),'location':_0x454b07(0xd7),'logo':_0x4734c1(0xae,'Dvj0')},'CHI':{'id':0x60000005,'abbreviation':'CHI','teamName':_0x4734c1(0x210,'Ny@&'),'simpleName':_0x454b07(0x14e),'shortName':'bulls','location':_0x454b07(0x253),'logo':_0x4734c1(0x1b8,'Ny@&')},'CLE':{'id':0x60000003,'abbreviation':_0x4734c1(0x22b,'g(c['),'teamName':'Cleveland\x20Cavaliers','simpleName':_0x4734c1(0x23a,'Y5Y7'),'shortName':_0x454b07(0x189),'location':'速贷球馆','logo':_0x4734c1(0x99,'C1)E')},'DAL':{'id':0x60000006,'abbreviation':_0x4734c1(0x165,'H2#k'),'teamName':_0x454b07(0x209),'simpleName':_0x4734c1(0x21f,'1ott'),'shortName':'mavericks','location':_0x4734c1(0xb0,'1Uwf'),'logo':_0x4734c1(0x16b,'g(c[')},'DEN':{'id':0x60000007,'abbreviation':_0x4734c1(0xf8,'eZnz'),'teamName':_0x4734c1(0xb9,'o(V]'),'simpleName':_0x454b07(0x151),'shortName':'nuggets','location':_0x454b07(0x149),'logo':_0x454b07(0x126)},'DET':{'id':0x6000001d,'abbreviation':_0x454b07(0xa0),'teamName':_0x454b07(0x138),'simpleName':_0x4734c1(0xca,'WRPs'),'shortName':_0x4734c1(0x1de,'#n%h'),'location':_0x454b07(0x128),'logo':'https://www.thesportsdb.com/images/media/team/badge/12612u1511101660.png/preview'},'GSW':{'id':0x60000008,'abbreviation':_0x454b07(0x1c1),'teamName':_0x454b07(0xe6),'simpleName':_0x454b07(0x288),'shortName':_0x454b07(0x1eb),'location':'奥克兰体育馆','logo':_0x454b07(0xe8)},'HOU':{'id':0x60000009,'abbreviation':'HOU','teamName':'Houston\x20Rockets','simpleName':'Rockets','shortName':_0x454b07(0x125),'location':_0x4734c1(0xe9,'ibor'),'logo':_0x4734c1(0x14d,'%W*X')},'IND':{'id':0x60000012,'abbreviation':_0x454b07(0x98),'teamName':_0x454b07(0x19b),'simpleName':_0x4734c1(0x10d,'[aW5'),'shortName':_0x454b07(0x1dc),'location':_0x4734c1(0xbf,'g(c['),'logo':_0x4734c1(0x1c4,'1wbB')},'LAC':{'id':0x6000000a,'abbreviation':_0x454b07(0x16a),'teamName':_0x454b07(0x2ab),'simpleName':_0x454b07(0xc5),'shortName':_0x454b07(0x27a),'location':_0x4734c1(0x153,'LAy]'),'logo':_0x4734c1(0x266,'ibor')},'LAL':{'id':0x6000000b,'abbreviation':'LAL','teamName':_0x4734c1(0x235,'Py*t'),'simpleName':_0x454b07(0x141),'shortName':_0x454b07(0x174),'location':_0x454b07(0xc8),'logo':_0x4734c1(0x275,'WRPs')},'MEM':{'id':0x6000001b,'abbreviation':_0x454b07(0x133),'teamName':_0x454b07(0x1cd),'simpleName':_0x4734c1(0x2b0,'eZnz'),'shortName':_0x454b07(0x159),'location':_0x4734c1(0x27c,'f4OK'),'logo':'https://www.thesportsdb.com/images/media/team/badge/m64v461565196789.png/preview'},'MIA':{'id':0x6000000c,'abbreviation':_0x4734c1(0x238,'1ott'),'teamName':_0x4734c1(0x202,'dbXa'),'simpleName':_0x454b07(0x285),'shortName':_0x4734c1(0x195,'2Pn['),'location':'美航球馆','logo':_0x454b07(0xa9)},'MIL':{'id':0x6000000d,'abbreviation':'MIL','teamName':_0x454b07(0x1e1),'simpleName':_0x4734c1(0x23e,'GcV@'),'shortName':_0x454b07(0x1dd),'location':'布拉德利中心','logo':'https://www.thesportsdb.com/images/media/team/badge/qgyz6z1503742649.png/preview'},'MIN':{'id':0x6000000e,'abbreviation':_0x454b07(0x290),'teamName':_0x454b07(0xce),'simpleName':'Timberwolves','shortName':_0x4734c1(0xf7,'eZnz'),'location':_0x4734c1(0x158,'9n]2'),'logo':_0x454b07(0x211)},'NOP':{'id':0x60000004,'abbreviation':'NOP','teamName':_0x454b07(0x18e),'simpleName':'Pelicans','shortName':_0x454b07(0x197),'location':_0x454b07(0x26b),'logo':'https://www.thesportsdb.com/images/media/team/badge/f341s31523700397.png/preview'},'NYK':{'id':0x60000010,'abbreviation':_0x4734c1(0x164,'T6BY'),'teamName':_0x4734c1(0xa3,'R0qC'),'simpleName':_0x4734c1(0x220,'1ott'),'shortName':'knicks','location':'麦迪逊广场花园','logo':_0x4734c1(0xe5,'ibor')},'OKC':{'id':0x60000018,'abbreviation':_0x454b07(0x1b1),'teamName':_0x4734c1(0x2a4,'$GzP'),'simpleName':_0x4734c1(0x2ac,'aeED'),'shortName':'thunder','location':_0x454b07(0x105),'logo':_0x4734c1(0x2a2,'#hBm')},'ORL':{'id':0x60000011,'abbreviation':_0x454b07(0x15a),'teamName':_0x4734c1(0x243,'nkbA'),'simpleName':_0x454b07(0x1bb),'shortName':_0x4734c1(0x29f,'taSu'),'location':_0x454b07(0x1b9),'logo':_0x4734c1(0x2ae,'nkbA')},'PHI':{'id':0x60000013,'abbreviation':_0x4734c1(0x140,'1Uwf'),'teamName':'Philadelphia\x2076ers','simpleName':_0x4734c1(0xf1,'%W*X'),'shortName':_0x4734c1(0x28f,'#n%h'),'location':'瓦乔维亚中心球场','logo':_0x454b07(0xb4)},'PHX':{'id':0x60000014,'abbreviation':_0x454b07(0xb5),'teamName':_0x454b07(0x168),'simpleName':_0x4734c1(0x2c3,'BGd['),'shortName':'suns','location':'美航中心','logo':'https://www.thesportsdb.com/images/media/team/badge/qrtuxq1422919040.png/preview'},'POR':{'id':0x60000015,'abbreviation':_0x4734c1(0x169,'Ny@&'),'teamName':_0x4734c1(0x106,'FOFg'),'simpleName':_0x454b07(0x263),'shortName':_0x454b07(0x212),'location':'摩达中心','logo':_0x4734c1(0x198,'%W*X')},'SAC':{'id':0x60000016,'abbreviation':'SAC','teamName':_0x454b07(0x25e),'simpleName':'Kings','shortName':_0x454b07(0x1c5),'location':_0x454b07(0x20c),'logo':_0x4734c1(0xe3,'eaH]')},'SAS':{'id':0x60000017,'abbreviation':_0x454b07(0x1ac),'teamName':'San\x20Antonio\x20Spurs','simpleName':_0x4734c1(0xe0,'z1^b'),'shortName':_0x454b07(0x12a),'location':_0x4734c1(0x29a,'a^!['),'logo':'https://www.thesportsdb.com/images/media/team/badge/crit1q1511809636.png/preview'},'TOR':{'id':0x60000019,'abbreviation':_0x454b07(0x2b7),'teamName':_0x454b07(0x1c2),'simpleName':_0x454b07(0x2ad),'shortName':_0x4734c1(0xa7,'#n%h'),'location':_0x454b07(0xb8),'logo':_0x4734c1(0x11d,'f4OK')},'UTA':{'id':0x6000001a,'abbreviation':'UTA','teamName':'Utah\x20Jazz','simpleName':_0x4734c1(0x1a7,'%B9M'),'shortName':_0x4734c1(0x1b6,'U%0L'),'location':_0x4734c1(0x10a,'$15Y'),'logo':_0x4734c1(0x2bb,'Ny@&')},'WAS':{'id':0x6000001c,'abbreviation':_0x4734c1(0x255,'yMCo'),'teamName':_0x454b07(0x178),'simpleName':_0x454b07(0x1fe),'shortName':_0x4734c1(0x1d6,'%W*X'),'location':_0x4734c1(0x2b2,'H2#k'),'logo':_0x454b07(0x9f)}};}async function getImage(_0x233a5d){const _0x3cfea9=_0x2b9a94,_0x1339e0=new Request(_0x233a5d),_0x5e8800=await _0x1339e0[_0x3cfea9(0x257,'taSu')]();return _0x5e8800;}async function shadowImage(_0x338ad5){const _0x1b8323=_0x2b9a94,_0xf5cf4=_0x324b29;let _0x546150=new DrawContext();return _0x546150['size']=_0x338ad5[_0xf5cf4(0xad)],_0x546150[_0x1b8323(0x11a,'EB71')](_0x338ad5,new Rect(0x0,0x0,_0x338ad5['size'][_0xf5cf4(0x2ba)],_0x338ad5[_0xf5cf4(0xad)][_0xf5cf4(0x1d0)])),_0x546150['setFillColor'](new Color(_0x1b8323(0x254,'cGUC'),0.5)),_0x546150[_0xf5cf4(0x116)](new Rect(0x0,0x0,_0x338ad5[_0xf5cf4(0xad)][_0xf5cf4(0x2ba)],_0x338ad5[_0x1b8323(0x233,'EB71')][_0x1b8323(0x15f,'1ott')])),await _0x546150[_0x1b8323(0x22f,'#hBm')]();}async function generateAlert(_0x5096f2,_0x2f9d2b){const _0x4ab06c=_0x324b29,_0x139a4f=(function(){let _0x127481=!![];return function(_0x127783,_0x4b6007){const _0x2dbc79=_0x127481?function(){const _0x4f5b7e=_0x13a4;if(_0x4b6007){const _0x18a396=_0x4b6007[_0x4f5b7e(0x2be,'eZnz')](_0x127783,arguments);return _0x4b6007=null,_0x18a396;}}:function(){};return _0x127481=![],_0x2dbc79;};}()),_0x3e08ab=_0x139a4f(this,function(){const _0xfd4da9=_0x5978,_0x344e30=_0x13a4;return _0x3e08ab[_0x344e30(0x1b0,'ibor')]()[_0xfd4da9(0xea)]('(((.+)+)+)+$')[_0xfd4da9(0x2a5)]()[_0x344e30(0x231,'gn@E')](_0x3e08ab)['search'](_0xfd4da9(0x185));});_0x3e08ab();let _0x3719cd=new Alert();_0x3719cd[_0x4ab06c(0xd4)]=_0x5096f2;for(const _0xf94d4e of _0x2f9d2b){_0x3719cd[_0x4ab06c(0x2b5)](_0xf94d4e);}let _0x3adfef=await _0x3719cd[_0x4ab06c(0x13d)]();return _0x3adfef;}function _0x215f(){const _0x452af4=['W7aHmwJdTINdVSofDqtcTNJdPb/dOSkLWPaSWQjkWQq','j8oCW6aAW7hdISonjSkzaaxdNCkq','W5reh1W','sg9YBMv0CW','Ag9YBMv0CW','ACkSW6NcGWu','Bg9NB0XPBMS','wYTD5Qoa5Rwl5yIW5PYj5PAW54Mi5PYS77Yb','hLNdTSojx8oJomksC8ksACofWPPFW4ZcPqddJLxcOeOQkuyCWPJcHmktWQ/dQfPbWOqkW5BcTLBdKmoOeZlcNSoynXqjm8kQWPGNW4ddP8k7W7BcRCkhW6eBWQlcTCoCFSkHygRcTXtdTcZdN8k+fZakzcqPWQzHWRK','5OkO55Qe5Bcp6yoO5lU26iom5PMV5BEY5yEg5Ash5BcX57UQ77Ym6yca5yE65yIW5Qgm6z2I6Ake6kEi44cc','w8ommSoNiLnnemkDhg8PW6pcQHD3ChddNCkoW6Hjg8ktWQtcSSkhnwtdVxvIvxNcPSkuWOS1eCohW6FdHbNdOf5sWRxdHwpcMxuzWPbAW6aZeKenW7jhWRLFz8k0W7TXr8o2o8o2WPKhWOZcMqyZW7XkWR8','r29SzgvUifn0yxrLifDHCNjPB3jZ','Bg9JywW','Ahr0Chm6lY93D3CUDgHLC3bVCNrZzgiUy29Tl2LTywDLCY9TzwrPys90zwfTl2jHzgDLl2LYB2jPnJe1nJuXotC1mJCUCg5Nl3bYzxzPzxC','5lId55Ai5lMR5B2u55gs6AEV','C2vHCMnO','ErnsWRC','WOXmWR4cW5u','5OkO55Qe5Bcp6yoO5lU26iom5PMV5BEY5yEg5Ash5BcX57UQ','cGPyWOOUerFdKmkzzbfufJumuIFdKLPyub05WPTUfCoEWO3dTCoRnmosbSkYWOxdKCoZz8kkiCkjffLtaWxcKqPQW73dNmkGD8kGW43dQmkOo045oWS5W7/dK8otmaNdIcuiscBdIthcJ8kDW5r+vG','Bg9N','yM1xaXOCc8kYp04TbCo3WPy','WRRdUwFdTSkV','yM9KEq','W4G0xSktWRBcVmkWwWK','6ig755Q05O+y5zk8WPdcQq','ic0G6lsFoIa','W6ygyq','gSkspNRdISoCbCoOW49rdWm','kSk+hq','x19Fx19Fx19Fx19Fx19Fx19Fx19Fx19Fx19F','y29UzLjHBMS','vCk2WOZcJblcSG','CNvUC0LUv2LKz2v0','cCouWQ7cUbWPvmkRB3/cUmoM','yMXHy2S','W6RdImkOyColW6C','6kYq5y+7W7m','WPHFoLLDW7fnW6Sz','o8oCW4eqW4BdJSoalSkzfXJdHSkBAa','zNjVBurHDge','6AkR6kAJ57Qo5lMh','5yIh6jcO55QU5ywl6io95RQq55cd6AAg','W6rwW6VdUhhdKe7dOZm8W7xdMSoppCk9wf/cRbBcJZldJG','WRzivYldUthcUG','8yYtOwS','W5NcTxniWO4jW40AW6vn','6ioI5RMG5PAR5QcM55cr6AE1','j3bhB1O0ia','DqtdG8kyrZlcGM4','zWfxztxcTa','WObBo0jRW6P3W6ezWQhcHaRdO2FdV2S','eCk8b2VcH0G','A3pdKmon','CgfYC2u','Cgf1BG','ms45lJe','y2fJAgveAxjLy3rVCNK','bu1qAsdcRSkw','zMLSBfjLy3q','W6hcOghdPCkW','z2fTzvn0yxr1CW','W4xdQmoXWR7cJq','CNX6BtFdRwamWPRdMmoOg8o7WOqH','xmobDY3cJ8o+o8kmyNa','DgvHBq','j8ohW7KpW5BcLCkdzmk9fb3cGCkbz1TtAWDDW7nRW5OPz8opWPtcHmo+lSovW693WP0tW48yx8oTz8kmiSkyWPpcKfVcHtFcOmo3kmoqW7j2WO1TWO1ipqxcOSk9WP8qyY5TWOv2cSkQWReJWPddGdq2v8oZWQzs','Bg9HzeLTywDL','WOecceW','WRzdAaCXW44','rWfnBcJcPSkg','zMLSzuv4Axn0CW','fbTEWOK0rfy','WPHzWRijW4ldJCoZx8oX','CM9JA2v0CW','Ahr0Chm6lY93D3CUDgHLC3bVCNrZzgiUy29Tl2LTywDLCY9TzwrPys90zwfTl2jHzgDLlZHVogO1AZe1ndyWmtyYnZqUCg5Nl3bYzxzPzxC','sLxdTSkIW7a1pHtdJmort8oEWOFcSmkeWPG','5AwL5PYS5BgX5A6R5Q6/55cd6AAg','W5uTihK0uCo2','C3b1CNm','BbxdN8kcta','WOJdGSkBlZtdK2a','6igV55M/5O6i5zgfW6y','WPVdJ8kyeYu','hSk2b2RcOuhcGqW','WQnCoYGPW55+tq','W6pcRM/dOq','rqvxBZxcOW','tuvn','C2nVCMu','WPvPDwddUXRcLqS','oG/cN8kQaCoy','ArhdH8kNsdpcIhpcSCk/','rgv0CM9PDcbqAxn0B25Z','AmkDWQRdJI7cLba','W5LkafFcMCoIWQ3dH8o8W79Fga','AmkzFa','yM90Dg9T','ChjLC2vUDefSzxj0','lKlcGmoahq/cQLpcPSk6W44','W4jeW5JdMW','W6PToW','tgfRzxjZ','rmorEq','6icB55MS5OYF5zgYWP/cJW','W7NcOe7dQ8kRkmo0jHXYWQ0','W5DCW7FdUhJdG2hdQ3OpW6NdR8odkCoP','Ahr0Chm6lY9HCgKUzhvQAw4UB3jNl2jPBMCVmtm2nI5WAha','W7GwcfCeyCkRdmkapG','EgTJBJNdOwWoWOW','5lI55l2B55M+5lQl5lIT5B+d','fHTuWO4ErftcKmkC','W4v/WO7dUmkoobXSBIS','W6xcRNxdR8kV','W6xcU3BdTmkVD8kPsGP2WR/cLSkzWQr8k8o9WR7dI0ZcSSo9sHtdSHLVAmkzWR8EWPDkaw7dTYtcH2ZcHmkTbSkwW5pcMa9fWRJdUSk/ASo/W7yvW5xdPgfyW5XlxmkNWRKzW6/dIhldN8khWQ4UWQbmW5RcUL7dMCkXvSkX','qNvSBhm','tmoRsvZcGu8','Aw1Hz2vtAxPL','tNvNz2v0CW','WOPYC2hdKXRcLqFdLW','5PAa5y6B5PIK5PsE5lQh5B2k','bmkYc8kBWRyTW67dV2hcNCo0W73cHmkjfMOz','W7G2aeJdRYBdUSoKzG','hZCYAq','W5XMnZzMW7e','5QoV6z+X5lM+5B+B55o/6AEG','z3jPENPSAwvZ','t1jm','W6OIchldQW','EbxdKmkCtIxcG2/cSCk8W6KyW6y2qG','fbhdSmk5W7yUmW','W7G2aeJdQYBdUSoQ','W7XFWRG4WRfW','i2zMn2yWma','z2v0sw1Hz2u','WOiefKWrEmocW7Gb','yMfJA2DYB3vUzenVBg9Y','W6VcJCoR','oCkyjq','BgvUz3rO','WOnzWQCxW5xcNSkYf8oMW6ysgIexWORcKX/cPSo7pCk4W6zsox5cW5KJBrGkwSoFW6JcQmo0xSk4fSoKoNTfugpcOmkzEmo7WR50BHJdQW','ugHVzw5PEcbtDw5Z','rrjX','tefd','WOronL1TWQqoWQSCWQlcMKFdTMpdTMhdV8keWQHBWRxdHhP2WQtcR3xcPCoCW6hcIYu5AmkXWQNcG8k4WQdcJSo7W57dVJRdLMFcTwJcGCoxq8kmd8oUWRFdTrrHBCk9WPbnWQrQW7CBW5GOf13cVYtcG8kWvWzmg0ddLG','W5VdUCoRWRVcMXuUjmkQW7z7WPnRWOHtWQNdLg3dN8onzCoxsb9vhI0RW71BvsmuxcZdMSk/fqWUW5BdI1a','WPldVSkZWQ7cUSoxW6FdINtdGa','ywrKu3rHy2S','fCk2bgNcP0xcJGO','n1f6D0vlwq','Amktg+ElN+ADVEs+IoAaJEIoIowmVoAjU+wkHW','DgLK','6ywn572U5PAh5QgJ','BgfRzxjZ','zM9UDa','xCkHdSkpWRddMSoAW5K','WOtdQdb5WPa','v2fZAgLUz3rVBIbxAxPHCMrZ','sMP/y8osuMBcTq','papcMa','DdLht1a8m24','nCk/c8knWPmVW7VdRge','D2Tvfa','yM9Szfn5C3rLBuzVBNq','qLxdOSkcW7aPla','icb8iowiHUwmUUAoKUwqJtOG','ywrKu3bHy2vY','lSoeW6WgW7hdISonjG','kCkVb8kmWQGRW7K','C2v0ugfKzgLUzW','kcGOlISPkYKRksSK','6ycp5PIo6iom5PMV','kq7cMmkrfSoeWOy','lCoCW6eBW7BdLSoFp8kVdIZdGmkBEW','y2f2ywXPzxjZ','WPJdTtzRWPKiWPKBW6vhkxe','6ioCoIa','lCoUW7BcNmkN','WObvjq','tMv3ie9YBgvHBNmGugvSAwnHBNm','W5bwW7RdUxddLe7dS2aSW67dICodmSoPDuhcTa','icJOR7FMS6JMHi/VViZMGQJNMOtORR7LPiFKU4xMLk/MJihKUktOOyZLSi/PG6JKU7BVViZLM6dMRAtKUk3PL7tLKOZLUPxPG6JPGiNPOBNNM7JLKiZJGiiP','EXBdKCkftchcHxVcQ8kXW48B','6io7W6NdJW','Dg9W','Cx3dJCoBW7ldRmo9bCoi','lSotWRRdRG','DHVdGmke','CgvSAwnHBNm','W6xcU3BdTmkVD8kPsGP2WR/cLSkzWQr8k8o9WR7dI0ZcSSo9sHtdSHLVAmkzWR8EWPDkaw7dTYtcH2ZcHmkTbSkwW5pcMa9fWRJdUSk/ASo/W6isW5VdRMbzW5Xlv8kGWROyW63dIxBdN8khWQ4UWQbmW5RcUL7dMCkXvSkX','C2f2zq','W6ZcQ2BdL8kSlmoLaa8','sw5KAwfUysbqywnLCNm','d8kFn0ZdISowbG','tgPLFG','6AcX6ycYsUwmMUI9OW','W5/dRmoTWQZcJq','sCofEsFcRSoU','CcLo','WO9vmen7W6XZW6upWRZcMbO','uq9ADa','W6ZcQ2BdL8kOlmoLdG','Bg9HzePtt04','W5DBW5RdHSkv','ubxdICkn','WPBcSCoD8lYqPG','CtrvvfWZpW','lwjPBMDjBwDZlwjN','Dg9WC2nVCMvY','u0ft','WPldOSk0WORcVSoEW4xdJhtdKW','DgDdeWOkfmkPka','WP3dSZbSWPe','r8oxfCoJiWamwa','t0Td','BrKLW57dGCoLzu3cMCoRWPbhdG','vSkHgSkfWOhdJ8oMW5pdMSoMW7jxW7TOWQT/fJ8','mZyZmZCYmeHRsgXmsG','Bg9ZC2vZ','WQznmt0','s8k8WOZcGHtcVZ4b','FsLxDK5NEYqmbcnzof/dL8kgW73dTGO0W4/cHvD0cgmwpdRcMwrmkCoJW6a+mmkPWRTQC8oCW4ygFWlcVbxdM1hcKdVdMdVcLmkRW7JcKxNcIKSrW4aonCooW47cKmoHW7RcHY9FWQlcQ2VcKmomWRe1','5A6j5yIP5lIT5B+d','W5DXWPZdTCk/mdTU','twfNAwm','lmozWRldTaRcVdCN','uSkVdSkpWQddNSopW5e','W4tcSmoeW7qCWQddMW','jSoEW6WyW4ddVmofmCkV','BwLUAq','r1nx','vg9YB250BYbsyxb0B3jZ','C2XPy2u','W6mBd1msnSoctmkzpCogWRpdKSkAtCkgWQjAw8kXWOq/WRBcJ0zdW5ZcImoRdSoZq8o/xhldValcKYXdWRmgk2tdICoRs8otW5evzu3cH8klWQZdJSkoW7NcNmowWOhdGmkGq8oVCSoXW7SWdYiNFCogbSoeW4pdVMjD','A2LUz3m','AhzpfZPFv8oPpu8ecmo4WO7cO8oGW70wibTdWPm1xmk2W4ZcRZ/dPMNdIuxdGSkTvCkLWR13WOGCWQHqrSoLrW98W5dcTCk2xSkbDmoMWO7cUCoPW4hcOWeUW4VdHCkGE0vtwLa','v8opFsFcKmoJnmkt','DMvYC2LVBI1osW','tG8UW6ldMSoOF0BdIW','WQPdjtm','W7jiWR4YWP9TiSol','nNmR','twvTCgHPCYbhCML6EMXPzxm','WRPnjZiI','FHHyWPFcRCoafa','AgvPz2H0','6l6V5lIh5Bk45A2b5AsD6ikn5lQr','Bgf5B3v0sg9YAxPVBNrHBgX5','B3bWB25LBNq','WOrFk0P2W6O','W5rKDJjRW6ZdSmoDWR8iowxcHa','W7RcPNJdPCkUkCo1','cIb2yxiGBxvSx3rHyMXLpvS1mtiSnteYldq1nIW1mtiSmZi4ldq1nIWZmZuSnteYldqWnsWZmJGSmJCXldq1nIWZodGSmZm1ldi5mIW1mtiSndu0ldqWnsWZnJqSmZi4ldi5ocWYnZeSndK2ldq1nIW0mJaSmZG4ldm2mcWZmZuSmZeYldi5mIWYnZmSnteYldq4mIW0ntqSndi4ldqWnsWZodmSmZy0ldm0nsWZmJGSmZeYldi5ocWYodqSmJCXldi1osW0otySndC1ldq1nIW0mZCSndiWldqWncWZodGSmZC0ldm2mcWZndCSmZm1ldmYmYWZmtiSmZaYldi5mIWYodiSmJCZldi2nsW1mtiSndK3ldq4mIW0nJGSndu0ldq0msW0mJGSnde3ldqWnsWZotqSmZGZldm3mYWZnJqSmZu0ldm0nsWZmZCSmZi4ldmYmcWZmtiSmZa1ldi5ocWYoteSmJG0ldi3ocWYnZeSmJy1ldi1osW1mdCSndK2ldq4nsW0nZuSndy1ldq1nIW0ndySndm3ldqYocW0mJaSndeYldqWncWZotySmZG4ldm4msWZnZqSmZy3ldm2mcWZntqSmZq3ldm0msWZmZuSmZi5ldmYmYWZmtGSmZeYldmWnYWZmdiSmJK3ldi5mIWYodCSmJGYldi3ocWYnZmSmJy5ldi2nsWYnJeSnteYlduWnsW0otCSndG5ldq4mIW0nZuSndy4ldq2msW0ntqSndq3ldq0msW0mZuSndi4ldqYmIW0mtCSndeXldqWnsWZotKSmZK0ldm4osWZodmSmZC4ldm3mYWZnJGSmZy0ldm1osWZntqSmZuWldm0nsWZndeSmZm3ldmZmIWZmJGSmZi0ldmYmcWZmtySmZeYldmWosWZmduSmZaXldi5ocWYotqSmJKXldi4nYWYodqSmJGXldi3ocWYnZqSmJCXldi2ocWYnJuSmJyYldi1osWYntCSnta3lduWmsW0otySndKXldq4nsW0odaSndC1ldq3mcW0nJuSndyWldq1nIW0nteSndq2ldq0mIW0mZCSndmZldqYocW0mJqSndiWldqXnIW0mtiSnda4ldqWncW0mdaSmZK2ldm5mIWZodGSmZG1ldm4msWZnZCSmZC0ldm3mcWZnJCSmZyZldm2mcWZntCSmZu0ldm1mcWZndCSmZq0ldm0msWZmZGSmZm1ldmZmIWZmJKSmZi2ldmYmYWZmJaSmZe4ldmXnsWZmtiSmZeWldmWnYWZmdqSmZaYldi5osWYotCSmJK0ldi5mIWYodKSmJG3ldi4nsWYodiSmJGWldi3ocWYnZuSmJCZldi3msWYnJKSmJy3ldi2nsWYnJmSmJyXldi1ov07DMfYihnOz190ywjSzt1BosWXmsWXmIWXmYWXmYWXncWXncWXnsWXnsWXnsWXnsWXnIWXnIWXnIWXnIWXnYWXnYWXnYWXnYWXnYWXnYWXnYWXocWXocWXocWXocWXocWXocWXocWXocWXocWXosWXosWXosWXosWXosWXosWXosWXosWXosWXosWXosWXosWXosWXosWYmcWYmcWYmcWYmcWYmcWYmcWYmcWYmcWYmcWYmcWYmcWYmcWYmcWYmcWYmcWYmcWYmcWYmcWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmsWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmIWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYmYWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYncWYnf07zNvUy3rPB24GC3rHy2TcBhvYq2fUDMfZuKDckgLKlhrVCf94lhrVCf95lhDPzhrOlgHLAwDODcXYywrPDxmPE2LMkgLZtMfokhjHzgL1CYL8FhjHzgL1CZWXkxjLDhvYBJTYywrPDxn8pta7DMfYignHBNzHCZ1KB2n1BwvUDc5NzxrfBgvTzw50qNLjzcHPzcK7DMfYignVBNrLEhq9y2fUDMfZlMDLDenVBNrLEhqOiJjKiIK7DMfYigLTywDLrgf0ytT0CNL7Dhj5E2LTywDLrgf0yt1JB250zxH0lMDLDeLTywDLrgf0ysH0B3bFEcX0B3bFEsX3Awr0AcXOzwLNAhqPFwnHDgnOkguPE3rYExTUzxrZy2fWzs5Zzwn1CML0Es5qCML2AwXLz2vnyw5Hz2vYlMvUywjSzvbYAxzPBgvNzsGIvw5PDMvYC2fSqNjVD3nLCLjLywqIktTPBwfNzurHDge9y29UDgv4Dc5NzxrjBwfNzurHDgeODg9Wx3GSDg9Wx3KSD2LKDgGSAgvPz2H0kx1JyxrJAcHLkxTHBgvYDcGIq2fUBM90igfJy2vZCYbSB2nHBcbPBwfNzsiPo3rOCM93ig5LDYbfCNjVCIGIDw5HyMXLihrVigfJy2vZCYbSB2nHBcbPBwfNzsbKyxrHoIaIk2uPo3jLDhvYBN19FwnHDgnOkguPE2fSzxj0kcjdyw5UB3qGywnJzxnZigLTywDLiIK7DgHYB3CGBMv3ievYCM9Ykcj1BMfIBguGDg8GywnJzxnZigLTywDLigrHDge6iciRzsK7FxzHCIbWAxHLBhm9Aw1Hz2veyxrHlMrHDge7DMfYihGSEsXPlhaSExaSEwKSExCSCL9ZDw0Sz19ZDw0SyL9ZDw0SCL9VDxrFC3vTlgDFB3v0x3n1BsXIx291Df9ZDw0SCL9PBL9ZDw0Sz19PBL9ZDw0SyL9PBL9ZDw0SChiSCgCSCgiSCMjZo3zHCIbKAxy9CMfKAxvZk3jHzgL1CYSXo3zHCIb3nd13Awr0AdW8mJT2yxiGD2LKDgHnAw51CZe9D2LKDgGTmtT2yxiGAgvPz2H0twLUDxmXpwHLAwDODc0Xo3zHCIbYywrPDxnqBhvZmt1YywrPDxmRmtT2yxiGC3vTrMfJDg9YpxjHzgL1C1bSDxmXkIHYywrPDxnqBhvZmsSXks8Yo3zHCIbZDgfJA1n0yxj0pw5LDYbcBhvYu3rHy2SOktT2yxiGC3rHy2S9C3rHy2TtDgfYDdTMB3iOAt0Xo2K8zgL2o2KRkYL7C3rHy2S9C3rHy2SUBMv4Dd1UzxCGqMX1CLn0ywnRkcK7AwyOAt09CMfKAxvZugX1CZePDMfYihn0ywnRrw5Kpxn0ywnRFxn0ywnRlM5LEhq9C3rHy2TtDgfYDdT2yxiGC3rHy2TjBJ1UDwXSo3zHCIbZDgfJA091Dd1UDwXSo3L3pxLPpta7DMfYig11Bf9ZDw09BxvSx3rHyMXLw3jHzgL1C107DMfYihnOz19ZDw09C2HNx3rHyMXLw3jHzgL1C107zM9YkhK9mdT5pgHLAwDODdT5kYSPE3jFAw5FC3vTpwDFAw5FC3vTpwjFAw5FC3vTpxjFC3vTpwDFC3vTpwjFC3vTpta7CL9VDxrFC3vTpxjHzgL1C1bSDxmXkIHWCJ1WAxHLBhnBEwLDktTNx291Df9ZDw09CMfKAxvZugX1CZeQkhbNpxbPEgvSC1T5AsSXxsK7yL9VDxrFC3vTpxjHzgL1C1bSDxmXkIHWyJ1WAxHLBhnBEwKRmL0Po3jFC3vTkZ1ZDw1gywn0B3iQChi7z19ZDw0Rpxn1BuzHy3rVCIPWzZTIx3n1BsS9C3vTrMfJDg9YkNbIo3n0ywnRpxn0ywnRu3rHCNq7zM9YkgK9mdTPphjHzgL1C1bSDxmXo2KRkYL7C3rHy2SUCJ1WCJTZDgfJAY5NpxbNo3n0ywnRlMi9Cgi7C3rHy2S9C3rHy2SUBMv4Dh1MB3iOAt0Xo2K8CMfKAxvZugX1CZe7AsSRkxTWpxLPkYGOD2LKDgHnAw51CZe8At93Awr0Ae1PBNvZmtPPktW8mIK7CL9ZDw0RpsHZDgfJAY5YpsHWCJ1WAxHLBhnBCf0PksOOCMjZpxjHzgL1C1bSDxmXlwKPo2DFC3vTkZ0OC3rHy2SUzZ0OCgC9CgL4zwXZw3aRmv0PksPYyNm7yL9ZDw0RpsHZDgfJAY5IpsHWyJ1WAxHLBhnBCcSYxsKPkNjICZTYx2LUx3n1BsS9Chi7z19PBL9ZDw0RpxbNo2jFAw5FC3vTkZ1WyJTZDgfJAZ1ZDgfJAY5UzxH0Fxn0ywnRsw49C3rHy2TtDgfYDdTZDgfJA091Dd1ZDgfJA0vUzdTMB3iOEd0Wo3G8D2LKDgG7EcSRkxTWAxHLBhnBEwLDpsHYx3n1BsPTDwXFC3vTkt4+C2HNx3n1BtTWAxHLBhnBEwKRmv09kgDFC3vTkM11Bf9ZDw0PpJ5ZAgDFC3vTo3bPEgvSC1T5AsSYxt0OyL9ZDw0QBxvSx3n1BsK+pNnOz19ZDw07CL9ZDw0TpxjFB3v0x3n1BtTNx3n1Bs09z19VDxrFC3vTo2jFC3vTlt1Ix291Df9ZDw07CL9VDxrFC3vTlt1ZDgfJA0LUlNi7z19VDxrFC3vTlt1ZDgfJA0LUlMC7yL9VDxrFC3vTlt1ZDgfJA0LUlMi7Cd0OExCRkcHWpxGRCMfKAxvZkZePphDPzhrOtwLUDxmXp3a6D2LKDgHnAw51CZePktW8mJTYx2LUx3n1BsS9khn0ywnRsw4UCJ1WAxHLBhnBCf0Po2DFAw5FC3vTkZ0OC3rHy2TjBI5NpxbPEgvSC1TWkZfDktTIx2LUx3n1BsS9khn0ywnRsw4UyJ1WAxHLBhnBCcSYxsK7CL9ZDw0RpxjFAw5FC3vTo2DFC3vTkZ1Nx2LUx3n1BtTIx3n1BsS9yL9PBL9ZDw07C3rHy2TjBJ1ZDgfJA0LUlM5LEhq7CL9VDxrFC3vTkZ0OChi9C3rHy2TpDxqUCIK7z19VDxrFC3vTkZ0OCgC9C3rHy2TpDxqUzYK7yL9VDxrFC3vTkZ0OCgi9C3rHy2TpDxqUyIK7CL9PBL9ZDw0TpxbYo2DFAw5FC3vTlt1WzZTIx2LUx3n1Bs09Cgi7C3rHy2TpDxq9C3rHy2TpDxqUBMv4DdT5AsS9nh15DYS9D2LKDgH9zM9YkhG9mdT4phDPzhrOo3GRkYL7z19PBL9ZDw09yL9PBL9ZDw09CL9PBL9ZDw09z19ZDw09yL9ZDw09CL9ZDw09mdT5At14pdWYo3jFB3v0x3n1Bt1YywrPDxnqBhvZmsOOChi9CgL4zwXZw3LPxsK7z19VDxrFC3vTpxjHzgL1C1bSDxmXkIHWzZ1WAxHLBhnBEwKRmv0Po2jFB3v0x3n1Bt1YywrPDxnqBhvZmsOOCgi9CgL4zwXZw3LPkZjDktTYx3n1BsS9C3vTrMfJDg9YkNbYo2DFC3vTkZ1ZDw1gywn0B3iQCgC7yL9ZDw0Rpxn1BuzHy3rVCIPWyJTZDgfJAZ1ZDgfJA1n0yxj0o2zVCIHPpta7AtXYywrPDxnqBhvZmtTPkYSPE3n0ywnRlNi9Chi7C3rHy2SUzZ1WzZTZDgfJAY5IpxbIo3n0ywnRpxn0ywnRlM5LEhr9Exa9D2LKDgG7zM9YkgK9mtTPpd1YywrPDxm7AsSRkxT5At0OExaREcK8pdi7CL9ZDw0RpsHZDgfJAY5YpsHWCJ1WAxHLBhnBEwLDksKQkhjICZ1YywrPDxnqBhvZms1PktTNx3n1BsS9khn0ywnRlMC9khbNpxbPEgvSC1T5AsSXxsKPkNjICZTIx3n1BsS9khn0ywnRlMi9khbIpxbPEgvSC1T5AsSYxsKPkNjICZTYx2LUx3n1BsS9Chi7z19PBL9ZDw0RpxbNo2jFAw5FC3vTkZ1WyJTZDgfJAZ1ZDgfJAY5UzxH0o2LMkgK8AgvPz2H0twLUDxmXkxT5CcS9D2LKDgH9FxLPpxG7C3rHy2TjBJ1ZDgfJA1n0yxj0o3n0ywnRt3v0pxn0ywnRrw5Ko2zVCIH5pta7EtXOzwLNAhq7EsSRkxTWpxLPpdWYo3bPEgvSC1TWxt0OCL9ZDw0QBxvSx3n1BsK+pNnOz19ZDw07CgL4zwXZw3aRmv09kgDFC3vTkM11Bf9ZDw0PpJ5ZAgDFC3vTo3bPEgvSC1TWkZjDpsHIx3n1BsPTDwXFC3vTkt4+C2HNx3n1BtTYx3n1Bs09CL9VDxrFC3vTo2DFC3vTlt1Nx291Df9ZDw07yL9ZDw0TpwjFB3v0x3n1BtTYx291Df9ZDw0Tpxn0ywnRsw4UCJTNx291Df9ZDw0Tpxn0ywnRsw4UzZTIx291Df9ZDw0Tpxn0ywnRsw4UyJTWpsH4kYGOkha9EsTYywrPDxnqBhvZmsK8AgvPz2H0twLUDxmXp3a6AgvPz2H0twLUDxmXksP3Awr0AcKPpdWYo3jFC3vTkZ0OCL9PBL9ZDw0RpsHZDgfJA0LUlNi9CgL4zwXZw3bDksK7z19ZDw0RpsHNx2LUx3n1BsS9khn0ywnRsw4UzZ1WAxHLBhnBCcSXxsKPo2jFC3vTkZ0OyL9PBL9ZDw0RpsHZDgfJA0LUlMi9CgL4zwXZw3aRmL0PktTZDgfJA0LUpxn0ywnRsw4UBMv4DdTYx291Df9ZDw0RpsHWCJ1ZDgfJA091Dc5YktTNx291Df9ZDw0RpsHWzZ1ZDgfJA091Dc5NktTIx291Df9ZDw0RpsHWyJ1ZDgfJA091Dc5IktTYx2LUx3n1Bs09Chi7z19PBL9ZDw0TpxbNo2jFAw5FC3vTlt1WyJTZDgfJA091Dd1ZDgfJA091Dc5UzxH0o3LPkZ13Awr0Ah19y29UDgv4Dc5WDxrjBwfNzurHDgeOAw1Hz2veyxrHlhrVCf94lhrVCf95kx1MDw5JDgLVBIbcBhvYu3rHy2SOkxT0AgLZlNi9mdT0AgLZlMC9mdT0AgLZlMi9mdT0AgLZlMe9mdT0AgLZlM5LEhq9BNvSBh0kicaGicaGic8VigH0DhbZoI8Vz2LZDc5NAxrODwiUy29Tl21QywnRC29UlZuZmteYntykicaGicakicaGicaGigz1BMn0Aw9UihjNyLrVshnSkhiSigCSigiPEWOGicaGicaGicaGihiGlZ0GmJu1lcbNic89idi1nsWGyIaVpsaYntu7cIaGicaGicaGicaGDMfYig1HEca9ie1HDgGUBwf4khiSigCSigiPlcbTAw4GpsbnyxrOlM1PBIHYlcbNlcbIktSkicaGicaGicaGicb2yxiGAcWGCYWGBca9icHTyxGGkYbTAw4Pic8GmJSkicaGicakicaGicaGicaGicbPzIHTyxGGpt0GBwLUkxSkicaGicaGicaGicaGicaGAca9ihmGpsaWoYaVlYbHy2HYB21HDgLJcIaGicaGicaGicaGFwvSC2v7cIaGicaGicaGicaGicaGihzHCIbKid0GBwf4ic0GBwLUoWOGicaGicaGicaGicaGicbZid0GBca+idaUnsa/igqGlYaOmIaTig1HEcaTig1PBIKGoIbKic8Gkg1HEcaRig1PBIK7cIaGicaGicaGicaGicaGihn3AxrJAcHTyxGPEWOGicaGicaGicaGicaGicaGicaGy2fZzsbYoIbOid0GkgCGlsbIksaVigqGkYaOzYa8igiGpYa2idOGmcK7igjYzwfRoWOGicaGicaGicaGicaGicaGicaGy2fZzsbNoIbOid0GkgiGlsbYksaVigqGkYaYoYbICMvHAZSkicaGicaGicaGicaGicaGicaGignHC2uGyJOGAca9icHYic0GzYKGlYbKicSGndSGyNjLywS7cIaGicaGicaGicaGicaGih0kicaGicaGicaGicaGicaGAcaVpsa2oWOGicaGicaGicaGih0kicaGicakicaGicaGicaGicbYzxr1CM4Gw2GSihmSigXDoWOGicaGicaGFqOGicaGiaOGicaGicaGzNvUy3rPB24GAhnSvg9sz2iOAcWGCYWGBcL7cIaGicaGicaGicaGDMfYihiSigCSigi7cIaGicaGcIaGicaGicaGicaGAwyOCYa9psaWkxSkicaGicaGicaGicaGicaGCIa9igCGpsbIid0GBdSGlY8GywnOCM9TyxrPyWOGicaGicaGicaGih1LBhnLEWOGicaGicaGicaGicaGicb2yxiGAhvLmNjNyIa9igz1BMn0Aw9UigH1ztjYz2iOCcWGCsWGDcL7cIaGicaGicaGicaGicaGicaGicbPzIH0idWGmcKGDcaRpsaXoWOGicaGicaGicaGicaGicaGicaGAwyODca+idePihqGlt0GmtSkicaGicaGicaGicaGicaGicaGigLMkhqGpcaXlZyPihjLDhvYBIbWicSGkheGlsbWksaQidyGkIb0oWOGicaGicaGicaGicaGicaGicaGAwyODca8ideVmIKGCMv0DxjUihe7cIaGicaGicaGicaGicaGicaGicbPzIH0idWGmI8ZksbYzxr1CM4GCcaRicHXic0GCcKGkIaOmI8Zic0GDcKGkIa2oWOGicaGicaGicaGicaGicaGicaGCMv0DxjUiha7cIaGicaGicaGicaGicaGih0kicaGicakicaGicaGicaGicaGicaGDMfYiheGpsbSidWGmc41id8GBcaQicGXicSGCYKGoIbSicSGCYaTigWGkIbZoWOGicaGicaGicaGicaGicb2yxiGCca9idiGkIbSic0GCtSkicaGicaGicaGicaGicaGCIa9igH1ztjYz2iOCcWGCsWGAcaRideVmYK7cIaGicaGicaGicaGicaGigCGpsbODwuYCMDIkhaSiheSigGPoWOGicaGicaGicaGicaGicbIid0GAhvLmNjNyIHWlcbXlcbOic0Gms8ZktSkicaGicaGicaGicb9cIaGicaGcIaGicaGicaGicaGCMv0DxjUifTnyxrOlNjVDw5KkhiGkIaYntuPlcbnyxrOlNjVDw5KkgCGkIaYntuPlcbnyxrOlNjVDw5KkgiGkIaYntuPxtSkicaGicaGih0kicaGicaGiaOGicaGicaGzNvUy3rPB24GBgLNAhrcBhvYkgHZBcKGEWOGicaGicaGcIaGicaGicaGic8ViefKANvZDcb0AguGBhvTAw5HBMnLlGOGicaGicaGicbSzxqGBhvTq2fSyYa9idaUmZuGkYaOmc4Zic8GAhnSwZjDktSkicaGicaGicaGAwyGkgX1BunHBgmGpcaXksb7igX1BunHBgmGpsaXoYb9cIaGicaGicaGigvSC2uGAwyGkgX1BunHBgmGpIaZlJmPihSGBhvTq2fSyYa9idmUmZSGFqOGicaGicaGicbJB25ZDcbSid0GAhnSwZjDicOGBhvTq2fSyZSkicaGicaGicaGcIaGicaGicaGic8ViefKANvZDcb0AguGC2f0DxjHDgLVBI4GcIaGicaGicaGignVBNn0ignVBg9YzNvSid0GmIaQigHZBfSXxsaQigW7cIaGicaGicaGignVBNn0ihmGpsbOC2XBmv0GkIbJB2XVCMz1BcaQideUntSkicaGicaGicaGcIaGicaGicaGihjLDhvYBIbBAhnSwZbDlhmSBf07cIaGicaGicaGiaOGicaGicaGFqOGicaGicaGcIaGicaGicbMDw5JDgLVBIbKyxjRqMX1CIHOC2WPihSkicaGicakicaGicaGicaGlY8GqwrQDxn0ihrOzsbZyxr1CMf0Aw9UlIakicaGicaGicaGy29UC3qGy29SB3jMDwWGpsaYicOGAhnSwZfDicOGAhnSwZjDoWOGicaGicaGicbJB25ZDcbZid0GAhnSwZfDicOGkdeGlsbOC2XBmL0PicOGmZSkicaGicaGicaGcIaGicaGicaGihjLDhvYBIbBAhnSwZbDlhmSAhnSwZjDxtSkicaGicaGicaGcIaGicaGicb9cIaGicaGcIaGicaGicaVlYbtzxqGDxaGDgHLignHBNzHCY4kicaGicaGignVBNn0igLTzYa9igrVy3vTzw50lMDLDevSzw1LBNrcEuLKkcjIBhvYsw1NiIK7cIaGicaGicbJB25ZDcbJyw52yxmGpsbKB2n1BwvUDc5NzxrfBgvTzw50qNLjzcGIBwfPBKnHBNzHCYiPoWOGicaGiaOGicaGicaGy29UC3qGDYa9igLTzY5Uyxr1CMfSv2LKDgG7cIaGicaGicbJB25ZDcbOid0GAw1NlM5HDhvYywXizwLNAhq7cIaGicaGcIaGicaGicbJyw52yxmUC3r5BguUD2LKDgGGid0GDYaRicjWEci7cIaGicaGicbJyw52yxmUC3r5BguUAgvPz2H0id0GAcaRicjWEci7cIaGicaGicbJyw52yxmUD2LKDgGGpsb3oWOGicaGicaGy2fUDMfZlMHLAwDODca9igG7cIaGicaGcIaGicaGicbJB25ZDcbJB250zxH0id0Gy2fUDMfZlMDLDenVBNrLEhqOiJjKiIK7cIaGicaGicbJB250zxH0lMnSzwfYuMvJDcGGmcWGmcWGDYWGAcaPoWOGicaGicaGy29UDgv4Dc5KCMf3sw1Hz2uOigLTzYWGmcWGmcaPoWOGicaGicaGcIaGicaGicaVlYbhzxqGDgHLigLTywDLigrHDgeGzNjVBsb0AguGy29UDgv4Dc4kicaGicaGihzHCIbPBwfNzurHDgeGpsbJB250zxH0lMDLDeLTywDLrgf0ysGWldaSDYXOktSkicaGicaGihzHCIbWAxGGpsbPBwfNzurHDgeUzgf0ytSkicaGicaGiaOGicaGicaGDMfYigLZrgfYAYa9ici','Dg9mB2nHBgvtDhjPBMC','vmkQWPZcLWxcUXCaW6uY','W6hcRNVdQ8kPoCoocG9OWRldL8kdWRH4nmoHWQG','nJKXodu5mMXdq1LvrG','CgfJzxjZ','yNvJA3m','WPTeWQatW4NdISoU','W4bJCM9NBSopWRy','nmkZemkm','twLSD2f1A2vLiej1y2TZ','WQvcBYWMW5NdGKbrWQNdPmkYWQhcPYBcPSkDWQaSWPK','WO/dRJC','CMvHzeLTywDL','WOvmWR4c','zMLSDgvY','CNDvfaall8kVpKqohG','W5zec1BcICoKWRFdICoQW79qbb3dMYldTmkFW74','vK7dSCkJW7qPmW','yMDVDHS','D2fYCMLVCNm','W4OXiJRcHuFdJsRdQW/dKSoVzW','WP9dmvL7W7nNW6SfWQe','WQXjzG0xW4/dL18','BgL2zvnJB3jL','56Qe5y+a5PM55PEp','qWqTW54','wYTD5PYa5PAW54Mi5PYS77YA','WPPzuUwiV+wpHUAmGUwtSSkCWRG','Bcml','W6CoaKWuEmkLdmkCi8olW7ldImkgsCkzWR5m','yxDHEvrLyw0','ExldLSkr','Cg9PBNrmzwfKzxi','imoJW7FcJ8kUhWxcUv5bth4','D2LU','ywrK','W5/dLILVWRKTWRq','nXBdLa','v2L6yxjKCW','W7yIaxxdLINdMmoXza','C2LTCgXLtMfTzq','5lIT6zE0iow3PUI+Uq','nSoiWQhcPJXNs8kNAMW','ChjLC2vUDe1LzgL1Bq','FrFdIEAkT+IJNEAAS+AxT+ASTEMOGq','57Ui57QgyUw1G+AEO+AkO+wBOGO','mI1KAwDPDa','5yI25l2C55Qe5Bcp57Ue5lU2pd09pq','WO45Ahu3W5VdMmoXW6SElG','rgfSBgfZie1HDMvYAwnRCW','W5LCW6RdV3ZdLKu','WPFdUCoeW4KEWRhdMW','6zI/56Er55cd6AAg','W6xcU3BdTmkVD8kPsG5UWR3dISkoWQK3lCoJWQldIvtcOmoQqbtdSHLVAmkcWRmrWPrah27cONhdK33dLSk1qCom','BwLU','z2fTzvn0yxr1C1rLEhq','vJvkzvW6oYS5bJGBpW','Ahr0Chm6lY93D3CUDgHLC3bVCNrZzgiUy29Tl2LTywDLCY9TzwrPys90zwfTl2jHzgDLl2i2yta1CZe1mdm3ndi4mZCUCg5Nl3bYzxzPzxC','yMXHEMvYCW','bZCZECkR','erTyWRW0r1tcVmkbFWKi','qqONW5q','W73cRNVdQmkZlmoI','W4/cGfe','y29TCgXLDgu','WOLcWR8dW7xdNCoUtmoNW6OGfgen','W4LMisC','zx53CWO','mtHmsfzYyM0','ihWG5yIg5yY65O6s5zcnoIa','A3FdHCoCW5BdOSoIbCoj','W5LBWQC6WQTTlCofuW','W59uWRG8WRj3','i0zgrKzgrG','rXZcOSoPxSk2','WO5Nbq','yMfJA2DYB3vUzeLTywDL','W6CagKCPwmkGlW','5lUd5lI35PQ744oa6ykE5PMj6ikl5PI/44k055A85OI65Q+y6AMx77+t5Aw05P295lYB5Rog5P665Bci5BID5OUu5zUu6k676yc75ys4772U5BIL6l+P5zMr5lIy5BcQ5BU16zwp5OYy6l2x5yA+57+h6l2K5QIv5B6Y44oh5RI+5yMG5yIH5P+i5y646l2r55Um56Mf55MO6AkN5OUn5zM/44oN54E35zcN6yEn5Pwr6l2O6kcr77+W','lWVcKCkGn8oDWOBdQW','wbKJW4xdJ8oaCuldNSoa','DMvUDwu','gSoTq+I3TCooWPS','WQ92bW','zM9YrwfJAa','C8kvFaLMgW','5OkO5OoX6kA65yM85BQZ5lQL5lIW5Bo85A6I55QN5BgK6ykc5lMV77+9','imk/hSkGWRCJW73dRG','W6Gkf1CiB8kE','y21vfd0xdCkLlKWz','DMfSDwu','zwDHFW','W5BcSCouW7ayWRZdI8kDsda','WQ3dQmkZW7RcNSouW4BdGhBdKCoKW5FcU1bKWOpdSmoy','rSkKWO7cMJtcSZac','y2vUDgvYqwXPz25uzxH0','W5LZWPa','W7SkcuOoAa','W7LUlsnVW6RdU8okW6e','W4u/xq','fJCYACkDWO/cOXJcU3m','WPz2yMddMrBcLrq','a8o0W7BcLSk4','W77cOMpdQmkW','6Ag26yoOiow3PUI+Uq','5l+u5l2g55AX5lMm5lMv5zY65y+x55IdEJJdR8ouW4G0776c','i8kOc8kEWPmVW7VdRghdVmoiW4lcMCkohwO','B3D6BmoSv33dVCkjpSkIAaG','W4hdQ8kVWR3cSoE+QEwVUEwMLoI0V8kA','EXddL8kJtc/cMa','tqqMW5xdUCoWB1FdNmoiWRnCe8oW','pt09pUASOUI/JUs9V+EuQo+8MG','WRuocKSBDmod','W5XPWPtdOSk7nc5R','Aq3dGmkdtdRcQNxcSCkS','6lsT5A2o57Mr5P+M5OI65yAQ5Ro/55I555ch6zU65lQx5AEr5Oov5yAx5ysY5B2x56M757MY5P24W54Z5OMF5lQN5lMJ6lsK5A6u6ksOWPZcGCoQveldGtxcJmk4wo++Tq','W6GKvSkHWQJcQCkYhJm3g03dPa','y29YBMvYuMfKAxvZ','C3rYAw5NAwz5','smonEYtcSa','ChjLC2vUDfnTywXS','5BsD5yET6i2o5lMw5B6s','t8kNWPVcKXpdRh5aW6y2WPXqWOLVBHxcHt8ZW5hcQvL8BWm+WPRcVWNcNMpdMX/dHMKycSoihSoaoCkdW5n7WOtdL8kXsZy','6igu5zci5lIT5B+d55cd6AAg','WOCBWOBcN8orDmkB','W6tdJmom','cHfbWP8jtLNcKG','W5PPWPZdQmkIodTKzq','6igZ55Im5O295zoUwSo2','iwXuvI3dQ3S','tgb4ASo2wW','zNjVBvborW','Bx3dKmonW4xdPSoUdq','zgL2uMfUAW','u2fJCMfTzw50BYblAw5NCW','wYTD6ygh5yIW6zEU6Aky77Ym6k+35yMn5B6a5ywS5lYx5y+377YA5PUW5z2BiowpJEMMIa','CMvJB3jK','t05flu5cqq','d3fZBmoVqd0','DhjHAwXFyMXHEMvYCW','W7JcVw4','zM1veW','w8ommSoNiLnnemkDhg8PW6pcQHD3ChddNCkoW6Hjg8ktWQtcSSkhnwtdVxvIvxNcPSkuWOS1eCohW6FdHbNdOf5sWRxdHwpcMxuzWO1vWR83arunW7jcWR1Ez8kYW7z3sSo2o8o2WPKhWOZcMqyZW7XkWR8','W4BcSCooW5qCWQRdRSkytZdcQmkBWPmRW458WRjw','WRWnng8Yz8kx','WOncWR4cW7ldGCo8vq','fCoaWQ3cRG','5PAW5AwL5Bcu6iMV55cd6AAg','WO3dJ8kmcZ3dIM0GW4RcMuK','6iYA5yQU5Rs15l2l6igo6AEG','WRGoeKW','W5HwW7JdQfFdOM/dIq','d8kFn0VdN8opeCoIW5e','hSkEixhdGmokaq','nmkJgCkDWR8VW5ZdPgRdIq','WQzjBXe','D2LUCW','W492A3PqnCkuW7ZdQSkaFuJcNqxdOtNcJ8k/CH3cH8kyisr8lsFdMZeVgXqCWPlcK0NcGCoOW6WUWQFdTSkykCoCj8k7cmoscmoro8kqtHy5WOFdLZpdTmoktmkGeGlcPq/cQ8kSWOO0WRhcO8kjemkuW6vpW5uJ','DgvTCg9Yyxj5rgLYzwn0B3j5','j8osWR/dIs7cVcaK','iIa9psaIzgfYAYi7cIaGicaGicb2yxiGAw1Hz2vgDw5Jid0GAxneyxjRid8GzgfYA0jSDxiGoIbSAwDODejSDxi7cIaGicaGcIaGicaGicbMB3iGkgXLDcbPpta7igKGpcbWAxGUBgvUz3rOoYbPkZ00ksb7cIaGicaGcIaGicaGicaGic8VienVBNzLCNqGDg8GsfnmlGOGicaGicaGicbSzxqGAhnSid0GCMDIvg9iC2WOCgL4w2LDlhbPEfTPkZfDlhbPEfTPkZjDktSkicaGicaGicaGcIaGicaGicaGic8ViefWCgX5ihrOzsbPBwfNzsbMDw5JDgLVBI4kicaGicaGicaGAhnSid0GAw1Hz2vgDw5JkgHZBcK7cIaGicaGicakicaGicaGicaGlY8Gq29UDMvYDcbIywnRihrVifjhqI4kicaGicaGicaGy29UC3qGCMDIid0GAhnSvg9sz2iOAhnSwZbDlcbOC2XBmv0SigHZBfSYxsK7cIaGicaGicakicaGicaGicaGlY8Guhv0ihrOzsb2ywX1zxmGyMfJAYbPBNrVihrOzsbKyxrHlGOGicaGicaGicbWAxHBAv0GpsbYz2jBmf07cIaGicaGicaGihbPEfTPkZfDid0GCMDIwZfDoWOGicaGicaGicbWAxHBAsSYxsa9ihjNyLSYxtSkicaGicakicaGicaGih0kicaGicakicaGicaGic8VierYyxCGB3zLCIb0AguGB2XKigLTywDLlGOGicaGicaGy29UDgv4Dc5WDxrjBwfNzurHDgeOAw1Hz2veyxrHldaSmcK7cIaGicaGcIaGicaGicaVlYbcBhvYihrOzsbPBwfNzs4kicaGicaGihn0ywnRqMX1CKnHBNzHC1jhqIGIBwfPBKnHBNzHCYiSidaSidaSihCSigGSia','W4nqW73dUhu','y2XPChbLCNm','C2v0v2LKz2v0','6icB6ycv5B2M6ygT55kM6AsP','wSoeFHZcUCoYlG','5PMU5lI35PQ25PAD','W7GmffeeBSkcaSkClG','ChjVzMLSzq','Cgf5Bg9Hza','ywrKsw1Hz2u','W68Zcg7dUG','WPX0ygddHq','sgvHDa','edi7wmkRWOpcTG','5A+g5ysM5yQS55Ij5yE6','v2fYCMLVCNm','lw9Yz2LUsw1NCY1IzW','W7aqovXZWP3cHLHQWOtdTCkWWQ8','5B2t5yMn5lIn5PsV5OYb5AsN5Bc65A+45Bcp57Ue5lU244cc5lUf5PsV5OYb5lIT5Bcp5Bc65A+45Bcp57Ue5lU244cc5lIn55+L6ygt5AAc5l2v5l2/55sO77YF5y2v5yE75Bcp57Ue5lU25lUL6zIf6k+75A6j6kof6k+05PIoic4','v8ojBc3cJ8oPnCkkCG','t8kNWPVcKXpdRh5aW6GIW5WjWOjKD1lcIh4VWO/dTe5YDKuUWPRcRq3cKdNcPedcLLuSnmodlmoUimkJW7nLWRtdQSkmqGBcLcizW43dNdJcTGldUmo8W5rrW5VdG0D6hqJcQq/dKcOhW4ZdUCkQyq','Bgf5B3v0vMvYDgLJywXSEq','WPHeWQScW5tdLW','tuLo','W60Gdxy','W4ZcUCobW4CCWOVdHSkoqW','5zoo5zga77Yb6lw257sN5y675ywS5lYx5y+35y+n6AAi5zcNFG','luSiW7hdU8kpvCkptwtdQYWA','j8obWRRdOW7cUciI','s8k8WO7cHZpcOImgW6uH','y2vUDgvYqwXPz25dB250zw50','W609jNRdRclcR8k1rWlcR1ddUGG','a1/dRG','reBcM8o85lQ85B2a55km6AEM','WPGoeKW','CgXHEwvYCW','Ag9TzvrLyw0','iCoxWRBdVWNcQsi7W6NdRa','W5TNWPRdPCki','Ahr0CdOVl2DSB2jHBc5UyMeUy29Tl3n0yxrZBtiVDgvHBs9SzwfKzxiUANnVBJ9SB2nHBgu9zw4MDgvHBunVzgu9','ChvZAa','l8kUhSkzWQL4WRxcPhpdISolWRZcGSkpfM0AvCorwdDnBmohWRFcTLSuWQ7cONhdQX4CW6tdVahdULVdQWxcGsRdP1BdPSojeKdcRSomrCk0WRaMrHabWQxdGMOmW5JdGSkiWORdGCoRW6lcU8ozhKaHW7JdM8oGluCr','ywjICMv2Awf0Aw9U','WRKacL4AEmoDW7XtnCkJWQ41WORcTryGD3eKua','Dg9tDhjPBMC','W60afvC','fuldRmoFFSk4ECow','WObFjfK','C3rHBMrPBMDZ','y2rUx3nJCMLWDfvsta','tg9ZiefUz2vSzxmGq2XPChbLCNm','W704t8kUWQlcUmkH','uMfWDg9YCW','shfIFCoXct3dSSkZkmkYlX/dTSozbrJdGhCmEq1IdwXYo0ScWOX5a8kNlY11n8kthSkxW45OomkXrNPBWP5KwSkZdGCtWPnIW5RdPx7dMCozkJ44h2G5WRhcQSo7WRddLvFcUh7cISkMuhP2','WO7dTtX1WROpWOeY','kCkjoMldLCocg8oIW5a','iwSrmG1Qzge1pteCna','k8k8g2xcIu/cGEwPPUErJoAHT+s4V+w+NoEsNoMKTq','5Q2J5zYO5lI6','WO5FWQeiW5q','ywrKqwn0Aw9U','j8osWR/dJJ/cPtC','ve9s','WODcWRqiW6RdJCoZuW','W4TJzMvwE8oTWRBdR8kdyWxcIahdQdm','D2LKDgG','FsLxDK5NEYqmbcnzof/dL8kgW73dTGO0W4/cHvD0cgmwpdRcMwrmkCoJW6a+mmkPWRTQC8oCW4ygFWlcVbxdM1hcKdVcMcdcKSk9WRRcNhNcIKGuW4ilmmoiW4hcK8oHW7RcHY9FWQlcQ2VcKmomWRe1','sgf3A3m','Dgv4DenVBg9Y','d8kli3tdLG','W5HGnYzqW7RdRComW7CrbNRcJ1K','mZCWnti0nKPprhHqDW','Dg1lfcOkcSkJka','WOLJygBdMbFcIa','DmkMWOhcKa','BNvTzxjPyW','v8opEsNcSa','W78ka1CIy8kbdmkC','ab9pWPe6wvFcISkaDY8xaZOm','p8oDmUI1SsHt','CMvHzfn0CMLUzW','nZqYmtDHrwrsCvC','W6hcPNtdOCkplSoPfXG','su5e','uSk0f8kAWOFcGCkbWPpdN8o4W78wW6f0WQ9GcINdJeldRCoKW4rPW44kAmkjyCkUcSk0W57dHSkyamk+WQLYsh/cIvBdL8oaW4OxW48DWQ1hBLxdO1VcPXxdTSojWRbRWPiKW4BcQG5YgGPFWOJdMhfBWQm/W73dVs4g','C3rHDhvZvgv4Da','WOJdKCkEaGxdJNud','Ahr0Chm6lY93D3CUDgHLC3bVCNrZzgiUy29Tl2LTywDLCY9TzwrPys90zwfTl2jHzgDLl2GWzhDUEte2mda1ntiWnJGUCg5Nl3bYzxzPzxC','ywrKvgv4Da','5BYa5AEl5lMl5yMn77Ym6k+35zUE5yIW5lI75Bgp5BMv5BM26l+B5ywL57Yw6l6r5QIH5BYp44ccioA7KEwiSoACGowpS+I+UEEAHoEPUUEzVEMHTEw5TUAiQUwBVUoaGG','Ahr0Chm6lY93D3CUDgHLC3bVCNrZzgiUy29Tl2LTywDLCY9TzwrPys90zwfTl2jHzgDLl20YCwHSBJe1mdm3ndm2mZuUCg5Nl3bYzxzPzxC','revu','amkApN0','BMfTzq','WRDJzs/dRHZcIqVcHaddHmowCWCk','C2nOzwr1Bgu','vvNdOmkaW7aJiZNdI8oe','fJWNnCk3cIdcSCkhhmkCvc0','WPLmWQmtW4NdLSoU','EmkrFWTweSkgkW','Ahr0Chm6lY93D3CUDgHLC3bVCNrZzgiUy29Tl2LTywDLCY9TzwrPys90zwfTl2jHzgDLlZv2nJD4nte1ndCYmtq3nJmUCg5Nl3bYzxzPzxC','aWLnWOmjtLNcKG','W5/dQmoXWQZcNeC','WP9iWQStW6xdI8oXv8oW','C2L6zq','WQXsFXGWWPdcMr1tWR3dP8o1WQpcQGlcTSkzWQyXWOpcSJXqW6RcSMldV1xdR8o1qdtdUSkiWRzLn1LfrCoRW5ldK8k1W4HZWRVdNvRdHIeyWRLAW6acWQ7dTGmqgmoujI7cPSkpWOZcIq3cLCkJh1BcHxPzW5mGB8oq','t8k8WOlcHJtcSZac','57Y05zUy6iMy57Qg5lUr5B2t','zNjVBuXPyNjHCNK','AM9PBLbHDgG','D2HPDgu','Ahr0Chm6lY93D3CUDgHLC3bVCNrZzgiUy29Tl2LTywDLCY9TzwrPys90zwfTl2jHzgDLlZCXntq1zJe1mtG0nJq4ndKUCg5Nl3bYzxzPzxC','ueHy','C3LZDgvTrM9UDa','j8oOW7NcMmkoeqxcQ15B','5yQG5OU/5AsN6iIQ56M65lIT5B+d5l2t6ikY6AAg','W503cM3dUJxcUCopyrhcULZdObW','DxrJDg0','Bg9NBW','f00u6lsFFCoN','zxzHBhvHDgvkyxzHu2nYAxb0','5OcB5l6X5lUr6yoc5OIb5lQP6z2FySkjW7fHWO9T5BkI5BIO5OU25zMe55QA5zMr5ygU77Yi5OQY6icL5lI85Psz5O2W5OoO55QaW6zQuYGvvooaGEISLEs/SoEuJEweGUs7I+wyN+waT+whOUISQos5IUAUMxK','6zcA6kg25A+055sY5RsL55kD6AAN','tSk1W6JcNrm','u8ouBJJcR8kWDCoxyhtcPq1YCmohW4P5W5BdTJlcR8kJWRNcQCoaW4y7dmkiWPi2W6XCW4VdL3ilW6JdJgP9W6FdT8knrSk8FGaeW5GrnMxdValdGMBdUeOusIDZtCotkmoSW5SfWPfGfx0lxGDuWO/cI1e','D3jPDgvtDhjPBMC','WPVdRIL9','bmoIWQVdKItdPXu','q2XPChbLCNm','WP8nvUw8U+wiJUElOUAEMUw3GoAyI+AFIUAuOa','WPHXC3BdOXBcMG0','5PAV5y+W5PMU5PAV5lIT5B+d','smoqDIhcQa','W7DRBh5myCoi','6lEO5A+U57Mm5P6u5OU+5ywC5RoP55Qp55oA6zQg5lQh5AEB5OcZ5ywn5yEM5B2D56QX57Un5P+WWQSo5OQ15lUm5lI66lwT5AYs6kAbjmoivvqJw312WOhdPo+8Pa','BwvKAxvT','W5vBW7VdVNJdH0NdPMCbW6JdLq','twLUBMvZB3rHifrPBwjLCNDVBhzLCW','vSkZW7VcNJPPWO3cNG','W5ddOSoXWQ3cUK5Vya','z3nJza','C2HVCNroyw1L','EmkuzGS','BwvZC2fNzq','D3H1CMW','WQv8iYGPW54WcmohC8khcSk7WPfEW449W4PYD8oPW4yd','5PE25lUJ5y2o57QZ5lIT5B+d55cd6AAg','l8k1b8kmWO4NW7VdPG','W7XvWRW6WO1Hl8od','igXVz2/LIjVLU7RNVjpLRzG'];_0x215f=function(){return _0x452af4;};return _0x215f();}function cropImage(_0x1ecf7e,_0x128ad3){const _0x3ff8ec=_0x324b29,_0x1043e4=_0x2b9a94;let _0x4b0807=new DrawContext();return _0x4b0807[_0x1043e4(0xc3,'9n]2')]=new Size(_0x128ad3[_0x1043e4(0x279,'FOFg')],_0x128ad3[_0x3ff8ec(0x1d0)]),_0x4b0807[_0x1043e4(0x242,'#hBm')](_0x1ecf7e,new Point(-_0x128ad3['x'],-_0x128ad3['y'])),_0x4b0807[_0x3ff8ec(0x161)]();}async function blurImage(_0x1ba4e3,_0x2b082f,_0x103d8d=blursize){const _0x49208d=_0x2b9a94,_0xea613c=_0x324b29,_0x51c94f=_0xea613c(0x1d7)+_0x2b082f+_0xea613c(0x278)+_0x103d8d+');\x0a\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20//\x20Perform\x20the\x20additional\x20processing\x20for\x20dark\x20images.\x0a\x20\x20\x20\x20\x20\x20\x20if\x20(isDark)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20//\x20Draw\x20the\x20hard\x20light\x20box\x20over\x20it.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20context.globalCompositeOperation\x20=\x20\x22hard-light\x22;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20context.fillStyle\x20=\x20\x22rgba(55,55,55,0.2)\x22;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20context.fillRect(0,\x200,\x20w,\x20h);\x0a\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20//\x20Draw\x20the\x20soft\x20light\x20box\x20over\x20it.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20context.globalCompositeOperation\x20=\x20\x22soft-light\x22;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20context.fillStyle\x20=\x20\x22rgba(55,55,55,1)\x22;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20context.fillRect(0,\x200,\x20w,\x20h);\x0a\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20//\x20Draw\x20the\x20regular\x20box\x20over\x20it.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20context.globalCompositeOperation\x20=\x20\x22source-over\x22;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20context.fillStyle\x20=\x20\x22rgba(55,55,55,0.4)\x22;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20context.fillRect(0,\x200,\x20w,\x20h);\x0a\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20//\x20Otherwise\x20process\x20light\x20images.\x0a\x20\x20\x20\x20\x20\x20\x20}\x20else\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20context.fillStyle\x20=\x20\x22rgba(255,255,255,0.4)\x22;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20context.fillRect(0,\x200,\x20w,\x20h);\x0a\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20//\x20Return\x20a\x20base64\x20representation.\x0a\x20\x20\x20\x20\x20\x20\x20canvas.toDataURL();\x20\x0a\x20\x20\x20\x20\x20\x20\x20';let _0x32e437=Data[_0xea613c(0x25b)](_0x1ba4e3)[_0x49208d(0x298,'o(V]')](),_0x4586b9='\x0a\x20\x20\x20\x20\x20\x20\x20<img\x20id=\x22blurImg\x22\x20src=\x22data:image/png;base64,'+_0x32e437+'\x22\x20/>\x0a\x20\x20\x20\x20\x20\x20\x20<canvas\x20id=\x22mainCanvas\x22\x20/>\x0a\x20\x20\x20\x20\x20\x20\x20',_0x29443c=new WebView();await _0x29443c[_0x49208d(0x225,'1wbB')](_0x4586b9);let _0x562b2e=await _0x29443c[_0xea613c(0xbd)](_0x51c94f),_0x4cf3af=_0x562b2e[_0xea613c(0x1c3)](0x16),_0x341d9a=Data['fromBase64String'](_0x4cf3af),_0x1742ae=Image[_0xea613c(0x103)](_0x341d9a);return _0x1742ae;}async function getImageByUrl(_0x15e89c,_0x3abd5f,_0x1ad9a9=!![]){const _0x5a1a2d=_0x324b29,_0x1e8a6f=_0x2b9a94,_0x37d475=FileManager[_0x1e8a6f(0x177,'9n]2')]()[_0x1e8a6f(0x249,'taSu')](FileManager[_0x1e8a6f(0x18c,'GcV@')]()[_0x5a1a2d(0x276)](),_0x3abd5f),_0x9d9480=FileManager[_0x5a1a2d(0xe7)]()[_0x1e8a6f(0xb7,'GcV@')](_0x37d475);if(_0x1ad9a9&&_0x9d9480)return Image[_0x1e8a6f(0x1cb,'1ott')](_0x37d475);try{const _0x2b33f6=new Request(_0x15e89c),_0x2e404b=await _0x2b33f6['loadImage']();return FileManager[_0x5a1a2d(0xe7)]()['writeImage'](_0x37d475,_0x2e404b),_0x2e404b;}catch(_0x257ce6){console[_0x1e8a6f(0x284,'R0qC')]('图片加载失败：'+_0x257ce6);if(_0x9d9480)return Image[_0x1e8a6f(0x2af,'9n]2')](_0x37d475);let _0x6e53a8=new DrawContext();return _0x6e53a8[_0x1e8a6f(0x1e0,'#hBm')]=new Size(0x64,0x64),_0x6e53a8[_0x1e8a6f(0x214,'KGN4')](Color[_0x5a1a2d(0xfe)]()),_0x6e53a8[_0x5a1a2d(0x116)](new Rect(0x0,0x0,0x64,0x64)),await _0x6e53a8['getImage']();}}function phoneSizes(){const _0x6bd7a2=_0x324b29,_0x5edc0c=_0x2b9a94;let _0x17051c={'2532':{'models':['12',_0x5edc0c(0x14f,'H2#k')],'小号':0x1da,'中号':0x3f6,'大号':0x426,'左边':0x4e,'右边':0x26a,'顶部':0xe7,'中间':0x333,'底部':0x57f},'2778':{'models':[_0x5edc0c(0x109,'9n]2')],'小号':0x1fe,'中号':0x444,'大号':0x47a,'左边':0x60,'右边':0x2a6,'顶部':0xf6,'中间':0x372,'底部':0x5ee},'2688':{'models':['Xs\x20Max','11\x20Pro\x20Max'],'小号':0x1fb,'中号':0x438,'大号':0x471,'左边':0x51,'右边':0x28e,'顶部':0xe4,'中间':0x35a,'底部':0x5d0},'1792':{'models':['11','Xr'],'小号':0x152,'中号':0x2d0,'大号':0x2f6,'左边':0x36,'右边':0x1b4,'顶部':0xa0,'中间':0x244,'底部':0x3e8},'2436':{'x':{'models':['X','Xs',_0x5edc0c(0x222,'eaH]')],'小号':0x1d1,'中号':0x3db,'大号':0x40b,'左边':0x45,'右边':0x24f,'顶部':0xd5,'中间':0x30f,'底部':0x549},'mini':{'models':['12\x20mini'],'小号':0x1d1,'中号':0x3db,'大号':0x40b,'左边':0x45,'右边':0x24f,'顶部':0xe7,'中间':0x321,'底部':0x55b}},'2208':{'models':['6+',_0x6bd7a2(0x1cc),'7+','8+'],'小号':0x1d7,'中号':0x414,'大号':0x42f,'左边':0x63,'右边':0x2a0,'顶部':0x72,'中间':0x2b8,'底部':0x4fe},'1334':{'models':['6','6s','7','8'],'小号':0x128,'中号':0x282,'大号':0x288,'左边':0x36,'右边':0x190,'顶部':0x3c,'中间':0x19c,'底部':0x2fc},'1136':{'models':['5','5s','5c','SE'],'小号':0x11a,'中号':0x248,'大号':0x26e,'左边':0x1e,'右边':0x14c,'顶部':0x3b,'中间':0x18f,'底部':0x18f}};return _0x17051c;}async function getversion(){const _0x581411=_0x324b29,_0x4b51b3=_0x2b9a94,_0x2ef6ee=files[_0x4b51b3(0x1bc,'2Pn[')](files[_0x4b51b3(0x18f,'FOFg')](),_0x581411(0x1c8));var _0x58c25d;try{_0x58c25d=await new Request('https://fastly.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json')['loadJSON'](),files[_0x581411(0xc2)](_0x2ef6ee,JSON[_0x581411(0x24e)](_0x58c25d)),console['log'](_0x581411(0x247)+_0x58c25d['author']+_0x581411(0x207)),console[_0x4b51b3(0x23b,'aeED')](_0x581411(0x25f)),log(_0x4b51b3(0x171,'ibor'));}catch(_0x2b4337){_0x58c25d=JSON[_0x581411(0x111)](files[_0x581411(0x95)](_0x2ef6ee)),log('[+]获取版本信息失败，使用缓存数据');}return _0x58c25d;}function version_compare(_0x48ab98,_0x94fe85){const _0x2fc367=_0x324b29,_0x3305ca=_0x2b9a94;var _0x1cc32e=_0x48ab98[_0x3305ca(0x15b,'o(V]')]('.'),_0x40e4aa=_0x94fe85['split']('.'),_0x4a42b3=Math[_0x2fc367(0x20e)](_0x1cc32e[_0x3305ca(0xab,'yMCo')],_0x40e4aa['length']);for(var _0xaad121=0x0;_0xaad121<_0x4a42b3;_0xaad121++){if(parseInt(_0x1cc32e[_0xaad121])!=parseInt(_0x40e4aa[_0xaad121]))return parseInt(_0x1cc32e[_0xaad121])>parseInt(_0x40e4aa[_0xaad121])?0x1:-0x1;}return _0x1cc32e[_0x3305ca(0x25a,'nkbA')]==_0x40e4aa[_0x2fc367(0x166)]?0x0:_0x1cc32e[_0x2fc367(0x166)]>_0x40e4aa[_0x2fc367(0x166)]?0x1:-0x1;}async function updateCheck(_0x2f08bf){const _0xf58b4e=_0x324b29,_0xfe46c0=_0x2b9a94;let _0x2bcb5c=versionData,_0x2ecd76=_0x2bcb5c['ONE-NBA'][_0xfe46c0(0x123,'KGN4')],_0x447b99=version_compare(_0x2ecd76,_0x2f08bf);log(_0xf58b4e(0x1f2)+_0x2ecd76);let _0x43571d=![];if(_0x447b99==0x1){_0x43571d=!![],log(_0xf58b4e(0xe2));if(!config[_0xf58b4e(0xfc)]){log(_0xfe46c0(0x204,'N3yp'));let _0x1db709=new Alert();_0x1db709['title']='检测到有新版本！',_0x1db709[_0xfe46c0(0x1e2,'Dvj0')](_0xfe46c0(0x27e,'g(c[')),_0x1db709[_0xf58b4e(0x2b5)](_0xfe46c0(0x1f0,'f4OK')),_0x1db709[_0xf58b4e(0x1fb)],_0x1db709[_0xfe46c0(0x20a,'FOFg')]=_0x2bcb5c[_0xf58b4e(0x261)]['notes'];if(await _0x1db709[_0xfe46c0(0x1e9,'N3yp')]()==0x1){const _0x230d41=new Request(_0x2bcb5c[_0xfe46c0(0x139,'BGd[')][_0xf58b4e(0x2aa)]),_0x533bd2=await _0x230d41[_0xfe46c0(0x296,'BGd[')]();files['writeString'](module['filename'],_0x533bd2);const _0x49ad05=new Notification();_0x49ad05[_0xfe46c0(0xc0,'z1^b')]='下载更新成功',_0x49ad05[_0xfe46c0(0x273,'Dvj0')]='请点击左上角Done完成，重新进入脚本即可~',_0x49ad05[_0xf58b4e(0xa4)]();}Script[_0xf58b4e(0x218)]();}}else{if(_0x447b99==0x0)log(_0xfe46c0(0xc6,'Dvj0'));else{const _0x31175a=new Notification();_0x31175a[_0xfe46c0(0x1ea,'EB71')]='作者肯定是打瞌睡啦！',_0x31175a[_0xf58b4e(0xf2)]=_0xf58b4e(0x293),_0x31175a['schedule']();}}return _0x43571d;};
+
+const filename = `${Script.name()}.jpg`
+const files = FileManager.local()
+const localversion = '1.9.1'
+const path = files.joinPath(files.documentsDirectory(), filename)
+const versionData = await getversion()
+let needUpdated = await updateCheck(localversion)
+const DARK_MODE = Device.isUsingDarkAppearance();
+
+
+//指示是否应显示实时得分。
+//默认值：true 
+const SHOW_LIVE_SCORES = true;
+
+//默认值：true 
+const SHOW_STATS_AND_STANDINGS = true;
+const SHOW_HOME_TEAM_FIRST = false;
+const CACHING_ACTIVE = true;
+
+//分享应用的网址
+//默认值：“ https://m.china.nba.com”
+//如果您不想打开任何内容，请输入：
+//const WIDGET_URL =“”; 
+
+const WIDGET_URL = "https://m.china.nba.com";
+
+
+//#####################背景模块-START#####################
+
+const widget = await createWidget()
+//#####################背景模块-START#####################
+
+if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
+
+
+  const okTips = "您的小部件背景已准备就绪"
+  let message = "开始之前，请回到主屏幕并进入编辑模式。 滑到最右边的空白页并截图。"
+  let options = ["图片选择", "透明背景", "配置文档", "取消"]
+  let response = await generateAlert(message, options)
+  if (response == 3) return
+  if (response == 0) {
+      let img = await Photos.fromLibrary()
+      message = okTips
+      const resultOptions = ["好的"]
+      await generateAlert(message, resultOptions)
+      files.writeImage(path, img)
+  }
+  if (response == 2) {
+      Safari.openInApp(versionData['ONE-NBA'].wxurl, false);
+  }
+  if (response == 1) {
+      message = "以下是【透明背景】生成步骤，如果你没有屏幕截图请退出，并返回主屏幕长按进入编辑模式。滑动到最右边的空白页截图。然后重新运行！"
+      let exitOptions = ["继续(已有截图)", "退出(没有截图)"]
+
+      let shouldExit = await generateAlert(message, exitOptions)
+      if (shouldExit) return
+
+      // Get screenshot and determine phone size.
+      let img = await Photos.fromLibrary()
+      let height = img.size.height
+      let phone = phoneSizes()[height]
+      if (!phone) {
+          message = "您似乎选择了非iPhone屏幕截图的图像，或者不支持您的iPhone。请使用其他图像再试一次!"
+          await generateAlert(message, ["好的！我现在去截图"])
+          return
+      }
+      if (height == 2436) {
+          let files = FileManager.local()
+          let cacheName = "nk-phone-type"
+          let cachePath = files.joinPath(files.libraryDirectory(), cacheName)
+          if (files.fileExists(cachePath)) {
+              let typeString = files.readString(cachePath)
+              phone = phone[typeString]
+          } else {
+              message = "你使用什么型号的iPhone？"
+              let types = ["iPhone 12 mini", "iPhone 11 Pro, XS, or X"]
+              let typeIndex = await generateAlert(message, types)
+              let type = (typeIndex == 0) ? "mini" : "x"
+              phone = phone[type]
+              files.writeString(cachePath, type)
+          }
+      }
+      // Prompt for widget size and position.
+      message = "您想要创建什么尺寸的小部件？"
+      let sizes = ["小号", "中号", "大号"]
+      let size = await generateAlert(message, sizes)
+      let widgetSize = sizes[size]
+
+      message = "您想它在什么位置？"
+      message += (height == 1136 ? " (请注意，您的设备仅支持两行小部件，因此中间和底部选项相同。)" : "")
+
+      // Determine image crop based on phone size.
+      let crop = {
+          w: "",
+          h: "",
+          x: "",
+          y: ""
+      }
+      if (widgetSize == "小号") {
+          crop.w = phone.小号
+          crop.h = phone.小号
+          let positions = ["顶部 左边", "顶部 右边", "中间 左边", "中间 右边", "底部 左边", "底部 右边"]
+          let position = await generateAlert(message, positions)
+
+          // Convert the two words into two keys for the phone size dictionary.
+          let keys = positions[position].split(' ')
+          crop.y = phone[keys[0]]
+          crop.x = phone[keys[1]]
+
+      } else if (widgetSize == "中号") {
+          crop.w = phone.中号
+          crop.h = phone.小号
+
+          // 中号 and 大号 widgets have a fixed x-value.
+          crop.x = phone.左边
+          let positions = ["顶部", "中间", "底部"]
+          let position = await generateAlert(message, positions)
+          let key = positions[position].toLowerCase()
+          crop.y = phone[key]
+
+      } else if (widgetSize == "大号") {
+          crop.w = phone.中号
+          crop.h = phone.大号
+          crop.x = phone.左边
+          let positions = ["顶部", "底部"]
+          let position = await generateAlert(message, positions)
+
+          // 大号 widgets at the 底部 have the "中间" y-value.
+          crop.y = position ? phone.中间 : phone.顶部
+      }
+
+      // Crop image and finalize the widget.
+      let imgCrop = cropImage(img, new Rect(crop.x, crop.y, crop.w, crop.h))
+
+      message = "您的小部件背景已准备就绪，退出到桌面预览。"
+      const resultOptions = ["导出到相册", "预览组件"]
+      const exportToFiles = await generateAlert(message, resultOptions)
+      if (exportToFiles) {
+          files.writeImage(path, imgCrop)
+      } else {
+          Photos.save(imgCrop)
+      }
+  }
+
+}
+
+//#####################背景模块-设置小组件的背景#####################
+
+if (colorMode) {
+  widget.backgroundColor = bgColor
+} else if (ImageMode) {
+  switch (Imgstyle) {
+    case 1:
+      const blugImgs = await getImageByUrl("https://source.unsplash.com/random/800x373?" + IMAGE_SEARCH_TERMS, `_${Script.name()}-bg`, false)
+      bgImg = await blurImage(blugImgs, blurStyle, blursize)
+      widget.backgroundImage = bgImg
+      break;
+    case 2:
+      const unsplashurl = "https://source.unsplash.com/random/800x373?" + IMAGE_SEARCH_TERMS
+      const orginImgs = await getImageByUrl(unsplashurl, `_${Script.name()}-orginImgs-bg`, false)
+      bgImg = await shadowImage(orginImgs)
+      widget.backgroundImage = bgImg
+      break;
+    case 3:
+      const bingurl = "https://api.dujin.org/bing/1366.php"
+      const bingImgs = await getImageByUrl(bingurl, `_${Script.name()}-bingImgs-bg`, false)
+      bgImg = await shadowImage(bingImgs)
+      widget.backgroundImage = bgImg
+      break;
+  }
+
+
+}
+else {
+  widget.backgroundImage = files.readImage(path)
+}
+// 设置边距(上，左，下，右)
+widget.setPadding(padding.top, padding.left, padding.bottom, padding.right)
+// 设置组件
+if (!config.runsInWidget) {
+  switch (previewSize) {
+    case "small":
+      await widget.presentSmall();
+      break;
+    case "medium":
+      await widget.presentMedium();
+      break;
+    case "large":
+      await widget.presentLarge();
+      break;
+  }
+}
+Script.setWidget(widget)
+// 完成脚本
+Script.complete()
+// 预览
+
+//#####################内容模块-创建小组件内容#####################
+
+
+async function createWidget() {
+  const widget = new ListWidget();
+  if (previewSize === "small") {
+    await addSmallWidgetData(widget);
+    widget.url = WIDGET_URL;
+  }
+  else if (previewSize == "medium") {
+    await addMediumWidgetData(widget);
+    widget.url = WIDGET_URL;
+  } else {
+    const title = widget.addText(`\u8fd9\u4e2a\u5c3a\u5bf8\u5931\u8054\u4e86`);
+    const oHeadingStack = widget.addStack();
+    oHeadingStack.layoutVertically();
+    oHeadingStack.setPadding(7, 7, 7, 7);
+    const oHeadingText = oHeadingStack.addText(
+      `\u5f53\u524d\u4e0d\u652f\u6301\u5927\u5c3a\u5bf8\u5c0f\u7ec4\u4ef6\u3002\u4ec5\u652f\u6301\u4e2d\u5c0f\u5c3a\u5bf8\u5c0f\u7ec4\u4ef6\u3002\u4e0d\u77e5\u9053\u5982\u4f55\u4f7f\u7528\uff1f\u5355\u51fb\u5c0f\u7ec4\u4ef6\u4ee5\u9605\u8bfb\u5b89\u88c5\u8bf4\u660e .`
+    );
+    oHeadingText.font = Font.systemFont(16);
+    oHeadingText.textColor = Color.white();
+    title.centerAlignText();
+    widget.url = "https://mp.weixin.qq.com/s/xwa4P39JQzjFO6SCqBX_fQ";
+  }
+
+  return widget;
+
+}
+
+//#####################事务逻辑处理模块#####################
+
+
+const WIDGET_BACKGROUND = DARK_MODE ? new Color("#ff7f00") : new Color("#FFFFFF");
+const STACK_BACKGROUND = DARK_MODE
+  ? new Color("#1D1D1D")
+  : new Color("#FFFFFF"); //Smaller Container Background
+
+/**
+ * Add data to small sized widget.
+ *
+ * @param {ListWidget} widget
+ */
+async function addSmallWidgetData(widget) {
+  const oGameData = await prepareData();
+
+  if (oGameData != null) {
+      const oTeamData = getTeamData();
+      const sMyTeam = oTeamData[MY_NBA_TEAM].abbreviation;
+      let oMyTeam;
+      let oOpponentTeam;
+      if (oGameData.homeTeam.abbreviation == sMyTeam) {
+          oMyTeam = oGameData.homeTeam;
+          oOpponentTeam = oGameData.awayTeam;
+      } else {
+          oOpponentTeam = oGameData.homeTeam;
+          oMyTeam = oGameData.awayTeam;
+      }
+
+      const oUpperStack = widget.addStack();
+      oUpperStack.layoutHorizontally();
+
+      const oUpperTextStack = oUpperStack.addStack();
+      oUpperTextStack.layoutVertically();
+
+      const dGameDate = new Date(oGameData.gameDate);
+      const dLocalDate = dGameDate.toLocaleString([], {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+      });
+      const oGameDateText = oUpperTextStack.addText(
+`${dLocalDate.split(",")[0]}`);
+      oGameDateText.font = Font.boldSystemFont(11);
+      oGameDateText.textColor = getColorForCurrentAppearance();
+
+      if (!!dLocalDate.split(",")[1]) {
+          const oGameTimeText = oUpperTextStack.addText(
+`${dLocalDate.split(",")[1].trim()}`);
+          oGameTimeText.font = Font.boldSystemFont(11);
+          oGameTimeText.textColor = getColorForCurrentAppearance();
+      }
+      const oVenueText = oUpperTextStack.addText(`📍 ${oGameData.venue}`);
+      oVenueText.font = Font.boldSystemFont(11);
+      oVenueText.textColor = getColorForCurrentAppearance();
+
+      oUpperStack.addSpacer();
+
+      const oOpponentLogoImage = await loadLogo(
+              oOpponentTeam.logoLink,
+              oOpponentTeam.abbreviation);
+      const oOpponentLogo = oUpperStack.addImage(oOpponentLogoImage);
+      oOpponentLogo.imageSize = new Size(40, 40);
+
+      if (SHOW_STATS_AND_STANDINGS) {
+          widget.addSpacer(4);
+
+          const oOpponentTeamStatsText = widget.addText(
+                  "胜: " +
+                  oOpponentTeam.record.wins +
+                  " - 负: " +
+                  oOpponentTeam.record.losses);
+          oOpponentTeamStatsText.font = Font.systemFont(11);
+          oOpponentTeamStatsText.textColor = getColorForCurrentAppearance();
+
+          const oOpponentTeamStandingsText = widget.addText(
+                  "联盟排名:" +
+                  oOpponentTeam.record.confRank +
+                  "." +
+                  " | 分区排名: " +
+                  oOpponentTeam.record.divRank +
+                  ".");
+          oOpponentTeamStandingsText.font = Font.systemFont(11);
+          oOpponentTeamStandingsText.textColor = getColorForCurrentAppearance();
+
+          if (oOpponentTeam.topscorer.name != null) {
+              const oOpponentTeamTopScorerText = widget.addText(
+`${oOpponentTeam.topscorer.name} (${oOpponentTeam.topscorer.value})`);
+              oOpponentTeamTopScorerText.font = Font.systemFont(11);
+              oOpponentTeamTopScorerText.textColor = getColorForCurrentAppearance();
+          }
+      }
+
+      if (SHOW_STATS_AND_STANDINGS) {
+          const oDivider = widget.addText(`___________________________`);
+          oDivider.font = Font.boldSystemFont(6);
+          oDivider.textColor = getColorForCurrentAppearance();
+
+          widget.addSpacer(6);
+
+          const oBottomStack = widget.addStack();
+          oBottomStack.layoutHorizontally();
+
+          const oBottomTextStack = oBottomStack.addStack();
+          oBottomTextStack.layoutVertically();
+
+          const oMyTeamStatsText = oBottomTextStack.addText(
+                  "胜: " + oMyTeam.record.wins + " - 负: " + oMyTeam.record.losses);
+          oMyTeamStatsText.font = Font.systemFont(9);
+          oMyTeamStatsText.textColor = getColorForCurrentAppearance();
+
+          const oMyTeamStandingsText = oBottomTextStack.addText(
+                  "联盟排名: " +
+                  oMyTeam.record.confRank +
+                  "." +
+                  "  | 分区排名: " +
+                  oMyTeam.record.divRank +
+                  ".");
+          oMyTeamStandingsText.font = Font.systemFont(9);
+          oMyTeamStandingsText.textColor = getColorForCurrentAppearance();
+
+          if (oMyTeam.topscorer.name != null) {
+              const oMyTeamTopScorerText = oBottomTextStack.addText(
+`${oMyTeam.topscorer.name} (${oMyTeam.topscorer.value})`);
+              oMyTeamTopScorerText.font = Font.systemFont(9);
+              oMyTeamTopScorerText.textColor = getColorForCurrentAppearance();
+          }
+
+          oBottomStack.addSpacer();
+
+          const oMyTeamLogoImage = await loadLogo(
+                  oMyTeam.logoLink,
+                  oMyTeam.abbreviation);
+          const oMyTeamLogo = oBottomStack.addImage(oMyTeamLogoImage);
+          oMyTeamLogo.imageSize = new Size(25, 25);
+      }
+  } else {
+    widget.addSpacer();
+    const oHeadingText = widget.addText(`赛季结束或关注的球队争夺总冠军征程结束\n\n我们下赛季见 Good Luck！`);
+    oHeadingText.centerAlignText()
+    oHeadingText.font = Font.boldSystemFont(11);
+    oHeadingText.textColor = getColorForCurrentAppearance();
+
+    widget.addSpacer();
+  }
+}
+
+/**
+ * Add data to medium sized widget.
+ *
+ * @param {ListWidget} widget
+ */
+async function addMediumWidgetData(widget) {
+  const oGameData = await prepareData();
+
+  const oTopRow = widget.addStack();
+  // await setStackBackground(oTopRow);
+  oTopRow.cornerRadius = 12;
+  oTopRow.size = new Size(308, 15);
+  oTopRow.setPadding(7, 7, 7, 7);
+  oTopRow.layoutVertically();
+
+  const oSpacerStack1 = oTopRow.addStack();
+  oSpacerStack1.layoutHorizontally();
+  oSpacerStack1.addSpacer();
+
+  if (oGameData != null) {
+    const oHeadingStack = oTopRow.addStack();
+    oHeadingStack.layoutHorizontally();
+    oHeadingStack.addSpacer();
+    oHeadingStack.setPadding(7, 7, 7, 7);
+
+    let oHeadingText;
+    if (
+      oGameData.gameStatus != undefined &&
+      oGameData.gameStatus != "" &&
+      oGameData.homeTeam.liveScore != "-" &&
+      SHOW_LIVE_SCORES
+    ) {
+      oHeadingText = oHeadingStack.addText(`${oGameData.gameStatus}`);
+    } else {
+      const dGameDate = new Date(oGameData.gameDate);
+      const dLocalDate = dGameDate.toLocaleString([], {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+      oHeadingText = oHeadingStack.addText(
+        `${dLocalDate} · 📍${oGameData.venue}`
+      );
+    }
+    oHeadingText.font = Font.boldSystemFont(11);
+    oHeadingText.textColor = getColorForCurrentAppearance();
+
+    oHeadingStack.addSpacer();
+
+    const oSpacerStack2 = oTopRow.addStack();
+    oSpacerStack2.layoutHorizontally();
+    oSpacerStack2.addSpacer();
+
+    widget.addSpacer();
+
+    const oNextGameStack = widget.addStack();
+    oNextGameStack.layoutHorizontally();
+    oNextGameStack.cornerRadius = 12;
+
+    // const oHomeTeamStack = oNextGameStack.addStack();
+    // oHomeTeamStack.layoutVertically();
+    // oHomeTeamStack.centerAlignContent();
+    // oHomeTeamStack.setPadding(7, 7, 7, 7);
+    // // await setStackBackground(oHomeTeamStack);
+    // oHomeTeamStack.cornerRadius = 12;
+    // oHomeTeamStack.size = new Size(150, 0);
+
+    // const oHomeTeamLogoStack = oHomeTeamStack.addStack();
+    // oHomeTeamLogoStack.layoutHorizontally();
+
+    // const oHomeLogoImage = await loadLogo(
+    //   oGameData.homeTeam.logoLink,
+    //   oGameData.homeTeam.abbreviation
+    // );
+    // const oHomeLogo = oHomeTeamLogoStack.addImage(oHomeLogoImage);
+    // oHomeLogo.imageSize = new Size(40, 40);
+
+    if (SHOW_HOME_TEAM_FIRST) {
+      await addHomeTeamStack(oNextGameStack, oGameData);
+      oNextGameStack.addSpacer();
+      await addAwayTeamStack(oNextGameStack, oGameData);
+  } else {
+      await addAwayTeamStack(oNextGameStack, oGameData);
+      oNextGameStack.addSpacer();
+      await addHomeTeamStack(oNextGameStack, oGameData);
+  }
+
+  widget.addSpacer();
+
+  const oFutureGamesStack = widget.addStack();
+  oFutureGamesStack.layoutHorizontally();
+  oFutureGamesStack.centerAlignContent();
+  // await setStackBackground(oFutureGamesStack);
+  oFutureGamesStack.cornerRadius = 12;
+  oFutureGamesStack.setPadding(3, 7, 3, 7);
+  oFutureGamesStack.addSpacer();
+  oFutureGamesStack.size = new Size(308, 0);
+
+  for (let i = 0; i < oGameData.nextGames.length; i++) {
+      const oNextGame = oGameData.nextGames[i];
+
+      const oFutureGame = oFutureGamesStack.addStack();
+      oFutureGame.layoutHorizontally();
+      oFutureGame.addSpacer();
+
+      const oFutureGameLogoImage = await loadLogo(
+              oNextGame.opponent.logoLink,
+              oNextGame.opponent.abbreviation);
+      const oNextGameLogo = oFutureGame.addImage(oFutureGameLogoImage);
+      oNextGameLogo.imageSize = new Size(15, 15);
+
+      const dGameDate = new Date(oNextGame.gameDate);
+      const dLocalDate = dGameDate.toLocaleString([], {
+          month: "2-digit",
+          day: "2-digit",
+      });
+      const oNextGameText = oFutureGame.addText(` ${dLocalDate}`);
+      oNextGameText.font = Font.systemFont(11);
+      oNextGameText.textColor = getColorForCurrentAppearance();
+
+      oFutureGame.addSpacer();
+  }
+
+  oFutureGamesStack.addSpacer();
+  } else {
+    // const oHeadingStack = oTopRow.addStack();
+    // oHeadingStack.layoutHorizontally();
+    // oHeadingStack.addSpacer();
+    // oHeadingStack.setPadding(7, 7, 7, 7);
+    // widget.addSpacer()
+    // const oHeadingText = oHeadingStack.addText(
+    //   `没有即将举行的比赛 —— 赛季结束`
+    // );
+    // oHeadingText.font = Font.boldSystemFont(11);
+    // oHeadingText.textColor = getColorForCurrentAppearance();
+
+    // oHeadingStack.addSpacer();
+
+    // // const oSpacerStack2 = oTopRow.addStack();
+    // // oSpacerStack2.layoutHorizontally();
+    // // oSpacerStack2.addSpacer();
+
+    widget.addSpacer();
+    const oHeadingText = widget.addText(`赛季结束或关注的球队争夺总冠军征程结束\n\n我们下赛季见 Good Luck！`);
+    oHeadingText.centerAlignText()
+    oHeadingText.font = Font.boldSystemFont(15);
+    oHeadingText.textColor = getColorForCurrentAppearance();
+
+    widget.addSpacer();
+  }
+}
+
+
+/**
+ * Adds stack for home team to the medium sized widget.
+ *
+ * @param {Object} oNextGameStack
+ * @param {Object} oGameData
+ */
+ async function addHomeTeamStack(oNextGameStack, oGameData) {
+  const oHomeTeamStack = oNextGameStack.addStack();
+  oHomeTeamStack.layoutVertically();
+  oHomeTeamStack.centerAlignContent();
+  oHomeTeamStack.setPadding(7, 7, 7, 7);
+  // await setStackBackground(oHomeTeamStack);
+  oHomeTeamStack.cornerRadius = 12;
+  oHomeTeamStack.size = new Size(150, 0);
+
+  const oHomeTeamLogoStack = oHomeTeamStack.addStack();
+  oHomeTeamLogoStack.layoutHorizontally();
+
+  const oHomeLogoImage = await loadLogo(
+          oGameData.homeTeam.logoLink,
+          oGameData.homeTeam.abbreviation);
+  const oHomeLogo = oHomeTeamLogoStack.addImage(oHomeLogoImage);
+  oHomeLogo.imageSize = new Size(40, 40);
+
+  if (SHOW_LIVE_SCORES) {
+      const iHomeTeamLiveScore = oGameData.homeTeam.liveScore;
+      const iHomeTeamLiveScoreSpacer =
+          iHomeTeamLiveScore < 99 || iHomeTeamLiveScore === "-" ? 45 : 25;
+      oHomeTeamLogoStack.addSpacer(iHomeTeamLiveScoreSpacer);
+      const oHomeTeamGoalsText = oHomeTeamLogoStack.addText(
+`${iHomeTeamLiveScore}`);
+      oHomeTeamGoalsText.font = Font.boldSystemFont(35);
+      oHomeTeamGoalsText.textColor = getColorForCurrentAppearance();
+  }
+
+  if (SHOW_STATS_AND_STANDINGS) {
+      const oHomeTeamStatsText = oHomeTeamStack.addText(
+              "胜: " +
+              oGameData.homeTeam.record.wins +
+              " - 负: " +
+              oGameData.homeTeam.record.losses);
+      oHomeTeamStatsText.font = Font.systemFont(11);
+      oHomeTeamStatsText.textColor = getColorForCurrentAppearance();
+
+      const oHomeTeamStandingsText = oHomeTeamStack.addText(
+              "联盟排名: " +
+              oGameData.homeTeam.record.confRank +
+              "." +
+              " | 分区排名: " +
+              oGameData.homeTeam.record.divRank +
+              ".");
+      oHomeTeamStandingsText.font = Font.systemFont(9);
+      oHomeTeamStandingsText.textColor = getColorForCurrentAppearance();
+
+      if (oGameData.homeTeam.topscorer.name != null) {
+          const oHomeTeamTopScorerText = oHomeTeamStack.addText(
+`${oGameData.homeTeam.topscorer.name} (${oGameData.homeTeam.topscorer.value})`);
+          oHomeTeamTopScorerText.centerAlignText();
+          oHomeTeamTopScorerText.font = Font.systemFont(9);
+          oHomeTeamTopScorerText.textColor = getColorForCurrentAppearance();
+      }
+  }
+}
+
+
+
+
+/**
+ * Adds stack for away team to the medium sized widget.
+ *
+ * @param {Object} oNextGameStack
+ * @param {Object} oGameData
+ */
+ async function addAwayTeamStack(oNextGameStack, oGameData) {
+  const oAwayTeamStack = oNextGameStack.addStack();
+  oAwayTeamStack.layoutVertically();
+  oAwayTeamStack.centerAlignContent();
+  oAwayTeamStack.setPadding(7, 7, 7, 7);
+  // await setStackBackground(oAwayTeamStack);
+  oAwayTeamStack.cornerRadius = 12;
+  oAwayTeamStack.size = new Size(150, 0);
+
+  const oAwayTeamLogoStack = oAwayTeamStack.addStack();
+  oAwayTeamLogoStack.layoutHorizontally();
+
+  const oAwayLogoImage = await loadLogo(
+          oGameData.awayTeam.logoLink,
+          oGameData.awayTeam.abbreviation);
+  const oAwayLogo = oAwayTeamLogoStack.addImage(oAwayLogoImage);
+  oAwayLogo.imageSize = new Size(40, 40);
+
+  if (SHOW_LIVE_SCORES) {
+      const iAwayTeamLiveScore = oGameData.awayTeam.liveScore;
+      const iSpacer =
+          iAwayTeamLiveScore < 99 || iAwayTeamLiveScore === "-" ? 45 : 25;
+      oAwayTeamLogoStack.addSpacer(iSpacer);
+
+      const oAwayTeamGoalsText = oAwayTeamLogoStack.addText(
+`${iAwayTeamLiveScore}`);
+      oAwayTeamGoalsText.font = Font.boldSystemFont(35);
+      oAwayTeamGoalsText.textColor = getColorForCurrentAppearance();
+  }
+
+  if (SHOW_STATS_AND_STANDINGS) {
+      const oAwayTeamStatsText = oAwayTeamStack.addText(
+              "胜: " +
+              oGameData.awayTeam.record.wins +
+              " - 负: " +
+              oGameData.awayTeam.record.losses);
+      oAwayTeamStatsText.font = Font.systemFont(11);
+      oAwayTeamStatsText.textColor = getColorForCurrentAppearance();
+
+      const oAwayTeamStandingsText = oAwayTeamStack.addText(
+              "联盟排名: " +
+              oGameData.awayTeam.record.confRank +
+              "." +
+              " | 分区排名: " +
+              oGameData.awayTeam.record.divRank +
+              ".");
+      oAwayTeamStandingsText.font = Font.systemFont(9);
+      oAwayTeamStandingsText.textColor = getColorForCurrentAppearance();
+
+      if (oGameData.awayTeam.topscorer.name != null) {
+          const oAwayTeamTopScorerText = oAwayTeamStack.addText(
+`${oGameData.awayTeam.topscorer.name} (${oGameData.awayTeam.topscorer.value})`);
+          oAwayTeamTopScorerText.font = Font.systemFont(9);
+          oAwayTeamTopScorerText.textColor = getColorForCurrentAppearance();
+      }
+  }
+}
+
+
+
+
+/**
+ * Prepares data.
+ *
+ * @return {Object[]}
+ */
+ async function prepareData() {
+  const oData = {
+      gameDate: "",
+      gameStatus: "",
+      venue: "",
+      nextGames: [],
+      homeTeam: {
+          abbreviation: "",
+          logoLink: "",
+          record: {
+              wins: "",
+              losses: "",
+              confRank: "",
+              divRank: "",
+          },
+          liveScore: "",
+          topscorer: {
+              name: null,
+              value: "",
+          },
+      },
+      awayTeam: {
+          abbreviation: "",
+          logoLink: "",
+          record: {
+              wins: "",
+              losses: "",
+              confRank: "",
+              divRank: ""
+          },
+          liveScore: "",
+          topscorer: {
+              name: null,
+              value: "",
+          },
+      },
+  };
+
+  const oTeamData = getTeamData();
+  let aScheduleData = await fetchScheduleData(oTeamData);
+
+  if (aScheduleData && aScheduleData.length > 0) {
+      const oNextGame = aScheduleData[0];
+                       
+
+      if (oNextGame != undefined) {
+                          
+          const oHomeTeam = filterTeamDataById(oNextGame.h.tid, oTeamData);
+          const oHomeTeamStandings = await fetchStandings(oHomeTeam);
+                
+              
+          const oHomeTeamTopScorer = await fetchTopScorer(oHomeTeam);
+
+          const oAwayTeam = filterTeamDataById(oNextGame.v.tid, oTeamData);
+          const oAwayTeamStandings = await fetchStandings(oAwayTeam);
+                
+              
+          const oAwayTeamTopScorer = await fetchTopScorer(oAwayTeam);
+
+          oData.gameDate = oNextGame.utctm;
+          oData.venue = oHomeTeam.location;
+          oData.nextGames = getNextGames(aScheduleData, oTeamData);
+          oData.homeTeam.abbreviation = oHomeTeam.abbreviation;
+          oData.homeTeam.logoLink = oHomeTeam.logo;
+          oData.homeTeam.record = {
+              wins: oHomeTeamStandings.win,
+              losses: oHomeTeamStandings.loss,
+              confRank: oHomeTeamStandings.confRank,
+              divRank: oHomeTeamStandings.divRank,
+          };
+          oData.awayTeam.abbreviation = oAwayTeam.abbreviation;
+          oData.awayTeam.logoLink = oAwayTeam.logo;
+          oData.awayTeam.record = {
+              wins: oAwayTeamStandings.win,
+              losses: oAwayTeamStandings.loss,
+              confRank: oAwayTeamStandings.confRank,
+              divRank: oAwayTeamStandings.divRank,
+          };
+          if (oHomeTeamTopScorer.name != null) {
+              oData.homeTeam.topscorer.name = oHomeTeamTopScorer.name;
+              oData.homeTeam.topscorer.value = oHomeTeamTopScorer.value;
+          }
+          if (oAwayTeamTopScorer.name != null) {
+              oData.awayTeam.topscorer.name = oAwayTeamTopScorer.name;
+              oData.awayTeam.topscorer.value = oAwayTeamTopScorer.value;
+          }
+
+          if (SHOW_LIVE_SCORES) {
+              const oLiveData = await fetchLiveData(oNextGame.gid, oNextGame.etm);
+              oData.homeTeam.liveScore = oLiveData.homeTeamScore;
+              oData.awayTeam.liveScore = oLiveData.awayTeamScore;
+              oData.gameStatus = oLiveData.statusText;
+          }
+      }
+  } else {
+      return null;
+  }
+
+  return oData;
+}
+
+
+
+/**
+ * 按团队ID进行排名.
+ *
+ * @param {String} sTeamId
+ * @param {Object[]} aStandings
+ * @return {Object[]}
+ */
+ function filterTeamDataById(sTeamId, oTeamData) {
+  for (let key in oTeamData) {
+      if (oTeamData[key].id == sTeamId) {
+          return oTeamData[key];
+      }
+  }
+
+  return {};
+}
+
+/**
+ * 下一场比赛数据.
+ *
+ * @param {Object[]} aGames
+ * @param {Object} oTeamData
+ * @return {Object[]}
+ */
+function getNextGames(aGames, oTeamData) {
+  const sMyTeamId = oTeamData[MY_NBA_TEAM].id;
+  const aNextGames = [];
+  const iLength = aGames.length < 5 ? aGames.length : 5;
+
+  for (let i = 1; i < iLength; i++) {
+    let oData = {
+      gameDate: "",
+      opponent: {
+        abbreviation: "",
+        logoLink: "",
+      },
+    };
+
+    const oGame = aGames[i];
+    oData.gameDate = oGame.gdtutc;
+
+    if (oGame.h.tid == sMyTeamId) {
+      const oAwayTeam = filterTeamDataById(oGame.v.tid, oTeamData);
+      oData.opponent.abbreviation = oAwayTeam.abbreviation;
+      oData.opponent.logoLink = oAwayTeam.logo;
+    } else {
+      const oHomeTeam = filterTeamDataById(oGame.h.tid, oTeamData);
+      oData.opponent.abbreviation = oHomeTeam.abbreviation;
+      oData.opponent.logoLink = oHomeTeam.logo;
+    }
+
+    aNextGames.push(oData);
+  }
+
+  return aNextGames;
+}
+
+/**
+ * 从NBA API获取时间表数据.
+ *
+ * @param {Object} oTeamData
+ * @return {Object[]}
+ */
+async function fetchScheduleData(oTeamData) {
+  const sMyTeam = oTeamData[MY_NBA_TEAM].simpleName.toLowerCase();
+  const sCurrentSeasonStartYear = CURRENT_SEASON_START_YEAR;
+  const sUrl = `https://data.nba.com/data/v2015/json/mobile_teams/nba/${sCurrentSeasonStartYear}/teams/${sMyTeam}_schedule.json`;
+  const oRequest = new Request(sUrl);
+  const oResponse = await oRequest.loadJSON();
+
+  if (oResponse) {
+    const dStartDate = new Date();
+
+    // Games in Europe are after midnight, so subtract 6 hours
+    dStartDate.setHours(dStartDate.getHours() - 6);
+
+    const aAllGames = oResponse.gscd.g;
+    const aNextGames = aAllGames.filter((game) => {
+      const dDate = new Date(game.gdte);
+
+      if (
+        new Date(dDate.toDateString()) >= new Date(dStartDate.toDateString())
+      ) {
+        game.utctm = game.gdtutc + "T" + game.utctm + ":00Z";
+        return game;
+      }
+    });
+    return aNextGames;
+  }
+
+  return [];
+}
+
+// /**
+//  *从NBA API获取所有球员数据.
+//  *
+//  * @return {Object[]}
+//  */
+// async function fetchPlayers() {
+//   const sCurrentSeasonStartYear = CURRENT_SEASON_START_YEAR;
+//   const sUrl = `http://data.nba.net/data/10s/prod/v1/${sCurrentSeasonStartYear}/players.json`;
+//   const oRequest = new Request(sUrl);
+//   const oResponse = await oRequest.loadJSON();
+//   return oResponse.league.standard;
+// }
+
+/**
+ * 从NBA API获取当前的排名数据.
+ *
+ * @return {Object[]}
+ */
+ async function fetchStandings(oTeamData) {
+  const sUrl = `https://global.nba.com/statsm2/team/standing.json?locale=en&teamCode=${oTeamData.shortName}`;
+  const oRequest = new Request(sUrl);
+  const oResponse = await oRequest.loadJSON();
+  return {
+      win: oResponse.payload.team.standings.wins,
+      loss: oResponse.payload.team.standings.losses,
+      confRank: oResponse.payload.team.standings.confRank,
+      divRank: oResponse.payload.team.standings.divRank,
+  };
+}
+/**
+ * 从NBA API获取最高得分手数据.
+ *
+ * @param {string} sTeamId
+ * @return {Object}
+ */
+ async function fetchTopScorer(oTeamData) {
+  const sCurrentSeasonStartYear = CURRENT_SEASON_START_YEAR;
+  const sUrl = `http://global.nba.com/statsm2/team/leader.json?locale=en&teamCode=${oTeamData.shortName}`;
+  const oRequest = new Request(sUrl);
+  const oTopScorers = await oRequest.loadJSON();
+
+  let oResult = {
+      name: null,
+      value: "",
+  };
+  if (oTopScorers) {            
+      const oTopScorer = oTopScorers.payload.pointLeader.players[0];               
+      oResult.name = oTopScorer.profile.displayName;
+      oResult.value = oTopScorer.value;
+  }
+
+  return oResult;
+}
+
+/**
+ * 从NBA API获取实时排名数据.
+ *
+ * @param {string} sGameId
+ * @return {Object}
+ */
+async function fetchLiveData(sGameId, sDate) {
+  const sUrl = `https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json`;
+  const oRequest = new Request(sUrl);
+  const oLiveData = await oRequest.loadJSON();
+  if (oLiveData !== undefined) {
+    const aGamesToday = oLiveData.scoreboard.games;
+    const oGameToday = aGamesToday.filter((game) => game.gameId == sGameId);
+    if (oGameToday.length > 0) {
+      const oGame = oGameToday[0];
+      return {
+        statusText: oGame.gameStatusText,
+        homeTeamScore:
+          oGame.period === 0 ? "-" : calculateScore(oGame.homeTeam.periods),
+        awayTeamScore:
+          oGame.period === 0 ? "-" : calculateScore(oGame.awayTeam.periods),
+      };
+    }
+  }
+
+  return {
+    statusText: null,
+    homeTeamScore: "***",
+    awayTeamScore: "***",
+  };
+}
+
+/**
+ * Calculates score for live data.
+ *
+ * @param {Object[]} aPeriodScores
+ * @return {Number}
+ */
+function calculateScore(aPeriodScores) {
+  let iResultScore = 0;
+  aPeriodScores.forEach(
+    (oPeriodScore) => (iResultScore += parseInt(oPeriodScore.score))
+  );
+  return iResultScore;
+}
+
+/**
+ * Loads image from thesportsdb.com or from local cache.
+ *
+ * @param {String} sImageUrl
+ * @param {String} sTeamAbbreviation
+ * @return {Object}
+ */
+ async function loadLogo(sImageUrl, sTeamAbbreviation) {
+  let oResult;
+  if (CACHING_ACTIVE) {
+      // Set up the file manager.
+      const oFiles = FileManager.local();
+
+      // Set up cache
+      const sCachePath = oFiles.joinPath(
+              oFiles.cacheDirectory(),
+              sTeamAbbreviation + "_NBA");
+      const bCacheExists = oFiles.fileExists(sCachePath);
+      try {
+          if (bCacheExists) {
+              oResult = oFiles.readImage(sCachePath);
+          } else {
+              const oRequest = new Request(sImageUrl);
+              oResult = await oRequest.loadImage();
+              try {
+                  oFiles.writeImage(sCachePath, oResult);
+                  console.log("正在为" + sTeamAbbreviation +' logo创建缓存');
+              } catch (e) {
+                  console.log(e);
+              }
+          }
+      } catch (oError) {
+          console.error(oError);
+          if (bCacheExists) {
+              oResult = oFiles.readImage(sCachePath);
+          } else {
+              console.log("读取 " + sTeamAbbreviation + " logo缓存失败.");
+          }
+      }
+  } else {
+      const oRequest = new Request(sImageUrl);
+      oResult = await oRequest.loadImage();
+  }
+
+  return oResult;
+}
+
+/**
+ * 设置堆栈的背景.
+ *
+ * @param {String} oStack
+ */
+// async function setStackBackground(oStack) {
+//   if (
+//     NO_BACKGROUND_INSTALLED &&
+//     NO_BACKGROUND_ACTIVE &&
+//     NO_BACKGROUND_FULL_ACTIVE
+//   ) {
+//     oStack.backgroundImage = await transparent(Script.name());
+//   } else {
+//     oStack.backgroundColor = STACK_BACKGROUND;
+//   }
+// }
+
+/**
+ * 返回颜色对象，具体取决于是否启用了暗模式.
+ *
+ * @return {Object}
+ */
+function getColorForCurrentAppearance() {
+  return DARK_MODE ? Color.white() : Color.white();
+}
+
+/**
+ * 当未安装no-background.js时的占位符功能.
+ *
+ * @return {Object}
+ */
+function emptyFunction() {
+
+  return {};
+}
+
+/**
+ * 返回静态团队数据
+ *
+ * @return {Object}
+ */
+function getTeamData() {
+  return {
+    ATL: {
+      id: 1610612737,
+      abbreviation: "ATL",
+      teamName: "Atlanta Hawks",
+      simpleName: "Hawks",
+      shortName: "hawks",
+      location: "菲利浦体育馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/cfcn1w1503741986.png/preview",
+    },
+    BOS: {
+      id: 1610612738,
+      abbreviation: "BOS",
+      teamName: "Boston Celtics",
+      simpleName: "Celtics",
+      shortName: "celtics",
+      location: "TD北岸花园球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/051sjd1537102179.png/preview",
+    },
+    BKN: {
+      id: 1610612751,
+      abbreviation: "BKN",
+      teamName: "Brooklyn Nets",
+      simpleName: "Nets",
+      shortName: "nets",
+      location: "巴克莱中心",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/h0dwny1600552068.png/preview",
+    },
+    CHA: {
+      id: 1610612766,
+      abbreviation: "CHA",
+      teamName: "Charlotte Hornets",
+      simpleName: "Hornets",
+      shortName: "hornets",
+      location: "时代华纳中心球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/xqtvvp1422380623.png/preview",
+    },
+    CHI: {
+      id: 1610612741,
+      abbreviation: "CHI",
+      teamName: "Chicago Bulls",
+      simpleName: "Bulls",
+      shortName: "bulls",
+      location: "联合中心球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/yk7swg1547214677.png/preview",
+    },
+    CLE: {
+      id: 1610612739,
+      abbreviation: "CLE",
+      teamName: "Cleveland Cavaliers",
+      simpleName: "Cavaliers",
+      shortName: "cavaliers",
+      location: "速贷球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/a2pp4c1503741152.png/preview",
+    },
+    DAL: {
+      id: 1610612742,
+      abbreviation: "DAL",
+      teamName: "Dallas Mavericks",
+      simpleName: "Mavericks",
+      shortName: "mavericks",
+      location: "美国航线中心",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/yqrxrs1420568796.png/preview",
+    },
+    DEN: {
+      id: 1610612743,
+      abbreviation: "DEN",
+      teamName: "Denver Nuggets",
+      simpleName: "Nuggets",
+      shortName: "nuggets",
+      location: "丹佛百事中心",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/8o8j5k1546016274.png/preview",
+    },
+    DET: {
+      id: 1610612765,
+      abbreviation: "DET",
+      teamName: "Detroit Pistons",
+      simpleName: "Pistons",
+      shortName: "pistons",
+      location: "奥本山宫殿球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/12612u1511101660.png/preview",
+    },
+    GSW: {
+      id: 1610612744,
+      abbreviation: "GSW",
+      teamName: "Golden State Warriors",
+      simpleName: "Warriors",
+      shortName: "warriors",
+      location: "奥克兰体育馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/irobi61565197527.png/preview",
+    },
+    HOU: {
+      id: 1610612745,
+      abbreviation: "HOU",
+      teamName: "Houston Rockets",
+      simpleName: "Rockets",
+      shortName: "rockets",
+      location: "丰田中心球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/yezpho1597486052.png/preview",
+    },
+    IND: {
+      id: 1610612754,
+      abbreviation: "IND",
+      teamName: "Indiana Pacers",
+      simpleName: "Pacers",
+      shortName: "pacers",
+      location: "银行家生活球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/v6jzgm1503741821.png/preview",
+    },
+    LAC: {
+      id: 1610612746,
+      abbreviation: "LAC",
+      teamName: "Los Angeles Clippers",
+      simpleName: "Clippers",
+      shortName: "clippers",
+      location: "斯台普斯中心",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/jv7tf21545916958.png/preview",
+    },
+    LAL: {
+      id: 1610612747,
+      abbreviation: "LAL",
+      teamName: "Los Angeles Lakers",
+      simpleName: "Lakers",
+      shortName: "lakers",
+      location: "斯台普斯中心",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/44ubym1511102073.png/preview",
+    },
+    MEM: {
+      id: 1610612763,
+      abbreviation: "MEM",
+      teamName: "Memphis Grizzlies",
+      simpleName: "Grizzlies",
+      shortName: "grizzlies",
+      location: "联邦快递球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/m64v461565196789.png/preview",
+    },
+    MIA: {
+      id: 1610612748,
+      abbreviation: "MIA",
+      teamName: "Miami Heat",
+      simpleName: "Heat",
+      shortName: "heat",
+      location: "美航球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/5v67x51547214763.png/preview",
+    },
+    MIL: {
+      id: 1610612749,
+      abbreviation: "MIL",
+      teamName: "Milwaukee Bucks",
+      simpleName: "Bucks",
+      shortName: "bucks",
+      location: "布拉德利中心",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/qgyz6z1503742649.png/preview",
+    },
+    MIN: {
+      id: 1610612750,
+      abbreviation: "MIN",
+      teamName: "Minnesota Timberwolves",
+      simpleName: "Timberwolves",
+      shortName: "timberwolves",
+      location: "标靶中心球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/b6a05s1503742837.png/preview",
+    },
+    NOP: {
+      id: 1610612740,
+      abbreviation: "NOP",
+      teamName: "New Orleans Pelicans",
+      simpleName: "Pelicans",
+      shortName: "pelicans",
+      location: "新奥尔良球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/f341s31523700397.png/preview",
+    },
+    NYK: {
+      id: 1610612752,
+      abbreviation: "NYK",
+      teamName: "New York Knicks",
+      simpleName: "Knicks",
+      shortName: "knicks",
+      location: "麦迪逊广场花园",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/wyhpuf1511810435.png/preview",
+    },
+    OKC: {
+      id: 1610612760,
+      abbreviation: "OKC",
+      teamName: "Oklahoma City Thunder",
+      simpleName: "Thunder",
+      shortName: "thunder",
+      location: "切萨皮克能源球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/xpswpq1422575434.png/preview",
+    },
+    ORL: {
+      id: 1610612753,
+      abbreviation: "ORL",
+      teamName: "Orlando Magic",
+      simpleName: "Magic",
+      shortName: "magic",
+      location: "安利中心",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/txuyrr1422492990.png/preview",
+    },
+    PHI: {
+      id: 1610612755,
+      abbreviation: "PHI",
+      teamName: "Philadelphia 76ers",
+      simpleName: "76ers",
+      shortName: "sixers",
+      location: "瓦乔维亚中心球场",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/71545f1518464849.png/preview",
+    },
+    PHX: {
+      id: 1610612756,
+      abbreviation: "PHX",
+      teamName: "Phoenix Suns",
+      simpleName: "Suns",
+      shortName: "suns",
+      location: "美航中心",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/qrtuxq1422919040.png/preview",
+    },
+    POR: {
+      id: 1610612757,
+      abbreviation: "POR",
+      teamName: "Portland Trail Blazers",
+      simpleName: "trail_blazers",
+      shortName: "blazers",
+      location: "摩达中心",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/mbtzin1520794112.png/preview",
+    },
+    SAC: {
+      id: 1610612758,
+      abbreviation: "SAC",
+      teamName: "Sacramento Kings",
+      simpleName: "Kings",
+      shortName: "kings",
+      location: "阿科球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/nf6jii1511465735.png/preview",
+    },
+    SAS: {
+      id: 1610612759,
+      abbreviation: "SAS",
+      teamName: "San Antonio Spurs",
+      simpleName: "Spurs",
+      shortName: "spurs",
+      location: "AT&T中心球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/crit1q1511809636.png/preview",
+    },
+    TOR: {
+      id: 1610612761,
+      abbreviation: "TOR",
+      teamName: "Toronto Raptors",
+      simpleName: "Raptors",
+      shortName: "raptors",
+      location: "加拿大航空中心体育馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/gitpi61503743151.png/preview",
+    },
+    UTA: {
+      id: 1610612762,
+      abbreviation: "UTA",
+      teamName: "Utah Jazz",
+      simpleName: "Jazz",
+      shortName: "jazz",
+      location: "能源方案球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/9p1e5j1572041084.png/preview",
+    },
+    WAS: {
+      id: 1610612764,
+      abbreviation: "WAS",
+      teamName: "Washington Wizards",
+      simpleName: "Wizards",
+      shortName: "wizards",
+      location: "Verizon威瑞森中心球馆",
+      logo:
+        "https://www.thesportsdb.com/images/media/team/badge/m2qhln1503743635.png/preview",
+    },
+  };
+}
+
+//#####################背景模块-逻辑处理部分#####################
+
+async function getImage(url) {
+
+  const request = new Request(url);
+  const image = await request.loadImage();
+  return image;
+}
+
+async function shadowImage(img) {
+  let ctx = new DrawContext()
+  // 把画布的尺寸设置成图片的尺寸
+  ctx.size = img.size
+  // 把图片绘制到画布中
+  ctx.drawImageInRect(img, new Rect(0, 0, img.size['width'], img.size['height']))
+  // 设置绘制的图层颜色，为半透明的黑色
+  ctx.setFillColor(new Color('#000000', 0.5))
+  // 绘制图层
+  ctx.fillRect(new Rect(0, 0, img.size['width'], img.size['height']))
+
+  // 导出最终图片
+  return await ctx.getImage()
+}
+
+async function generateAlert(message, options) {
+  let alert = new Alert()
+  alert.message = message
+
+  for (const option of options) {
+    alert.addAction(option)
+  }
+
+  let response = await alert.presentAlert()
+  return response
+}
+
+// Crop an image into the specified rect.
+function cropImage(img, rect) {
+  let draw = new DrawContext()
+  draw.size = new Size(rect.width, rect.height)
+  draw.drawImageAtPoint(img, new Point(-rect.x, -rect.y))
+  return draw.getImage()
+}
+
+// **
+//  * 图片高斯模糊
+//  * @param {Image} img 
+//  * @param {string} style light/dark
+//  * @return {Image} 图片
+//  */
+async function blurImage(img, style, blur = blursize) {
+  const js = `
+ var mul_table=[512,512,456,512,328,456,335,512,405,328,271,456,388,335,292,512,454,405,364,328,298,271,496,456,420,388,360,335,312,292,273,512,482,454,428,405,383,364,345,328,312,298,284,271,259,496,475,456,437,420,404,388,374,360,347,335,323,312,302,292,282,273,265,512,497,482,468,454,441,428,417,405,394,383,373,364,354,345,337,328,320,312,305,298,291,284,278,271,265,259,507,496,485,475,465,456,446,437,428,420,412,404,396,388,381,374,367,360,354,347,341,335,329,323,318,312,307,302,297,292,287,282,278,273,269,265,261,512,505,497,489,482,475,468,461,454,447,441,435,428,422,417,411,405,399,394,389,383,378,373,368,364,359,354,350,345,341,337,332,328,324,320,316,312,309,305,301,298,294,291,287,284,281,278,274,271,268,265,262,259,257,507,501,496,491,485,480,475,470,465,460,456,451,446,442,437,433,428,424,420,416,412,408,404,400,396,392,388,385,381,377,374,370,367,363,360,357,354,350,347,344,341,338,335,332,329,326,323,320,318,315,312,310,307,304,302,299,297,294,292,289,287,285,282,280,278,275,273,271,269,267,265,263,261,259];var shg_table=[9,11,12,13,13,14,14,15,15,15,15,16,16,16,16,17,17,17,17,17,17,17,18,18,18,18,18,18,18,18,18,19,19,19,19,19,19,19,19,19,19,19,19,19,19,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24];function stackBlurCanvasRGB(id,top_x,top_y,width,height,radius){if(isNaN(radius)||radius<1)return;radius|=0;var canvas=document.getElementById(id);var context=canvas.getContext("2d");var imageData;try{try{imageData=context.getImageData(top_x,top_y,width,height)}catch(e){try{netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");imageData=context.getImageData(top_x,top_y,width,height)}catch(e){alert("Cannot access local image");throw new Error("unable to access local image data: "+e);return}}}catch(e){alert("Cannot access image");throw new Error("unable to access image data: "+e);}var pixels=imageData.data;var x,y,i,p,yp,yi,yw,r_sum,g_sum,b_sum,r_out_sum,g_out_sum,b_out_sum,r_in_sum,g_in_sum,b_in_sum,pr,pg,pb,rbs;var div=radius+radius+1;var w4=width<<2;var widthMinus1=width-1;var heightMinus1=height-1;var radiusPlus1=radius+1;var sumFactor=radiusPlus1*(radiusPlus1+1)/2;var stackStart=new BlurStack();var stack=stackStart;for(i=1;i<div;i++){stack=stack.next=new BlurStack();if(i==radiusPlus1)var stackEnd=stack}stack.next=stackStart;var stackIn=null;var stackOut=null;yw=yi=0;var mul_sum=mul_table[radius];var shg_sum=shg_table[radius];for(y=0;y<height;y++){r_in_sum=g_in_sum=b_in_sum=r_sum=g_sum=b_sum=0;r_out_sum=radiusPlus1*(pr=pixels[yi]);g_out_sum=radiusPlus1*(pg=pixels[yi+1]);b_out_sum=radiusPlus1*(pb=pixels[yi+2]);r_sum+=sumFactor*pr;g_sum+=sumFactor*pg;b_sum+=sumFactor*pb;stack=stackStart;for(i=0;i<radiusPlus1;i++){stack.r=pr;stack.g=pg;stack.b=pb;stack=stack.next}for(i=1;i<radiusPlus1;i++){p=yi+((widthMinus1<i?widthMinus1:i)<<2);r_sum+=(stack.r=(pr=pixels[p]))*(rbs=radiusPlus1-i);g_sum+=(stack.g=(pg=pixels[p+1]))*rbs;b_sum+=(stack.b=(pb=pixels[p+2]))*rbs;r_in_sum+=pr;g_in_sum+=pg;b_in_sum+=pb;stack=stack.next}stackIn=stackStart;stackOut=stackEnd;for(x=0;x<width;x++){pixels[yi]=(r_sum*mul_sum)>>shg_sum;pixels[yi+1]=(g_sum*mul_sum)>>shg_sum;pixels[yi+2]=(b_sum*mul_sum)>>shg_sum;r_sum-=r_out_sum;g_sum-=g_out_sum;b_sum-=b_out_sum;r_out_sum-=stackIn.r;g_out_sum-=stackIn.g;b_out_sum-=stackIn.b;p=(yw+((p=x+radius+1)<widthMinus1?p:widthMinus1))<<2;r_in_sum+=(stackIn.r=pixels[p]);g_in_sum+=(stackIn.g=pixels[p+1]);b_in_sum+=(stackIn.b=pixels[p+2]);r_sum+=r_in_sum;g_sum+=g_in_sum;b_sum+=b_in_sum;stackIn=stackIn.next;r_out_sum+=(pr=stackOut.r);g_out_sum+=(pg=stackOut.g);b_out_sum+=(pb=stackOut.b);r_in_sum-=pr;g_in_sum-=pg;b_in_sum-=pb;stackOut=stackOut.next;yi+=4}yw+=width}for(x=0;x<width;x++){g_in_sum=b_in_sum=r_in_sum=g_sum=b_sum=r_sum=0;yi=x<<2;r_out_sum=radiusPlus1*(pr=pixels[yi]);g_out_sum=radiusPlus1*(pg=pixels[yi+1]);b_out_sum=radiusPlus1*(pb=pixels[yi+2]);r_sum+=sumFactor*pr;g_sum+=sumFactor*pg;b_sum+=sumFactor*pb;stack=stackStart;for(i=0;i<radiusPlus1;i++){stack.r=pr;stack.g=pg;stack.b=pb;stack=stack.next}yp=width;for(i=1;i<=radius;i++){yi=(yp+x)<<2;r_sum+=(stack.r=(pr=pixels[yi]))*(rbs=radiusPlus1-i);g_sum+=(stack.g=(pg=pixels[yi+1]))*rbs;b_sum+=(stack.b=(pb=pixels[yi+2]))*rbs;r_in_sum+=pr;g_in_sum+=pg;b_in_sum+=pb;stack=stack.next;if(i<heightMinus1){yp+=width}}yi=x;stackIn=stackStart;stackOut=stackEnd;for(y=0;y<height;y++){p=yi<<2;pixels[p]=(r_sum*mul_sum)>>shg_sum;pixels[p+1]=(g_sum*mul_sum)>>shg_sum;pixels[p+2]=(b_sum*mul_sum)>>shg_sum;r_sum-=r_out_sum;g_sum-=g_out_sum;b_sum-=b_out_sum;r_out_sum-=stackIn.r;g_out_sum-=stackIn.g;b_out_sum-=stackIn.b;p=(x+(((p=y+radiusPlus1)<heightMinus1?p:heightMinus1)*width))<<2;r_sum+=(r_in_sum+=(stackIn.r=pixels[p]));g_sum+=(g_in_sum+=(stackIn.g=pixels[p+1]));b_sum+=(b_in_sum+=(stackIn.b=pixels[p+2]));stackIn=stackIn.next;r_out_sum+=(pr=stackOut.r);g_out_sum+=(pg=stackOut.g);b_out_sum+=(pb=stackOut.b);r_in_sum-=pr;g_in_sum-=pg;b_in_sum-=pb;stackOut=stackOut.next;yi+=width}}context.putImageData(imageData,top_x,top_y)}function BlurStack(){this.r=0;this.g=0;this.b=0;this.a=0;this.next=null}
+       // https://gist.github.com/mjackson/5311256
+     
+       function rgbToHsl(r, g, b){
+           r /= 255, g /= 255, b /= 255;
+           var max = Math.max(r, g, b), min = Math.min(r, g, b);
+           var h, s, l = (max + min) / 2;
+     
+           if(max == min){
+               h = s = 0; // achromatic
+           }else{
+               var d = max - min;
+               s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+               switch(max){
+                   case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                   case g: h = (b - r) / d + 2; break;
+                   case b: h = (r - g) / d + 4; break;
+               }
+               h /= 6;
+           }
+     
+           return [h, s, l];
+       }
+     
+       function hslToRgb(h, s, l){
+           var r, g, b;
+     
+           if(s == 0){
+               r = g = b = l; // achromatic
+           }else{
+               var hue2rgb = function hue2rgb(p, q, t){
+                   if(t < 0) t += 1;
+                   if(t > 1) t -= 1;
+                   if(t < 1/6) return p + (q - p) * 6 * t;
+                   if(t < 1/2) return q;
+                   if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+                   return p;
+               }
+     
+               var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+               var p = 2 * l - q;
+               r = hue2rgb(p, q, h + 1/3);
+               g = hue2rgb(p, q, h);
+               b = hue2rgb(p, q, h - 1/3);
+           }
+     
+           return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+       }
+       
+       function lightBlur(hsl) {
+       
+         // Adjust the luminance.
+         let lumCalc = 0.35 + (0.3 / hsl[2]);
+         if (lumCalc < 1) { lumCalc = 1; }
+         else if (lumCalc > 3.3) { lumCalc = 3.3; }
+         const l = hsl[2] * lumCalc;
+         
+         // Adjust the saturation. 
+         const colorful = 2 * hsl[1] * l;
+         const s = hsl[1] * colorful * 1.5;
+         
+         return [hsl[0],s,l];
+         
+       }
+       
+       function darkBlur(hsl) {
+     
+         // Adjust the saturation. 
+         const colorful = 2 * hsl[1] * hsl[2];
+         const s = hsl[1] * (1 - hsl[2]) * 3;
+         
+         return [hsl[0],s,hsl[2]];
+         
+       }
+     
+       // Set up the canvas.
+       const img = document.getElementById("blurImg");
+       const canvas = document.getElementById("mainCanvas");
+     
+       const w = img.naturalWidth;
+       const h = img.naturalHeight;
+     
+       canvas.style.width  = w + "px";
+       canvas.style.height = h + "px";
+       canvas.width = w;
+       canvas.height = h;
+     
+       const context = canvas.getContext("2d");
+       context.clearRect( 0, 0, w, h );
+       context.drawImage( img, 0, 0 );
+       
+       // Get the image data from the context.
+       var imageData = context.getImageData(0,0,w,h);
+       var pix = imageData.data;
+       
+       var isDark = "${style}" == "dark";
+       var imageFunc = isDark ? darkBlur : lightBlur;
+     
+       for (let i=0; i < pix.length; i+=4) {
+     
+         // Convert to HSL.
+         let hsl = rgbToHsl(pix[i],pix[i+1],pix[i+2]);
+         
+         // Apply the image function.
+         hsl = imageFunc(hsl);
+       
+         // Convert back to RGB.
+         const rgb = hslToRgb(hsl[0], hsl[1], hsl[2]);
+       
+         // Put the values back into the data.
+         pix[i] = rgb[0];
+         pix[i+1] = rgb[1];
+         pix[i+2] = rgb[2];
+     
+       }
+     
+       // Draw over the old image.
+       context.putImageData(imageData,0,0);
+     
+       // Blur the image.
+       stackBlurCanvasRGB("mainCanvas", 0, 0, w, h, ${blur});
+       
+       // Perform the additional processing for dark images.
+       if (isDark) {
+       
+         // Draw the hard light box over it.
+         context.globalCompositeOperation = "hard-light";
+         context.fillStyle = "rgba(55,55,55,0.2)";
+         context.fillRect(0, 0, w, h);
+     
+         // Draw the soft light box over it.
+         context.globalCompositeOperation = "soft-light";
+         context.fillStyle = "rgba(55,55,55,1)";
+         context.fillRect(0, 0, w, h);
+     
+         // Draw the regular box over it.
+         context.globalCompositeOperation = "source-over";
+         context.fillStyle = "rgba(55,55,55,0.4)";
+         context.fillRect(0, 0, w, h);
+       
+       // Otherwise process light images.
+       } else {
+         context.fillStyle = "rgba(255,255,255,0.4)";
+         context.fillRect(0, 0, w, h);
+       }
+     
+       // Return a base64 representation.
+       canvas.toDataURL(); 
+       `
+
+  // Convert the images and create the HTML.
+  let blurImgData = Data.fromPNG(img).toBase64String()
+  let html = `
+       <img id="blurImg" src="data:image/png;base64,${blurImgData}" />
+       <canvas id="mainCanvas" />
+       `
+
+  // Make the web view and get its return value.
+  let view = new WebView()
+  await view.loadHTML(html)
+  let returnValue = await view.evaluateJavaScript(js)
+
+  // Remove the data type from the string and convert to data.
+  let imageDataString = returnValue.slice(22)
+  let imageData = Data.fromBase64String(imageDataString)
+
+  // Convert to image and crop before returning.
+  let imageFromData = Image.fromData(imageData)
+  // return cropImage(imageFromData)
+  return imageFromData
+}
+
+async function getImageByUrl(url, cacheKey, useCache = true) {
+  const cacheFile = FileManager.local().joinPath(FileManager.local().temporaryDirectory(), cacheKey)
+  const exists = FileManager.local().fileExists(cacheFile)
+  // 判断是否有缓存
+  if (useCache && exists) {
+    return Image.fromFile(cacheFile)
+  }
+  try {
+    const req = new Request(url)
+    const img = await req.loadImage()
+    // 存储到缓存
+    FileManager.local().writeImage(cacheFile, img)
+    return img
+  } catch (e) {
+    console.error(`图片加载失败：${e}`)
+    if (exists) {
+      return Image.fromFile(cacheFile)
+    }
+    // 没有缓存+失败情况下，返回黑色背景
+    let ctx = new DrawContext()
+    ctx.size = new Size(100, 100)
+    ctx.setFillColor(Color.black())
+    ctx.fillRect(new Rect(0, 0, 100, 100))
+    return await ctx.getImage()
+  }
+}
+
+
+// Pixel sizes and positions for widgets on all supported phones.
+function phoneSizes() {
+  let phones = {
+    "2556": {
+      "models": ["14 Pro Max"],
+      "小号": 510,
+      "中号": 1092,
+      "大号": 1146,
+      "左边": 99,
+      "右边": 681,
+      "顶部": 282,
+      "中间": 918,
+      "底部": 1554,
+    },
+
+    "2556": {
+      "models": ["14 Pro"],
+      "小号": 474,
+      "中号": 1014,
+      "大号": 1062,
+      "左边": 82,
+      "右边": 622,
+      "顶部": 270,
+      "中间": 858,
+      "底部": 1446,
+    },
+    "2532": {
+      "models": ["12", "12 Pro", "14"],
+      "小号": 474,
+      "中号": 1014,
+      "大号": 1062,
+      "左边": 78,
+      "右边": 618,
+      "顶部": 231,
+      "中间": 819,
+      "底部": 1407,
+    },
+
+    "2778": {
+      "models": ["12 Pro Max", "13 Pro Max"],
+      "小号": 510,
+      "中号": 1092,
+      "大号": 1146,
+      "左边": 96,
+      "右边": 678,
+      "顶部": 246,
+      "中间": 882,
+      "底部": 1518,
+    },
+
+    "2688": {
+      "models": ["Xs Max", "11 Pro Max"],
+      "小号": 507,
+      "中号": 1080,
+      "大号": 1137,
+      "左边": 81,
+      "右边": 654,
+      "顶部": 228,
+      "中间": 858,
+      "底部": 1488
+    },
+
+    "1792": {
+      "models": ["11", "Xr"],
+      "小号": 338,
+      "中号": 720,
+      "大号": 758,
+      "左边": 54,
+      "右边": 436,
+      "顶部": 160,
+      "中间": 580,
+      "底部": 1000
+    },
+
+    "2436": {
+      x: {
+        "models": ["X", "Xs", "11 Pro"],
+        "小号": 465,
+        "中号": 987,
+        "大号": 1035,
+        "左边": 69,
+        "右边": 591,
+        "顶部": 213,
+        "中间": 783,
+        "底部": 1353
+      },
+
+      mini: {
+        "models": ["12 mini"],
+        "小号": 465,
+        "中号": 987,
+        "大号": 1035,
+        "左边": 69,
+        "右边": 591,
+        "顶部": 231,
+        "中间": 801,
+        "底部": 1371
+      }
+    },
+
+    "2208": {
+      "models": ["6+", "6s+", "7+", "8+"],
+      "小号": 471,
+      "中号": 1044,
+      "大号": 1071,
+      "左边": 99,
+      "右边": 672,
+      "顶部": 114,
+      "中间": 696,
+      "底部": 1278
+    },
+
+    "1334": {
+      "models": ["6", "6s", "7", "8", "SE2"],
+      "小号": 296,
+      "中号": 642,
+      "大号": 648,
+      "左边": 54,
+      "右边": 400,
+      "顶部": 60,
+      "中间": 412,
+      "底部": 764
+    },
+
+    "1136": {
+      "models": ["5", "5s", "5c", "SE"],
+      "小号": 282,
+      "中号": 584,
+      "大号": 622,
+      "左边": 30,
+      "右边": 332,
+      "顶部": 59,
+      "中间": 399,
+      "底部": 399
+    }
+  }
+  return phones
+}
+
+//#####################版本更新模块#####################
+
+async function getversion() {
+  const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")
+  var versionData
+  try {
+    versionData = await new Request("https://fastly.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
+    files.writeString(versionCachePath, JSON.stringify(versionData))
+    console.log(`===>欢迎使用：${versionData.author}制作的小组件<===`);
+    console.log("[+]遇到问题，请前往公众号：曰坛 反馈");
+    log("[+]版本信息获取成功")
+  } catch (e) {
+    versionData = JSON.parse(files.readString(versionCachePath))
+    log("[+]获取版本信息失败，使用缓存数据")
+  }
+
+  return versionData
+}
+
+
+
+// 版本比较
+function version_compare(v1, v2) {
+  // 将两个版本号拆成数组
+  var arr1 = v1.split('.'),
+      arr2 = v2.split('.');
+  var minLength = Math.min(arr1.length, arr2.length);
+  // 依次比较版本号每一位大小
+  for (var i = 0; i < minLength; i++) {
+      if (parseInt(arr1[i]) != parseInt(arr2[i])) {
+          return (parseInt(arr1[i]) > parseInt(arr2[i])) ? 1 : -1;
+      }
+  }
+  // 若前几位分隔相同，则按分隔数比较。
+  if (arr1.length == arr2.length) {
+      return 0;
+  } else {
+      return (arr1.length > arr2.length) ? 1 : -1;
+  }
+}
+
+async function updateCheck(localversion) {
+
+  let uC = versionData
+  let originversion = uC['ONE-NBA'].version
+  let status = version_compare(originversion, localversion)
+  log('[+]最新版本：' + originversion)
+  let needUpdate = false
+  if (status == 1) {
+      needUpdate = true
+      log("[+]检测到有新版本！")
+      if (!config.runsInWidget) {
+          log("[+]执行更新步骤")
+          let upd = new Alert()
+          upd.title = "检测到有新版本！"
+          upd.addDestructiveAction("暂不更新")
+          upd.addAction("立即更新")
+          upd.add
+          upd.message = uC['ONE-NBA'].notes
+          if (await upd.present() == 1) {
+              const req = new Request(uC['ONE-NBA'].cdn_scriptURL)
+              const codeString = await req.loadString()
+              files.writeString(module.filename, codeString)
+              const n = new Notification()
+              n.title = "下载更新成功"
+              n.body = "请点击左上角Done完成，重新进入脚本即可~"
+              n.schedule()
+
+          }
+          Script.complete()
+      }
+
+  } else if(status == 0) {
+      log("[+]当前版本已是最新")
+  } else {
+      const n = new Notification()
+      n.title = "作者肯定是打瞌睡啦！"
+      n.body = "哎呀！赶紧去公众号反馈吧~"
+      n.schedule()
+  }
+
+  return needUpdate
+}
+
+/********************************************************
+************* MAKE SURE TO COPY EVERYTHING *************
+*******************************************************
+************ © 2023 Copyright Nicolas-kings ************/

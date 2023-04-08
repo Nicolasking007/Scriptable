@@ -1,31 +1,857 @@
+// @ts-nocheck
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
 // icon-color: deep-green; icon-glyph: user-shield;
 /********************************************************
  ************* MAKE SURE TO COPY EVERYTHING *************
  *******************************************************
- ************ © 2021 Copyright Nicolas-kings ************/
+ ************ © 2023 Copyright Nicolas-kings ************/
 /********************************************************
  * script     : ONE-COVID_Vac.js
- * version    : 1.4
+ * version    : 1.5
  * author     : Nicolas-kings
  * date       : 2021-05-23
  * github     : https://github.com/Nicolasking007/Scriptable
  * desc       : 具体配置说明，详见微信公众号-曰(读yue)坛
- * Changelog  :  v1.4 - 压缩代码，提升性能
+ * Changelog  :  v1.5 - 修复背景报错，新增多个图片背景选项
+ *               v1.4 - 压缩代码，便于复制
  *               v1.3 - 支持透明背景、图片背景、纯色背景设置
  *               v1.2 - 修复小尺寸无数据的问题、部分细节优化
  *               v1.1 - 部分UI细节调整
  *               v1.0 - 首次发布
  *******************************************************/
 //##############公共参数配置模块############## 
-const changePicBg = false  //选择true时，使用透明背景 
-const ImageMode = true   //选择true时，使用必应壁纸
-const previewSize = (config.runsInWidget ? config.widgetFamily : "medium");   //预览大小  medium/large//
-const colorMode = false // 是否使用纯色背景
-const bgColor = new Color('#223A70', 1)// 小组件背景色
-const blurStyle = "light" // 高斯样式：light/dark
-const type = args.widgetParameter || '中国'    // 选项：中国、全球   在此修改或桌面组件Parameter处 默认展示中国数据
-const COLORS = { blynk: '#2edbad', bg1: '#29323c', bg2: '#1c1c1c' } //背景颜色
+// 选择true时，使用透明背景
+const changePicBg = false
+// 选择true时，使用必应壁纸  
+const ImageMode = false
+// 预览大小  small/medium/large
+const previewSize = (config.runsInWidget ? config.widgetFamily : "small");
+// 是否使用纯色背景
+const colorMode = false
+// 小组件背景色
+const bgColor = new Color('#223A70', 1)
+// 高斯样式：light/dark
+const blurStyle = "dark"
+// 模糊程度 参数范围 1~150
+const blursize = 100
+// 1：图片加蒙板 2：unsplash壁纸  3：Bing 壁纸
+const Imgstyle = 1
+// 仅当选项为Unsplash有效 即Imgstyle = 2
+const IMAGE_SEARCH_TERMS = "nature,wather"
+// 选项：中国、全球   在此修改或桌面组件Parameter处 默认展示中国数据
+const type = args.widgetParameter || '中国'
+// 默认字体颜色
+const COLORS = {
+  blynk: '#2edbad',
+  bg1: '#29323c',
+  bg2: '#1c1c1c'
+}
+// 上下间距
+const padding = {
+  top: 10,
+  left: 15,
+  bottom: 10,
+  right: 15
+}
 //##############公共参数配置模块############## 
-const _0xbadd=['WPJdQNJcIW','z2v0sw1Hz2u','6ygw5PUT6ig45PQQ','mJG1odH1B05qv1O','ktSkicaGicaGicaGcIaGicaGicaGic8VifbLCMzVCM0GDgHLigfKzgL0Aw9UywWGChjVy2vZC2LUzYbMB3iGzgfYAYbPBwfNzxmUcIaGicaGicaGigLMicHPC0rHCMSPihSkicaGicaGicaGcIaGicaGicaGicaGlY8GrhjHDYb0AguGAgfYzcbSAwDODcbIB3GGB3zLCIbPDc4kicaGicaGicaGicbJB250zxH0lMDSB2jHBenVBxbVC2L0zu9WzxjHDgLVBIa9icjOyxjKlwXPz2H0iJSkicaGicaGicaGicbJB250zxH0lMzPBgXtDhLSzsa9icjYz2jHkdu1ldu1ldu1ldaUmIKIoWOGicaGicaGicaGignVBNrLEhqUzMLSBfjLy3qOmcWGmcWGDYWGAcK7cIaGicaGicakicaGicaGicaGicaVlYbeCMf3ihrOzsbZB2z0igXPz2H0igjVEcbVDMvYigL0lGOGicaGicaGicaGignVBNrLEhqUz2XVyMfSq29TCg9ZAxrLt3bLCMf0Aw9Uid0GiNnVzNqTBgLNAhqIoWOGicaGicaGicaGignVBNrLEhqUzMLSBfn0EwXLid0GiNjNyMeOntuSntuSntuSmsKIoWOGicaGicaGicaGignVBNrLEhqUzMLSBfjLy3qOmcWGmcWGDYWGAcK7cIaGicaGicakicaGicaGicaGicaVlYbeCMf3ihrOzsbYzwD1BgfYigjVEcbVDMvYigL0lGOGicaGicaGicaGignVBNrLEhqUz2XVyMfSq29TCg9ZAxrLt3bLCMf0Aw9Uid0GiNnVDxjJzs1VDMvYiJSkicaGicaGicaGicbJB250zxH0lMzPBgXtDhLSzsa9icjYz2jHkdu1ldu1ldu1ldaUncKIoWOGicaGicaGicaGignVBNrLEhqUzMLSBfjLy3qOmcWGmcWGDYWGAcK7cIaGicaGicaGiaOGicaGicaGicaVlYbpDgHLCNDPC2uGChjVy2vZCYbSAwDODcbPBwfNzxmUcIaGicaGicaGih0GzwXZzsb7cIaGicaGicaGicaGy29UDgv4Dc5MAwXSu3r5BguGpsaICMDIysGYntuSmJu1ldi1nsWWlJqPiJSkicaGicaGicaGicbJB250zxH0lMzPBgXszwn0kdaSidaSihCSigGPoWOGicaGicaGicb9cIaGicaGicakicaGicaGicaGlY8GuMv0DxjUigeGyMfZzty0ihjLChjLC2vUDgf0Aw9UlGOGicaGicaGicbJyw52yxmUDg9eyxrHvvjmkcK7iaOGicaGicaGica','cIaGihzHCIbTDwXFDgfIBgu9wZuXmIW1mtiSndu2lduXmIWZmJGSndu2ldmZnsW1mtiSnda1ldmYocWYnZeSndu2ldm4ocWZmZuSmJKYlduXmIW0ntqSnda1ldm2ncWZmJGSmJK4ldi3msW0otySndu2ldqYmcWZodGSmZyWldmZnsWZmtiSmJKYldi3mYW1mtiSndGYldq1ncW0mJGSnda1ldm4mYWZnJqSmZq1ldmYocWZmtiSmJK4ldi4ncWYnZeSmJu5ldq5nIW0nZuSndu2ldqZnYW0mJaSnda0ldm4ocWZnZqSmZyWldm0nYWZmZuSmZiZldmXmIWZmdiSmJKYldi4mIWYnZmSmJy1lduXmIW0otCSndGYldq2ocW0ntqSndqXldqYocW0mtCSnda1ldm5ncWZodmSmZCZldm2ncWZntqSmZq1ldmZnYWZmJGSmZiWldmXmIWZmduSmJK4ldi5msWYodqSmJC4ldi3msWYnJuSmJu5lduWnYW0otySndG1ldq3nsW0nJuSndu2ldq0nIW0mZCSndi4ldqYmcW0mtiSnda0ldm5nIWZodGSmZGXldm3ncWZnJCSmZyWldm1ncWZndCSmZqXldmZnsWZmJKSmZiZldmXocWZmtiSmZa3ldmWmIWYotCSmJKYldi4nYWYodiSmJC4ldi3mYWYnJKSmJy1ldi2msW1mtiSnta1ldq5nYW0odKSndGYldq3nsW0nJGSndyXldq1ncW0ndCSndqXldqZnsW0mJGSndiYldqXnYW0mteSnda1ldm5osWZotqSmZG5ldm4mYWZnZGSmZCZldm2ocWZnJqSmZu5ldm1ncWZntaSmZq1ldm0msWZmZCSmZmYldmYocWZmJqSmZiWldmXnIWZmtiSmZa5ldmWnsWZmdeSmJK4ldi5ncWYoteSmJG3ldi4ncWYodeSmJC4ldi3ncWYnZeSmJy4ldi2nsWYnJiSmJu5ldi1nYW1mdCSntaXldq5nIW0oteSndG1ldq4mcW0nZuSndCWldq2nsW0nJaSndu2ldq1msW0ndySndqYldqZnYW0mZmSndi4ldqYncW0mJaSnde2ldqXmIW0mdGSnda0ldqWmcWZotySmZKYldm4ocWZoduSmZGXldm3nYWZnZqSmZCWldm2nYWZnJmSmZyWldm1nYWZntqSmZuWldm0nYWZndqSmZqXldmZocWZmZuSmZmYldmYosWZmJySmZiZldmYmcWZmtGSmZe1ldmXmIWZmtaSmZa3ldmWncWZmdiSmJK5ldi5nYWYotqSmJKYldi4osWYodCSmJG1ldi4mIWYodaSmJC4ldi3nsWYnZmSmJCXldi2osWYnJCSmJy1ldi2mYWYnJeSmJu5xtT2yxiGC2HNx3rHyMXLpvS5ldeXldeYldeZldeZlde0lde0lde1lde1lde1lde1lde2lde2lde2lde2lde3lde3lde3lde3lde3lde3lde3lde4lde4lde4lde4lde4lde4lde4lde4lde4lde5lde5lde5lde5lde5lde5lde5lde5lde5lde5lde5lde5lde5lde5ldiWldiWldiWldiWldiWldiWldiWldiWldiWldiWldiWldiWldiWldiWldiWldiWldiWldiWldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiXldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiYldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldiZldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0ldi0xtTMDw5JDgLVBIbZDgfJA0jSDxjdyw52yxnsr0iOAwqSDg9Wx3GSDg9Wx3KSD2LKDgGSAgvPz2H0lhjHzgL1CYL7AwyOAxnoyu4OCMfKAxvZkxX8CMfKAxvZpdePCMv0DxjUo3jHzgL1C3W9mdT2yxiGy2fUDMfZpwrVy3vTzw50lMDLDevSzw1LBNrcEuLKkgLKktT2yxiGy29UDgv4Dd1Jyw52yxmUz2v0q29UDgv4DcGImMqIktT2yxiGAw1Hz2veyxrHo3rYExT0CNL7Aw1Hz2veyxrHpwnVBNrLEhqUz2v0sw1Hz2veyxrHkhrVCf94lhrVCf95lhDPzhrOlgHLAwDODcL9y2f0y2GOzsL7Dhj5E25LDhnJyxbLlNnLy3vYAxr5lLbYAxzPBgvNzu1HBMfNzxiUzw5HyMXLuhjPDMLSzwDLkcjvBML2zxjZywXcCM93C2vYuMvHzciPo2LTywDLrgf0yt1JB250zxH0lMDLDeLTywDLrgf0ysH0B3bFEcX0B3bFEsX3Awr0AcXOzwLNAhqPFwnHDgnOkguPE2fSzxj0kcjdyw5UB3qGywnJzxnZigXVy2fSigLTywDLiIK7DgHYB3CGBMv3ievYCM9Ykcj1BMfIBguGDg8GywnJzxnZigXVy2fSigLTywDLigrHDge6iciRzsK7CMv0DxjUFx19y2f0y2GOzsL7ywXLCNqOiKnHBM5VDcbHy2nLC3mGAw1Hz2uIktT0AhjVDYbUzxCGrxjYB3iOiNvUywjSzsb0BYbHy2nLC3mGAw1Hz2uGzgf0ytOGiITLktT9DMfYihbPEgvSCZ1PBwfNzurHDgeUzgf0ytT2yxiGEcX5lgKSCcX5CcX5AsX5DYXYx3n1BsXNx3n1BsXIx3n1BsXYx291Df9ZDw0Sz19VDxrFC3vTlgjFB3v0x3n1BsXYx2LUx3n1BsXNx2LUx3n1BsXIx2LUx3n1BsXWCIXWzYXWyIXYyNm7DMfYigrPDJ1YywrPDxmRCMfKAxvZkZe7DMfYihC0pxDPzhrOpdWYo3zHCIb3Awr0Ae1PBNvZmt13Awr0Ac0Xo3zHCIbOzwLNAhrnAw51CZe9AgvPz2H0lte7DMfYihjHzgL1C1bSDxmXpxjHzgL1CYSXo3zHCIbZDw1gywn0B3i9CMfKAxvZugX1CZeQkhjHzgL1C1bSDxmXkZePlZi7DMfYihn0ywnRu3rHCNq9BMv3iejSDxjtDgfJAYGPo3zHCIbZDgfJAZ1ZDgfJA1n0yxj0o2zVCIHPpte7AtXKAxy7AsSRkxTZDgfJAZ1ZDgfJAY5UzxH0pw5LDYbcBhvYu3rHy2SOktTPzIHPpt1YywrPDxnqBhvZmsL2yxiGC3rHy2TfBMq9C3rHy2T9C3rHy2SUBMv4Dd1ZDgfJA1n0yxj0o3zHCIbZDgfJA0LUpw51BgW7DMfYihn0ywnRt3v0pw51BgW7ExC9EwK9mdT2yxiGBxvSx3n1Bt1TDwXFDgfIBgvBCMfKAxvZxtT2yxiGC2HNx3n1Bt1ZAgDFDgfIBgvBCMfKAxvZxtTMB3iOEt0Wo3K8AgvPz2H0o3KRkYL7CL9PBL9ZDw09z19PBL9ZDw09yL9PBL9ZDw09CL9ZDw09z19ZDw09yL9ZDw09mdTYx291Df9ZDw09CMfKAxvZugX1CZeQkhbYpxbPEgvSC1T5Av0Po2DFB3v0x3n1Bt1YywrPDxnqBhvZmsOOCgC9CgL4zwXZw3LPkZfDktTIx291Df9ZDw09CMfKAxvZugX1CZeQkhbIpxbPEgvSC1T5AsSYxsK7CL9ZDw0Rpxn1BuzHy3rVCIPWCJTNx3n1BsS9C3vTrMfJDg9YkNbNo2jFC3vTkZ1ZDw1gywn0B3iQCgi7C3rHy2S9C3rHy2TtDgfYDdTMB3iOAt0Wo2K8CMfKAxvZugX1CZe7AsSRkxTZDgfJAY5YpxbYo3n0ywnRlMC9CgC7C3rHy2SUyJ1WyJTZDgfJAZ1ZDgfJAY5UzxH0FwzVCIHPpte7AtXYywrPDxnqBhvZmtTPkYSPE3a9EwKRkcH3Awr0Ae1PBNvZmtXPp3DPzhrOtwLUDxmXoMKPpdWYktTYx3n1BsS9khn0ywnRlNi9khbYpxbPEgvSC1TWxsKPkIHYyNm9CMfKAxvZugX1CZeTAsK7z19ZDw0RpsHZDgfJAY5NpsHWzZ1WAxHLBhnBCcSXxsKPkNjICZTIx3n1BsS9khn0ywnRlMi9khbIpxbPEgvSC1TWkZjDksKQCMjZo3jFAw5FC3vTkZ1WCJTNx2LUx3n1BsS9CgC7yL9PBL9ZDw0RpxbIo3n0ywnRpxn0ywnRlM5LEhr9C3rHy2TjBJ1ZDgfJA1n0yxj0o3n0ywnRt3v0pxn0ywnRrw5Ko2zVCIH4pta7EdX3Awr0AdT4kYSPE3bPEgvSC1T5Av09khjFC3vTkM11Bf9ZDw0PpJ5ZAgDFC3vTo3bPEgvSC1T5AsSXxt0Oz19ZDw0QBxvSx3n1BsK+pNnOz19ZDw07CgL4zwXZw3LPkZjDpsHIx3n1BsPTDwXFC3vTkt4+C2HNx3n1BtTYx3n1Bs09CL9VDxrFC3vTo2DFC3vTlt1Nx291Df9ZDw07yL9ZDw0TpwjFB3v0x3n1BtTYx291Df9ZDw0Tpxn0ywnRsw4UCJTNx291Df9ZDw0Tpxn0ywnRsw4UzZTIx291Df9ZDw0Tpxn0ywnRsw4UyJTWpsH5DYSOkha9EcTYywrPDxmRmsK8D2LKDgHnAw51CZe/CdP3Awr0Ae1PBNvZmsKPpdWYo3jFAw5FC3vTkZ0OC3rHy2TjBI5YpxbPEgvSC1TWxsK7z19PBL9ZDw0RpsHZDgfJA0LUlMC9CgL4zwXZw3aRmv0Po2jFAw5FC3vTkZ0OC3rHy2TjBI5IpxbPEgvSC1TWkZjDktTYx3n1BsS9CL9PBL9ZDw07z19ZDw0RpwDFAw5FC3vTo2jFC3vTkZ1Ix2LUx3n1BtTZDgfJA0LUpxn0ywnRsw4UBMv4DdTYx291Df9ZDw0RpsHWCJ1ZDgfJA091Dc5YktTNx291Df9ZDw0RpsHWzZ1ZDgfJA091Dc5NktTIx291Df9ZDw0RpsHWyJ1ZDgfJA091Dc5IktTYx2LUx3n1Bs09Chi7z19PBL9ZDw0TpxbNo2jFAw5FC3vTlt1WyJTZDgfJA091Dd1ZDgfJA091Dc5UzxH0o3LPkZ00FxL3kZ13Awr0Ah1MB3iOEd0Wo3G8D2LKDgG7EcSRkxTNx2LUx3n1Bt1Ix2LUx3n1Bt1Yx2LUx3n1Bt1Nx3n1Bt1Ix3n1Bt1Yx3n1Bt0Wo3LPpxG8pdi7CL9VDxrFC3vTpxjHzgL1C1bSDxmXkIHWCJ1WAxHLBhnBEwLDktTNx291Df9ZDw09CMfKAxvZugX1CZeQkhbNpxbPEgvSC1T5AsSXxsK7yL9VDxrFC3vTpxjHzgL1C1bSDxmXkIHWyJ1WAxHLBhnBEwKRmL0Po3jFC3vTkZ1ZDw1gywn0B3iQChi7z19ZDw0Rpxn1BuzHy3rVCIPWzZTIx3n1BsS9C3vTrMfJDg9YkNbIo3n0ywnRpxn0ywnRu3rHCNq7zM9YkgK9mdTPphjHzgL1C1bSDxmXo2KRkYL7C3rHy2SUCJ1WCJTZDgfJAY5NpxbNo3n0ywnRlMi9Cgi7C3rHy2S9C3rHy2SUBMv4Dh15Cd13Awr0AdTMB3iOAt0Xo2K8pxjHzgL1CZTPkYSPE3LPpsH5CcT4ktW8mJTYx3n1BsS9khn0ywnRlNi9khbYpxbPEgvSC1T5Av0PksOOCMjZpxjHzgL1C1bSDxmXlwKPo2DFC3vTkZ0OC3rHy2SUzZ0OCgC9CgL4zwXZw3LPkZfDksKQCMjZo2jFC3vTkZ0OC3rHy2SUyJ0OCgi9CgL4zwXZw3LPkZjDksKQCMjZo3jFAw5FC3vTkZ1WCJTNx2LUx3n1BsS9CgC7yL9PBL9ZDw0RpxbIo3n0ywnRpxn0ywnRlM5LEhq7AwyOAtXOzwLNAhrnAw51CZePE3LWkZ13Awr0Ah19EwK9EdTZDgfJA0LUpxn0ywnRu3rHCNq7C3rHy2TpDxq9C3rHy2TfBMq7zM9YkhK9mdT5pgHLAwDODdT5kYSPE3a9EwK8pdi7CgL4zwXZw3bDpsHYx3n1BsPTDwXFC3vTkt4+C2HNx3n1BtTWAxHLBhnBCcSXxt0Oz19ZDw0QBxvSx3n1BsK+pNnOz19ZDw07CgL4zwXZw3aRmL09kgjFC3vTkM11Bf9ZDw0PpJ5ZAgDFC3vTo3jFC3vTlt1Yx291Df9ZDw07z19ZDw0TpwDFB3v0x3n1BtTIx3n1Bs09yL9VDxrFC3vTo3jFB3v0x3n1Bs09C3rHy2TjBI5Yo2DFB3v0x3n1Bs09C3rHy2TjBI5No2jFB3v0x3n1Bs09C3rHy2TjBI5Io3a9khGRkcGOCd15k3jHzgL1C1bSDxmXktXOzwLNAhrnAw51CZe/CdPOzwLNAhrnAw51CZePkNDPzhrOksK8pdi7CL9ZDw0RpsHYx2LUx3n1BsS9khn0ywnRsw4UCJ1WAxHLBhnBCf0PktTNx3n1BsS9kgDFAw5FC3vTkZ0OC3rHy2TjBI5NpxbPEgvSC1TWkZfDksK7yL9ZDw0RpsHIx2LUx3n1BsS9khn0ywnRsw4UyJ1WAxHLBhnBCcSYxsKPo3n0ywnRsw49C3rHy2TjBI5UzxH0o3jFB3v0x3n1BsS9khbYpxn0ywnRt3v0lNiPo2DFB3v0x3n1BsS9khbNpxn0ywnRt3v0lMCPo2jFB3v0x3n1BsS9khbIpxn0ywnRt3v0lMiPo3jFAw5FC3vTlt1WCJTNx2LUx3n1Bs09CgC7yL9PBL9ZDw0TpxbIo3n0ywnRt3v0pxn0ywnRt3v0lM5LEhq7EwKRpxDPzhrOFx1JB250zxH0lNb1DeLTywDLrgf0ysHPBwfNzurHDgeSDg9Wx3GSDg9Wx3KPFwz1BMn0Aw9UiejSDxjtDgfJAYGPE3rOAxmUCJ0Wo3rOAxmUzZ0Wo3rOAxmUyJ0Wo3rOAxmUyt0Wo3rOAxmUBMv4Dd1UDwXSFqOGicaGicaGicaVlYbODhrWCZOVl2DPC3qUz2L0AhvIlMnVBs9TAMfJA3nVBI81mZeXmJu2cIaGicaGicakicaGicaGicaGzNvUy3rPB24GCMDIvg9iC2WOCIWGzYWGyIL7cIaGicaGicaGicaGicbYic89idi1nsWGzYaVpsaYntuSigiGlZ0GmJu1oWOGicaGicaGicaGicaGDMfYig1HEca9ie1HDgGUBwf4khiSigCSigiPlcbTAw4GpsbnyxrOlM1PBIHYlcbNlcbIktSkicaGicaGicaGicaGihzHCIbOlcbZlcbSid0Gkg1HEcaRig1PBIKGlYaYoWOGicaGicaGcIaGicaGicaGicaGicbPzIHTyxGGpt0GBwLUkxSkicaGicaGicaGicaGicaGicbOid0GCYa9ida7ic8VigfJAhjVBwf0AwmkicaGicaGicaGicaGih1LBhnLEWOGicaGicaGicaGicaGicaGihzHCIbKid0GBwf4ic0GBwLUoWOGicaGicaGicaGicaGicaGihmGpsbSid4Gmc41id8GzcaVicGYic0GBwf4ic0GBwLUksa6igqGlYaOBwf4icSGBwLUktSkicaGicaGicaGicaGicaGicbZD2L0y2GOBwf4kxSkicaGicaGicaGicaGicaGicaGicaGy2fZzsbYoIbOid0GkgCGlsbIksaVigqGkYaOzYa8igiGpYa2idOGmcK7igjYzwfRoWOGicaGicaGicaGicaGicaGicaGicbJyxnLigC6igGGpsaOyIaTihiPic8GzcaRidi7igjYzwfRoWOGicaGicaGicaGicaGicaGicaGicbJyxnLigi6igGGpsaOCIaTigCPic8GzcaRidq7igjYzwfRoWOGicaGicaGicaGicaGicaGih0kicaGicaGicaGicaGicaGicbOic89idy7cIaGicaGicaGicaGicb9cIaGicaGicakicaGicaGicaGicaGihjLDhvYBIbBAcWGCYWGBf07cIaGicaGicaGih0kicaGicaGiaOGicaGicaGicbMDw5JDgLVBIbOC2XuB1jNyIHOlcbZlcbSkxSkicaGicaGicaGicaGihzHCIbYlcbNlcbIoWOGicaGicaGcIaGicaGicaGicaGicbPzIHZid09idaPEWOGicaGicaGicaGicaGicaGihiGpsbNid0GyIa9igW7ic8VigfJAhjVBwf0AwmkicaGicaGicaGicaGih1LBhnLEWOGicaGicaGicaGicaGicaGihzHCIbODwuYCMDIid0GzNvUy3rPB24GAhvLmNjNyIHWlcbXlcb0kxSkicaGicaGicaGicaGicaGicaGicaGAwyODca8idaPihqGkZ0GmtSkicaGicaGicaGicaGicaGicaGicaGAwyODca+idePihqGlt0GmtSkicaGicaGicaGicaGicaGicaGicaGAwyODca8ideVnIKGCMv0DxjUihaGkYaOCsaTihaPicOGnIaQihq7cIaGicaGicaGicaGicaGicaGicaGigLMkhqGpcaXlZiPihjLDhvYBIbXoWOGicaGicaGicaGicaGicaGicaGicbPzIH0idWGmI8ZksbYzxr1CM4GCcaRicHXic0GCcKGkIaOmI8Zic0GDcKGkIa2oWOGicaGicaGicaGicaGicaGicaGicbYzxr1CM4GCdSkicaGicaGicaGicaGicaGicb9cIaGicaGicakicaGicaGicaGicaGicaGicb2yxiGCsa9igWGpcaWlJuGpYbSicOGkdeGkYbZksa6igWGkYbZic0GBcaQihm7cIaGicaGicaGicaGicaGicaGDMfYihaGpsaYicOGBcaTihe7cIaGicaGicaGicaGicaGicaGCIa9igH1ztjYz2iOCcWGCsWGAcaRideVmYK7cIaGicaGicaGicaGicaGicaGzYa9igH1ztjYz2iOCcWGCsWGAcK7cIaGicaGicaGicaGicaGicaGyIa9igH1ztjYz2iOCcWGCsWGAcaTideVmYK7cIaGicaGicaGicaGicb9cIaGicaGicakicaGicaGicaGicaGihjLDhvYBIbBtwf0Ac5YB3vUzcHYicOGmJu1ksWGtwf0Ac5YB3vUzcHNicOGmJu1ksWGtwf0Ac5YB3vUzcHIicOGmJu1kv07cIaGicaGicaGih0kicaGicaGicaGcIaGicaGicaGigz1BMn0Aw9UigXPz2H0qMX1CIHOC2WPihSkicaGicaGicaGcIaGicaGicaGicaGlY8GqwrQDxn0ihrOzsbSDw1PBMfUy2uUcIaGicaGicaGicaGBgv0igX1BunHBgmGpsaWlJm1icSGkdaUmYaVigHZBfSYxsK7cIaGicaGicaGicaGAwyGkgX1BunHBgmGpcaXksb7igX1BunHBgmGpsaXoYb9cIaGicaGicaGicaGzwXZzsbPzIaOBhvTq2fSyYa+idmUmYKGEYbSDw1dywXJid0GmY4ZoYb9cIaGicaGicaGicaGy29UC3qGBca9igHZBfSYxsaQigX1BunHBgm7cIaGicaGicaGicaGcIaGicaGicaGicaGlY8GqwrQDxn0ihrOzsbZyxr1CMf0Aw9UlIakicaGicaGicaGicbJB25ZDcbJB2XVCMz1Bca9idiGkIbOC2XBmv0GkIbSoWOGicaGicaGicaGignVBNn0ihmGpsbOC2XBmv0GkIbJB2XVCMz1BcaQideUntSkicaGicaGicaGicakicaGicaGicaGicbYzxr1CM4Gw2HZBfSWxsXZlgXDoWOGicaGicaGicaGiaOGicaGicaGicb9cIaGicaGicaGiaOGicaGicaGicbMDw5JDgLVBIbKyxjRqMX1CIHOC2WPihSkicaGicaGiaOGicaGicaGicaGic8ViefKANvZDcb0AguGC2f0DxjHDgLVBI4GcIaGicaGicaGicaGy29UC3qGy29SB3jMDwWGpsaYicOGAhnSwZfDicOGAhnSwZjDoWOGicaGicaGicaGignVBNn0ihmGpsbOC2XBmv0GkIaOmsaTigHZBfSYxsKGkIaZoWOGicaGicaGicaGiaOGicaGicaGicaGihjLDhvYBIbBAhnSwZbDlhmSAhnSwZjDxtSkicaGicaGicaGicakicaGicaGicaGFqOGicaGicaGcIaGicaGicaGic8VifnLDcb1Ccb0AguGy2fUDMfZlGOGicaGicaGicbJB25ZDcbPBwCGpsbKB2n1BwvUDc5NzxrfBgvTzw50qNLjzcGIyMX1CKLTzYiPoWOGicaGicaGicbJB25ZDcbJyw52yxmGpsbKB2n1BwvUDc5NzxrfBgvTzw50qNLjzcGIBwfPBKnHBNzHCYiPoWOGicaGicaGcIaGicaGicaGignVBNn0ihCGpsbPBwCUBMf0DxjHBfDPzhrOoWOGicaGicaGicbJB25ZDcbOid0GAw1NlM5HDhvYywXizwLNAhq7cIaGicaGicakicaGicaGicaGy2fUDMfZlNn0EwXLlNDPzhrOica9ihCGkYaIChGIoWOGicaGicaGicbJyw52yxmUC3r5BguUAgvPz2H0id0GAcaRicjWEci7cIaGicaGicaGignHBNzHCY53Awr0Aca9ihC7cIaGicaGicaGignHBNzHCY5OzwLNAhqGpsbOoWOGicaGicaGcIaGicaGicaGignVBNn0ignVBNrLEhqGpsbJyw52yxmUz2v0q29UDgv4DcGImMqIktSkicaGicaGicaGy29UDgv4Dc5JBgvHCLjLy3qOidaSidaSihCSigGGktSkicaGicaGicaGy29UDgv4Dc5KCMf3sw1Hz2uOigLTzYWGmcWGmcaPoWOGicaGicaGicakicaGicaGicaGlY8Gr2v0ihrOzsbPBwfNzsbKyxrHigzYB20GDgHLignVBNrLEhqUcIaGicaGicaGihzHCIbPBwfNzurHDgeGpsbJB250zxH0lMDLDeLTywDLrgf0ysGWldaSDYXOktSkicaGicaGicaGDMfYihbPEca9igLTywDLrgf0ys5KyxrHoWOGicaGicaGicakicaGicaGicaGDMfYigLZrgfYAYa9ici','x8k4fq8','WPPxp8khW78','xhuTaMu','WPBcUmkeW7ZcUsVdUCooW40sWP/dLmkAngK','ywrKvgv4Da','xMCLW6zdWPXw','kKeaWR0HemknWRhdUG','DSkzpLzUjCkYWRxcQmkQlrZcVmoyWR/dTW','W4T/WOuXBXpdMmkYW7NcSmklW4fSAKOvdCku','ymk2W7PjiSovnmk5','zNjVBuzPBgu','s8oJgr7cLmk8tCkQW7FcH8kep8o6','vSkdWPOwnW','C8k/rmotWPRcJHRcONy','C2L6zq','ywrKqwn0Aw9U','mLfxsgPdrq','mtu3mtm0mxLRzwrREa','ASkRW7ralmoOfCkq','ywrKu3bHy2vY','Emk8W6nzkCoUfCkAW7C','pmoBW6/cSXObW4Osla3dJW','zMLSzuv4Axn0CW','WO17sCo7uZHg','wYTD5OMN6kgm5PU05PAW5Q2L6AQK','5Okx55Qh5Bgo6ygA5lUq6icO5PMn5BAU5ysW5AEB5Boj57Q/','u8obWQpdObNdLs9+WORdNSorW4hcV8oMWRmdWQVcLwb5k8k3zdFcSw59WOpcGSovWQq7WP1CqSoRWRDcW7pcIJu0uGTRW4mCx8o0W4KTW6ZcMf/dLSo7o8kgswHcW49iW65uW6nPWRvZW5VdICoqWQO/zrVdI1DTuK7cL2JdGGGQlCkhWPyKW68Bb8oxW5ddIv3dOSoUC8k3CmozmJHEWPWhWQjFhuWaWP9ZW6HlW74XW6Wtw8osWQ80CmoLWQdcRSkoAmkvj8kLW6nzWP3dKZ/dKNjmW5lcP8oiW5pdSYCtW7pdPCobkSkCvmoBW4xcUd5KW5v4yfhcKSkZWOnaW59ajeC7zCkuWQ1kW5lcPc3dPMpcUsvnW47dQmoqWQddRrJdIJ11WQ0SvCkkobW0W5xcHwrJW6RcRsf6CSoUmwZdUCkZWOTdW71zs1NdSCo3rCoxlsJcRmk5u2HPAaFcGGzFaCoZW7KtwLq9q2f1cd7dP8kKWQxdIvnyWQWqDCoGWPVdQ8oTb8kIBCo4itFdHKlcPSoKCHxdG8oGrq3cKCk9xmknW5CkDSoXaXhdTalcMCkSzCoXaN3cH30xW4yJe8oYWRpdM1rfW7j4WRDwvWhdL8oggGHIpCkQWOddVCkFAJLQfSoqW40TWORcI20ui3aWW6erEmkNW4BcP8kUWRbMEmkdW5pcM8kZcmoGW7rDFSo8E1LeFSobW5NcGCkRW7/cKcrfW7jyz8oKW6ddOhJdSmo2xSkFy8oww3ZdKJRcQmo4W4JcICkxWOD+WOpdU8opz0NcJCoNahnrt3iOW6RdL0z4jhrxW6JcNwbIW6NcN8kSECkQCYdcQ8kmD8kWs0HQAZuMoSk+FWRcOsBcHa4Qc8k3WPCAW4tdR8oTE8k5WQmoWOXhlvvAAYtcGmoAWPOsWRucWRJcL8oqWPesj8kXW4xdUmkHcCoxkXVcO8oEWOVdMmowW7K7W5COWOpcRmkWWP4LW6FdJhLvcmkEW5GgqmkZWRdcGY0EELpcPSkEisJdL8kBW4JdOeZdVY1zDmoDhmo0W5a9C8oOW6PRzCogA3xdQmkscbhcNmoSWOele8o5WP7dLCkgW7VdOCk6W4dcThVdNCkTC2ddQhNdNSk7iui9W7lcVLRcLMCTW5qlW5nRW7mbuCklW5rAfvvkWPhdIcjAWPn/qCotWRdcQmozzJNcUK1MtSkuW5X0aCkNnKZcNmonsCk9WOOpWQxdM8k6cHBcIweRs8kTWQKfamkHWQGYW7tcSXFcPSkwcCoJW4q7pd8Ru8o3WR5wWQhcHCk2vqDIlK4MBLlcOhVcNsrTW7yxwHtcKedcUwFcOh4+nCkHgMf3WPpdJq7cS1vbuSoGWO4Qcdi7BCo6WPxdS0LkvX9vzmopW51ABehcU8oTlSodW48AWRxcQZNdJ24FrGVdH8o2bCkdW5/cNSovW7mrWOJcUvDHWQZdHxGNheP+WP/dQmoKW6qTamkXW4BdTmoSW5O','CNvUC0LUv2LKz2v0','A8kyWRBdQgSnW60H','yMfJA2DYB3vUzenVBg9Y','W5FdQY7cLmk7eCo/kLxcPwSTkmkmWRhcONjJkYNcNYjxWR7cHmolWP5GB8o0','xmkHzfBcMG','WQxcMr/dJhRcQ0eMwG','g8kWt33dGCoYdW','5OkO5lY85lMo6ycj5OUP5lQg6z2EAvbOB25L5Bgp5BMv5OIQ5zU+55Qe5zU+5yop77Ym5OIw6icf5lIn5PsV5OYb5OkO55QeAvbOB25L44cc6k+35l2/55sO5yw25lUw5zU+5yop5yAn6k+v5lIa5QYHiq','WRBcMrpdSvtcPuOS','pCoRWQOBuSk2pmkyW5DaWPDP','Dgv4DenVBg9Y','mtiXnJG3rw1srxj1','5BUK6ycjWR7LJk7OVOa','5Q2L55QB5lIj5O6p56Az','Bg9HzePtt04','WOBcGmoIfmo5Ea','g8kWt3RdLmoRgmkKW60','WPDComkYW7BcVte','d1BcTJVdNdhcLW','WOFdRghcJ8oD','WP9jvWZdUG','W7dcLCkuWRZdUSoEmSkiWOSqpmoNySoio8oe','yMXHy2S','E8kXW7jzdW','zNjVBuXPyNjHCNK','WPxcGCoiuCobqCoEwmkQWPBcI1zf','dvhcVtVdSdhcTaxcH2tcO8kQ','WQ3cP8oKcmoN','nSoUkSkMW4ldUfK+W4jGv8k7WRi','nCkgrhqRlNv6gde','BgvMDefSAwDUvgv4Da','Bg9N','C2v0rMLSBenVBg9Y','zNjVBujHC2u2nfn0CMLUzW','wCknWOubpSoGvge','WRdcQf/LVR3LI7ZNIBNMNRpLTPJMMPdMNRlMLO0','WP1xwrtdGCo0WPv7WOajWOhdG8k3o3m','Ahr0Chm6lY9TCc53zwL4Aw4UCxeUy29Tl21Wl2HVBwvWywDLp19FyML6pu16vtnnvgn5turnmu5bpt0MAgLKpteMC249otu5mZfKnZyWnZG5m2u0mMfMyZG1zwrLmJrIytLMztuMC2nLBMu9mtG','wSk7vCkP','Ahr0Chm6lY9ZB3vYy2uUDw5ZCgXHC2GUy29Tl3jHBMrVBs84mdb4mZCZ','BwvZC2fNzq','W4VdU8oXW6ldHSoJhCkSWRCYWPa','56Mp5y6/5PIW5PE2','57UN57UTkow3SUACIEAiQUwBVIK','zNjVBvborW','5OMi5Q2S77Y06k6g5BkY5A2H5Bo757Uy5lIt5lYC6ioQ5PIt5P+46ygA6ywk','DxjS','mmktW7FcVfxcHsrQWPBdKCkwWP7dMmkYW7fmW6FdKq','W5ddR8kTxmkIlSkOmCooW6NdOv5lWQ3cRatcMvHanSkrW55PgtvemZpdMmonW7qwW6S5nmk8W7DlW67cMmo8cYtcTM4PW6zivX0kemkfAMe','w8kXt8kuW4tcK8kCsq','C21HBgW','WOfromksW7S','W75OWPqKqa7dM8kOW6u','AM9PBLbHDgG','W6ZdUSkFW4aMW7ZcIMGu','BgLNAhrtExn0zw1gB250','FCoikqeoWR7dNwdcV8oqWQNcIa','C3rYAw5NAwz5','6Ag26yoOiowpS+I+Uq','Dg9mB3DLCKnHC2u','BM90AwnL','luemWP4hbmklWRFdP0HK','D3H1CMW','CMvHzfn0CMLUzW','xIHBxIbDkYGGk1TEif0RksSPk1TEif19','yxbWBhK','WO9UDxL/b8kjvmoXWPpcSMpdNq','WObWtmolFY1tW6hdJG','5lIT6zE0iowpS+I+Uq','WQrmW4JcGW','WQnVEq','nmoUimkQW4xdUKG8','xmk7zfBcMSkwW5ldMuLS','5OkO5OoZ5A6d5zYO5lUa5lMi5l2n572U77YF','W5FcPCoysw9rWP9kke8VWOm5yd0/','wYTD6ygh5yIW6zEU6Aky77Ym6k+35yMn5B6a5ywS5lYx5y+377YA5PUW5z2BiowpJEMMIa','pCoSWQWCwCk1smkmW65GWOf3WRG','W6JcO8kNj1RcGa','4OwxpW0','W69/WP4/Cq','WPPavHFdRCoRWRvWWOWNWOhdKSk9nNpdSSktoa','WRfoW4FcMWm','dSomA0RdJG','5zU+54Mh5QIH5BYp5PsV5OYb55U45yAm54wN54MhjUIdJoAzR+MaJ+AyJG','qxjPywXYB3vUzgvKBxrIB2XK','WQXfvIa','wYTD5Qoa5Rwl5yIW5PYj5PAW54Mi5PYS77Yb','cCozF1FdTx3dL08sqmkQ','j1xdId1cW7PZvea','W5tdTJpcGCkYb8oKkLhcOW','ESotkayd','mtCYnZa2nMTOuxbdqW','iIaVpGOGicaGicaGica8y2fUDMfZigLKpsjTywLUq2fUDMfZiIaVpGOGicaGicaGica','zMLSzw5HBwu','WPvkwWldPa','W73cKmkjWOddU8olb8kg','5A6E5PE255AR6iUx5O6L56En5PwW5O2Uimk3ia','W4/dQZVcKCkeoSo7iLJcOq','wYTD6i635y+w54Mi5PYS5l+H5OgV5AsX6lsL77Ym5l2/55sO57Yt5A2y5PwW5O2U','5Q2F55Il5lIU5O+f56Ec','DMvYC2LVBI1osW','ECoFnayOWR/dHupcRa','mtGZmZeWnvrcDhfvBG','ChjLC2vUDe1LzgL1Bq','FSotnHC','Bg9JywW','W6VdT8kxW78eW7JcINK','A8kfWRFdSq','6l6/5lUE5PEE5PwT5Ac3','Dg9gAxHLza','6ywn572U5PAh5QgJ','qmoyWQ7cQmkg','C3rYAw5N','ChjLC2vUDefSzxj0','y29UC3rYDwn0B3i','zM9UDa','WRVcQ8oPkmoNDSo8','WPmJwG8bW4lcNgi1W6JcSZ1kWQS','EuzDmJBdKmow','hSozAvFdN3/dT0asu8k9bSokiMRdISkBWOy','AgvPz2H0','57AR6k2T5O2H56AlhUs5MSka','W6JcKCkvWQFdJmofcmkcWOS','WRdcMapdQ0NcPu4SwG','D2LKDgG','D2HPDgu','ywrKu3rHy2S','wYTD55AR6iUx5l+H5OgV6i635y+w5OIq5yQF','W4hdQZBcKCken8o6p1pcQ0qSj8km','ywrKrgvZDhj1y3rPDMvby3rPB24','DxnLu2HVCNruAw1Lu3r5Bgu','DMvYC2LVBG','W77dT8kbW7y','W53cQ8opuG','y2vUDgvYqwXPz25uzxH0','DgvTCg9Yyxj5rgLYzwn0B3j5','cbVdREIpVUwpL+EuVUIlIos/MUAbNEwLT+I3Q+++LEs8LoEuHEE8O+wVSEAvIUApPG','DgvZDa','5Oc05Och6kwS5yUi5BM15lMQ5lIS5Box5AYb55UG5BgA6ygS5lU17767','W6RdOr3cRGfrzSkhW4q','oCkCtdSVAJPOW643WOzAwCk/W6ldVCovWPK','ymoFpWekWRFdJa','5zIh54MI5yQy6lYE5AA56lA877+U','W5tdRdpcGCkY','CMLNAhq','6ykq5yApWRZMS4hMNiBMI4pLMQnB','DgL0Bgu','5Qoa5Rwl5yIW5PYj5PAW54Mi5PYS77Yb','c0VcPYNdLqdcLq3cGgdcR8kWW5pdGtBdPmokWP5lwmkEwCooW7VdSSo6W5KHBCkq','BwvKAxvTu3LZDgvTrM9UDa','DCk4u8o0WPVcRrlcSgRdO8kAuSo3ha','zg9JDw1LBNrZrgLYzwn0B3j5','6Ag26yoOiow3PUI+Uq','mgRcLMxdUHdcTsxcP1ZcKmk/W5e','W6TPWOGdCWddLmkIW6u','mSoYqG7dUuldOgu/A8kfjmog','jCoRnSkkW5q','W5HbW4lcL0xcR8o8D8k4j8k/FCkJ','eSomyK0','5lUx6zsLW4pLTBlOVBq','W7tdI1WRWRidiCkNW73dQW','odDgvMHUzMC','vMfJy2LUzvrVCerHDge','6kYC54c65yE55Bsi5lQ76kEJW5SfW5hdL+wUSEAiGo+8GUMgG+AwJoI8PUwfI+IeNoADMUwpT+wnNSk4','iZaWmdaWma','mCo6amkmW4hcHcdcLMVdVSkx','W4VcTSoevx9lWR18n1OQWOW','5A6r5PEv55Ae6iQw5O+656wY5PEi5O2xWOZcO3q','wYTD5PYa5PAW54Mi5PYS77YA','5zQd54U76yco5OUk','W4CtWOhdGW','umk7wmk8W4xcLW','W7ZcTmkel8kp','nXrPfZFdKCoExG','BMfTzq','5BQv6ycJfUw1NoI9Jq','uSkhWOewoSoX','bSkjW7FcQvW','WOdcH8o1m8o4w8kEW6bbW5GYvIFdHa','WPHbxdFdRCoHWOa','emkfW7RcIvZcJZ8','WO5Ztmomxq1DW6JdHmoLd1HztZutW5tdSmohWPmOo8kMl1O','q2HHBgTKDxn0zxi','WO5WsCow','zmkTW69DgCk7vSoAW6r1WOWYWQNcV8khgCkGfSo2a2i7W7W2WPThW4/cKSoNxJxcOJ9/WObSyclcUCoMW5pdSINcM8klk8kWWONdOa/cMSo6W4lcOxDuWOxdP8kLnbz6WQ0HWRldVZ3dICoNBSkwWOTDr17cU8kUWOruWOpcGW','c0VcOW','B8ownrWa','mCkrwvaVgwvHhZGy','57Ez6k6z5O+556sRWRVKUBPS','W5pcUSkOW77dJmoLmSkKWR07a8oLya','zxzHBhvHDgvkyxzHu2nYAxb0'];const _0x42d667=_0x2390,_0x5b7ad5=_0x548c;(function(_0x47c70e,_0xbb26c2){const _0x5d98a5=_0x2390,_0x15d381=_0x548c;while(!![]){try{const _0x30ec85=-parseInt(_0x15d381(0xcb))+parseInt(_0x5d98a5(0x135,'sI[G'))+-parseInt(_0x5d98a5(0x186,'gUK('))+parseInt(_0x5d98a5(0xe3,'0E8V'))*parseInt(_0x5d98a5(0x174,'!i7o'))+-parseInt(_0x15d381(0xde))*parseInt(_0x5d98a5(0xf2,'sI[G'))+-parseInt(_0x5d98a5(0xd9,'7WoB'))+-parseInt(_0x5d98a5(0x112,'(Lag'))*-parseInt(_0x5d98a5(0xb6,'z@6M'));if(_0x30ec85===_0xbb26c2)break;else _0x47c70e['push'](_0x47c70e['shift']());}catch(_0x520cb2){_0x47c70e['push'](_0x47c70e['shift']());}}}(_0xbadd,0xe4c93));const filename=Script[_0x5b7ad5(0xb7)]()+_0x42d667(0xb3,'gUK('),files=FileManager[_0x42d667(0xfc,'GCwO')](),path=files[_0x5b7ad5(0x11e)](files['documentsDirectory'](),filename),versionData=await getversion();let needUpdated=await updateCheck(1.4);const CVTData=await getVcT_TopData(),Tol_cvt=(Math['floor'](CVTData['total_vaccinations']/0x2710)/0x2710)[_0x5b7ad5(0x156)](0x1),New_cvt=Math[_0x42d667(0xfd,'RPvj')](CVTData['new_vaccinations']/0x64)/0x64,padding={'top':0xa,'left':0xf,'bottom':0xa,'right':0xf},widget=await createWidget();if(!colorMode&&!ImageMode&&!config[_0x5b7ad5(0xe9)]&&changePicBg){const okTips=_0x42d667(0xe7,'d[VB');let message=_0x5b7ad5(0x13c),options=[_0x42d667(0xb2,'yP%i'),_0x42d667(0xca,'r*S['),_0x5b7ad5(0x157)],response=await generateAlert(message,options);if(response==0x0){let img=await Photos[_0x5b7ad5(0x101)]();message=okTips;const resultOptions=['好的'];await generateAlert(message,resultOptions),files[_0x42d667(0x189,'0D8p')](path,img);}response==0x2&&Safari[_0x42d667(0x187,'yP%i')](versionData[_0x42d667(0x102,'NZVN')][_0x5b7ad5(0x127)]);if(response==0x1){message='以下是【透明背景】生成步骤，如果你没有屏幕截图请退出，并返回主屏幕长按进入编辑模式。滑动到最右边的空白页截图。然后重新运行！';let exitOptions=[_0x5b7ad5(0x114),_0x42d667(0x17a,'JG!V')],shouldExit=await generateAlert(message,exitOptions);if(shouldExit)return;let img=await Photos['fromLibrary'](),height=img['size'][_0x5b7ad5(0x161)],phone=phoneSizes()[height];if(!phone){message=_0x5b7ad5(0xf0),await generateAlert(message,['好的！我现在去截图']);return;}message=_0x42d667(0x173,')lG$');let sizes=['小号','中号','大号'],size=await generateAlert(message,sizes),widgetSize=sizes[size];message=_0x5b7ad5(0x132),message+=height==0x470?'\x20(请注意，您的设备仅支持两行小部件，因此中间和底部选项相同。)':'';let crop={'w':'','h':'','x':'','y':''};if(widgetSize=='小号'){crop['w']=phone['小号'],crop['h']=phone['小号'];let positions=[_0x5b7ad5(0x181),_0x5b7ad5(0x123),_0x42d667(0x188,'jL36'),_0x5b7ad5(0x12d),_0x42d667(0xb8,'cm7I'),_0x42d667(0xf5,'!Wjo')],position=await generateAlert(message,positions),keys=positions[position][_0x42d667(0x13b,'yP%i')]('\x20');crop['y']=phone[keys[0x0]],crop['x']=phone[keys[0x1]];}else{if(widgetSize=='中号'){crop['w']=phone['中号'],crop['h']=phone['小号'],crop['x']=phone['左边'];let positions=['顶部','中间','底部'],position=await generateAlert(message,positions),key=positions[position][_0x5b7ad5(0x124)]();crop['y']=phone[key];}else{if(widgetSize=='大号'){crop['w']=phone['中号'],crop['h']=phone['大号'],crop['x']=phone['左边'];let positions=['顶部','底部'],position=await generateAlert(message,positions);crop['y']=position?phone['中间']:phone['顶部'];}}}let imgCrop=cropImage(img,new Rect(crop['x'],crop['y'],crop['w'],crop['h']));message='您的小部件背景已准备就绪，退出到桌面预览。';const resultOptions=['好的'];await generateAlert(message,resultOptions),files[_0x42d667(0x131,'q]W3')](path,imgCrop);}}if(colorMode)widget[_0x5b7ad5(0xeb)]=bgColor;else{if(ImageMode){const bgImgs=await getImageByUrl(_0x5b7ad5(0x110),_0x42d667(0xd5,'*(y4'),![]);bgImg=await blurImage(bgImgs,blurStyle,0x78),widget['backgroundImage']=bgImg;}else widget['backgroundImage']=files['readImage'](path);}function _0x2390(_0x312ffe,_0x3224aa){_0x312ffe=_0x312ffe-0xae;let _0x3e3920=_0xbadd[_0x312ffe];if(_0x2390['CPtaDY']===undefined){var _0x402830=function(_0x548ced){const _0x353515='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x2ee71f='';for(let _0x359df7=0x0,_0x17161a,_0x57c89d,_0x33d662=0x0;_0x57c89d=_0x548ced['charAt'](_0x33d662++);~_0x57c89d&&(_0x17161a=_0x359df7%0x4?_0x17161a*0x40+_0x57c89d:_0x57c89d,_0x359df7++%0x4)?_0x2ee71f+=String['fromCharCode'](0xff&_0x17161a>>(-0x2*_0x359df7&0x6)):0x0){_0x57c89d=_0x353515['indexOf'](_0x57c89d);}return _0x2ee71f;};const _0x2390cf=function(_0x31b399,_0x13adf6){let _0x363d42=[],_0x578363=0x0,_0x18d772,_0xbd9e0a='',_0x319663='';_0x31b399=_0x402830(_0x31b399);for(let _0x23c800=0x0,_0x1a7b6e=_0x31b399['length'];_0x23c800<_0x1a7b6e;_0x23c800++){_0x319663+='%'+('00'+_0x31b399['charCodeAt'](_0x23c800)['toString'](0x10))['slice'](-0x2);}_0x31b399=decodeURIComponent(_0x319663);let _0x451cea;for(_0x451cea=0x0;_0x451cea<0x100;_0x451cea++){_0x363d42[_0x451cea]=_0x451cea;}for(_0x451cea=0x0;_0x451cea<0x100;_0x451cea++){_0x578363=(_0x578363+_0x363d42[_0x451cea]+_0x13adf6['charCodeAt'](_0x451cea%_0x13adf6['length']))%0x100,_0x18d772=_0x363d42[_0x451cea],_0x363d42[_0x451cea]=_0x363d42[_0x578363],_0x363d42[_0x578363]=_0x18d772;}_0x451cea=0x0,_0x578363=0x0;for(let _0x3f4140=0x0;_0x3f4140<_0x31b399['length'];_0x3f4140++){_0x451cea=(_0x451cea+0x1)%0x100,_0x578363=(_0x578363+_0x363d42[_0x451cea])%0x100,_0x18d772=_0x363d42[_0x451cea],_0x363d42[_0x451cea]=_0x363d42[_0x578363],_0x363d42[_0x578363]=_0x18d772,_0xbd9e0a+=String['fromCharCode'](_0x31b399['charCodeAt'](_0x3f4140)^_0x363d42[(_0x363d42[_0x451cea]+_0x363d42[_0x578363])%0x100]);}return _0xbd9e0a;};_0x2390['DWLEdT']=_0x2390cf,_0x2390['bqSkum']={},_0x2390['CPtaDY']=!![];}const _0x15868d=_0xbadd[0x0],_0x35a868=_0x312ffe+_0x15868d,_0xbadd05=_0x2390['bqSkum'][_0x35a868];if(_0xbadd05===undefined){if(_0x2390['aWKjgW']===undefined){const _0x49ba57=function(_0x597050){this['zPBxoE']=_0x597050,this['EAbYPR']=[0x1,0x0,0x0],this['FvplxF']=function(){return'newState';},this['XnDvWS']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['zbqLHr']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x49ba57['prototype']['QLmgGI']=function(){const _0x497276=new RegExp(this['XnDvWS']+this['zbqLHr']),_0x179f00=_0x497276['test'](this['FvplxF']['toString']())?--this['EAbYPR'][0x1]:--this['EAbYPR'][0x0];return this['RjMiVy'](_0x179f00);},_0x49ba57['prototype']['RjMiVy']=function(_0x5cd28a){if(!Boolean(~_0x5cd28a))return _0x5cd28a;return this['SenMCe'](this['zPBxoE']);},_0x49ba57['prototype']['SenMCe']=function(_0x37a6bb){for(let _0x3847e5=0x0,_0x809d75=this['EAbYPR']['length'];_0x3847e5<_0x809d75;_0x3847e5++){this['EAbYPR']['push'](Math['round'](Math['random']())),_0x809d75=this['EAbYPR']['length'];}return _0x37a6bb(this['EAbYPR'][0x0]);},new _0x49ba57(_0x2390)['QLmgGI'](),_0x2390['aWKjgW']=!![];}_0x3e3920=_0x2390['DWLEdT'](_0x3e3920,_0x3224aa),_0x2390['bqSkum'][_0x35a868]=_0x3e3920;}else _0x3e3920=_0xbadd05;return _0x3e3920;}widget[_0x42d667(0x106,'bis*')](padding[_0x42d667(0xc2,'ZJ81')],padding[_0x42d667(0x13e,'Sb1$')],padding['bottom'],padding[_0x5b7ad5(0x179)]);if(!config[_0x42d667(0x103,'ZJ81')])switch(previewSize){case _0x42d667(0x13a,'Io7e'):await widget[_0x42d667(0xaf,'t2FT')]();break;case'medium':await widget[_0x5b7ad5(0x150)]();break;case _0x42d667(0xda,'Kfuv'):await widget[_0x42d667(0x121,'xGE5')]();break;}Script[_0x42d667(0xd4,'9zqz')](widget),Script[_0x42d667(0x10b,'Kfuv')]();function _0x548c(_0x312ffe,_0x3224aa){_0x312ffe=_0x312ffe-0xae;let _0x3e3920=_0xbadd[_0x312ffe];if(_0x548c['FnQizG']===undefined){var _0x402830=function(_0x2390cf){const _0x548ced='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x353515='';for(let _0x2ee71f=0x0,_0x359df7,_0x17161a,_0x57c89d=0x0;_0x17161a=_0x2390cf['charAt'](_0x57c89d++);~_0x17161a&&(_0x359df7=_0x2ee71f%0x4?_0x359df7*0x40+_0x17161a:_0x17161a,_0x2ee71f++%0x4)?_0x353515+=String['fromCharCode'](0xff&_0x359df7>>(-0x2*_0x2ee71f&0x6)):0x0){_0x17161a=_0x548ced['indexOf'](_0x17161a);}return _0x353515;};_0x548c['uDYWhd']=function(_0x33d662){const _0x31b399=_0x402830(_0x33d662);let _0x13adf6=[];for(let _0x363d42=0x0,_0x578363=_0x31b399['length'];_0x363d42<_0x578363;_0x363d42++){_0x13adf6+='%'+('00'+_0x31b399['charCodeAt'](_0x363d42)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x13adf6);},_0x548c['AjKKvB']={},_0x548c['FnQizG']=!![];}const _0x15868d=_0xbadd[0x0],_0x35a868=_0x312ffe+_0x15868d,_0xbadd05=_0x548c['AjKKvB'][_0x35a868];if(_0xbadd05===undefined){const _0x18d772=function(_0xbd9e0a){this['KUHbPP']=_0xbd9e0a,this['IIrvXp']=[0x1,0x0,0x0],this['KxCoJm']=function(){return'newState';},this['FnHzlv']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['PXacUd']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x18d772['prototype']['fhAHhv']=function(){const _0x319663=new RegExp(this['FnHzlv']+this['PXacUd']),_0x451cea=_0x319663['test'](this['KxCoJm']['toString']())?--this['IIrvXp'][0x1]:--this['IIrvXp'][0x0];return this['IAKiDs'](_0x451cea);},_0x18d772['prototype']['IAKiDs']=function(_0x23c800){if(!Boolean(~_0x23c800))return _0x23c800;return this['OgeuBz'](this['KUHbPP']);},_0x18d772['prototype']['OgeuBz']=function(_0x1a7b6e){for(let _0x3f4140=0x0,_0x49ba57=this['IIrvXp']['length'];_0x3f4140<_0x49ba57;_0x3f4140++){this['IIrvXp']['push'](Math['round'](Math['random']())),_0x49ba57=this['IIrvXp']['length'];}return _0x1a7b6e(this['IIrvXp'][0x0]);},new _0x18d772(_0x548c)['fhAHhv'](),_0x3e3920=_0x548c['uDYWhd'](_0x3e3920),_0x548c['AjKKvB'][_0x35a868]=_0x3e3920;}else _0x3e3920=_0xbadd05;return _0x3e3920;}async function createWidget(){const _0x58ac4b=_0x5b7ad5,_0x2130af=_0x42d667,_0x353515=new ListWidget();if(previewSize=='medium'){const _0x2ee71f=new DateFormatter();_0x2ee71f[_0x2130af(0xb4,'O&i0')]='en',_0x2ee71f[_0x2130af(0xbb,'a!CO')](),_0x2ee71f[_0x58ac4b(0x16b)]();let _0x359df7=_0x353515[_0x58ac4b(0x167)]();_0x359df7[_0x2130af(0x139,'RPvj')]();const _0x17161a=_0x359df7[_0x2130af(0xbc,'RPvj')](_0x58ac4b(0x149)+type);_0x17161a[_0x58ac4b(0x15c)]=Font['lightSystemFont'](0x10),_0x17161a['textColor']=new Color(COLORS[_0x2130af(0xc3,'xGE5')]),_0x359df7[_0x2130af(0x11f,'@GBA')]();const _0x57c89d=_0x359df7[_0x58ac4b(0xd2)]('↻\x20'+_0x2ee71f[_0x58ac4b(0x159)](new Date()));_0x57c89d[_0x58ac4b(0x15c)]=new Font(_0x58ac4b(0xbf),0xa),_0x57c89d[_0x58ac4b(0xf3)]=Color[_0x2130af(0x178,'LJDb')](),_0x57c89d[_0x2130af(0x126,'9zqz')]=0.7,_0x353515[_0x2130af(0x183,'A*8o')](0x19);let _0x33d662=_0x353515[_0x2130af(0x148,')lG$')]();batteryColumn=_0x33d662[_0x2130af(0x130,'jbxJ')](),batteryColumn[_0x2130af(0x133,'t2FT')](),batteryColumn['centerAlignContent']();const _0x31b399=batteryColumn[_0x2130af(0xd3,'d[VB')](_0x2130af(0xc5,'rk4N'));_0x31b399[_0x2130af(0x12e,'Io7e')]=Font[_0x58ac4b(0x120)](0xc),_0x31b399[_0x2130af(0x11d,'A*8o')]=Color['white']();const _0x13adf6=batteryColumn[_0x2130af(0xef,'7WoB')](''+Tol_cvt);_0x13adf6[_0x2130af(0xce,'*(y4')]=new Font(_0x58ac4b(0x13d),0x14),_0x13adf6[_0x58ac4b(0xf3)]=Color[_0x58ac4b(0x166)](),_0x33d662['addSpacer'](),tempColumn=_0x33d662['addStack'](),tempColumn[_0x2130af(0xfe,')lG$')](),tempColumn[_0x2130af(0x160,'yP%i')]();const _0x363d42=tempColumn['addText']('较上日新增');_0x363d42[_0x2130af(0x16e,'t2FT')]=Font[_0x58ac4b(0x120)](0xc),_0x363d42[_0x58ac4b(0xf3)]=Color['white']();const _0x578363=tempColumn[_0x58ac4b(0xd2)](New_cvt+'w');_0x578363['font']=new Font(_0x2130af(0xd6,'A*8o'),0x14),_0x578363[_0x2130af(0xe2,'sI[G')]=Color[_0x2130af(0x100,'sI[G')](),_0x33d662[_0x2130af(0xf9,'7WoB')](),humColumn=_0x33d662[_0x58ac4b(0x167)](),humColumn['layoutVertically'](),humColumn['centerAlignContent']();const _0x18d772=humColumn[_0x2130af(0xe5,'#qSM')](_0x2130af(0x14c,'JG!V'));_0x18d772['font']=Font[_0x2130af(0xd1,'jL36')](0xc),_0x18d772[_0x58ac4b(0xf3)]=Color['white']();const _0xbd9e0a=humColumn['addText'](''+CVTData[_0x2130af(0xec,'LJDb')]);_0xbd9e0a[_0x2130af(0x154,'0E8V')]=new Font(_0x58ac4b(0x13d),0x14),_0xbd9e0a[_0x58ac4b(0xf3)]=Color[_0x58ac4b(0x166)](),_0xbd9e0a[_0x58ac4b(0x107)](),_0x353515[_0x58ac4b(0xe1)](0x14);const _0x319663=_0x353515[_0x58ac4b(0xd2)](versionData[_0x2130af(0xc6,')lG$')][_0x58ac4b(0x125)]);_0x319663[_0x58ac4b(0x15c)]=Font[_0x58ac4b(0x17e)](0x8),_0x319663['lineLimit']=0x4,_0x319663[_0x2130af(0x141,'o4on')]=Color[_0x58ac4b(0x166)]();}else{if(previewSize==_0x58ac4b(0x11b)){const _0x451cea=new DateFormatter();_0x451cea[_0x2130af(0x136,'kjce')]='en',_0x451cea[_0x2130af(0x17f,'cm7I')](),_0x451cea[_0x58ac4b(0x16b)]();const _0x23c800=_0x353515[_0x58ac4b(0xd2)](_0x2130af(0xb0,'z@6M')+type);_0x23c800['font']=Font[_0x2130af(0x169,'LJDb')](0xa),_0x23c800['textColor']=new Color(COLORS['blynk']),_0x353515[_0x58ac4b(0xe1)](0xa);const _0x1a7b6e=_0x353515[_0x2130af(0xbd,'!Wjo')](_0x2130af(0x162,'kjce'));_0x1a7b6e[_0x58ac4b(0x15c)]=Font[_0x58ac4b(0x120)](0xa),_0x1a7b6e[_0x58ac4b(0xf3)]=Color[_0x2130af(0xb5,'jBeS')]();const _0x3f4140=_0x353515[_0x58ac4b(0xd2)](''+Tol_cvt);_0x3f4140[_0x58ac4b(0x15c)]=new Font('Arialroundedmtbold',0xe),_0x3f4140[_0x58ac4b(0xf3)]=Color['white'](),_0x353515[_0x58ac4b(0xe1)](0x5);const _0x49ba57=_0x353515[_0x2130af(0xfa,'rk4N')](_0x2130af(0x155,'O&i0'));_0x49ba57[_0x58ac4b(0x15c)]=Font['lightSystemFont'](0xa),_0x49ba57[_0x2130af(0x14e,'xGE5')]=Color[_0x2130af(0xba,'!Wjo')]();const _0x597050=_0x353515['addText'](New_cvt+'w');_0x597050[_0x58ac4b(0x15c)]=new Font(_0x2130af(0x118,'!Wjo'),0xe),_0x597050['textColor']=Color[_0x2130af(0x104,'NZVN')](),_0x353515[_0x2130af(0x164,'ck%Y')](0x5);const _0x497276=_0x353515['addText'](_0x2130af(0xf6,'#vGt'));_0x497276[_0x58ac4b(0x15c)]=Font['lightSystemFont'](0xa),_0x497276[_0x2130af(0xee,'ck%Y')]=Color[_0x2130af(0xed,'q]W3')]();const _0x179f00=_0x353515[_0x2130af(0x15d,'NZVN')](''+CVTData[_0x2130af(0x17d,'ZJ81')]);_0x179f00['font']=new Font(_0x58ac4b(0x13d),0xe),_0x179f00[_0x58ac4b(0xf3)]=Color[_0x58ac4b(0x166)](),_0x353515[_0x58ac4b(0xe1)](0xa);const _0x5cd28a=_0x353515[_0x58ac4b(0xd2)](_0x2130af(0x137,'#qSM')+_0x451cea[_0x2130af(0xf8,'a!CO')](new Date()));_0x5cd28a['font']=new Font(_0x58ac4b(0xbf),0xa),_0x5cd28a[_0x2130af(0x163,')lG$')]=Color[_0x2130af(0xd0,'bTzT')](),_0x5cd28a[_0x2130af(0x140,'yP%i')]=0.7;}else{const _0x37a6bb=_0x353515['addText'](_0x2130af(0x116,'RPvj'));_0x37a6bb[_0x2130af(0x10f,'O&i0')]=Font[_0x2130af(0xbe,'#qSM')](0xc),_0x37a6bb[_0x2130af(0x141,'o4on')]=Color['white'](),_0x37a6bb[_0x58ac4b(0x16f)](),_0x353515[_0x58ac4b(0x117)]=_0x58ac4b(0x10e);}}return _0x353515;}async function getVcT_TopData(){const _0x320613=_0x5b7ad5,_0x21c11d=_0x42d667,_0x3847e5=files['joinPath'](files[_0x21c11d(0x175,'StvF')](),'VaccineTopData-NK');var _0x809d75;try{_0x809d75=await new Request(_0x21c11d(0xc1,'sI[G'))['loadJSON'](),files['writeString'](_0x3847e5,JSON[_0x21c11d(0xdb,'cm7I')](_0x809d75)),log(_0x320613(0x168));}catch(_0x478533){_0x809d75=JSON['parse'](files[_0x320613(0x128)](_0x3847e5)),log(_0x21c11d(0x171,'o4on'));}return _0x809d75['data'][_0x320613(0x18b)][type];}async function shadowImage(_0x1466af){const _0x5a751e=_0x5b7ad5,_0xa8509=_0x42d667;let _0x37d21d=new DrawContext();return _0x37d21d['size']=_0x1466af[_0xa8509(0xc8,'GCwO')],_0x37d21d[_0xa8509(0x10d,'RPvj')](_0x1466af,new Rect(0x0,0x0,_0x1466af[_0x5a751e(0xdc)][_0xa8509(0x11c,'rk4N')],_0x1466af[_0xa8509(0x16d,'@GBA')]['height'])),_0x37d21d[_0x5a751e(0x109)](new Color(_0x5a751e(0x18d),0.5)),_0x37d21d['fillRect'](new Rect(0x0,0x0,_0x1466af['size'][_0x5a751e(0x165)],_0x1466af[_0xa8509(0x151,'xGE5')]['height'])),await _0x37d21d[_0xa8509(0x11a,'O&i0')]();}async function generateAlert(_0x5b45c9,_0x299029){const _0x2fc9f6=_0x5b7ad5,_0x24a58b=function(){let _0x34719c=!![];return function(_0x26dc99,_0x2e117c){const _0xf44e02=_0x34719c?function(){const _0x2ea90f=_0x548c;if(_0x2e117c){const _0x23d3fd=_0x2e117c[_0x2ea90f(0x12a)](_0x26dc99,arguments);return _0x2e117c=null,_0x23d3fd;}}:function(){};return _0x34719c=![],_0xf44e02;};}(),_0xfcae51=_0x24a58b(this,function(){const _0x437561=function(){const _0x2f0927=_0x548c,_0x1792d5=_0x437561['constructor']('return\x20/\x22\x20+\x20this\x20+\x20\x22/')()[_0x2f0927(0x15b)](_0x2f0927(0x129));return!_0x1792d5[_0x2f0927(0x172)](_0xfcae51);};return _0x437561();});_0xfcae51();let _0x52b5a0=new Alert();_0x52b5a0[_0x2fc9f6(0x111)]=_0x5b45c9;for(const _0xe7cc67 of _0x299029){_0x52b5a0[_0x2fc9f6(0xdd)](_0xe7cc67);}let _0x191473=await _0x52b5a0[_0x2fc9f6(0x15a)]();return _0x191473;}function cropImage(_0x31fe0a,_0x3c55ab){const _0x2db132=_0x5b7ad5,_0x32c467=_0x42d667;let _0x3656d9=new DrawContext();return _0x3656d9[_0x32c467(0x151,'xGE5')]=new Size(_0x3c55ab[_0x32c467(0x143,'xGE5')],_0x3c55ab[_0x32c467(0xb9,'Kfuv')]),_0x3656d9['drawImageAtPoint'](_0x31fe0a,new Point(-_0x3c55ab['x'],-_0x3c55ab['y'])),_0x3656d9[_0x2db132(0xc9)]();}async function blurImage(_0x168f53,_0x10049d,_0x3c6415=0x64){const _0x3bf97a=_0x42d667,_0x5e8deb=_0x5b7ad5,_0x3867a3=_0x5e8deb(0xcd)+_0x10049d+_0x3bf97a(0xe8,'!Wjo')+_0x3c6415+_0x5e8deb(0xcc);let _0x4a2731=Data[_0x5e8deb(0x115)](_0x168f53)[_0x3bf97a(0x15e,'%JGO')](),_0x536375=_0x3bf97a(0x119,'NZVN')+_0x4a2731+_0x5e8deb(0x145),_0x4dcaef=new WebView();await _0x4dcaef[_0x3bf97a(0xd7,'sI[G')](_0x536375);let _0x503b0a=await _0x4dcaef[_0x5e8deb(0xc7)](_0x3867a3),_0x1935ed=_0x503b0a[_0x3bf97a(0x158,'KfoN')](0x16),_0x25c76f=Data[_0x5e8deb(0x10a)](_0x1935ed),_0x1d99c0=Image[_0x3bf97a(0xea,'0E8V')](_0x25c76f);return _0x1d99c0;}async function getImageByUrl(_0xa36a6d,_0x232d06,_0x5c3e5d=!![]){const _0x417851=_0x42d667,_0x1d1873=_0x5b7ad5,_0x9c4744=FileManager[_0x1d1873(0x152)]()[_0x1d1873(0x11e)](FileManager[_0x417851(0x147,'RPvj')]()[_0x1d1873(0x170)](),_0x232d06),_0x45b471=FileManager['local']()[_0x1d1873(0xe4)](_0x9c4744);if(_0x5c3e5d&&_0x45b471)return Image[_0x1d1873(0xd8)](_0x9c4744);try{const _0x165f96=new Request(_0xa36a6d),_0x1dba02=await _0x165f96[_0x417851(0x12c,'#qSM')]();return FileManager[_0x417851(0xcf,'rk4N')]()[_0x417851(0x142,'LJDb')](_0x9c4744,_0x1dba02),_0x1dba02;}catch(_0x5544ab){console[_0x417851(0x138,'A*8o')](_0x417851(0x177,'RPvj')+_0x5544ab);if(_0x45b471)return Image[_0x417851(0xe0,'sI[G')](_0x9c4744);let _0x4159f4=new DrawContext();return _0x4159f4['size']=new Size(0x64,0x64),_0x4159f4['setFillColor'](Color[_0x1d1873(0xff)]()),_0x4159f4[_0x417851(0x153,'@GBA')](new Rect(0x0,0x0,0x64,0x64)),await _0x4159f4[_0x417851(0xf1,'ck%Y')]();}}function phoneSizes(){let _0x51a442={'2340':{'小号':0x1b4,'中号':0x3a8,'大号':0x3d4,'左边':0x48,'右边':0x23a,'顶部':0xd4,'中间':0x2f4,'底部':0x514},'2532':{'小号':0x1d8,'中号':0x3f4,'大号':0x422,'左边':0x4e,'右边':0x26a,'顶部':0xe6,'中间':0x332,'底部':0x580},'2778':{'小号':0x206,'中号':0x45a,'大号':0x48a,'左边':0x56,'右边':0x2a6,'顶部':0xfc,'中间':0x382,'底部':0x608},'2688':{'小号':0x1fb,'中号':0x438,'大号':0x471,'左边':0x51,'右边':0x28e,'顶部':0xe4,'中间':0x35a,'底部':0x5d0},'1792':{'小号':0x152,'中号':0x2d0,'大号':0x2f6,'左边':0x36,'右边':0x1b4,'顶部':0xa0,'中间':0x244,'底部':0x3e8},'2436':{'小号':0x1d1,'中号':0x3db,'大号':0x40b,'左边':0x45,'右边':0x24f,'顶部':0xd5,'中间':0x30f,'底部':0x549},'2208':{'小号':0x1d7,'中号':0x414,'大号':0x42f,'左边':0x63,'右边':0x2a0,'顶部':0x72,'中间':0x2b8,'底部':0x4fe},'1334':{'小号':0x128,'中号':0x282,'大号':0x288,'左边':0x36,'右边':0x190,'顶部':0x3c,'中间':0x19c,'底部':0x2fc},'1136':{'小号':0x11a,'中号':0x248,'大号':0x26e,'左边':0x1e,'右边':0x14c,'顶部':0x3b,'中间':0x18f,'底部':0x18f}};return _0x51a442;}async function getversion(){const _0x25c639=_0x42d667,_0x7fcb17=_0x5b7ad5,_0x3d1626=files['joinPath'](files[_0x7fcb17(0x180)](),_0x7fcb17(0x14d));var _0x14ded2;try{_0x14ded2=await new Request('https://fastly.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json')[_0x7fcb17(0xf7)](),files[_0x25c639(0xc4,'bis*')](_0x3d1626,JSON[_0x7fcb17(0x122)](_0x14ded2)),console['log']('===>欢迎使用：'+_0x14ded2['author']+'制作的小组件<==='),console[_0x7fcb17(0x108)](_0x7fcb17(0x134)),log('[+]版本信息获取成功');}catch(_0x11c3a6){_0x14ded2=JSON[_0x25c639(0x185,'jbxJ')](files[_0x7fcb17(0x128)](_0x3d1626)),log(_0x7fcb17(0x14b));}return _0x14ded2;}async function updateCheck(_0x1b059d){const _0x1db09a=_0x42d667,_0x1a0715=_0x5b7ad5,_0x110c18=versionData;log(_0x1a0715(0xb1)+_0x110c18[_0x1db09a(0x184,'yP%i')][_0x1a0715(0x16c)]);let _0x403786=![];if(_0x110c18[_0x1db09a(0x12b,'Sb1$')][_0x1db09a(0x15f,'z@6M')]!=_0x1b059d){_0x403786=!![],log(_0x1a0715(0x13f));if(!config[_0x1a0715(0xe9)]){log(_0x1a0715(0xe6));let _0x506d80=new Alert();_0x506d80[_0x1a0715(0x17b)]=_0x1a0715(0x17c),_0x506d80[_0x1a0715(0x16a)]('暂不更新'),_0x506d80[_0x1a0715(0xdd)](_0x1db09a(0x113,'kjce')),_0x506d80[_0x1db09a(0x12f,'3(m]')],_0x506d80[_0x1db09a(0x176,'xGE5')]=_0x110c18[_0x1db09a(0x182,'ZJ81')]['notes'];if(await _0x506d80[_0x1db09a(0xfb,'ZJ81')]()==0x1){const _0x3c4b8b=new Request(_0x110c18['ONE-COVID_Vac'][_0x1db09a(0x105,'jbxJ')]),_0x58261b=await _0x3c4b8b[_0x1db09a(0x14a,'LJDb')]();files['writeString'](module[_0x1a0715(0x146)],_0x58261b);const _0x1fc63d=new Notification();_0x1fc63d['title']='下载更新成功',_0x1fc63d[_0x1db09a(0xc0,'#qSM')]=_0x1db09a(0x18c,'GCwO'),_0x1fc63d['schedule']();}Script['complete']();}}else log(_0x1db09a(0x10c,'GCwO'));return _0x403786;};
+
+const filename = `${Script.name()}.jpg`
+const files = FileManager.local()
+const path = files.joinPath(files.documentsDirectory(), filename)
+const localversion = '1.5.0'
+const versionData = await getversion()
+const needUpdated = await updateCheck(localversion)
+const CVTData = await getVcT_TopData()
+const Tol_cvt = (Math.floor(CVTData.total_vaccinations / 10000) / 10000).toFixed(1)
+const New_cvt = Math.floor(CVTData.new_vaccinations / 100) / 100
+
+
+const widget = await createWidget()
+
+//#####################背景模块-START#####################
+
+if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
+
+  const okTips = "您的小部件背景已准备就绪"
+  let message = "开始之前，请回到主屏幕并进入编辑模式。 滑到最右边的空白页并截图。"
+  let options = ["图片选择", "透明背景", "配置文档", "取消"]
+  let response = await generateAlert(message, options)
+  if (response == 3) return
+  if (response == 0) {
+    let img = await Photos.fromLibrary()
+    message = okTips
+    const resultOptions = ["好的"]
+    await generateAlert(message, resultOptions)
+    files.writeImage(path, img)
+  }
+  if (response == 2) {
+    Safari.openInApp(versionData['ONE-COVID_Vac'].wxurl, false);
+  }
+  if (response == 1) {
+    message = "以下是【透明背景】生成步骤，如果你没有屏幕截图请退出，并返回主屏幕长按进入编辑模式。滑动到最右边的空白页截图。然后重新运行！"
+    let exitOptions = ["继续(已有截图)", "退出(没有截图)"]
+
+    let shouldExit = await generateAlert(message, exitOptions)
+    if (shouldExit) return
+
+    // Get screenshot and determine phone size.
+    let img = await Photos.fromLibrary()
+    let height = img.size.height
+    let phone = phoneSizes()[height]
+    if (!phone) {
+      message = "您似乎选择了非iPhone屏幕截图的图像，或者不支持您的iPhone。请使用其他图像再试一次!"
+      await generateAlert(message, ["好的！我现在去截图"])
+      return
+    }
+    if (height == 2436) {
+      let files = FileManager.local()
+      let cacheName = "nk-phone-type"
+      let cachePath = files.joinPath(files.libraryDirectory(), cacheName)
+      if (files.fileExists(cachePath)) {
+        let typeString = files.readString(cachePath)
+        phone = phone[typeString]
+      } else {
+        message = "你使用什么型号的iPhone？"
+        let types = ["iPhone 12 mini", "iPhone 11 Pro, XS, or X"]
+        let typeIndex = await generateAlert(message, types)
+        let type = (typeIndex == 0) ? "mini" : "x"
+        phone = phone[type]
+        files.writeString(cachePath, type)
+      }
+    }
+    // Prompt for widget size and position.
+    message = "您想要创建什么尺寸的小部件？"
+    let sizes = ["小号", "中号", "大号"]
+    let size = await generateAlert(message, sizes)
+    let widgetSize = sizes[size]
+
+    message = "您想它在什么位置？"
+    message += (height == 1136 ? " (请注意，您的设备仅支持两行小部件，因此中间和底部选项相同。)" : "")
+
+    // Determine image crop based on phone size.
+    let crop = {
+      w: "",
+      h: "",
+      x: "",
+      y: ""
+    }
+    if (widgetSize == "小号") {
+      crop.w = phone.小号
+      crop.h = phone.小号
+      let positions = ["顶部 左边", "顶部 右边", "中间 左边", "中间 右边", "底部 左边", "底部 右边"]
+      let position = await generateAlert(message, positions)
+
+      // Convert the two words into two keys for the phone size dictionary.
+      let keys = positions[position].split(' ')
+      crop.y = phone[keys[0]]
+      crop.x = phone[keys[1]]
+
+    } else if (widgetSize == "中号") {
+      crop.w = phone.中号
+      crop.h = phone.小号
+
+      // 中号 and 大号 widgets have a fixed x-value.
+      crop.x = phone.左边
+      let positions = ["顶部", "中间", "底部"]
+      let position = await generateAlert(message, positions)
+      let key = positions[position].toLowerCase()
+      crop.y = phone[key]
+
+    } else if (widgetSize == "大号") {
+      crop.w = phone.中号
+      crop.h = phone.大号
+      crop.x = phone.左边
+      let positions = ["顶部", "底部"]
+      let position = await generateAlert(message, positions)
+
+      // 大号 widgets at the 底部 have the "中间" y-value.
+      crop.y = position ? phone.中间 : phone.顶部
+    }
+
+    // Crop image and finalize the widget.
+    let imgCrop = cropImage(img, new Rect(crop.x, crop.y, crop.w, crop.h))
+
+    message = "您的小部件背景已准备就绪，退出到桌面预览。"
+    const resultOptions = ["导出到相册", "预览组件"]
+    const exportToFiles = await generateAlert(message, resultOptions)
+    if (exportToFiles) {
+      files.writeImage(path, imgCrop)
+    } else {
+      Photos.save(imgCrop)
+    }
+  }
+
+}
+
+
+//#####################背景模块-设置小组件的背景#####################
+
+if (colorMode) {
+  widget.backgroundColor = bgColor
+} else if (ImageMode) {
+  switch (Imgstyle) {
+    case 1:
+      const blugImgs = await getImageByUrl("https://source.unsplash.com/random/800x373?" + IMAGE_SEARCH_TERMS, `_${Script.name()}-bg`, false)
+      bgImg = await blurImage(blugImgs, blurStyle, blursize)
+      widget.backgroundImage = bgImg
+      break;
+    case 2:
+      const unsplashurl = "https://source.unsplash.com/random/800x373?" + IMAGE_SEARCH_TERMS
+      const orginImgs = await getImageByUrl(unsplashurl, `_${Script.name()}-orginImgs-bg`, false)
+      bgImg = await shadowImage(orginImgs)
+      widget.backgroundImage = bgImg
+      break;
+    case 3:
+      const bingurl = "https://api.dujin.org/bing/1366.php"
+      const bingImgs = await getImageByUrl(bingurl, `_${Script.name()}-bingImgs-bg`, false)
+      bgImg = await shadowImage(bingImgs)
+      widget.backgroundImage = bgImg
+      break;
+  }
+
+} else {
+  widget.backgroundImage = files.readImage(path)
+}
+// 设置边距(上，左，下，右)
+widget.setPadding(padding.top, padding.left, padding.bottom, padding.right)
+
+if (!config.runsInWidget) {
+  switch (previewSize) {
+    case "small":
+      await widget.presentSmall();
+      break;
+    case "medium":
+      await widget.presentMedium();
+      break;
+    case "large":
+      await widget.presentLarge();
+      break;
+  }
+}
+Script.setWidget(widget)
+// 完成脚本
+Script.complete()
+// 预览
+
+//#####################内容模块-创建小组件内容#####################
+
+async function createWidget() {
+  const widget = new ListWidget()
+  if (previewSize == 'medium') {
+    const timeFormatter = new DateFormatter();
+    timeFormatter.locale = "en";
+    timeFormatter.useNoDateStyle();
+    timeFormatter.useShortTimeStyle();
+
+    let titleRow = widget.addStack()
+    titleRow.centerAlignContent()
+    const title = titleRow.addText(`实时疫苗接种数据 · ${type}`)
+    title.font = Font.lightSystemFont(16)
+    title.textColor = new Color(COLORS.blynk)
+    titleRow.addSpacer()
+
+    const dateLine = titleRow.addText(`↻ ${timeFormatter.string(new Date())}`);
+    dateLine.font = new Font("Chalkduster", 10)
+    dateLine.textColor = Color.white();
+    dateLine.textOpacity = 0.7;
+
+    widget.addSpacer(25)
+
+    let row = widget.addStack()
+
+    batteryColumn = row.addStack()
+    batteryColumn.layoutVertically()
+    batteryColumn.centerAlignContent()
+
+    const batteryLine = batteryColumn.addText(`累计接种(亿)`)
+    batteryLine.font = Font.lightSystemFont(12)
+    batteryLine.textColor = Color.white()
+
+    const batteryLabel = batteryColumn.addText(`${Tol_cvt}`)
+    batteryLabel.font = new Font("Arialroundedmtbold", 20)
+    batteryLabel.textColor = Color.white()
+
+    row.addSpacer()
+
+    //Create temperatue column & set its properties
+    tempColumn = row.addStack()
+    tempColumn.layoutVertically()
+    tempColumn.centerAlignContent()
+
+    const tempLine = tempColumn.addText(`较上日新增`)
+    tempLine.font = Font.lightSystemFont(12)
+    tempLine.textColor = Color.white()
+
+    const tempLabel = tempColumn.addText(`${New_cvt}w`)
+    tempLabel.font = new Font("Arialroundedmtbold", 20)
+    tempLabel.textColor = Color.white()
+
+    row.addSpacer()
+    //      Create humidity column & set its properties
+    humColumn = row.addStack()
+    humColumn.layoutVertically()
+    humColumn.centerAlignContent()
+
+    const humLine = humColumn.addText(`每百人接种`)
+    humLine.font = Font.lightSystemFont(12)
+    humLine.textColor = Color.white()
+
+    const humLabel = humColumn.addText(`${CVTData.total_vaccinations_per_hundred}`)
+    humLabel.font = new Font("Arialroundedmtbold", 20)
+    humLabel.textColor = Color.white()
+    humLabel.leftAlignText()
+
+    widget.addSpacer(20)
+
+    const deviceLine = widget.addText(versionData['ONE-COVID_Vac'].notice)
+    deviceLine.font = Font.mediumSystemFont(8)
+    deviceLine.lineLimit = 4
+    deviceLine.textColor = Color.white()
+
+  } else if (previewSize == 'small') {
+
+    const timeFormatter = new DateFormatter();
+    timeFormatter.locale = "en";
+    timeFormatter.useNoDateStyle();
+    timeFormatter.useShortTimeStyle();
+
+    const title = widget.addText(`实时疫苗接种数据 · ${type}`)
+    title.font = Font.boldSystemFont(10)
+    title.textColor = new Color(COLORS.blynk)
+    widget.addSpacer(10)
+
+    const batteryLine = widget.addText(`累计接种(亿)`)
+    batteryLine.font = Font.lightSystemFont(10)
+    batteryLine.textColor = Color.white()
+
+    const batteryLabel = widget.addText(`${Tol_cvt}`)
+    batteryLabel.font = new Font("Arialroundedmtbold", 14)
+    batteryLabel.textColor = Color.white()
+
+    widget.addSpacer(5)
+
+    const tempLine = widget.addText(`较上日新增`)
+    tempLine.font = Font.lightSystemFont(10)
+    tempLine.textColor = Color.white()
+
+    const tempLabel = widget.addText(`${New_cvt}w`)
+    tempLabel.font = new Font("Arialroundedmtbold", 14)
+    tempLabel.textColor = Color.white()
+
+    widget.addSpacer(5)
+
+    const deviceLine = widget.addText(`每百人接种`)
+    deviceLine.font = Font.lightSystemFont(10)
+    deviceLine.textColor = Color.white()
+
+    const connectionLine = widget.addText(`${CVTData.total_vaccinations_per_hundred}`)
+    connectionLine.font = new Font("Arialroundedmtbold", 14)
+    connectionLine.textColor = Color.white()
+    widget.addSpacer(10)
+    const dateLine = widget.addText(`↻  ${timeFormatter.string(new Date())}`);
+    dateLine.font = new Font("Chalkduster", 10)
+    dateLine.textColor = Color.white();
+    // dateLine.rightAlignText();
+    dateLine.textOpacity = 0.7;
+
+  } else {
+    const error = widget.addText("\u62b1\u6b49\uff0c\u8be5\u5c3a\u5bf8\u5c0f\u7ec4\u4ef6\u4f5c\u8005\u6682\u672a\u9002\u914d")
+    error.font = Font.blackMonospacedSystemFont(12)
+    error.textColor = Color.white()
+    error.centerAlignText()
+    widget.url = 'https://mp.weixin.qq.com/mp/homepage?__biz=MzU3MTcyMDM1NA==&hid=1&sn=95931d7607893e42afc85ede24ba9fe5&scene=18'
+  }
+  return widget
+}
+
+//#####################事务逻辑处理模块#####################
+
+async function getVcT_TopData() {
+  const VTDataCachePath = files.joinPath(files.documentsDirectory(), "VaccineTopData-NK")
+  var VTData
+  try {
+    VTData = await new Request("https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=VaccineTopData").loadJSON()
+    files.writeString(VTDataCachePath, JSON.stringify(VTData))
+    log("[+]疫苗信息获取成功")
+  } catch (e) {
+    VTData = JSON.parse(files.readString(VTDataCachePath))
+    log("[+]获取疫苗信息失败，使用缓存数据")
+  }
+
+  return VTData.data.VaccineTopData[type]
+}
+
+
+//#####################背景模块-逻辑处理部分#####################
+
+async function shadowImage(img) {
+  let ctx = new DrawContext()
+  // 把画布的尺寸设置成图片的尺寸
+  ctx.size = img.size
+  // 把图片绘制到画布中
+  ctx.drawImageInRect(img, new Rect(0, 0, img.size['width'], img.size['height']))
+  // 设置绘制的图层颜色，为半透明的黑色
+  ctx.setFillColor(new Color('#000000', 0.5))
+  // 绘制图层
+  ctx.fillRect(new Rect(0, 0, img.size['width'], img.size['height']))
+
+  // 导出最终图片
+  return await ctx.getImage()
+}
+
+
+async function generateAlert(message, options) {
+  let alert = new Alert()
+  alert.message = message
+
+  for (const option of options) {
+    alert.addAction(option)
+  }
+
+  let response = await alert.presentAlert()
+  return response
+}
+
+// Crop an image into the specified rect.
+function cropImage(img, rect) {
+  let draw = new DrawContext()
+  draw.size = new Size(rect.width, rect.height)
+  draw.drawImageAtPoint(img, new Point(-rect.x, -rect.y))
+  return draw.getImage()
+}
+
+// **
+//  * 图片高斯模糊
+//  * @param {Image} img 
+//  * @param {string} style light/dark
+//  * @return {Image} 图片
+//  */
+async function blurImage(img, style, blur = blursize) {
+  const js = `
+   var mul_table=[512,512,456,512,328,456,335,512,405,328,271,456,388,335,292,512,454,405,364,328,298,271,496,456,420,388,360,335,312,292,273,512,482,454,428,405,383,364,345,328,312,298,284,271,259,496,475,456,437,420,404,388,374,360,347,335,323,312,302,292,282,273,265,512,497,482,468,454,441,428,417,405,394,383,373,364,354,345,337,328,320,312,305,298,291,284,278,271,265,259,507,496,485,475,465,456,446,437,428,420,412,404,396,388,381,374,367,360,354,347,341,335,329,323,318,312,307,302,297,292,287,282,278,273,269,265,261,512,505,497,489,482,475,468,461,454,447,441,435,428,422,417,411,405,399,394,389,383,378,373,368,364,359,354,350,345,341,337,332,328,324,320,316,312,309,305,301,298,294,291,287,284,281,278,274,271,268,265,262,259,257,507,501,496,491,485,480,475,470,465,460,456,451,446,442,437,433,428,424,420,416,412,408,404,400,396,392,388,385,381,377,374,370,367,363,360,357,354,350,347,344,341,338,335,332,329,326,323,320,318,315,312,310,307,304,302,299,297,294,292,289,287,285,282,280,278,275,273,271,269,267,265,263,261,259];var shg_table=[9,11,12,13,13,14,14,15,15,15,15,16,16,16,16,17,17,17,17,17,17,17,18,18,18,18,18,18,18,18,18,19,19,19,19,19,19,19,19,19,19,19,19,19,19,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24];function stackBlurCanvasRGB(id,top_x,top_y,width,height,radius){if(isNaN(radius)||radius<1)return;radius|=0;var canvas=document.getElementById(id);var context=canvas.getContext("2d");var imageData;try{try{imageData=context.getImageData(top_x,top_y,width,height)}catch(e){try{netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");imageData=context.getImageData(top_x,top_y,width,height)}catch(e){alert("Cannot access local image");throw new Error("unable to access local image data: "+e);return}}}catch(e){alert("Cannot access image");throw new Error("unable to access image data: "+e);}var pixels=imageData.data;var x,y,i,p,yp,yi,yw,r_sum,g_sum,b_sum,r_out_sum,g_out_sum,b_out_sum,r_in_sum,g_in_sum,b_in_sum,pr,pg,pb,rbs;var div=radius+radius+1;var w4=width<<2;var widthMinus1=width-1;var heightMinus1=height-1;var radiusPlus1=radius+1;var sumFactor=radiusPlus1*(radiusPlus1+1)/2;var stackStart=new BlurStack();var stack=stackStart;for(i=1;i<div;i++){stack=stack.next=new BlurStack();if(i==radiusPlus1)var stackEnd=stack}stack.next=stackStart;var stackIn=null;var stackOut=null;yw=yi=0;var mul_sum=mul_table[radius];var shg_sum=shg_table[radius];for(y=0;y<height;y++){r_in_sum=g_in_sum=b_in_sum=r_sum=g_sum=b_sum=0;r_out_sum=radiusPlus1*(pr=pixels[yi]);g_out_sum=radiusPlus1*(pg=pixels[yi+1]);b_out_sum=radiusPlus1*(pb=pixels[yi+2]);r_sum+=sumFactor*pr;g_sum+=sumFactor*pg;b_sum+=sumFactor*pb;stack=stackStart;for(i=0;i<radiusPlus1;i++){stack.r=pr;stack.g=pg;stack.b=pb;stack=stack.next}for(i=1;i<radiusPlus1;i++){p=yi+((widthMinus1<i?widthMinus1:i)<<2);r_sum+=(stack.r=(pr=pixels[p]))*(rbs=radiusPlus1-i);g_sum+=(stack.g=(pg=pixels[p+1]))*rbs;b_sum+=(stack.b=(pb=pixels[p+2]))*rbs;r_in_sum+=pr;g_in_sum+=pg;b_in_sum+=pb;stack=stack.next}stackIn=stackStart;stackOut=stackEnd;for(x=0;x<width;x++){pixels[yi]=(r_sum*mul_sum)>>shg_sum;pixels[yi+1]=(g_sum*mul_sum)>>shg_sum;pixels[yi+2]=(b_sum*mul_sum)>>shg_sum;r_sum-=r_out_sum;g_sum-=g_out_sum;b_sum-=b_out_sum;r_out_sum-=stackIn.r;g_out_sum-=stackIn.g;b_out_sum-=stackIn.b;p=(yw+((p=x+radius+1)<widthMinus1?p:widthMinus1))<<2;r_in_sum+=(stackIn.r=pixels[p]);g_in_sum+=(stackIn.g=pixels[p+1]);b_in_sum+=(stackIn.b=pixels[p+2]);r_sum+=r_in_sum;g_sum+=g_in_sum;b_sum+=b_in_sum;stackIn=stackIn.next;r_out_sum+=(pr=stackOut.r);g_out_sum+=(pg=stackOut.g);b_out_sum+=(pb=stackOut.b);r_in_sum-=pr;g_in_sum-=pg;b_in_sum-=pb;stackOut=stackOut.next;yi+=4}yw+=width}for(x=0;x<width;x++){g_in_sum=b_in_sum=r_in_sum=g_sum=b_sum=r_sum=0;yi=x<<2;r_out_sum=radiusPlus1*(pr=pixels[yi]);g_out_sum=radiusPlus1*(pg=pixels[yi+1]);b_out_sum=radiusPlus1*(pb=pixels[yi+2]);r_sum+=sumFactor*pr;g_sum+=sumFactor*pg;b_sum+=sumFactor*pb;stack=stackStart;for(i=0;i<radiusPlus1;i++){stack.r=pr;stack.g=pg;stack.b=pb;stack=stack.next}yp=width;for(i=1;i<=radius;i++){yi=(yp+x)<<2;r_sum+=(stack.r=(pr=pixels[yi]))*(rbs=radiusPlus1-i);g_sum+=(stack.g=(pg=pixels[yi+1]))*rbs;b_sum+=(stack.b=(pb=pixels[yi+2]))*rbs;r_in_sum+=pr;g_in_sum+=pg;b_in_sum+=pb;stack=stack.next;if(i<heightMinus1){yp+=width}}yi=x;stackIn=stackStart;stackOut=stackEnd;for(y=0;y<height;y++){p=yi<<2;pixels[p]=(r_sum*mul_sum)>>shg_sum;pixels[p+1]=(g_sum*mul_sum)>>shg_sum;pixels[p+2]=(b_sum*mul_sum)>>shg_sum;r_sum-=r_out_sum;g_sum-=g_out_sum;b_sum-=b_out_sum;r_out_sum-=stackIn.r;g_out_sum-=stackIn.g;b_out_sum-=stackIn.b;p=(x+(((p=y+radiusPlus1)<heightMinus1?p:heightMinus1)*width))<<2;r_sum+=(r_in_sum+=(stackIn.r=pixels[p]));g_sum+=(g_in_sum+=(stackIn.g=pixels[p+1]));b_sum+=(b_in_sum+=(stackIn.b=pixels[p+2]));stackIn=stackIn.next;r_out_sum+=(pr=stackOut.r);g_out_sum+=(pg=stackOut.g);b_out_sum+=(pb=stackOut.b);r_in_sum-=pr;g_in_sum-=pg;b_in_sum-=pb;stackOut=stackOut.next;yi+=width}}context.putImageData(imageData,top_x,top_y)}function BlurStack(){this.r=0;this.g=0;this.b=0;this.a=0;this.next=null}
+         // https://gist.github.com/mjackson/5311256
+       
+         function rgbToHsl(r, g, b){
+             r /= 255, g /= 255, b /= 255;
+             var max = Math.max(r, g, b), min = Math.min(r, g, b);
+             var h, s, l = (max + min) / 2;
+       
+             if(max == min){
+                 h = s = 0; // achromatic
+             }else{
+                 var d = max - min;
+                 s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                 switch(max){
+                     case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                     case g: h = (b - r) / d + 2; break;
+                     case b: h = (r - g) / d + 4; break;
+                 }
+                 h /= 6;
+             }
+       
+             return [h, s, l];
+         }
+       
+         function hslToRgb(h, s, l){
+             var r, g, b;
+       
+             if(s == 0){
+                 r = g = b = l; // achromatic
+             }else{
+                 var hue2rgb = function hue2rgb(p, q, t){
+                     if(t < 0) t += 1;
+                     if(t > 1) t -= 1;
+                     if(t < 1/6) return p + (q - p) * 6 * t;
+                     if(t < 1/2) return q;
+                     if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+                     return p;
+                 }
+       
+                 var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+                 var p = 2 * l - q;
+                 r = hue2rgb(p, q, h + 1/3);
+                 g = hue2rgb(p, q, h);
+                 b = hue2rgb(p, q, h - 1/3);
+             }
+       
+             return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+         }
+         
+         function lightBlur(hsl) {
+         
+           // Adjust the luminance.
+           let lumCalc = 0.35 + (0.3 / hsl[2]);
+           if (lumCalc < 1) { lumCalc = 1; }
+           else if (lumCalc > 3.3) { lumCalc = 3.3; }
+           const l = hsl[2] * lumCalc;
+           
+           // Adjust the saturation. 
+           const colorful = 2 * hsl[1] * l;
+           const s = hsl[1] * colorful * 1.5;
+           
+           return [hsl[0],s,l];
+           
+         }
+         
+         function darkBlur(hsl) {
+       
+           // Adjust the saturation. 
+           const colorful = 2 * hsl[1] * hsl[2];
+           const s = hsl[1] * (1 - hsl[2]) * 3;
+           
+           return [hsl[0],s,hsl[2]];
+           
+         }
+       
+         // Set up the canvas.
+         const img = document.getElementById("blurImg");
+         const canvas = document.getElementById("mainCanvas");
+       
+         const w = img.naturalWidth;
+         const h = img.naturalHeight;
+       
+         canvas.style.width  = w + "px";
+         canvas.style.height = h + "px";
+         canvas.width = w;
+         canvas.height = h;
+       
+         const context = canvas.getContext("2d");
+         context.clearRect( 0, 0, w, h );
+         context.drawImage( img, 0, 0 );
+         
+         // Get the image data from the context.
+         var imageData = context.getImageData(0,0,w,h);
+         var pix = imageData.data;
+         
+         var isDark = "${style}" == "dark";
+         var imageFunc = isDark ? darkBlur : lightBlur;
+       
+         for (let i=0; i < pix.length; i+=4) {
+       
+           // Convert to HSL.
+           let hsl = rgbToHsl(pix[i],pix[i+1],pix[i+2]);
+           
+           // Apply the image function.
+           hsl = imageFunc(hsl);
+         
+           // Convert back to RGB.
+           const rgb = hslToRgb(hsl[0], hsl[1], hsl[2]);
+         
+           // Put the values back into the data.
+           pix[i] = rgb[0];
+           pix[i+1] = rgb[1];
+           pix[i+2] = rgb[2];
+       
+         }
+       
+         // Draw over the old image.
+         context.putImageData(imageData,0,0);
+       
+         // Blur the image.
+         stackBlurCanvasRGB("mainCanvas", 0, 0, w, h, ${blur});
+         
+         // Perform the additional processing for dark images.
+         if (isDark) {
+         
+           // Draw the hard light box over it.
+           context.globalCompositeOperation = "hard-light";
+           context.fillStyle = "rgba(55,55,55,0.2)";
+           context.fillRect(0, 0, w, h);
+       
+           // Draw the soft light box over it.
+           context.globalCompositeOperation = "soft-light";
+           context.fillStyle = "rgba(55,55,55,1)";
+           context.fillRect(0, 0, w, h);
+       
+           // Draw the regular box over it.
+           context.globalCompositeOperation = "source-over";
+           context.fillStyle = "rgba(55,55,55,0.4)";
+           context.fillRect(0, 0, w, h);
+         
+         // Otherwise process light images.
+         } else {
+           context.fillStyle = "rgba(255,255,255,0.4)";
+           context.fillRect(0, 0, w, h);
+         }
+       
+         // Return a base64 representation.
+         canvas.toDataURL(); 
+         `
+
+  // Convert the images and create the HTML.
+  let blurImgData = Data.fromPNG(img).toBase64String()
+  let html = `
+         <img id="blurImg" src="data:image/png;base64,${blurImgData}" />
+         <canvas id="mainCanvas" />
+         `
+
+  // Make the web view and get its return value.
+  let view = new WebView()
+  await view.loadHTML(html)
+  let returnValue = await view.evaluateJavaScript(js)
+
+  // Remove the data type from the string and convert to data.
+  let imageDataString = returnValue.slice(22)
+  let imageData = Data.fromBase64String(imageDataString)
+
+  // Convert to image and crop before returning.
+  let imageFromData = Image.fromData(imageData)
+  // return cropImage(imageFromData)
+  return imageFromData
+}
+
+
+async function getImageByUrl(url, cacheKey, useCache = true) {
+  const cacheFile = FileManager.local().joinPath(FileManager.local().temporaryDirectory(), cacheKey)
+  const exists = FileManager.local().fileExists(cacheFile)
+  // 判断是否有缓存
+  if (useCache && exists) {
+    return Image.fromFile(cacheFile)
+  }
+  try {
+    const req = new Request(url)
+    const img = await req.loadImage()
+    // 存储到缓存
+    FileManager.local().writeImage(cacheFile, img)
+    return img
+  } catch (e) {
+    console.error(`图片加载失败：${e}`)
+    if (exists) {
+      return Image.fromFile(cacheFile)
+    }
+    // 没有缓存+失败情况下，返回黑色背景
+    let ctx = new DrawContext()
+    ctx.size = new Size(100, 100)
+    ctx.setFillColor(Color.black())
+    ctx.fillRect(new Rect(0, 0, 100, 100))
+    return await ctx.getImage()
+  }
+}
+
+// Pixel sizes and positions for widgets on all supported phones.
+function phoneSizes() {
+  let phones = {
+    "2556": {
+      "models": ["14 Pro Max"],
+      "小号": 510,
+      "中号": 1092,
+      "大号": 1146,
+      "左边": 99,
+      "右边": 681,
+      "顶部": 282,
+      "中间": 918,
+      "底部": 1554,
+    },
+
+    "2556": {
+      "models": ["14 Pro"],
+      "小号": 474,
+      "中号": 1014,
+      "大号": 1062,
+      "左边": 82,
+      "右边": 622,
+      "顶部": 270,
+      "中间": 858,
+      "底部": 1446,
+    },
+    "2532": {
+      "models": ["12", "12 Pro", "14"],
+      "小号": 474,
+      "中号": 1014,
+      "大号": 1062,
+      "左边": 78,
+      "右边": 618,
+      "顶部": 231,
+      "中间": 819,
+      "底部": 1407,
+    },
+
+    "2778": {
+      "models": ["12 Pro Max", "13 Pro Max"],
+      "小号": 510,
+      "中号": 1092,
+      "大号": 1146,
+      "左边": 96,
+      "右边": 678,
+      "顶部": 246,
+      "中间": 882,
+      "底部": 1518,
+    },
+
+    "2688": {
+      "models": ["Xs Max", "11 Pro Max"],
+      "小号": 507,
+      "中号": 1080,
+      "大号": 1137,
+      "左边": 81,
+      "右边": 654,
+      "顶部": 228,
+      "中间": 858,
+      "底部": 1488
+    },
+
+    "1792": {
+      "models": ["11", "Xr"],
+      "小号": 338,
+      "中号": 720,
+      "大号": 758,
+      "左边": 54,
+      "右边": 436,
+      "顶部": 160,
+      "中间": 580,
+      "底部": 1000
+    },
+
+    "2436": {
+      x: {
+        "models": ["X", "Xs", "11 Pro"],
+        "小号": 465,
+        "中号": 987,
+        "大号": 1035,
+        "左边": 69,
+        "右边": 591,
+        "顶部": 213,
+        "中间": 783,
+        "底部": 1353
+      },
+
+      mini: {
+        "models": ["12 mini"],
+        "小号": 465,
+        "中号": 987,
+        "大号": 1035,
+        "左边": 69,
+        "右边": 591,
+        "顶部": 231,
+        "中间": 801,
+        "底部": 1371
+      }
+    },
+
+    "2208": {
+      "models": ["6+", "6s+", "7+", "8+"],
+      "小号": 471,
+      "中号": 1044,
+      "大号": 1071,
+      "左边": 99,
+      "右边": 672,
+      "顶部": 114,
+      "中间": 696,
+      "底部": 1278
+    },
+
+    "1334": {
+      "models": ["6", "6s", "7", "8", "SE2"],
+      "小号": 296,
+      "中号": 642,
+      "大号": 648,
+      "左边": 54,
+      "右边": 400,
+      "顶部": 60,
+      "中间": 412,
+      "底部": 764
+    },
+
+    "1136": {
+      "models": ["5", "5s", "5c", "SE"],
+      "小号": 282,
+      "中号": 584,
+      "大号": 622,
+      "左边": 30,
+      "右边": 332,
+      "顶部": 59,
+      "中间": 399,
+      "底部": 399
+    }
+  }
+  return phones
+}
+
+//#####################版本更新模块#####################
+
+async function getversion() {
+  const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")
+  var versionData
+  try {
+    versionData = await new Request("https://fastly.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
+    files.writeString(versionCachePath, JSON.stringify(versionData))
+    console.log(`===>欢迎使用：${versionData.author}制作的小组件<===`);
+    console.log("[+]遇到问题，请前往公众号：曰坛 反馈");
+    log("[+]版本信息获取成功")
+  } catch (e) {
+    versionData = JSON.parse(files.readString(versionCachePath))
+    log("[+]获取版本信息失败，使用缓存数据")
+  }
+
+  return versionData
+}
+
+
+// 版本比较
+function version_compare(v1, v2) {
+  // 将两个版本号拆成数组
+  var arr1 = v1.split('.'),
+    arr2 = v2.split('.');
+  var minLength = Math.min(arr1.length, arr2.length);
+  // 依次比较版本号每一位大小
+  for (var i = 0; i < minLength; i++) {
+    if (parseInt(arr1[i]) != parseInt(arr2[i])) {
+      return (parseInt(arr1[i]) > parseInt(arr2[i])) ? 1 : -1;
+    }
+  }
+  // 若前几位分隔相同，则按分隔数比较。
+  if (arr1.length == arr2.length) {
+    return 0;
+  } else {
+    return (arr1.length > arr2.length) ? 1 : -1;
+  }
+}
+
+async function updateCheck(localversion) {
+
+  let uC = versionData
+  let originversion = uC['ONE-COVID_Vac'].version
+  let status = version_compare(originversion, localversion)
+  log('[+]最新版本：' + originversion)
+  let needUpdate = false
+  if (status == 1) {
+    needUpdate = true
+    log("[+]检测到有新版本！")
+    if (!config.runsInWidget) {
+      log("[+]执行更新步骤")
+      let upd = new Alert()
+      upd.title = "检测到有新版本！"
+      upd.addDestructiveAction("暂不更新")
+      upd.addAction("立即更新")
+      upd.add
+      upd.message = uC['ONE-COVID_Vac'].notes
+      if (await upd.present() == 1) {
+        const req = new Request(uC['ONE-COVID_Vac'].cdn_scriptURL)
+        const codeString = await req.loadString()
+        files.writeString(module.filename, codeString)
+        const n = new Notification()
+        n.title = "下载更新成功"
+        n.body = "请点击左上角Done完成，重新进入脚本即可~"
+        n.schedule()
+
+      }
+      Script.complete()
+    }
+
+  } else if (status == 0) {
+    log("[+]当前版本已是最新")
+  } else {
+    const n = new Notification()
+    n.title = "作者肯定是打瞌睡啦！"
+    n.body = "哎呀！赶紧去公众号反馈吧~"
+    n.schedule()
+  }
+
+  return needUpdate
+}
+
+/********************************************************
+ ************* MAKE SURE TO COPY EVERYTHING *************
+ *******************************************************
+ ************ © 2023 Copyright Nicolas-kings ************/

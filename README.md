@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://pic8.58cdn.com.cn/nowater/webim/big/n_v21b56c7a316d74d89aa99621de9dce00b.png" alt="Scriptable" style="width: 170px;height: 170px;border-radius: 22%; overflow: hidden;display: inline-block;vertical-align: middle;">
+<img src="https://pic8.58cdn.com.cn/nowater/webim/big/n_v21b56c7a316d74d89aa99621de9dce00b.png" alt="Scriptable" style="width: 120px;height: 120px; overflow: hidden;display: inline-block;vertical-align: middle;">
 </br>
 </br>
 </div>

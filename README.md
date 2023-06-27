@@ -1,16 +1,21 @@
-<p align="center">
+<div  align="center">
  <img width="100px" src="https://res.cloudinary.com/anuraghazra/image/upload/v1594908242/logo_ccswme.svg" align="center" alt="Scriptables 脚本合集" />
- <h2 align="center">Scriptables 脚本合集</h2>
- </p>
+ <h1 align="center">Scriptables 脚本合集</h1>
+
+ <a href="https://github.com/Nicolasking007/Scriptable/stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Nicolasking007/Scriptable?color=yellow&logo=riseup&logoColor=yellow&style=flat-square"></a>
+<a href="https://github.com/Nicolasking007/Scriptable/network/members"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Nicolasking007/Scriptable?color=orange&style=flat-square"></a>
+<a href="https://github.com/Nicolasking007/Scriptable/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Nicolasking007/Scriptable?color=red&style=flat-square"></a>
+<a href="https://apps.apple.com/cn/app/scriptable/id1405459188"><img alt="Scriptables" src="https://img.shields.io/badge/-IOS-black?logo=apple"></a>
+<a href="https://scriptable.app/mac-beta/"><img alt="Scriptables" src="https://img.shields.io/badge/-MacOS-black?logo=apple"></a>
+ </div >
  
- <p align="center">iOS14桌面组件神器（Scriptable）原创脚本，精美作品收集、分享！ 如果喜欢，欢迎点个 ★ Star ★ 给予小支持，感谢您的使用！<br><br>喜欢这个项目？有好的脚本？请考虑留言来帮助完善它！</p>
+
+ <p align="center">iOS14桌面组件神器（Scriptable）原创脚本，精美作品收集、分享！ 如果喜欢，欢迎点个 ⭐️ Star ⭐️ 给予小支持，感谢您的使用！<br><br>喜欢这个项目？有好的脚本？请考虑留言来帮助完善它！</p>
 
  <p align="center">如果您使用过程中发现有问题或可以改进的流程，请提出 Issue 或 Pull request ！</p>
 
 ---
 
-![nicolasking007's github stats](https://github-readme-stats.vercel.app/api?username=nicolasking007&show_icons=true)
----
 
 
 ##  📌 项目代码已全部开源，欢迎提交`PR`

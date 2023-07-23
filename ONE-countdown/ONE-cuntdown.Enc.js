@@ -7,7 +7,7 @@
  *******************************************************
  ************ © 2023 Copyright Nicolas-kings ************/
 /********************************************************
- * script     : ONE-cuntdown.js
+ * script     : ONE-countdown.js
  * version    : 1.5
  * author     : Nicolas-kings
  * date       : 2020-11-14
@@ -81,7 +81,7 @@ if (!colorMode && !ImageMode && !config.runsInWidget && changePicBg) {
         files.writeImage(path, img)
     }
     if (response == 2) {
-        Safari.openInApp(versionData['ONE-cuntdown'].wxurl, false);
+        Safari.openInApp(versionData['ONE-countdown'].wxurl, false);
     }
     if (response == 1) {
         message = "以下是【透明背景】生成步骤，如果你没有屏幕截图请退出，并返回主屏幕长按进入编辑模式。滑动到最右边的空白页截图。然后重新运行！"
@@ -722,7 +722,7 @@ function version_compare(v1, v2) {
 async function updateCheck(localversion) {
 
     let uC = versionData
-    let originversion = uC['ONE-cuntdown'].version
+    let originversion = uC['ONE-countdown'].version
     let status = version_compare(originversion, localversion)
     log('[+]最新版本：' + originversion)
     let needUpdate = false
@@ -736,9 +736,9 @@ async function updateCheck(localversion) {
             upd.addDestructiveAction("暂不更新")
             upd.addAction("立即更新")
             upd.add
-            upd.message = uC['ONE-cuntdown'].notes
+            upd.message = uC['ONE-countdown'].notes
             if (await upd.present() == 1) {
-                const req = new Request(uC['ONE-cuntdown'].cdn_scriptURL)
+                const req = new Request(uC['ONE-countdown'].cdn_scriptURL)
                 const codeString = await req.loadString()
                 files.writeString(module.filename, codeString)
                 const n = new Notification()

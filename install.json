@@ -53,10 +53,10 @@
             "version": "1.4",
             "author": "Nicolas-kings",
             "description": "简单的倒计时小组件",
-            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-cuntdown/ONE-cuntdown.Enc.js",
-            "cdn_scriptURL": "https://fastly.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-cuntdown.Enc.js",
+            "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-countdown/ONE-countdown.Enc.js",
+            "cdn_scriptURL": "https://fastly.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/ONE-countdown.Enc.js",
             "thumb": "https://i.loli.net/2021/03/27/64eOAa1FtvDBm7J.jpg",
-            "name": "ONE-cuntdown",
+            "name": "ONE-countdown",
             "title": "倒计时",
             "images":["https://i.loli.net/2021/03/27/64eOAa1FtvDBm7J.jpg"]
         },

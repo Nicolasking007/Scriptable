@@ -1,4 +1,4 @@
-## Scriptables —— ONE-cuntdown(倒计时)
+## Scriptables —— ONE-countdown(倒计时)
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 

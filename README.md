@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://pic8.58cdn.com.cn/nowater/webim/big/n_v21b56c7a316d74d89aa99621de9dce00b.png" alt="Scriptable" style="width: 170px;height: 170px;border-radius: 22%; overflow: hidden;display: inline-block;vertical-align: middle;">
+<img src="https://pic8.58cdn.com.cn/nowater/webim/big/n_v21b56c7a316d74d89aa99621de9dce00b.png" alt="Scriptable" style="width: 120px;height: 120px;border-radius: 22%; overflow: hidden;display: inline-block;vertical-align: middle;">
 </br>
 </br>
 </div>
@@ -31,12 +31,12 @@
 ## 目录
 - [如何使用](#如何使用)
 - [我的作品集](#我的作品集)
-- [汽车电子类](#汽车电子类)
+- [汽车类](#汽车类)
 - [日历类](#日历类)
 - [健康类](#健康类)
 - [手机类](#手机类)
-- [音乐](#音乐)
-- [阅读](#阅读)
+- [音乐类](#音乐类)
+- [阅读类](#阅读类)
 - [社交类](#社交类)
 - [购物类](#购物)
 - [运动类](#运动类)
@@ -104,7 +104,7 @@
 | -  |  -  | -  |  - | -  |
 
   
-### 🌍汽车电子类
+### 🌍汽车类
 --- 
 <details>
 <summary>🔻查看更多</summary>
@@ -215,7 +215,7 @@
 
 
  
-## 🌍阅读类
+### 🌍阅读类
 --- 
 <details>
 <summary>🔻查看更多</summary>

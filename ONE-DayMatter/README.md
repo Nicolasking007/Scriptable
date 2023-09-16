@@ -1,4 +1,4 @@
-## Scriptables —— ONE-DayMatter(音乐榜单)
+## Scriptables —— ONE-DayMatter(倒数日)
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 

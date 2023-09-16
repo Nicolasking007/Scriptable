@@ -71,7 +71,7 @@
 
 |  序号 | 推荐指数  |  说明 |  链接 | 示意图  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
-| 1 | ⭐️⭐️⭐️⭐️⭐️  | 支持查询全国所有省份的油价实时数据  |  [ONE-oliprice.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-oliprice) |  <img src="https://i.loli.net/2021/03/27/OLpBgxMtnSJHWmh.jpg" width="400"/> |
+| 1 | ⭐️⭐️⭐️⭐️⭐️  | 支持查询全国所有省份的油价实时数据  |  [ONE-oilprice.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-oilprice) |  <img src="https://i.loli.net/2021/03/27/OLpBgxMtnSJHWmh.jpg" width="400"/> |
 | 2  | ⭐️⭐️⭐️⭐️⭐️  | 时间倒计时百分比  |  [ONE-Progress.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Progress) | <img src="https://i.loli.net/2021/03/27/pz7i8DsA3WkGaTU.jpg" width="400"/>  |
 | 3  |  ⭐️⭐️⭐️⭐️⭐️  | NBA-实时比分  |  [ONE-NBA.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-NBA) | <img src="https://i.loli.net/2021/03/27/yEZAWRdraFKMpJB.jpg" width="400"/> |
 | 4  | ⭐️⭐️⭐️⭐️⭐️  | 显示农历日、天气、情话等信息.  | [ONE-Tool.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Tool)  | <img src="https://i.loli.net/2021/03/27/sH1AGgCmOK3ilqu.jpg" width="400"/>  |

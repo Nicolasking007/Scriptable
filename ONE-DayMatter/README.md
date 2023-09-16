@@ -1,7 +1,10 @@
-## Scriptables —— ONE-musicTop(音乐榜单)
+## Scriptables —— ONE-DayMatter(音乐榜单)
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
-![menu.jpg](https://i.loli.net/2021/05/27/C5jLBVl8cS2DPzo.jpg)
+
+[![pPf8nsg.jpg](https://z1.ax1x.com/2023/09/16/pPf8nsg.jpg)](https://imgse.com/i/pPf8nsg)
+
+[![pPf8Qds.md.jpg](https://z1.ax1x.com/2023/09/16/pPf8Qds.md.jpg)](https://imgse.com/i/pPf8Qds)
 
 尽情期待！
 
@@ -17,8 +20,7 @@ iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 
 ### 支持尺寸
 ---
-* 大尺寸
-* 中尺寸
+* 锁屏尺寸
 * 小尺寸
 
 

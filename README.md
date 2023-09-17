@@ -87,8 +87,8 @@
 | 14  |  ⭐️⭐️⭐️⭐️⭐️  | NBA赛程比分  |  [ONE-NBAMATCH.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-NBAMATCH) | <img src="https://i.loli.net/2021/06/04/ietfW3wKngVLBGX.jpg" width="400"/>  | 
 | 15  |  ⭐️⭐️⭐️⭐️⭐️  | 东京奥运会奖牌榜  |  [ONE-Olympic.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Olympic) | <img src="https://i.loli.net/2021/07/24/sfr1aeEKlyRnIu4.jpg" width="400"/>  |
 | 16  |  ⭐️⭐️⭐️⭐️⭐️  | 正向计时小组件  |  [ONE-Forwardtime.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Forwardtime) | <img src="https://pic.rmb.bdstatic.com/bjh/d2fd42a569bef6049a1835c14051c6b8.jpeg" width="400"/>  |
-| 17  |  ⭐️⭐️⭐️⭐️⭐️  | 倒数日+日历锁屏小组件  |  [ONE-DayMatter.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-DayMatter) | <img src="https://z1.ax1x.com/2023/09/17/pPhEIO0.jpg" width="400"/>  |
-| 18  |  ⭐️⭐️⭐️⭐️⭐️  | -  |  - | -  |
+| 17  |  ⭐️⭐️⭐️⭐️⭐️  | COVID-19疫情数据小组件  |  [ONE-COVID19_Datasheet.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-COVID19_Datasheet) | <img src="https://pic.rmb.bdstatic.com/bjh/185a9ea25035c85ff056676f56e1e4c7.jpeg" width="400"/>  |
+| 18  |  ⭐️⭐️⭐️⭐️⭐️  | 倒数日+日历锁屏小组件  |  [ONE-DayMatter.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-DayMatter) | <img src="https://z1.ax1x.com/2023/09/17/pPhEIO0.jpg" width="400"/>  |
 | -  |  -  | -  |  - | -  |
 
 

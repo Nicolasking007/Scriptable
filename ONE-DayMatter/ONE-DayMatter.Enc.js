@@ -62,8 +62,8 @@ const titleColor = Color.white()
 // Only show the days in the month or show the week leading to the first day in the month and the week leaving the last
 const showOnlyMonth = true
 
-// 小尺寸组件默认显示 日历信息
-const showcalendar = args.widgetParameter || true
+// 小尺寸组件默认显示 日历信息  0 - 日历   1 - 倒数日
+const showtype = args.widgetParameter || 0
 
 // 每周起始日 默认周一
 const weekStartsMonday = true
@@ -135,9 +135,10 @@ async function createWidget() {
 
   switch (previewSize) {
     case 'small':
-      if (showcalendar) {
+      if (showtype == 0) {
         setupcalendarWidget(widget, weekStartsMonday, showOnlyMonth)
-      } else {
+      } 
+      else if (showtype == 1) {
         const pumpImage = await getRandomImageAsync();
         setupSmallWidget(widget, holidayInfo, weekNumber, dayOfYear, currentDateTime, pumpImage);
       }
@@ -167,7 +168,7 @@ async function createWidget() {
       break;
 
     case 'accessoryRectangular':
-      setupAccessoryRectangularWidget(widget, date, holidayInfo);
+      setupAccessoryRectangularWidget(widget, holidayInfo);
       break;
 
     default:

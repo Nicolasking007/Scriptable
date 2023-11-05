@@ -8,12 +8,13 @@
  ************ © 2023 Copyright Nicolas-kings ************/
 /********************************************************
  * script     : ONE-hotcomments.js
- * version    : 2.8
+ * version    : 2.9
  * author     : Nicolas-kings
  * date       : 2021-04-05
  * desc       : 具体配置说明，详见微信公众号-曰(读yue)坛
  * github     : https://github.com/Nicolasking007/Scriptable
- * Changelog  : v2.8 - 修复背景报错，新增多个图片背景选项
+ * Changelog  : v2.9 - 适配上游接口,修复接口限流问题
+ *              v2.8 - 修复背景报错，新增多个图片背景选项
  *              v2.7 - 增加背景图片可配置化
  *              v2.6 - 压缩代码，便于复制
  *              v2.5 - 增加api数据源,遇到接口问题时可自行切换接口源
@@ -57,7 +58,7 @@ const padding = {
 //##############用户自定义参数配置模块-结束##############
 const filename = `${Script.name()}.jpg`
 const files = FileManager.local()
-const localversion = '2.8.0'
+const localversion = '2.9.0'
 const path = files.joinPath(files.documentsDirectory(), filename)
 
 const versionData = await getversion()
@@ -261,7 +262,7 @@ async function createWidget() {
   const profileStack = footerStack.addStack();
   profileStack.topAlignContent();
 
-  const image = await getImage(Switch_data ? hotcommentsData.data.avatarurl : hotcommentsData.data.avatar);
+  const image = await getImage(Switch_data ? hotcommentsData.data.avatarurl : hotcommentsData.data.avatarUrl);
   let profileImage = profileStack.addImage(image);
 
 
@@ -284,14 +285,14 @@ async function createWidget() {
   username.url = "orpheuswidget://"
   nameStack.addSpacer(5)
   if (previewSize == 'small') {
-    const taglist = nameStack.addText(Switch_data ? `-《${hotcommentsData.data.name}》` : `-《${hotcommentsData.data.songName}》`);
+    const taglist = nameStack.addText(Switch_data ? `-《${hotcommentsData.data.name}》` : `-《${hotcommentsData.data.name}》`);
     taglist.textColor = new Color("#bfbfbf");
     taglist.font = Font.semiboldSystemFont(9);
     taglist.lineLimit = 1
 
 
   } else {
-    const taglist = nameStack.addText(Switch_data ? `—— 评论来自${hotcommentsData.data.artistsname} ·《${hotcommentsData.data.name}》` : `—— 评论来自${hotcommentsData.data.songAutho} ·《${hotcommentsData.data.songName}》`);
+    const taglist = nameStack.addText(Switch_data ? `—— 评论来自${hotcommentsData.data.artistsname} ·《${hotcommentsData.data.name}》` : `—— 评论来自${hotcommentsData.data.auther} ·《${hotcommentsData.data.name}》`);
     taglist.textColor = new Color("#bfbfbf");
     taglist.font = Font.semiboldSystemFont(9);
   }
@@ -304,7 +305,7 @@ async function createWidget() {
   let docsElement = footerStack.addImage(docsSymbol.image)
   docsElement.imageSize = new Size(20, 20)
   docsElement.tintColor = Color.white()
-  docsElement.url = Switch_data ? hotcommentsData.data.url : `http://music.163.com/song/media/outer/url?id=${hotcommentsData.data.songId}.mp3` //跳转直链播放
+  docsElement.url = Switch_data ? hotcommentsData.data.url : `http://music.163.com/song/media/outer/url?id=${hotcommentsData.data.id}.mp3` //跳转直链播放
   // docsElement.imageOpacity = 0.5
 
   // const devLogo = await getImage(
@@ -323,7 +324,7 @@ async function createWidget() {
 async function getData(source) {
   const hotcommentsCachePath = files.joinPath(files.documentsDirectory(), "hotcomments-NK")
   var hotcommentsData
-  let mxgapi = "https://api.muxiaoguo.cn/api/163reping"
+  let mxgapi = "https://api.vvhan.cn/api/163reping"
   let uomgapi = "https://api.uomg.com/api/comments.163"
   try {
 
@@ -739,7 +740,7 @@ async function getversion() {
   const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")
   var versionData
   try {
-    versionData = await new Request("https://fastly.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
+    versionData = await new Request("https://cdn.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
     files.writeString(versionCachePath, JSON.stringify(versionData))
     console.log(`[+]欢迎使用：${versionData.author}制作小组件`);
     console.log("[+]遇到问题，请前往公众号：曰坛 反馈");
@@ -788,7 +789,6 @@ async function updateCheck(localversion) {
       upd.title = "检测到有新版本！"
       upd.addDestructiveAction("暂不更新")
       upd.addAction("立即更新")
-      upd.add
       upd.message = uC['ONE-hotcomments'].notes
       if (await upd.present() == 1) {
         const req = new Request(uC['ONE-hotcomments'].cdn_scriptURL)

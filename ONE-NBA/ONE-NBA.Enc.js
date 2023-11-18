@@ -8,11 +8,12 @@
  ************ © 2023 Copyright Nicolas-kings ************/
 /********************************************************
  * script     : ONE-NBA.js
- * version    : 1.9.1
+ * version    : 1.9.2
  * author     : thisisevanfox & Nicolas-kings
  * date       : 2021-05-09
  * github     : https://github.com/Nicolasking007/Scriptable
- * Changelog  :  v1.9.1 - 适配上游接口，剔出失效接口，新增部分配置项
+ * Changelog  :  v1.9.2 - 修改时区
+ *               v1.9.1 - 适配上游接口，剔出失效接口，新增部分配置项
  *               v1.9 - 修复背景报错，新增多个图片背景选项
  *               v1.8 - 压缩代码，便于复制
  *               v1.7 - 优化背景逻辑
@@ -901,7 +902,7 @@ async function fetchScheduleData(oTeamData) {
     const dStartDate = new Date();
 
     // Games in Europe are after midnight, so subtract 6 hours
-    dStartDate.setHours(dStartDate.getHours() - 6);
+    dStartDate.setHours(dStartDate.getHours() - 14);
 
     const aAllGames = oResponse.gscd.g;
     const aNextGames = aAllGames.filter((game) => {

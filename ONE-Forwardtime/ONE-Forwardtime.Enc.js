@@ -579,7 +579,7 @@ async function getImageByUrl(url, cacheKey, useCache = true) {
 // Pixel sizes and positions for widgets on all supported phones.
 function phoneSizes() {
     let phones = {
-      "2556": {
+      "2796": {
         "models": ["14 Pro Max"],
         "小号": 510,
         "中号": 1092,

@@ -6,7 +6,7 @@
     "icon": "https://pic.rmb.bdstatic.com/bjh/6a9bfc89880d4a776f6406dd10249483.jpeg",
     "apps": [
         {
-            "version": "1.8",
+            "version": "1.8.2",
             "author": "Nicolas-kings",
             "description": "一个整合欢迎语、农历时间、每日情话、当日天气、手机电量、今年百分比的小组件",
             "scriptURL": "https://raw.githubusercontent.com/Nicolasking007/Scriptable/main/ONE-tool/ONE-Tool.Enc.js",

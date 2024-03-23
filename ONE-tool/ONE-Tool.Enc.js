@@ -8,12 +8,13 @@
  ************ © 2023 Copyright Nicolas-kings ************/
 /********************************************************
  * script     : ONE-Tool.js
- * version    : 1.8.1
+ * version    : 1.8.2
  * author     : Nicolas-kings
  * date       : 2021-04-05
  * desc       : 具体配置说明，详见微信公众号-曰(读yue)坛
  * github     : https://github.com/Nicolasking007/Scriptable
- * Changelog  : v1.8.1 - 新增彩云天气版，打印日志调整、其他细节优化
+ * Changelog  : v1.8.2 - 修复情话报错
+ *              v1.8.1 - 新增彩云天气版，打印日志调整、其他细节优化
  *              v1.8 - 修复背景报错，新增多个图片背景选项
  *              v1.7 - 压缩代码，便于复制
  *              v1.6 - 优化背景逻辑
@@ -63,7 +64,7 @@ const lockLocation = false
 //##############用户自定义参数配置模块-结束##############
 const filename = Script.name()
 const files = FileManager.local()
-const localversion = '1.8.1'
+const localversion = '1.8.2'
 const path = files.joinPath(files.documentsDirectory(), filename)
 const versionData = await getversion()
 const needUpdated = await updateCheck(localversion)
@@ -289,7 +290,7 @@ async function createWidget() {
         lunartime.textColor = new Color('#C6FFDD')
         lunartime.font = new Font('Menlo', 11)
 
-        const honey = widget.addText(`[🐷]${honeyData.ishan}`)
+        const honey = widget.addText(`[🐷]${honeyData.data.content}`)
         honey.textColor = new Color('#BBD676')
         honey.font = new Font('Menlo', 11)
         honey.lineLimit = 1
@@ -480,7 +481,7 @@ async function gethoney() {
     const honeyCachePath = files.joinPath(files.documentsDirectory(), "honey-NK")
     var honeyData
     try {
-        honeyData = await new Request("https://api.vvhan.com/api/love?type=json").loadJSON()
+        honeyData = await new Request("https://api.vvhan.com/api/text/love?type=json").loadJSON()
         files.writeString(honeyCachePath, JSON.stringify(honeyData))
         log("[+]情话信息获取成功")
     } catch (e) {

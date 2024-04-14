@@ -1,9 +1,12 @@
-## Scriptables —— ONE-Olympic(东京奥运会奖牌榜)
+## Scriptables ——ONE-Motto(每日一言音频小组件)
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
-![menu.jpg](https://i.loli.net/2021/07/24/sfr1aeEKlyRnIu4.jpg)
 
+|   | 
+| ------------ | 
+| <img src="https://s2.loli.net/2024/04/14/UQHSsyDM3iFgX8a.jpg" width="650"/>   |
 
+尽情期待！
 
 ### 如何使用
 ---
@@ -14,12 +17,11 @@ iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 
 <img src="https://shop.io.mi-img.com/app/shop/img?id=shop_2633f187a80f14a861acabba8963a8d8.jpeg" width="650px"/> 
 
-
 ### 支持尺寸
 ---
-* 大尺寸
-* 中尺寸
 
+* 中尺寸
+* 小尺寸
 
 
 ### 微信公众号

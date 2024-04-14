@@ -51,7 +51,7 @@
 3. 长按桌面，添加组件，选择 `Scriptable`，然后点击组件配置，选择刚刚保存的脚本即可.
 4. 尽情享受吧！   
 
-![menu.jpg](https://shop.io.mi-img.com/app/shop/img?id=shop_2633f187a80f14a861acabba8963a8d8.jpeg)
+<img src="https://shop.io.mi-img.com/app/shop/img?id=shop_2633f187a80f14a861acabba8963a8d8.jpeg" width="650px"/> 
 
 
 ### 🟠🟡🟢我的作品集   
@@ -89,6 +89,7 @@
 | 16  |  ⭐️⭐️⭐️⭐️⭐️  | 正向计时小组件  |  [ONE-Forwardtime.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Forwardtime) | <img src="https://pic.rmb.bdstatic.com/bjh/d2fd42a569bef6049a1835c14051c6b8.jpeg" width="400"/>  |
 | 17  |  ⭐️⭐️⭐️⭐️⭐️  | COVID-19疫情数据小组件  |  [ONE-COVID19_Datasheet.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-COVID19_Datasheet) | <img src="https://pic.rmb.bdstatic.com/bjh/185a9ea25035c85ff056676f56e1e4c7.jpeg" width="400"/>  |
 | 18  |  ⭐️⭐️⭐️⭐️⭐️  | 倒数日+日历锁屏小组件  |  [ONE-DayMatter.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-DayMatter) | <img src="https://z1.ax1x.com/2023/09/17/pPhEIO0.jpg" width="400"/>  |
+| 19  |  ⭐️⭐️⭐️⭐️⭐️  | 每日一言音频小组件  |  [ONE-Motto.js](https://github.com/Nicolasking007/Scriptable/tree/main/ONE-Motto) | <img src="https://s2.loli.net/2024/04/14/UQHSsyDM3iFgX8a.jpg" width="400"/>  |
 | -  |  -  | -  |  - | -  |
 
 
@@ -360,7 +361,7 @@
 ### 🟠🟡🟢微信公众号
 --- 
 <center>
-    <img src="https://s2.ax1x.com/2019/12/28/lemBSf.png" style="width: 100px;">
+    <img src="https://s2.ax1x.com/2019/12/28/lemBSf.png" style="width: 200px;">
 </center>
 
 <center>欢迎微信扫码关注公众号哟！</center>

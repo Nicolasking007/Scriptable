@@ -2,11 +2,15 @@
 ---
 iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 
-[![pPhEIO0.md.jpg](https://z1.ax1x.com/2023/09/17/pPhEIO0.md.jpg)](https://imgse.com/i/pPhEIO0)
 
-[![pPf8nsg.jpg](https://z1.ax1x.com/2023/09/16/pPf8nsg.jpg)](https://imgse.com/i/pPf8nsg)
+|  锁屏样式 | 深色模式  | 浅色模式  |
+| ------------ | ------------ | ------------ | 
+| ![IMG_4065.jpg](https://s2.loli.net/2024/04/14/HQsJUBK2ulwZXbx.jpg)  | ![IMG_4070.jpg](https://s2.loli.net/2024/04/14/AdqeWXErwRvaJnV.jpg)  |  ![IMG_4069.jpg](https://s2.loli.net/2024/04/14/hlHZUrnkNs3CvQY.jpg)  |
 
-[![pPf8Qds.md.jpg](https://z1.ax1x.com/2023/09/16/pPf8Qds.md.jpg)](https://imgse.com/i/pPf8Qds)
+
+
+
+
 
 尽情期待！
 
@@ -17,7 +21,7 @@ iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 3. 长按桌面，添加组件，选择 `Scriptable`，然后点击组件配置，选择刚刚保存的脚本即可.
 4. 尽情享受吧！   
 
-![menu.jpg](https://shop.io.mi-img.com/app/shop/img?id=shop_2633f187a80f14a861acabba8963a8d8.jpeg)
+<img src="https://shop.io.mi-img.com/app/shop/img?id=shop_2633f187a80f14a861acabba8963a8d8.jpeg" width="650px"/> 
 
 
 ### 支持尺寸
@@ -30,7 +34,7 @@ iOS14桌面组件神器（Scriptable）原创脚本，精美作品分享！
 ### 微信公众号
 --- 
 <center>
-    <img src="https://s2.ax1x.com/2019/12/28/lemBSf.png" style="width: 100px;">
+    <img src="https://s2.ax1x.com/2019/12/28/lemBSf.png" style="width: 200px;">
 </center>
 
 <center>欢迎微信扫码关注公众号哟！</center>

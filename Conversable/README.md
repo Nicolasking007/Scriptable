@@ -141,7 +141,7 @@ Telegram的例子:
 ### 微信公众号
 --- 
 <center>
-    <img src="https://s2.ax1x.com/2019/12/28/lemBSf.png" style="width: 100px;">
+    <img src="https://s2.ax1x.com/2019/12/28/lemBSf.png" style="width: 200px;">
 </center>
 
 <center>欢迎微信扫码关注公众号哟！</center>

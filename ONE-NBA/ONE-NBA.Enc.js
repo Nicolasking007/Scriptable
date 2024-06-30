@@ -1812,7 +1812,7 @@ async function getversion() {
   const versionCachePath = files.joinPath(files.documentsDirectory(), "version-NK")
   var versionData
   try {
-    versionData = await new Request("https://fastly.jsdelivr.net/gh/Nicolasking007/CDN@latest/Scriptable/UPDATE.json").loadJSON()
+    versionData = await new Request(atob("aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL05pY29sYXNraW5nMDA3L0NETkBsYXRlc3QvU2NyaXB0YWJsZS9VUERBVEUuanNvbg==")).loadJSON()
     files.writeString(versionCachePath, JSON.stringify(versionData))
     console.log(`===>欢迎使用：${versionData.author}制作的小组件<===`);
     console.log("[+]遇到问题，请前往公众号：曰坛 反馈");
